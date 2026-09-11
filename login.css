@@ -1,0 +1,3677 @@
+/* =========================================================
+   STACKLY BAKERY
+   LOGIN + SIGNUP AUTHENTICATION PAGE
+   PROFESSIONAL RESPONSIVE CSS
+========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+
+    --bakery-primary: #d4a373;
+    --bakery-primary-dark: #a96f35;
+    --bakery-primary-light: #f4dfc4;
+
+    --bakery-cream: #fffaf3;
+    --bakery-white: #ffffff;
+
+    --bakery-dark: #17120e;
+    --bakery-dark-soft: #2a211b;
+
+    --bakery-text: #4f4740;
+    --bakery-muted: #8a8179;
+
+    --bakery-border: #e8dfd5;
+    --bakery-input-bg: #fffdf9;
+
+    --bakery-success: #198754;
+    --bakery-error: #d93025;
+
+    --bakery-shadow:
+        0 30px 80px rgba(42, 31, 22, 0.15);
+
+    --bakery-soft-shadow:
+        0 12px 35px rgba(42, 31, 22, 0.10);
+
+    --bakery-transition:
+        all 0.35s ease;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    min-height: 100vh;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    color:
+        var(--bakery-text);
+
+    background:
+
+        radial-gradient(
+            circle at 8% 12%,
+            rgba(212, 163, 115, 0.16),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 92% 88%,
+            rgba(212, 163, 115, 0.13),
+            transparent 30%
+        ),
+
+        var(--bakery-cream);
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   FORM ELEMENTS
+========================================================= */
+
+button,
+input {
+    font-family: inherit;
+}
+
+button {
+    border: 0;
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* =========================================================
+   MAIN AUTH PAGE
+   DESKTOP:
+   PAGE DOES NOT SCROLL
+   RIGHT PANEL SCROLLS INDEPENDENTLY
+========================================================= */
+
+.bakery-auth-page {
+
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+
+    padding: 28px 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATIONS
+========================================================= */
+
+.bakery-auth-decoration {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+
+    filter: blur(1px);
+
+}
+
+
+/* -------------------------
+   DECORATION ONE
+------------------------- */
+
+.bakery-auth-decoration-one {
+
+    width: 360px;
+    height: 360px;
+
+    top: -170px;
+    left: -140px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(212, 163, 115, 0.20),
+            transparent 70%
+        );
+
+    animation:
+        bakeryFloatOne 8s ease-in-out infinite;
+
+}
+
+
+/* -------------------------
+   DECORATION TWO
+------------------------- */
+
+.bakery-auth-decoration-two {
+
+    width: 310px;
+    height: 310px;
+
+    top: 12%;
+    right: -130px;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(169, 111, 53, 0.12),
+            transparent 70%
+        );
+
+    animation:
+        bakeryFloatTwo 9s ease-in-out infinite;
+
+}
+
+
+/* -------------------------
+   DECORATION THREE
+------------------------- */
+
+.bakery-auth-decoration-three {
+
+    width: 280px;
+    height: 280px;
+
+    bottom: -140px;
+    left: 35%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(244, 223, 196, 0.55),
+            transparent 70%
+        );
+
+    animation:
+        bakeryFloatThree 10s ease-in-out infinite;
+
+}
+
+
+/* =========================================================
+   DECORATION ANIMATIONS
+========================================================= */
+
+@keyframes bakeryFloatOne {
+
+    0%,
+    100% {
+        transform:
+            translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform:
+            translate3d(30px, 25px, 0);
+    }
+
+}
+
+
+@keyframes bakeryFloatTwo {
+
+    0%,
+    100% {
+        transform:
+            translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform:
+            translate3d(-25px, 30px, 0);
+    }
+
+}
+
+
+@keyframes bakeryFloatThree {
+
+    0%,
+    100% {
+        transform:
+            translate3d(0, 0, 0);
+    }
+
+    50% {
+        transform:
+            translate3d(20px, -25px, 0);
+    }
+
+}
+
+
+/* =========================================================
+   MAIN AUTH CONTAINER
+   LEFT  = CONSTANT
+   RIGHT = SCROLLABLE
+========================================================= */
+
+.bakery-auth-container {
+
+    position: relative;
+
+    z-index: 2;
+
+    width:
+        min(1180px, 100%);
+
+    height:
+        min(720px, calc(100vh - 56px));
+
+    max-height:
+        calc(100vh - 56px);
+
+    min-height: 0;
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(320px, 0.86fr)
+        minmax(500px, 1.14fr);
+
+    background:
+        var(--bakery-white);
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.9);
+
+    border-radius:
+        28px;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        var(--bakery-shadow);
+
+}
+
+
+/* =========================================================
+   LEFT BRAND PANEL
+   CONSTANT / NON-SCROLLING
+========================================================= */
+
+.bakery-auth-brand-panel {
+
+    position: relative;
+
+    height: 100%;
+    min-height: 0;
+
+    padding:
+        34px 38px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    color:
+        var(--bakery-white);
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(23, 18, 14, 0.99),
+            rgba(63, 43, 27, 0.98)
+        );
+
+    overflow:
+        hidden;
+
+}
+
+
+/* =========================================================
+   LEFT PANEL DECORATIVE ELEMENT
+========================================================= */
+
+.bakery-auth-brand-panel::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 310px;
+    height: 310px;
+
+    top: -155px;
+    right: -130px;
+
+    border-radius: 50%;
+
+    background:
+
+        radial-gradient(
+            circle,
+            rgba(212, 163, 115, 0.27),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+}
+
+
+.bakery-auth-brand-panel::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    left: -115px;
+    bottom: -125px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(212, 163, 115, 0.25);
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.bakery-auth-logo {
+
+    position: relative;
+
+    z-index: 3;
+
+    display: inline-flex;
+
+    width: fit-content;
+
+    align-items: center;
+
+}
+
+
+.bakery-auth-logo img {
+
+    display: block;
+
+    width: 135px;
+
+    height: auto;
+
+    object-fit: contain;
+
+     filter:
+        brightness(0)
+        saturate(100%)
+        invert(46%)
+        sepia(27%)
+        saturate(780%)
+        hue-rotate(348deg)
+        brightness(92%)
+        contrast(91%);
+
+    transition:
+        var(--bakery-transition);
+
+}
+
+
+.bakery-auth-logo:hover img {
+
+    transform:
+        translateY(-2px)
+        scale(1.02);
+
+     filter:
+        brightness(0)
+        saturate(100%)
+        invert(49%)
+        sepia(30%)
+        saturate(900%)
+        hue-rotate(348deg)
+        brightness(100%)
+        contrast(95%)
+        drop-shadow(
+            0 5px 8px
+            rgba(169, 111, 67, 0.22)
+        )
+        drop-shadow(
+            0 10px 18px
+            rgba(194, 138, 90, 0.16)
+        );
+}
+
+
+/* =========================================================
+   BRAND CONTENT
+========================================================= */
+
+.bakery-auth-brand-content {
+
+    position: relative;
+
+    z-index: 3;
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================================================
+   SMALL LABEL
+========================================================= */
+
+.bakery-auth-small-label {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+
+    padding:
+        5px 10px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.10);
+
+    border-radius:
+        50px;
+
+    color:
+        var(--bakery-primary-light);
+
+    background:
+        rgba(255, 255, 255, 0.07);
+
+    font-size:
+        9px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        1.35px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+/* =========================================================
+   LEFT HEADING
+========================================================= */
+
+.bakery-auth-brand-content h1 {
+
+    max-width:
+        340px;
+
+    margin-bottom:
+        12px;
+
+    color:
+        var(--bakery-white);
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(30px, 3vw, 40px);
+
+    line-height:
+        1.08;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        -0.7px;
+
+}
+
+
+.bakery-auth-brand-content h1 span {
+
+    display: block;
+
+    color:
+        var(--bakery-primary-light);
+
+    font-style:
+        italic;
+
+}
+
+
+/* =========================================================
+   LEFT DESCRIPTION
+========================================================= */
+
+.bakery-auth-brand-content > p {
+
+    max-width:
+        345px;
+
+    color:
+        rgba(255, 255, 255, 0.66);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.65;
+
+}
+
+
+/* =========================================================
+   FEATURES
+========================================================= */
+
+.bakery-auth-features {
+
+    position: relative;
+
+    z-index: 3;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    gap:
+        7px;
+
+    margin:
+        14px 0;
+
+}
+
+
+/* =========================================================
+   FEATURE ITEM
+========================================================= */
+
+.bakery-auth-feature-item {
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        10px;
+
+    padding:
+        7px 9px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.055);
+
+    border-radius:
+        10px;
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    transition:
+        var(--bakery-transition);
+
+}
+
+
+.bakery-auth-feature-item:hover {
+
+    transform:
+        translateX(5px);
+
+    border-color:
+        rgba(212, 163, 115, 0.30);
+
+    background:
+        rgba(255, 255, 255, 0.085);
+
+}
+
+
+/* =========================================================
+   FEATURE ICON
+========================================================= */
+
+.bakery-auth-feature-icon {
+
+    flex:
+        0 0 32px;
+
+    width:
+        32px;
+
+    height:
+        32px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border-radius:
+        8px;
+
+    color:
+        var(--bakery-primary-light);
+
+    background:
+        rgba(212, 163, 115, 0.12);
+
+    font-size:
+        12px;
+
+}
+
+
+/* =========================================================
+   FEATURE CONTENT
+========================================================= */
+
+.bakery-auth-feature-content {
+
+    min-width:
+        0;
+
+}
+
+
+.bakery-auth-feature-content h4 {
+
+    margin-bottom:
+        2px;
+
+    color:
+        var(--bakery-white);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.3;
+
+    font-weight:
+        700;
+
+}
+
+
+.bakery-auth-feature-content p {
+
+    color:
+        rgba(255, 255, 255, 0.52);
+
+    font-size:
+        8.5px;
+
+    line-height:
+        1.4;
+
+}
+
+
+/* =========================================================
+   QUOTE
+========================================================= */
+
+.bakery-auth-quote {
+
+    position: relative;
+
+    z-index: 3;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        8px;
+
+    margin-top:
+        auto;
+
+    padding-top:
+        8px;
+
+}
+
+
+.bakery-auth-quote i {
+
+    flex:
+        0 0 auto;
+
+    color:
+        var(--bakery-primary);
+
+    font-size:
+        15px;
+
+}
+
+
+.bakery-auth-quote p {
+
+    color:
+        rgba(255, 255, 255, 0.68);
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        10px;
+
+    line-height:
+        1.5;
+
+    font-style:
+        italic;
+
+}
+
+
+/* =========================================================
+   HOME BUTTON
+========================================================= */
+
+.bakery-auth-home-button {
+
+    position: relative;
+
+    z-index: 3;
+
+    width:
+        fit-content;
+
+    margin-top:
+        10px;
+
+    padding:
+        8px 13px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.15);
+
+    border-radius:
+        50px;
+
+    color:
+        var(--bakery-white);
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    transition:
+        var(--bakery-transition);
+
+}
+
+
+.bakery-auth-home-button i {
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.bakery-auth-home-button:hover {
+
+    color:
+        var(--bakery-dark);
+
+    border-color:
+        var(--bakery-primary-light);
+
+    background:
+        var(--bakery-primary-light);
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 10px 24px
+        rgba(0, 0, 0, 0.15);
+
+}
+
+
+.bakery-auth-home-button:hover i {
+
+    transform:
+        translateX(-4px);
+
+}
+
+
+/* =========================================================
+   RIGHT FORM PANEL
+   ONLY SCROLLABLE DESKTOP AREA
+========================================================= */
+
+.bakery-auth-form-panel {
+
+    position: relative;
+
+    min-width:
+        0;
+
+    height:
+        100%;
+
+    max-height:
+        none;
+
+    padding:
+        46px 58px 50px;
+
+    background:
+        var(--bakery-white);
+
+    overflow-y:
+        auto;
+
+    overflow-x:
+        hidden;
+
+    overscroll-behavior:
+        contain;
+
+    scrollbar-width:
+        thin;
+
+    scrollbar-color:
+        var(--bakery-primary-light)
+        #f7f2ed;
+
+}
+
+
+/* =========================================================
+   RIGHT SCROLLBAR
+========================================================= */
+
+.bakery-auth-form-panel::-webkit-scrollbar {
+
+    width:
+        7px;
+
+}
+
+
+.bakery-auth-form-panel::-webkit-scrollbar-track {
+
+    background:
+        #f7f2ed;
+
+}
+
+
+.bakery-auth-form-panel::-webkit-scrollbar-thumb {
+
+    border-radius:
+        20px;
+
+    background:
+        var(--bakery-primary-light);
+
+}
+
+
+.bakery-auth-form-panel::-webkit-scrollbar-thumb:hover {
+
+    background:
+        var(--bakery-primary);
+
+}
+
+
+/* =========================================================
+   AUTH WRAPPER
+========================================================= */
+
+.bakery-auth-wrapper {
+
+    width:
+        100%;
+
+    max-width:
+        510px;
+
+    margin:
+        0 auto;
+
+    display:
+        none;
+
+    animation:
+        bakeryAuthEnter
+        0.45s
+        ease
+        forwards;
+
+}
+
+
+.bakery-auth-wrapper.active {
+
+    display:
+        block;
+
+}
+
+
+/* =========================================================
+   LOGIN / SIGNUP ENTRY ANIMATION
+========================================================= */
+
+@keyframes bakeryAuthEnter {
+
+    from {
+
+        opacity:
+            0;
+
+        transform:
+            translateX(20px);
+
+    }
+
+    to {
+
+        opacity:
+            1;
+
+        transform:
+            translateX(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   AUTH HEADING
+========================================================= */
+
+.bakery-auth-heading {
+
+    margin-bottom:
+        24px;
+
+}
+
+
+.bakery-auth-heading-label {
+
+    display:
+        inline-block;
+
+    margin-bottom:
+        6px;
+
+    color:
+        var(--bakery-primary-dark);
+
+    font-size:
+        9px;
+
+    font-weight:
+        800;
+
+    letter-spacing:
+        1.7px;
+
+    text-transform:
+        uppercase;
+
+}
+
+
+.bakery-auth-heading h2 {
+
+    margin-bottom:
+        7px;
+
+    color:
+        var(--bakery-dark);
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(32px, 3.3vw, 44px);
+
+    line-height:
+        1.08;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        -0.5px;
+
+}
+
+
+.bakery-auth-heading p {
+
+    max-width:
+        500px;
+
+    color:
+        var(--bakery-muted);
+
+    font-size:
+        12px;
+
+    line-height:
+        1.6;
+
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.bakery-auth-form {
+
+    width:
+        100%;
+
+}
+
+
+/* =========================================================
+   FORM FIELD
+========================================================= */
+
+.bakery-auth-field {
+
+    position:
+        relative;
+
+    margin-bottom:
+        16px;
+
+}
+
+
+/* =========================================================
+   FIELD LABEL
+========================================================= */
+
+.bakery-auth-field label {
+
+    display:
+        block;
+
+    margin-bottom:
+        6px;
+
+    color:
+        var(--bakery-dark);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.4;
+
+    font-weight:
+        700;
+
+}
+
+
+/* =========================================================
+   INPUT WRAPPER
+========================================================= */
+
+.bakery-input-wrapper {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+}
+
+
+/* =========================================================
+   INPUT ICON
+========================================================= */
+
+.bakery-input-icon {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    left:
+        15px;
+
+    z-index:
+        2;
+
+    transform:
+        translateY(-50%);
+
+    color:
+        #a59b91;
+
+    font-size:
+        13px;
+
+    pointer-events:
+        none;
+
+    transition:
+        var(--bakery-transition);
+
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+.bakery-input-wrapper input {
+
+    width:
+        100%;
+
+    min-height:
+        50px;
+
+    padding:
+        12px 45px 12px 45px;
+
+    border:
+        1px solid
+        var(--bakery-border);
+
+    border-radius:
+        10px;
+
+    outline:
+        none;
+
+    color:
+        var(--bakery-dark);
+
+    background:
+        var(--bakery-input-bg);
+
+    font-size:
+        12px;
+
+    font-weight:
+        500;
+
+    transition:
+        var(--bakery-transition);
+
+}
+
+
+.bakery-input-wrapper input::placeholder {
+
+    color:
+        #aaa198;
+
+    font-size:
+        11px;
+
+}
+
+
+.bakery-input-wrapper input:hover {
+
+    border-color:
+        #d7c6b5;
+
+    background:
+        var(--bakery-white);
+
+}
+
+
+.bakery-input-wrapper input:focus {
+
+    border-color:
+        var(--bakery-primary);
+
+    background:
+        var(--bakery-white);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(212, 163, 115, 0.12);
+
+}
+
+
+.bakery-input-wrapper:focus-within
+.bakery-input-icon {
+
+    color:
+        var(--bakery-primary-dark);
+
+}
+
+
+/* =========================================================
+   PASSWORD EYE BUTTON
+========================================================= */
+
+.bakery-password-eye {
+
+    position:
+        absolute;
+
+    top:
+        50%;
+
+    right:
+        6px;
+
+    width:
+        35px;
+
+    height:
+        35px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    transform:
+        translateY(-50%);
+
+    border-radius:
+        7px;
+
+    color:
+        #968b81;
+
+    background:
+        transparent;
+
+    font-size:
+        12px;
+
+    transition:
+        var(--bakery-transition);
+
+}
+
+
+.bakery-password-eye:hover {
+
+    color:
+        var(--bakery-primary-dark);
+
+    background:
+        var(--bakery-primary-light);
+
+}
+
+
+.bakery-password-eye:active {
+
+    transform:
+        translateY(-50%)
+        scale(0.94);
+
+}
+
+
+/* =========================================================
+   ROLE DROPDOWN
+========================================================= */
+
+.bakery-role-dropdown {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+}
+
+
+.bakery-role-button {
+
+    width:
+        100%;
+
+    min-height:
+        50px;
+
+    padding:
+        12px 14px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+    border:
+        1px solid
+        var(--bakery-border);
+
+    border-radius:
+        10px;
+
+    color:
+        #958b82;
+
+    background:
+        var(--bakery-input-bg);
+
+    font-size:
+        12px;
+
+    font-weight:
+        500;
+
+    text-align:
+        left;
+
+    transition:
+        var(--bakery-transition);
+
+}
+
+
+.bakery-role-button:hover {
+
+    border-color:
+        #d7c6b5;
+
+    background:
+        var(--bakery-white);
+
+}
+
+
+.bakery-role-dropdown.active
+.bakery-role-button {
+
+    border-color:
+        var(--bakery-primary);
+
+    background:
+        var(--bakery-white);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(212, 163, 115, 0.12);
+
+}
+
+
+.bakery-role-button i {
+
+    color:
+        var(--bakery-primary-dark);
+
+    font-size:
+        9px;
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.bakery-role-dropdown.active
+.bakery-role-button i {
+
+    transform:
+        rotate(180deg);
+
+}
+
+
+.bakery-role-value.has-value {
+
+    color:
+        var(--bakery-dark);
+
+}
+
+
+/* =========================================================
+   ROLE MENU
+========================================================= */
+
+.bakery-role-menu {
+
+    position:
+        absolute;
+
+    top:
+        calc(100% + 6px);
+
+    left:
+        0;
+
+    z-index:
+        100;
+
+    width:
+        100%;
+
+    padding:
+        5px;
+
+    border:
+        1px solid
+        var(--bakery-border);
+
+    border-radius:
+        11px;
+
+    background:
+        var(--bakery-white);
+
+    box-shadow:
+        0 18px 45px
+        rgba(43, 31, 22, 0.14);
+
+    opacity:
+        0;
+
+    visibility:
+        hidden;
+
+    transform:
+        translateY(-7px)
+        scale(0.98);
+
+    transform-origin:
+        top;
+
+    transition:
+        opacity 0.22s ease,
+        visibility 0.22s ease,
+        transform 0.22s ease;
+
+}
+
+
+.bakery-role-dropdown.active
+.bakery-role-menu {
+
+    opacity:
+        1;
+
+    visibility:
+        visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+
+}
+
+
+/* =========================================================
+   ROLE OPTION
+========================================================= */
+
+.bakery-role-option {
+
+    width:
+        100%;
+
+    min-height:
+        40px;
+
+    padding:
+        8px 10px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    gap:
+        9px;
+
+    border-radius:
+        7px;
+
+    color:
+        var(--bakery-text);
+
+    background:
+        transparent;
+
+    font-size:
+        11px;
+
+    font-weight:
+        600;
+
+    text-align:
+        left;
+
+    transition:
+        var(--bakery-transition);
+
+}
+
+
+.bakery-role-option i {
+
+    width:
+        20px;
+
+    color:
+        var(--bakery-primary-dark);
+
+    font-size:
+        12px;
+
+    text-align:
+        center;
+
+}
+
+
+.bakery-role-option:hover {
+
+    color:
+        var(--bakery-dark);
+
+    background:
+        var(--bakery-primary-light);
+
+    transform:
+        translateX(3px);
+
+}
+
+
+.bakery-role-option.selected {
+
+    color:
+        var(--bakery-dark);
+
+    background:
+        rgba(212, 163, 115, 0.16);
+
+}
+
+
+/* =========================================================
+   AUTH OPTIONS
+========================================================= */
+
+.bakery-auth-options {
+
+    margin:
+        2px 0 18px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        space-between;
+
+    gap:
+        15px;
+
+}
+
+
+/* =========================================================
+   REMEMBER ME
+========================================================= */
+
+.bakery-remember-option {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    gap:
+        7px;
+
+    color:
+        var(--bakery-muted);
+
+    font-size:
+        10px;
+
+    font-weight:
+        500;
+
+    cursor:
+        pointer;
+
+}
+
+
+.bakery-remember-option input {
+
+    position:
+        absolute;
+
+    width:
+        1px;
+
+    height:
+        1px;
+
+    opacity:
+        0;
+
+}
+
+
+/* =========================================================
+   CUSTOM CHECKBOX
+========================================================= */
+
+.bakery-checkmark {
+
+    width:
+        16px;
+
+    height:
+        16px;
+
+    flex:
+        0 0 16px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    border:
+        1.5px solid
+        #d5c9bd;
+
+    border-radius:
+        4px;
+
+    color:
+        transparent;
+
+    background:
+        var(--bakery-white);
+
+    transition:
+        var(--bakery-transition);
+
+}
+
+
+.bakery-checkmark i {
+
+    font-size:
+        7px;
+
+}
+
+
+.bakery-remember-option
+input:checked
++ .bakery-checkmark,
+
+.bakery-terms-option
+input:checked
++ .bakery-checkmark {
+
+    color:
+        var(--bakery-white);
+
+    border-color:
+        var(--bakery-primary-dark);
+
+    background:
+        var(--bakery-primary-dark);
+
+}
+
+
+.bakery-remember-option:hover
+.bakery-checkmark {
+
+    border-color:
+        var(--bakery-primary);
+
+}
+
+
+/* =========================================================
+   FORGOT PASSWORD
+========================================================= */
+
+.bakery-forgot-link {
+
+    color:
+        var(--bakery-primary-dark);
+
+    font-size:
+        10px;
+
+    font-weight:
+        700;
+
+    transition:
+        var(--bakery-transition);
+
+}
+
+
+.bakery-forgot-link:hover {
+
+    color:
+        var(--bakery-dark);
+
+    text-decoration:
+        underline;
+
+    text-underline-offset:
+        4px;
+
+}
+
+
+/* =========================================================
+   SUBMIT BUTTON
+========================================================= */
+
+.bakery-auth-submit {
+
+    position:
+        relative;
+
+    width:
+        100%;
+
+    min-height:
+        51px;
+
+    padding:
+        12px 20px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        9px;
+
+    overflow:
+        hidden;
+
+    border-radius:
+        10px;
+
+    color:
+        var(--bakery-white);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            var(--bakery-primary-dark),
+            var(--bakery-primary)
+        );
+
+    font-size:
+        12px;
+
+    font-weight:
+        700;
+
+    box-shadow:
+        0 12px 25px
+        rgba(169, 111, 53, 0.20);
+
+    transition:
+        var(--bakery-transition);
+
+}
+
+
+.bakery-auth-submit::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -120%;
+
+    width:
+        80%;
+
+    height:
+        100%;
+
+    transform:
+        skewX(-25deg);
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.30),
+            transparent
+        );
+
+    transition:
+        left 0.7s ease;
+
+}
+
+
+.bakery-auth-submit span,
+.bakery-auth-submit i {
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+}
+
+
+.bakery-auth-submit i {
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+.bakery-auth-submit:hover {
+
+    transform:
+        translateY(-2px);
+
+    box-shadow:
+        0 17px 32px
+        rgba(169, 111, 53, 0.27);
+
+}
+
+
+.bakery-auth-submit:hover::before {
+
+    left:
+        130%;
+
+}
+
+
+.bakery-auth-submit:hover i {
+
+    transform:
+        translateX(4px);
+
+}
+
+
+.bakery-auth-submit:active {
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   AUTH MESSAGE
+========================================================= */
+
+.bakery-auth-message {
+
+    min-height:
+        18px;
+
+    margin-top:
+        9px;
+
+    color:
+        var(--bakery-muted);
+
+    font-size:
+        10px;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.5;
+
+    text-align:
+        center;
+
+}
+
+
+.bakery-auth-message:empty {
+
+    min-height:
+        0;
+
+    margin-top:
+        0;
+
+}
+
+
+.bakery-auth-message.success {
+
+    color:
+        var(--bakery-success);
+
+}
+
+
+.bakery-auth-message.error {
+
+    color:
+        var(--bakery-error);
+
+}
+
+
+/* =========================================================
+   INPUT ERROR
+========================================================= */
+
+.bakery-input-error {
+
+    border-color:
+        var(--bakery-error) !important;
+
+    box-shadow:
+        0 0 0 3px
+        rgba(217, 48, 37, 0.08) !important;
+
+}
+
+
+.bakery-field-error {
+
+    margin-top:
+        4px;
+
+    color:
+        var(--bakery-error);
+
+    font-size:
+        9px;
+
+    font-weight:
+        600;
+
+    line-height:
+        1.4;
+
+}
+
+
+/* =========================================================
+   LOGIN / SIGNUP SWITCH
+========================================================= */
+
+.bakery-auth-switch {
+
+    margin-top:
+        18px;
+
+    padding-top:
+        16px;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        6px;
+
+    border-top:
+        1px solid
+        #eee8e2;
+
+    color:
+        var(--bakery-muted);
+
+    font-size:
+        11px;
+
+    line-height:
+        1.5;
+
+    text-align:
+        center;
+
+}
+
+
+.bakery-auth-switch button {
+
+    padding:
+        2px 0;
+
+    color:
+        var(--bakery-primary-dark);
+
+    background:
+        transparent;
+
+    font-size:
+        11px;
+
+    font-weight:
+        800;
+
+    transition:
+        var(--bakery-transition);
+
+}
+
+
+.bakery-auth-switch button:hover {
+
+    color:
+        var(--bakery-dark);
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+/* =========================================================
+   TERMS
+========================================================= */
+
+.bakery-terms-option {
+
+    margin:
+        4px 0 17px;
+
+}
+
+
+.bakery-terms-option label {
+
+    display:
+        flex;
+
+    align-items:
+        flex-start;
+
+    gap:
+        8px;
+
+    color:
+        var(--bakery-muted);
+
+    font-size:
+        9px;
+
+    line-height:
+        1.55;
+
+    cursor:
+        pointer;
+
+}
+
+
+.bakery-terms-option input {
+
+    position:
+        absolute;
+
+    width:
+        1px;
+
+    height:
+        1px;
+
+    opacity:
+        0;
+
+}
+
+
+.bakery-terms-option
+.bakery-checkmark {
+
+    margin-top:
+        2px;
+
+}
+
+
+.bakery-terms-content {
+
+    flex:
+        1;
+
+    min-width:
+        0;
+
+}
+
+
+.bakery-terms-content a {
+
+    color:
+        var(--bakery-primary-dark);
+
+    font-weight:
+        700;
+
+    transition:
+        var(--bakery-transition);
+
+}
+
+
+.bakery-terms-content a:hover {
+
+    color:
+        var(--bakery-dark);
+
+    text-decoration:
+        underline;
+
+    text-underline-offset:
+        3px;
+
+}
+
+
+/* =========================================================
+   FOCUS ACCESSIBILITY
+========================================================= */
+
+.bakery-auth-submit:focus-visible,
+.bakery-role-button:focus-visible,
+.bakery-role-option:focus-visible,
+.bakery-password-eye:focus-visible,
+.bakery-auth-switch button:focus-visible,
+.bakery-auth-home-button:focus-visible,
+.bakery-forgot-link:focus-visible {
+
+    outline:
+        3px solid
+        rgba(212, 163, 115, 0.35);
+
+    outline-offset:
+        3px;
+
+}
+
+
+.bakery-input-wrapper input:focus-visible {
+
+    outline:
+        none;
+
+}
+
+
+/* =========================================================
+   LARGE DESKTOP
+   1200px+
+========================================================= */
+
+@media (min-width: 1200px) {
+
+    .bakery-auth-container {
+
+        width:
+            min(1180px, calc(100% - 10px));
+
+    }
+
+}
+
+
+/* =========================================================
+   DESKTOP
+   851px+
+   
+   LEFT:
+   CONSTANT
+   
+   RIGHT:
+   SCROLLABLE
+========================================================= */
+
+@media (min-width: 851px) {
+
+    html,
+    body {
+
+        height:
+            100%;
+
+    }
+
+
+    body {
+
+        overflow:
+            hidden;
+
+    }
+
+
+    .bakery-auth-page {
+
+        height:
+            100vh;
+
+        min-height:
+            100vh;
+
+        padding:
+            28px 30px;
+
+        overflow:
+            hidden;
+
+    }
+
+
+    .bakery-auth-container {
+
+        height:
+            min(720px, calc(100vh - 56px));
+
+        max-height:
+            calc(100vh - 56px);
+
+        min-height:
+            0;
+
+    }
+
+
+    /*
+       LEFT SIDE STAYS CONSTANT
+       NO SCROLLBAR
+    */
+
+    .bakery-auth-brand-panel {
+
+        height:
+            100%;
+
+        min-height:
+            0;
+
+        overflow:
+            hidden;
+
+    }
+
+
+    /*
+       RIGHT SIDE IS THE ONLY SCROLLABLE AREA
+    */
+
+    .bakery-auth-form-panel {
+
+        height:
+            100%;
+
+        max-height:
+            none;
+
+        overflow-y:
+            auto;
+
+        overflow-x:
+            hidden;
+
+    }
+
+}
+
+
+/* =========================================================
+   SHORT DESKTOP SCREENS
+   851px+ / HEIGHT BELOW 760px
+========================================================= */
+
+@media (min-width: 851px) and (max-height: 760px) {
+
+    .bakery-auth-page {
+
+        padding:
+            15px 22px;
+
+    }
+
+
+    .bakery-auth-container {
+
+        height:
+            calc(100vh - 30px);
+
+        max-height:
+            calc(100vh - 30px);
+
+    }
+
+
+    /* LEFT SIDE */
+
+    .bakery-auth-brand-panel {
+
+        padding:
+            25px 30px;
+
+    }
+
+
+    .bakery-auth-logo img {
+
+        width:
+            120px;
+
+    }
+
+
+    .bakery-auth-brand-content {
+
+        margin-top:
+            3px;
+
+    }
+
+
+    .bakery-auth-small-label {
+
+        margin-bottom:
+            7px;
+
+        padding:
+            4px 9px;
+
+        font-size:
+            8px;
+
+    }
+
+
+    .bakery-auth-brand-content h1 {
+
+        margin-bottom:
+            8px;
+
+        font-size:
+            28px;
+
+    }
+
+
+    .bakery-auth-brand-content > p {
+
+        font-size:
+            10px;
+
+        line-height:
+            1.5;
+
+    }
+
+
+    .bakery-auth-features {
+
+        gap:
+            5px;
+
+        margin:
+            8px 0;
+
+    }
+
+
+    .bakery-auth-feature-item {
+
+        padding:
+            5px 7px;
+
+    }
+
+
+    .bakery-auth-feature-icon {
+
+        width:
+            28px;
+
+        height:
+            28px;
+
+        flex-basis:
+            28px;
+
+        font-size:
+            10px;
+
+    }
+
+
+    .bakery-auth-feature-content h4 {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .bakery-auth-feature-content p {
+
+        font-size:
+            7.5px;
+
+    }
+
+
+    .bakery-auth-quote {
+
+        padding-top:
+            4px;
+
+    }
+
+
+    .bakery-auth-quote i {
+
+        font-size:
+            13px;
+
+    }
+
+
+    .bakery-auth-quote p {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .bakery-auth-home-button {
+
+        margin-top:
+            6px;
+
+        padding:
+            6px 11px;
+
+        font-size:
+            9px;
+
+    }
+
+
+    /* RIGHT SIDE */
+
+    .bakery-auth-form-panel {
+
+        padding:
+            32px 48px 36px;
+
+    }
+
+
+    .bakery-auth-heading {
+
+        margin-bottom:
+            18px;
+
+    }
+
+
+    .bakery-auth-heading-label {
+
+        font-size:
+            8px;
+
+    }
+
+
+    .bakery-auth-heading h2 {
+
+        font-size:
+            34px;
+
+    }
+
+
+    .bakery-auth-heading p {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .bakery-auth-field {
+
+        margin-bottom:
+            12px;
+
+    }
+
+
+    .bakery-auth-field label {
+
+        margin-bottom:
+            5px;
+
+        font-size:
+            10px;
+
+    }
+
+
+    .bakery-input-wrapper input,
+    .bakery-role-button {
+
+        min-height:
+            46px;
+
+        font-size:
+            11px;
+
+    }
+
+
+    .bakery-input-wrapper input {
+
+        padding-top:
+            10px;
+
+        padding-bottom:
+            10px;
+
+    }
+
+
+    .bakery-auth-submit {
+
+        min-height:
+            47px;
+
+    }
+
+}
+
+
+/* =========================================================
+   TABLET DESKTOP
+   851px - 1050px
+========================================================= */
+
+@media (max-width: 1050px) and (min-width: 851px) {
+
+    .bakery-auth-page {
+
+        padding:
+            20px;
+
+    }
+
+
+    .bakery-auth-container {
+
+        grid-template-columns:
+            minmax(295px, 0.82fr)
+            minmax(420px, 1.18fr);
+
+    }
+
+
+    .bakery-auth-brand-panel {
+
+        padding:
+            30px;
+
+    }
+
+
+    .bakery-auth-logo img {
+
+        width:
+            125px;
+
+    }
+
+
+    .bakery-auth-brand-content h1 {
+
+        max-width:
+            290px;
+
+        font-size:
+            33px;
+
+    }
+
+
+    .bakery-auth-brand-content > p {
+
+        max-width:
+            295px;
+
+        font-size:
+            10px;
+
+    }
+
+
+    .bakery-auth-feature-item {
+
+        padding:
+            6px 7px;
+
+    }
+
+
+    .bakery-auth-feature-icon {
+
+        width:
+            30px;
+
+        height:
+            30px;
+
+        flex-basis:
+            30px;
+
+    }
+
+
+    .bakery-auth-feature-content h4 {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .bakery-auth-feature-content p {
+
+        font-size:
+            8px;
+
+    }
+
+
+    .bakery-auth-form-panel {
+
+        padding:
+            38px 35px 42px;
+
+    }
+
+
+    .bakery-auth-heading h2 {
+
+        font-size:
+            38px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE / TABLET
+   850px AND BELOW
+   
+   PAGE RETURNS TO NORMAL SCROLL
+========================================================= */
+
+@media (max-width: 850px) {
+
+    html,
+    body {
+
+        height:
+            auto;
+
+    }
+
+
+    body {
+
+        overflow-x:
+            hidden;
+
+        overflow-y:
+            auto;
+
+    }
+
+
+    .bakery-auth-page {
+
+        width:
+            100%;
+
+        height:
+            auto;
+
+        min-height:
+            100vh;
+
+        padding:
+            18px;
+
+        align-items:
+            flex-start;
+
+        overflow:
+            visible;
+
+    }
+
+
+    .bakery-auth-container {
+
+        width:
+            100%;
+
+        height:
+            auto;
+
+        max-height:
+            none;
+
+        min-height:
+            auto;
+
+        grid-template-columns:
+            1fr;
+
+        border-radius:
+            24px;
+
+        overflow:
+            hidden;
+
+    }
+
+
+    /*
+       LEFT PANEL
+       NORMAL FLOW ON MOBILE
+    */
+
+    .bakery-auth-brand-panel {
+
+        position:
+            relative;
+
+        width:
+            100%;
+
+        height:
+            auto;
+
+        min-height:
+            auto;
+
+        padding:
+            35px;
+
+        overflow:
+            hidden;
+
+    }
+
+
+    .bakery-auth-brand-content {
+
+        margin-top:
+            28px;
+
+    }
+
+
+    .bakery-auth-brand-content h1 {
+
+        max-width:
+            600px;
+
+        font-size:
+            40px;
+
+    }
+
+
+    .bakery-auth-brand-content > p {
+
+        max-width:
+            650px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .bakery-auth-features {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+        gap:
+            10px;
+
+        margin-top:
+            22px;
+
+    }
+
+
+    .bakery-auth-feature-item {
+
+        align-items:
+            flex-start;
+
+        flex-direction:
+            column;
+
+        padding:
+            10px;
+
+    }
+
+
+    .bakery-auth-quote {
+
+        margin-top:
+            22px;
+
+    }
+
+
+    /*
+       RIGHT FORM
+       NORMAL PAGE FLOW ON MOBILE
+    */
+
+    .bakery-auth-form-panel {
+
+        width:
+            100%;
+
+        height:
+            auto;
+
+        max-height:
+            none;
+
+        padding:
+            42px 38px;
+
+        overflow:
+            visible;
+
+    }
+
+
+    .bakery-auth-wrapper {
+
+        max-width:
+            650px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   600px AND BELOW
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .bakery-auth-page {
+
+        padding:
+            10px;
+
+    }
+
+
+    .bakery-auth-container {
+
+        border-radius:
+            20px;
+
+    }
+
+
+    /* LEFT */
+
+    .bakery-auth-brand-panel {
+
+        padding:
+            28px 23px;
+
+    }
+
+
+    .bakery-auth-logo img {
+
+        width:
+            130px;
+
+    }
+
+
+    .bakery-auth-brand-content {
+
+        margin-top:
+            25px;
+
+    }
+
+
+    .bakery-auth-small-label {
+
+        margin-bottom:
+            10px;
+
+        padding:
+            5px 9px;
+
+        font-size:
+            8px;
+
+        letter-spacing:
+            1.1px;
+
+    }
+
+
+    .bakery-auth-brand-content h1 {
+
+        margin-bottom:
+            12px;
+
+        font-size:
+            32px;
+
+        letter-spacing:
+            -0.5px;
+
+    }
+
+
+    .bakery-auth-brand-content > p {
+
+        font-size:
+            11px;
+
+        line-height:
+            1.65;
+
+    }
+
+
+    .bakery-auth-features {
+
+        display:
+            flex;
+
+        flex-direction:
+            column;
+
+        gap:
+            7px;
+
+        margin-top:
+            19px;
+
+    }
+
+
+    .bakery-auth-feature-item {
+
+        flex-direction:
+            row;
+
+        align-items:
+            center;
+
+        padding:
+            8px;
+
+    }
+
+
+    .bakery-auth-feature-icon {
+
+        width:
+            32px;
+
+        height:
+            32px;
+
+        flex-basis:
+            32px;
+
+        font-size:
+            11px;
+
+    }
+
+
+    .bakery-auth-feature-content h4 {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .bakery-auth-feature-content p {
+
+        font-size:
+            8px;
+
+    }
+
+
+    .bakery-auth-quote {
+
+        margin-top:
+            17px;
+
+    }
+
+
+    .bakery-auth-quote p {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .bakery-auth-home-button {
+
+        margin-top:
+            13px;
+
+        padding:
+            8px 13px;
+
+        font-size:
+            10px;
+
+    }
+
+
+    /* RIGHT */
+
+    .bakery-auth-form-panel {
+
+        padding:
+            32px 20px;
+
+    }
+
+
+    .bakery-auth-heading {
+
+        margin-bottom:
+            21px;
+
+    }
+
+
+    .bakery-auth-heading-label {
+
+        font-size:
+            8px;
+
+        letter-spacing:
+            1.3px;
+
+    }
+
+
+    .bakery-auth-heading h2 {
+
+        font-size:
+            32px;
+
+    }
+
+
+    .bakery-auth-heading p {
+
+        font-size:
+            11px;
+
+    }
+
+
+    .bakery-auth-field {
+
+        margin-bottom:
+            15px;
+
+    }
+
+
+    .bakery-auth-field label {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .bakery-input-wrapper input,
+    .bakery-role-button {
+
+        min-height:
+            49px;
+
+        font-size:
+            11px;
+
+    }
+
+
+    .bakery-input-wrapper input {
+
+        padding-left:
+            41px;
+
+        padding-right:
+            41px;
+
+    }
+
+
+    .bakery-input-wrapper input::placeholder {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .bakery-input-icon {
+
+        left:
+            14px;
+
+        font-size:
+            12px;
+
+    }
+
+
+    .bakery-auth-options {
+
+        align-items:
+            flex-start;
+
+    }
+
+
+    .bakery-remember-option,
+    .bakery-forgot-link {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .bakery-auth-submit {
+
+        min-height:
+            50px;
+
+        font-size:
+            11px;
+
+    }
+
+
+    .bakery-auth-switch {
+
+        flex-wrap:
+            wrap;
+
+        margin-top:
+            18px;
+
+        padding-top:
+            16px;
+
+        font-size:
+            10px;
+
+    }
+
+
+    .bakery-auth-switch button {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .bakery-terms-option label {
+
+        font-size:
+            9px;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+   390px AND BELOW
+========================================================= */
+
+@media (max-width: 390px) {
+
+    .bakery-auth-page {
+
+        padding:
+            7px;
+
+    }
+
+
+    .bakery-auth-container {
+
+        border-radius:
+            17px;
+
+    }
+
+
+    .bakery-auth-brand-panel {
+
+        padding:
+            24px 18px;
+
+    }
+
+
+    .bakery-auth-logo img {
+
+        width:
+            118px;
+
+    }
+
+
+    .bakery-auth-brand-content {
+
+        margin-top:
+            22px;
+
+    }
+
+
+    .bakery-auth-brand-content h1 {
+
+        font-size:
+            28px;
+
+    }
+
+
+    .bakery-auth-brand-content > p {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .bakery-auth-feature-item {
+
+        padding:
+            7px;
+
+    }
+
+
+    .bakery-auth-feature-icon {
+
+        width:
+            30px;
+
+        height:
+            30px;
+
+        flex-basis:
+            30px;
+
+    }
+
+
+    .bakery-auth-feature-content h4 {
+
+        font-size:
+            9px;
+
+    }
+
+
+    .bakery-auth-feature-content p {
+
+        font-size:
+            7.5px;
+
+    }
+
+
+    .bakery-auth-form-panel {
+
+        padding:
+            27px 16px;
+
+    }
+
+
+    .bakery-auth-heading h2 {
+
+        font-size:
+            29px;
+
+    }
+
+
+    .bakery-auth-heading p {
+
+        font-size:
+            10px;
+
+    }
+
+
+    .bakery-auth-options {
+
+        flex-direction:
+            column;
+
+        align-items:
+            flex-start;
+
+        gap:
+            9px;
+
+    }
+
+
+    .bakery-forgot-link {
+
+        align-self:
+            flex-end;
+
+    }
+
+
+    .bakery-auth-submit {
+
+        min-height:
+            48px;
+
+    }
+
+}
+
+
+/* =========================================================
+   LANDSCAPE MOBILE
+========================================================= */
+
+@media (max-width: 850px) and (orientation: landscape) {
+
+    .bakery-auth-page {
+
+        padding:
+            12px;
+
+    }
+
+
+    .bakery-auth-brand-panel {
+
+        padding:
+            25px 30px;
+
+    }
+
+
+    .bakery-auth-brand-content {
+
+        margin-top:
+            20px;
+
+    }
+
+
+    .bakery-auth-features {
+
+        display:
+            grid;
+
+        grid-template-columns:
+            repeat(3, 1fr);
+
+    }
+
+
+    .bakery-auth-form-panel {
+
+        padding:
+            30px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+
+        scroll-behavior:
+            auto;
+
+    }
+
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            0.01ms !important;
+
+    }
+
+}

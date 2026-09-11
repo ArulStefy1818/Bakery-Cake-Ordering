@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC META
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Bakery - Premium cakes, pastries, breads and delicious bakery treats."
+    >
+
+    <meta
+        name="keywords"
+        content="Stackly Bakery, cakes, bakery, pastries, fresh breads, online cake ordering"
+    >
+
+    <meta
+        name="author"
+        content="Stackly Bakery"
+    >
+
+    <meta
+        name="theme-color"
+        content="#a96f43"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <title>Stackly | Bakery &amp; Cake Ordering</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         AOS ANIMATION CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    >
+
+
+    <!-- =====================================================
+         MAIN WEBSITE CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="index.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================== -->
+
+<header
+    class="stackly-header"
+    data-aos="fade-down"
+    data-aos-duration="900"
+    data-aos-easing="ease-out-cubic"
+>
+
+    <div class="stackly-header-inner">
+
+
+        <!-- =================================================
+             LOGO
+        ================================================== -->
+
+        <a
+            href="index.html"
+            class="stackly-logo"
+            aria-label="Stackly Bakery Home"
+            data-aos="fade-right"
+            data-aos-duration="800"
+        >
+
+            <img
+                src="Stackly-logo-Blue.webp"
+                alt="Stackly Bakery"
+                width="160"
+                height="auto"
+            >
+
+        </a>
+
+        <!-- MOBILE CART -->
+    <a
+        href="cart.html"
+        class="stackly-mobile-cart"
+        aria-label="Shopping Cart"
+        title="Shopping Cart"
+    >
+        <i
+            class="fa-solid fa-cart-shopping"
+            aria-hidden="true"
+        ></i>
+
+        <span class="stackly-mobile-cart-count">
+            0
+        </span>
+    </a>
+
+
+        <!-- =================================================
+             MOBILE MENU CHECKBOX
+        ================================================== -->
+
+        <input
+            type="checkbox"
+            id="stackly-menu-toggle"
+            class="stackly-menu-toggle"
+            aria-hidden="true"
+            tabindex="-1"
+        >
+
+
+        <!-- =================================================
+             MOBILE HAMBURGER
+        ================================================== -->
+
+        <label
+            for="stackly-menu-toggle"
+            class="stackly-hamburger"
+            aria-label="Open navigation menu"
+            aria-controls="stackly-navigation"
+            data-aos="fade-left"
+            data-aos-duration="800"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </label>
+
+
+        <!-- =================================================
+             MAIN NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="stackly-navigation"
+            id="stackly-navigation"
+            aria-label="Main Navigation"
+        >
+
+
+            <!-- =============================================
+                 MOBILE CLOSE BUTTON
+            ============================================== -->
+
+            <label
+                for="stackly-menu-toggle"
+                class="stackly-menu-close"
+                aria-label="Close navigation menu"
+            >
+
+                <i
+                    class="fa-solid fa-xmark"
+                    aria-hidden="true"
+                ></i>
+
+            </label>
+
+
+            <!-- =============================================
+                 HOME
+            ============================================== -->
+
+            <a
+                href="index.html"
+                class="stackly-nav-link"
+            >
+                Home
+            </a>
+
+
+            <!-- =============================================
+                 ABOUT
+            ============================================== -->
+
+            <a
+                href="about.html"
+                class="stackly-nav-link"
+            >
+                About
+            </a>
+
+
+            <!-- =============================================
+                 CAKES
+            ============================================== -->
+
+            <a
+                href="cakes.html"
+                class="stackly-nav-link"
+            >
+                Cakes
+            </a>
+
+
+            <!-- =============================================
+                 OFFERS
+            ============================================== -->
+
+            <a
+                href="services.html"
+                class="stackly-nav-link"
+            >
+                Services
+            </a>
+
+
+            <!-- =============================================
+                 BLOG
+            ============================================== -->
+
+            <a
+                href="blog.html"
+                class="stackly-nav-link"
+            >
+                Blog
+            </a>
+
+
+            <!-- =============================================
+                 CONTACT
+            ============================================== -->
+
+            <a
+                href="contact.html"
+                class="stackly-nav-link"
+            >
+                Contact
+            </a>
+
+
+<!-- =============================================
+     CART
+============================================= -->
+
+<a
+    href="cart.html"
+    class="stackly-cart-button"
+    aria-label="Shopping Cart"
+>
+
+    <i
+        class="fa-solid fa-cart-shopping"
+        aria-hidden="true"
+    ></i>
+
+    <span>
+        Cart
+    </span>
+
+    <small class="stackly-cart-count">
+        0
+    </small>
+
+</a>
+
+
+<!-- =============================================
+     LOGIN
+============================================= -->
+
+<a
+    href="order.html"
+    class="stackly-order-button"
+>
+
+    <i
+        class="fa-solid fa-user"
+        aria-hidden="true"
+    ></i>
+
+    <span>
+        Login
+    </span>
+
+</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- =========================================================
+     STACKLY BAKERY - BLOG PAGE HEADING
+========================================================= -->
+
+<section
+    class="stackly-blog-page-heading"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-easing="ease-out-cubic"
+>
+
+    <div
+        class="stackly-blog-heading-content"
+        data-aos="zoom-in"
+        data-aos-duration="1100"
+        data-aos-delay="150"
+    >
+
+        <span class="stackly-blog-heading-label">
+            OUR BLOG
+        </span>
+
+        <h1>
+            Sweet Stories &amp; Bakery Inspiration
+        </h1>
+
+        <p>
+            Discover delicious recipes, baking tips, cake inspiration
+            and behind-the-scenes stories from Stackly Bakery.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     BAKERY BLOG SECTION
+========================================= -->
+
+<!-- =========================================================
+     STACKLY BAKERY BLOG SECTION
+========================================================= -->
+
+<section class="bakery-blog-section" id="bakeryBlog">
+
+    <!-- =====================================================
+         BLOG HEADER
+    ====================================================== -->
+
+    <div class="bakery-blog-header">
+
+        <span class="bakery-blog-subtitle">
+            FRESH FROM OUR OVEN
+        </span>
+
+        <h2 class="bakery-blog-title">
+            Get inspired and stay
+            <br>
+            sweet
+        </h2>
+
+        <p class="bakery-blog-intro">
+            Discover delicious baking ideas, cake inspiration, helpful
+            ordering tips, and stories from our bakery. Explore our
+            latest articles and find something sweet for every occasion.
+        </p>
+
+        <a
+            href="404.html"
+            class="bakery-blog-button"
+            aria-label="Read more bakery articles"
+        >
+            READ MORE
+        </a>
+
+    </div>
+
+
+    <!-- =====================================================
+         MAIN BLOG LAYOUT
+    ====================================================== -->
+
+    <div class="bakery-blog-layout">
+
+
+        <!-- =================================================
+             BLOG POSTS
+        ================================================== -->
+
+        <div class="bakery-blog-grid">
+
+
+            <!-- =================================================
+                 BLOG POST 1
+            ================================================== -->
+
+            <article class="bakery-blog-card">
+
+                <div class="bakery-blog-image">
+
+                    <img
+                        src="blog-1.webp"
+                        alt="Fresh chocolate cake"
+                        loading="lazy"
+                    >
+
+                    <span class="bakery-blog-date">
+                        JUNE 08, 2026
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-blog-card-content">
+
+                    <h3 class="bakery-blog-card-title">
+                        The Secret to a Perfect Chocolate Cake
+                    </h3>
+
+                    <p class="bakery-blog-card-text">
+                        Discover simple baking secrets that make every
+                        chocolate cake rich, moist, and delicious.
+                    </p>
+
+                    <a
+                        href="404.html"
+                        class="bakery-blog-read"
+                        aria-label="Read The Secret to a Perfect Chocolate Cake"
+                    >
+                        READ ARTICLE
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 BLOG POST 2
+            ================================================== -->
+
+            <article class="bakery-blog-card">
+
+                <div class="bakery-blog-image">
+
+                    <img
+                        src="blog-2.webp"
+                        alt="Colorful bakery cupcakes"
+                        loading="lazy"
+                    >
+
+                    <span class="bakery-blog-date">
+                        JUNE 10, 2026
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-blog-card-content">
+
+                    <h3 class="bakery-blog-card-title">
+                        How to Choose the Perfect Cupcake
+                    </h3>
+
+                    <p class="bakery-blog-card-text">
+                        From classic vanilla to rich chocolate, discover the 
+                        perfect cupcake flavors for your delicious celebration.
+                    </p>
+
+                    <a
+                        href="404.html"
+                        class="bakery-blog-read"
+                        aria-label="Read How to Choose the Perfect Cupcake"
+                    >
+                        READ ARTICLE
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 BLOG POST 3
+            ================================================== -->
+
+            <article class="bakery-blog-card">
+
+                <div class="bakery-blog-image">
+
+                    <img
+                        src="blog-3.webp"
+                        alt="Custom birthday cake"
+                        loading="lazy"
+                    >
+
+                    <span class="bakery-blog-date">
+                        JUNE 12, 2026
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-blog-card-content">
+
+                    <h3 class="bakery-blog-card-title">
+                        Create a Cake Made Just for You
+                    </h3>
+
+                    <p class="bakery-blog-card-text">
+                        Learn how custom cakes can turn your ideas,
+                        colors, and favorite flavors into something special.
+                    </p>
+
+                    <a
+                        href="404.html"
+                        class="bakery-blog-read"
+                        aria-label="Read Create a Cake Made Just for You"
+                    >
+                        READ ARTICLE
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 BLOG POST 4
+            ================================================== -->
+
+            <article class="bakery-blog-card">
+
+                <div class="bakery-blog-image">
+
+                    <img
+                        src="blog-4.webp"
+                        alt="Beautiful wedding cake"
+                        loading="lazy"
+                    >
+
+                    <span class="bakery-blog-date">
+                        JUNE 15, 2026
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-blog-card-content">
+
+                    <h3 class="bakery-blog-card-title">
+                        Wedding Cake Ideas for Your Big Day
+                    </h3>
+
+                    <p class="bakery-blog-card-text">
+                        Explore elegant wedding cake designs and delicious
+                        flavor combinations for your special celebration.
+                    </p>
+
+                    <a
+                        href="404.html"
+                        class="bakery-blog-read"
+                        aria-label="Read Wedding Cake Ideas for Your Big Day"
+                    >
+                        READ ARTICLE
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 BLOG POST 5
+            ================================================== -->
+
+            <article class="bakery-blog-card">
+
+                <div class="bakery-blog-image">
+
+                    <img
+                        src="blog-5.webp"
+                        alt="Fresh bakery pastries"
+                        loading="lazy"
+                    >
+
+                    <span class="bakery-blog-date">
+                        JUNE 18, 2026
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-blog-card-content">
+
+                    <h3 class="bakery-blog-card-title">
+                        Tips for Keeping Pastries Fresh
+                    </h3>
+
+                    <p class="bakery-blog-card-text">
+                        Simple storage tips to help your cakes, pastries,
+                        and baked treats stay fresh for longer.
+                    </p>
+
+                    <a
+                        href="404.html"
+                        class="bakery-blog-read"
+                        aria-label="Read Tips for Keeping Pastries Fresh"
+                    >
+                        READ ARTICLE
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- =================================================
+                 BLOG POST 6
+            ================================================== -->
+
+            <article class="bakery-blog-card">
+
+                <div class="bakery-blog-image">
+
+                    <img
+                        src="blog-6.webp"
+                        alt="Fresh bread and bakery products"
+                        loading="lazy"
+                    >
+
+                    <span class="bakery-blog-date">
+                        JUNE 20, 2026
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-blog-card-content">
+
+                    <h3 class="bakery-blog-card-title">
+                        Why Freshly Baked Always Tastes Better
+                    </h3>
+
+                    <p class="bakery-blog-card-text">
+                        Find out why fresh ingredients and careful baking
+                        make such a difference in every delicious bite.
+                    </p>
+
+                    <a
+                        href="404.html"
+                        class="bakery-blog-read"
+                        aria-label="Read Why Freshly Baked Always Tastes Better"
+                    >
+                        READ ARTICLE
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- =====================================================
+             BLOG SIDEBAR
+        ====================================================== -->
+
+        <aside class="bakery-blog-sidebar">
+
+
+            <!-- =================================================
+                 LATEST POSTS
+            ================================================== -->
+
+            <div class="bakery-latest-posts">
+
+                <h3 class="bakery-sidebar-title">
+                    Latest Posts
+                </h3>
+
+
+                <!-- Sidebar Post 1 -->
+
+                <a
+                    href="404.html"
+                    class="bakery-sidebar-post"
+                    aria-label="Make Every Celebration Sweeter"
+                >
+
+                    <img
+                        src="mini-cake.webp"
+                        alt="Mini celebration cake"
+                        loading="lazy"
+                    >
+
+                    <div class="bakery-sidebar-post-content">
+
+                        <h4>
+                            Make Every Celebration Sweeter
+                        </h4>
+
+                        <p>
+                            Delicious cake ideas for birthdays and parties.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- Sidebar Post 2 -->
+
+                <a
+                    href="404.html"
+                    class="bakery-sidebar-post"
+                    aria-label="Tips You Should Know"
+                >
+
+                    <img
+                        src="cupcake.webp"
+                        alt="Fresh cupcakes"
+                        loading="lazy"
+                    >
+
+                    <div class="bakery-sidebar-post-content">
+
+                        <h4>
+                            Tips You Should Know
+                        </h4>
+
+                        <p>
+                            Easy tips for choosing the right cake.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- Sidebar Post 3 -->
+
+                <a
+                    href="404.html"
+                    class="bakery-sidebar-post"
+                    aria-label="Quality Ingredients Matter"
+                >
+
+                    <img
+                        src="mini-bread.webp"
+                        alt="Fresh bakery products"
+                        loading="lazy"
+                    >
+
+                    <div class="bakery-sidebar-post-content">
+
+                        <h4>
+                            Quality Ingredients Matter
+                        </h4>
+
+                        <p>
+                            Why premium ingredients make better cakes.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+                <!-- Sidebar Post 4 -->
+
+                <a
+                    href="404.html"
+                    class="bakery-sidebar-post"
+                    aria-label="Easy Online Cake Ordering"
+                >
+
+                    <img
+                        src="red-velvet-cake.webp"
+                        alt="Online cake ordering"
+                        loading="lazy"
+                    >
+
+                    <div class="bakery-sidebar-post-content">
+
+                        <h4>
+                            Easy Online Cake Ordering
+                        </h4>
+
+                        <p>
+                            Order your favorite cake from the comfort
+                            of your home.
+                        </p>
+
+                    </div>
+
+                </a>
+
+
+            </div>
+
+
+            <!-- =================================================
+                 FEATURED BAKERY POST
+            ================================================== -->
+
+            <div class="bakery-sidebar-featured">
+
+                <img
+                    src="decorated-cake.webp"
+                    alt="Beautiful decorated bakery cake"
+                    loading="lazy"
+                >
+
+
+                <div class="bakery-sidebar-featured-overlay">
+
+                    <span>
+                        BAKERY SPECIAL
+                    </span>
+
+                    <h3>
+                        Order Your Dream Cake Online
+                    </h3>
+
+                    <p>
+                        Choose your flavor, design, size, and
+                        delivery date with ease.
+                    </p>
+
+                    <a
+                        href="404.html"
+                        aria-label="Order a cake online"
+                    >
+                        ORDER A CAKE
+                    </a>
+
+                </div>
+
+            </div>
+
+            
+<!-- =================================================
+     BAKERY TIPS SIDEBAR
+================================================== -->
+
+<div class="bakery-sidebar-tips">
+
+    <div class="bakery-sidebar-tips-icon">
+        ✦
+    </div>
+
+    <span class="bakery-sidebar-tips-label">
+        BAKING TIPS
+    </span>
+
+    <h3>
+        Sweet Tips From Our Bakers
+    </h3>
+
+    <p>
+        Discover simple tips for choosing, storing, serving,
+        and enjoying your favorite bakery treats.
+    </p>
+
+    <ul class="bakery-sidebar-tips-list">
+
+        <li>
+            <span>✓</span>
+            Choose the right cake size
+        </li>
+
+        <li>
+            <span>✓</span>
+            Keep cakes fresh longer
+        </li>
+
+        <li>
+            <span>✓</span>
+            Pick the perfect flavor
+        </li>
+
+    </ul>
+
+    <a
+        href="404.html"
+        class="bakery-sidebar-tips-link"
+        aria-label="Explore bakery tips"
+    >
+        EXPLORE TIPS
+        <span>→</span>
+    </a>
+
+</div>
+
+
+
+
+        </aside>
+
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     STACKLY BAKERY - PROFESSIONAL FOOTER
+========================================================= -->
+
+<footer class="stackly-footer">
+
+    <!-- =====================================================
+         FOOTER MAIN AREA
+    ====================================================== -->
+
+    <div class="stackly-footer-main">
+
+        <div class="stackly-footer-container">
+
+
+            <!-- =================================================
+                 BRAND COLUMN
+            ================================================== -->
+
+            <div class="stackly-footer-brand">
+
+                <a
+                    href="index.html"
+                    class="stackly-footer-logo"
+                    aria-label="Stackly Bakery Home"
+                >
+
+                    <img
+                        src="Stackly-logo-Blue.webp"
+                        alt="Stackly Bakery Logo"
+                    >
+
+                </a>
+
+
+                <p class="stackly-footer-description">
+
+                    Creating beautiful cakes, freshly baked breads,
+                    delicious pastries and sweet memories for every
+                    special occasion.
+
+                </p>
+
+
+                <!-- SOCIAL MEDIA -->
+
+                <div class="stackly-footer-social">
+
+                    <a
+                        href="404.html"
+                        aria-label="Facebook"
+                        title="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="404.html"
+                        aria-label="Instagram"
+                        title="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="404.html"
+                        aria-label="Twitter"
+                        title="Twitter"
+                    >
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a
+                        href="404.html"
+                        aria-label="YouTube"
+                        title="YouTube"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 QUICK LINKS
+            ================================================== -->
+
+            <div class="stackly-footer-column">
+
+                <h3 class="stackly-footer-title">
+                    Quick Links
+                </h3>
+
+                <ul class="stackly-footer-links">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="cakes.html">
+                            Our Cakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="services.html">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="blog.html">
+                            Bakery Blog
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- =================================================
+                 BAKERY SERVICES
+            ================================================== -->
+
+            <div class="stackly-footer-column">
+
+                <h3 class="stackly-footer-title">
+                    Our Specialties
+                </h3>
+
+                <ul class="stackly-footer-links">
+
+                    <li>
+                        <a href="404.html">
+                            Celebration Cakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Wedding Cakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Birthday Cakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Fresh Pastries
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Cupcakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Custom Cakes
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- =================================================
+                 CONTACT COLUMN
+            ================================================== -->
+
+            <div class="stackly-footer-column stackly-footer-contact">
+
+                <h3 class="stackly-footer-title">
+                    Get In Touch
+                </h3>
+
+
+                <!-- ADDRESS -->
+
+                <div class="stackly-footer-contact-item">
+
+                    <span class="stackly-footer-contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+
+                    <div>
+                        <strong>
+                            Visit Us
+                        </strong>
+
+                        <p>
+                            Fresh Street Bakery,
+                            Chennai, Tamil Nadu
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="stackly-footer-contact-item">
+
+                    <span class="stackly-footer-contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </span>
+
+                    <div>
+                        <strong>
+                            Call Us
+                        </strong>
+
+                        <p>
+                            +91 98765 43210
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="stackly-footer-contact-item">
+
+                    <span class="stackly-footer-contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+
+                    <div>
+                        <strong>
+                            Email Us
+                        </strong>
+
+                        <p>
+                            hello@stacklybakery.com
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NEWSLETTER STRIP
+    ====================================================== -->
+
+    <div class="stackly-footer-newsletter">
+
+        <div class="stackly-footer-newsletter-container">
+
+
+            <div class="stackly-footer-newsletter-content">
+
+                <span>
+                    SWEET NEWS
+                </span>
+
+                <h3>
+                    Get fresh bakery updates
+                    <br>
+                    delivered to your inbox.
+                </h3>
+
+            </div>
+
+
+            <form
+                class="stackly-footer-newsletter-form"
+                action="#"
+                method="post"
+            >
+
+                <label
+                    for="stacklyFooterEmail"
+                    class="stackly-footer-email-label"
+                >
+                    Email Address
+                </label>
+
+                <div class="stackly-footer-input-wrap">
+
+                    <input
+                        type="email"
+                        id="stacklyFooterEmail"
+                        name="email"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        aria-label="Subscribe to bakery newsletter"
+                    >
+                        SUBSCRIBE
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER BOTTOM
+    ====================================================== -->
+
+    <div class="stackly-footer-bottom">
+
+        <div class="stackly-footer-bottom-container">
+
+            <p>
+                © 2026
+                <strong>Stackly Bakery</strong>.
+                All Rights Reserved.
+            </p>
+
+
+            <div class="stackly-footer-bottom-links">
+
+                <a href="404.html">
+                    Privacy Policy
+                </a>
+
+                <a href="404.html">
+                    Terms &amp; Conditions
+                </a>
+
+                <a href="404.html">
+                    Cookie Policy
+                </a>
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="stackly-footer-back-top"
+                aria-label="Back to top"
+            >
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     AOS JAVASCRIPT
+========================================================== -->
+
+<script
+    src="https://unpkg.com/aos@2.3.4/dist/aos.js"
+></script>
+
+
+<!-- =========================================================
+     STACKLY MAIN JAVASCRIPT
+========================================================== -->
+
+<script
+    src="index.js"
+></script>
+
+
+</body>
+
+</html>

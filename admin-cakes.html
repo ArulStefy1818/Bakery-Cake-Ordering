@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Stackly Bakery | Admin Dashboard</title>
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     ADMIN DASHBOARD WRAPPER
+========================================================= -->
+
+<div class="bakery-admin-dashboard">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="bakery-admin-overlay"
+        id="bakeryAdminOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="bakery-admin-sidebar"
+        id="bakeryAdminSidebar"
+    >
+
+        <!-- Sidebar Header -->
+        <div class="bakery-admin-sidebar-header">
+
+            <a
+                href="admin.html"
+                class="bakery-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+            <button
+                type="button"
+                class="bakery-admin-close"
+                id="bakeryAdminClose"
+                aria-label="Close menu"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Sidebar Navigation -->
+        <nav class="bakery-admin-navigation">
+
+            <p class="bakery-admin-nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+            </a>
+
+
+            <a
+                href="admin-orders.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+                <small class="bakery-admin-nav-count">
+                    24
+                </small>
+            </a>
+
+
+            <a
+                href="admin-cakes.html"
+                class="bakery-admin-nav-link active"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </span>
+
+                <span>
+                    Cakes
+                </span>
+            </a>
+
+
+            <a
+                href="admin-customers.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+
+                <span>
+                    Customers
+                </span>
+            </a>
+
+
+            <a
+                href="admin-delivery.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-truck"></i>
+                </span>
+
+                <span>
+                    Delivery
+                </span>
+            </a>
+
+
+            <a
+                href="admin-reviews.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-star"></i>
+                </span>
+
+                <span>
+                    Reviews
+                </span>
+            </a>
+
+
+            <p class="bakery-admin-nav-title bakery-admin-nav-title-space">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-coupons.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </span>
+
+                <span>
+                    Coupons
+                </span>
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+
+                <span>
+                    Settings
+                </span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+        <div class="bakery-admin-sidebar-bottom">
+
+             
+
+            <button
+                type="button"
+                class="bakery-admin-logout"
+                id="bakeryAdminLogout"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="bakery-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="bakery-admin-topbar">
+
+
+            <!-- Left Side -->
+            <div class="bakery-admin-topbar-left">
+
+                <!-- Mobile Hamburger -->
+                <button
+                    type="button"
+                    class="bakery-admin-menu-toggle"
+                    id="bakeryAdminMenuToggle"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div class="bakery-admin-page-heading">
+
+                    <span class="bakery-admin-heading-label">
+                        ADMIN PANEL
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Side -->
+            <div class="bakery-admin-topbar-right">
+
+
+                <!-- Notification -->
+                <a
+                    href="404-admin.html"
+                    class="bakery-admin-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-admin-notification-dot">
+                        4
+                    </span>
+
+                </a>
+
+
+                <!-- User -->
+                <div class="bakery-admin-user">
+
+                    <div class="bakery-admin-user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+
+                    <div class="bakery-admin-user-details">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <!-- EMAIL WILL BE DISPLAYED HERE -->
+                        <span id="bakeryAdminEmail">
+                            admin@stackly.com
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+<!-- =========================================================
+     CAKES PAGE CONTENT
+========================================================= -->
+
+<section class="bakery-cakes-page-content">
+
+    <!-- =====================================================
+         PAGE INTRO
+    ====================================================== -->
+
+    <div class="bakery-cakes-page-intro">
+
+        <div class="bakery-cakes-intro-content">
+
+            <span class="bakery-cakes-eyebrow">
+                CAKE INVENTORY
+            </span>
+
+            <h2>
+                Manage Your Cakes
+            </h2>
+
+            <p>
+                Organize cake varieties, monitor inventory, update prices,
+                and manage your bakery's most popular creations.
+            </p>
+
+        </div>
+
+        <a
+            href="404-admin.html"
+            class="bakery-cakes-add-button"
+        >
+            <i class="fa-solid fa-plus"></i>
+            Add New Cake
+        </a>
+
+    </div>
+
+    <!-- =====================================================
+         CATEGORY SECTION
+    ====================================================== -->
+
+    <section class="bakery-cakes-category-section">
+
+        <div class="bakery-cakes-section-heading">
+
+            <div>
+
+                <span>
+                    CAKE COLLECTION
+                </span>
+
+                <h3>
+                    Browse Categories
+                </h3>
+
+            </div>
+
+            <a href="404-admin.html">
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="bakery-cakes-category-grid">
+
+            <!-- Chocolate -->
+
+            <a
+                href="404-admin.html"
+                class="bakery-cakes-category-card"
+            >
+
+                <div class="bakery-cakes-category-image">
+
+                    <img
+                        src="chocolate-cake.webp"
+                        alt="Chocolate Cakes"
+                    >
+
+                    <span>
+                        24 Cakes
+                    </span>
+
+                </div>
+
+                <div class="bakery-cakes-category-content">
+
+                    <div>
+                        <h4>
+                            Chocolate
+                        </h4>
+
+                        <p>
+                            Rich and indulgent favorites
+                        </p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+
+            </a>
+
+
+            <!-- Birthday -->
+
+            <a
+                href="404-admin.html"
+                class="bakery-cakes-category-card"
+            >
+
+                <div class="bakery-cakes-category-image">
+
+                    <img
+                        src="blog-3.webp"
+                        alt="Birthday Cakes"
+                    >
+
+                    <span>
+                        18 Cakes
+                    </span>
+
+                </div>
+
+                <div class="bakery-cakes-category-content">
+
+                    <div>
+                        <h4>
+                            Birthday
+                        </h4>
+
+                        <p>
+                            Colorful celebration cakes
+                        </p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+
+            </a>
+
+
+            <!-- Wedding -->
+
+            <a
+                href="404-admin.html"
+                class="bakery-cakes-category-card"
+            >
+
+                <div class="bakery-cakes-category-image">
+
+                    <img
+                        src="wedding-cake.webp"
+                        alt="Wedding Cakes"
+                    >
+
+                    <span>
+                        12 Cakes
+                    </span>
+
+                </div>
+
+                <div class="bakery-cakes-category-content">
+
+                    <div>
+                        <h4>
+                            Wedding
+                        </h4>
+
+                        <p>
+                            Elegant cakes for special days
+                        </p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+
+            </a>
+
+
+            <!-- Premium -->
+
+            <a
+                href="404-admin.html"
+                class="bakery-cakes-category-card"
+            >
+
+                <div class="bakery-cakes-category-image">
+
+                    <img
+                        src="premium-cake.webp"
+                        alt="Premium Cakes"
+                    >
+
+                    <span>
+                        16 Cakes
+                    </span>
+
+                </div>
+
+                <div class="bakery-cakes-category-content">
+
+                    <div>
+                        <h4>
+                            Premium
+                        </h4>
+
+                        <p>
+                            Luxury handcrafted creations
+                        </p>
+                    </div>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FEATURED CAKES
+    ====================================================== -->
+
+    <section class="bakery-cakes-featured-section">
+
+        <div class="bakery-cakes-section-heading">
+
+            <div>
+
+                <span>
+                    TOP PERFORMERS
+                </span>
+
+                <h3>
+                    Popular Cakes
+                </h3>
+
+            </div>
+
+            <a href="404-admin.html">
+                Manage Cakes
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="bakery-cakes-product-grid">
+
+
+            <!-- Cake 01 -->
+
+            <article class="bakery-cakes-product-card">
+
+                <div class="bakery-cakes-product-image">
+
+                    <img
+                        src="chocolate-truffle-cake.webp"
+                        alt="Chocolate Truffle Cake"
+                    >
+
+                    <span class="bakery-cakes-popular-badge">
+                        <i class="fa-solid fa-fire"></i>
+                        Popular
+                    </span>
+
+                    <button
+                        type="button"
+                        class="bakery-cakes-product-edit"
+                        aria-label="Edit Chocolate Truffle Cake"
+                    >
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="bakery-cakes-product-content">
+
+                    <span class="bakery-cakes-product-category">
+                        Chocolate
+                    </span>
+
+                    <h4>
+                        Chocolate Truffle Cake
+                    </h4>
+
+                    <div class="bakery-cakes-product-meta">
+
+                        <strong>
+                            ₹1,250
+                        </strong>
+
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            4.9
+                        </span>
+
+                    </div>
+
+                    <div class="bakery-cakes-stock-row">
+
+                        <span>
+                            Stock
+                        </span>
+
+                        <strong>
+                            24 available
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Cake 02 -->
+
+            <article class="bakery-cakes-product-card">
+
+                <div class="bakery-cakes-product-image">
+
+                    <img
+                        src="red-velvet-cake.webp"
+                        alt="Red Velvet Cake"
+                    >
+
+                    <span class="bakery-cakes-popular-badge">
+                        <i class="fa-solid fa-heart"></i>
+                        Favorite
+                    </span>
+
+                    <button
+                        type="button"
+                        class="bakery-cakes-product-edit"
+                        aria-label="Edit Red Velvet Cake"
+                    >
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="bakery-cakes-product-content">
+
+                    <span class="bakery-cakes-product-category">
+                        Celebration
+                    </span>
+
+                    <h4>
+                        Red Velvet Cake
+                    </h4>
+
+                    <div class="bakery-cakes-product-meta">
+
+                        <strong>
+                            ₹1,850
+                        </strong>
+
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            4.8
+                        </span>
+
+                    </div>
+
+                    <div class="bakery-cakes-stock-row">
+
+                        <span>
+                            Stock
+                        </span>
+
+                        <strong>
+                            18 available
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Cake 03 -->
+
+            <article class="bakery-cakes-product-card">
+
+                <div class="bakery-cakes-product-image">
+
+                    <img
+                        src="strawberry-cake.webp"
+                        alt="Strawberry Cream Cake"
+                    >
+
+                    <span class="bakery-cakes-new-badge">
+                        New
+                    </span>
+
+                    <button
+                        type="button"
+                        class="bakery-cakes-product-edit"
+                        aria-label="Edit Strawberry Cream Cake"
+                    >
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="bakery-cakes-product-content">
+
+                    <span class="bakery-cakes-product-category">
+                        Fresh Cream
+                    </span>
+
+                    <h4>
+                        Strawberry Cream Cake
+                    </h4>
+
+                    <div class="bakery-cakes-product-meta">
+
+                        <strong>
+                            ₹1,450
+                        </strong>
+
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            4.7
+                        </span>
+
+                    </div>
+
+                    <div class="bakery-cakes-stock-row">
+
+                        <span>
+                            Stock
+                        </span>
+
+                        <strong>
+                            13 available
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Cake 04 -->
+
+            <article class="bakery-cakes-product-card">
+
+                <div class="bakery-cakes-product-image">
+
+                    <img
+                        src="vanilla-cake.webp"
+                        alt="Vanilla Celebration Cake"
+                    >
+
+                    <span class="bakery-cakes-premium-badge">
+                        Premium
+                    </span>
+
+                    <button
+                        type="button"
+                        class="bakery-cakes-product-edit"
+                        aria-label="Edit Vanilla Celebration Cake"
+                    >
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="bakery-cakes-product-content">
+
+                    <span class="bakery-cakes-product-category">
+                        Vanilla
+                    </span>
+
+                    <h4>
+                        Vanilla Celebration Cake
+                    </h4>
+
+                    <div class="bakery-cakes-product-meta">
+
+                        <strong>
+                            ₹1,650
+                        </strong>
+
+                        <span>
+                            <i class="fa-solid fa-star"></i>
+                            4.6
+                        </span>
+
+                    </div>
+
+                    <div class="bakery-cakes-stock-row">
+
+                        <span>
+                            Stock
+                        </span>
+
+                        <strong>
+                            21 available
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INVENTORY + CUSTOM CAKES
+    ====================================================== -->
+
+    <div class="bakery-cakes-management-grid">
+
+
+        <!-- Inventory Alert -->
+
+        <section class="bakery-cakes-management-card">
+
+            <div class="bakery-cakes-management-heading">
+
+                <div>
+
+                    <span>
+                        INVENTORY ALERT
+                    </span>
+
+                    <h3>
+                        Low Stock Cakes
+                    </h3>
+
+                </div>
+
+                <i class="fa-solid fa-box-open"></i>
+
+            </div>
+
+
+            <div class="bakery-cakes-stock-list">
+
+
+                <div class="bakery-cakes-stock-item">
+
+                    <div class="bakery-cakes-stock-image">
+                        <img
+                            src="blackforest-cake.webp"
+                            alt="Black Forest Cake"
+                        >
+                    </div>
+
+                    <div class="bakery-cakes-stock-info">
+
+                        <strong>
+                            Black Forest Cake
+                        </strong>
+
+                        <span>
+                            Only 3 cakes left
+                        </span>
+
+                    </div>
+
+                    <span class="bakery-cakes-stock-danger">
+                        03
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-cakes-stock-item">
+
+                    <div class="bakery-cakes-stock-image">
+                        <img
+                            src="mango-cake.webp"
+                            alt="Mango Cake"
+                        >
+                    </div>
+
+                    <div class="bakery-cakes-stock-info">
+
+                        <strong>
+                            Mango Cream Cake
+                        </strong>
+
+                        <span>
+                            Only 5 cakes left
+                        </span>
+
+                    </div>
+
+                    <span class="bakery-cakes-stock-warning">
+                        05
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-cakes-stock-item">
+
+                    <div class="bakery-cakes-stock-image">
+                        <img
+                            src="pineapple-cake.webp"
+                            alt="Pineapple Cake"
+                        >
+                    </div>
+
+                    <div class="bakery-cakes-stock-info">
+
+                        <strong>
+                            Pineapple Cake
+                        </strong>
+
+                        <span>
+                            Only 4 cakes left
+                        </span>
+
+                    </div>
+
+                    <span class="bakery-cakes-stock-warning">
+                        04
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="404-admin.html"
+                    class="bakery-cakes-stock-action"
+                >
+                    Review Inventory
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- Custom Cake Requests -->
+
+        <section class="bakery-cakes-management-card">
+
+            <div class="bakery-cakes-management-heading">
+
+                <div>
+
+                    <span>
+                        CUSTOM ORDERS
+                    </span>
+
+                    <h3>
+                        Cake Requests
+                    </h3>
+
+                </div>
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+            </div>
+
+
+            <div class="bakery-cakes-request-list">
+
+
+                <div class="bakery-cakes-request-item">
+
+                    <div class="bakery-cakes-request-icon">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+
+                    <div class="bakery-cakes-request-info">
+
+                        <strong>
+                            Anniversary Cake
+                        </strong>
+
+                        <span>
+                            Priya • 2 Tier • Chocolate
+                        </span>
+
+                    </div>
+
+                    <span class="bakery-cakes-request-status">
+                        New
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-cakes-request-item">
+
+                    <div class="bakery-cakes-request-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+
+                    <div class="bakery-cakes-request-info">
+
+                        <strong>
+                            Wedding Cake
+                        </strong>
+
+                        <span>
+                            Arjun • 3 Tier • Vanilla
+                        </span>
+
+                    </div>
+
+                    <span class="bakery-cakes-request-status">
+                        Review
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-cakes-request-item">
+
+                    <div class="bakery-cakes-request-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <div class="bakery-cakes-request-info">
+
+                        <strong>
+                            Birthday Theme Cake
+                        </strong>
+
+                        <span>
+                            Meena • 1 Tier • Red Velvet
+                        </span>
+
+                    </div>
+
+                    <span class="bakery-cakes-request-status">
+                        New
+                    </span>
+
+                </div>
+
+
+                <a
+                    href="404-admin.html"
+                    class="bakery-cakes-stock-action"
+                >
+                    View Custom Requests
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </section>
+
+    </div>
+
+
+    <!-- =====================================================
+         CAKE PERFORMANCE
+    ====================================================== -->
+
+    <section class="bakery-cakes-performance-section">
+
+        <div class="bakery-cakes-section-heading">
+
+            <div>
+
+                <span>
+                    PERFORMANCE
+                </span>
+
+                <h3>
+                    Cake Sales Overview
+                </h3>
+
+            </div>
+
+             
+
+        </div>
+
+
+        <div class="bakery-cakes-performance-grid">
+
+            <div class="bakery-cakes-performance-stat">
+
+                <span>
+                    Best Selling Cake
+                </span>
+
+                <strong>
+                    Chocolate Truffle
+                </strong>
+
+                <small>
+                    84 orders
+                </small>
+
+            </div>
+
+
+            <div class="bakery-cakes-performance-stat">
+
+                <span>
+                    Highest Revenue
+                </span>
+
+                <strong>
+                    ₹1,42,500
+                </strong>
+
+                <small>
+                    Chocolate collection
+                </small>
+
+            </div>
+
+
+            <div class="bakery-cakes-performance-stat">
+
+                <span>
+                    Average Rating
+                </span>
+
+                <strong>
+                    4.8
+                </strong>
+
+                <small>
+                    From 326 reviews
+                </small>
+
+            </div>
+
+
+            <div class="bakery-cakes-performance-stat">
+
+                <span>
+                    Custom Requests
+                </span>
+
+                <strong>
+                    18
+                </strong>
+
+                <small>
+                    6 awaiting review
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         QUICK ACTIONS
+    ====================================================== -->
+
+    <section class="bakery-cakes-quick-section">
+
+        <div class="bakery-cakes-section-heading">
+
+            <div>
+
+                <span>
+                    QUICK ACTIONS
+                </span>
+
+                <h3>
+                    Cake Management
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="bakery-cakes-quick-grid">
+
+            <a
+                href="404-admin.html"
+                class="bakery-cakes-quick-card"
+            >
+
+                <span>
+                    <i class="fa-solid fa-plus"></i>
+                </span>
+
+                <div>
+                    <strong>
+                        Add New Cake
+                    </strong>
+
+                    <small>
+                        Create a new cake listing
+                    </small>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="404-admin.html"
+                class="bakery-cakes-quick-card"
+            >
+
+                <span>
+                    <i class="fa-solid fa-tags"></i>
+                </span>
+
+                <div>
+                    <strong>
+                        Update Prices
+                    </strong>
+
+                    <small>
+                        Manage cake pricing
+                    </small>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="404-admin.html"
+                class="bakery-cakes-quick-card"
+            >
+
+                <span>
+                    <i class="fa-solid fa-images"></i>
+                </span>
+
+                <div>
+                    <strong>
+                        Manage Gallery
+                    </strong>
+
+                    <small>
+                        Update cake photographs
+                    </small>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="404-admin.html"
+                class="bakery-cakes-quick-card"
+            >
+
+                <span>
+                    <i class="fa-solid fa-chart-line"></i>
+                </span>
+
+                <div>
+                    <strong>
+                        Sales Analytics
+                    </strong>
+
+                    <small>
+                        View cake performance
+                    </small>
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+</section>
+
+
+    
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="admin.js"></script>
+
+</body>
+</html>

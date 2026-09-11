@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Bakery Cart - Review your selected cakes, pastries and bakery treats."
+    >
+
+    <title>Stackly | Your Shopping Cart</title>
+
+
+    <!-- GOOGLE FONTS -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- FONT AWESOME -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- CART CSS -->
+
+    <link
+        rel="stylesheet"
+        href="cart.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     CART HEADER
+========================================================= -->
+
+<header class="stackly-cart-header">
+
+    <div class="stackly-cart-header-inner">
+
+
+        <a
+            href="index.html"
+            class="stackly-cart-logo"
+        >
+
+            <img
+                src="Stackly-logo-Blue.webp"
+                alt="Stackly Bakery"
+            >
+
+        </a>
+
+
+        <a
+            href="index.html"
+            class="stackly-continue-shopping"
+        >
+
+            <i class="fa-solid fa-arrow-left"></i>
+
+            Continue Shopping
+
+        </a>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================================================
+     CART PAGE HERO
+========================================================= -->
+
+<section class="stackly-cart-hero">
+
+    <div class="stackly-cart-hero-content">
+
+        <span>
+            YOUR BAKERY CART
+        </span>
+
+        <h1>
+            Sweet choices,
+            <br>
+            ready to order
+        </h1>
+
+        <p>
+            Review your favorite cakes and freshly baked treats
+            before placing your order.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     CART MAIN
+========================================================= -->
+
+<main class="stackly-cart-page">
+
+    <div class="stackly-cart-container">
+
+
+        <!-- =================================================
+             CART CONTENT
+        ================================================== -->
+
+        <div
+            id="stacklyCartContent"
+            class="stackly-cart-content"
+        >
+
+
+            <!-- =============================================
+                 CART ITEMS
+            ============================================== -->
+
+            <section class="stackly-cart-items-section">
+
+                <div class="stackly-cart-section-heading">
+
+                    <div>
+
+                        <span>
+                            YOUR SELECTION
+                        </span>
+
+                        <h2>
+                            Shopping Cart
+                        </h2>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="stacklyClearCart"
+                        class="stackly-clear-cart"
+                    >
+
+                        <i class="fa-regular fa-trash-can"></i>
+
+                        Clear Cart
+
+                    </button>
+
+                </div>
+
+
+                <div
+                    id="stacklyCartItems"
+                    class="stackly-cart-items"
+                >
+                </div>
+
+            </section>
+
+
+
+            <!-- =============================================
+                 ORDER SUMMARY
+            ============================================== -->
+
+            <aside class="stackly-cart-summary">
+
+                <div class="stackly-summary-inner">
+
+                    <span class="stackly-summary-label">
+                        ORDER SUMMARY
+                    </span>
+
+                    <h2>
+                        Your Order
+                    </h2>
+
+
+                    <div class="stackly-summary-row">
+
+                        <span>
+                            Subtotal
+                        </span>
+
+                        <strong id="stacklyCartSubtotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stackly-summary-row">
+
+                        <span>
+                            Delivery
+                        </span>
+
+                        <strong id="stacklyCartDelivery">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stackly-summary-line"></div>
+
+
+                    <div class="stackly-summary-total">
+
+                        <span>
+                            Total
+                        </span>
+
+                        <strong id="stacklyCartTotal">
+                            ₹0
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stackly-free-delivery-note">
+
+                        <i class="fa-solid fa-truck-fast"></i>
+
+                        <span>
+                            Free delivery on orders above ₹999
+                        </span>
+
+                    </div>
+
+
+                    <a
+                        href="order.html"
+                        class="stackly-checkout-button"
+                    >
+
+                        PROCEED TO CHECKOUT
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+
+                    <div class="stackly-secure-note">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                        Secure &amp; easy ordering
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </div>
+
+
+
+        <!-- =================================================
+             EMPTY CART
+        ================================================== -->
+
+        <section
+            id="stacklyEmptyCart"
+            class="stackly-empty-cart"
+        >
+
+            <div class="stackly-empty-cart-icon">
+
+                <i class="fa-solid fa-basket-shopping"></i>
+
+            </div>
+
+
+            <span>
+                YOUR CART IS WAITING
+            </span>
+
+
+            <h2>
+                Your cart is feeling a
+                little empty
+            </h2>
+
+
+            <p>
+                Discover freshly baked cakes, pastries and
+                delicious treats made especially for your
+                sweetest moments.
+            </p>
+
+
+            <a
+                href="cakes.html"
+                class="stackly-empty-cart-button"
+            >
+
+                EXPLORE OUR CAKES
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </section>
+
+    </div>
+
+</main>
+
+
+
+<!-- =========================================================
+     CART FOOTER
+========================================================= -->
+
+<footer class="stackly-cart-footer">
+
+    <p>
+        © 2026
+        <strong>Stackly Bakery</strong>.
+        Freshly baked with love.
+    </p>
+
+</footer>
+
+
+<script src="cart.js"></script>
+
+</body>
+
+</html>

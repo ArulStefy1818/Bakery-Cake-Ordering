@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Stackly Bakery | Admin Dashboard</title>
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     ADMIN DASHBOARD WRAPPER
+========================================================= -->
+
+<div class="bakery-admin-dashboard">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="bakery-admin-overlay"
+        id="bakeryAdminOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="bakery-admin-sidebar"
+        id="bakeryAdminSidebar"
+    >
+
+        <!-- Sidebar Header -->
+        <div class="bakery-admin-sidebar-header">
+
+            <a
+                href="admin.html"
+                class="bakery-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+            <button
+                type="button"
+                class="bakery-admin-close"
+                id="bakeryAdminClose"
+                aria-label="Close menu"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Sidebar Navigation -->
+        <nav class="bakery-admin-navigation">
+
+            <p class="bakery-admin-nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+            </a>
+
+
+            <a
+                href="admin-orders.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+                <small class="bakery-admin-nav-count">
+                    24
+                </small>
+            </a>
+
+
+            <a
+                href="admin-cakes.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </span>
+
+                <span>
+                    Cakes
+                </span>
+            </a>
+
+
+            <a
+                href="admin-customers.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+
+                <span>
+                    Customers
+                </span>
+            </a>
+
+
+            <a
+                href="admin-delivery.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-truck"></i>
+                </span>
+
+                <span>
+                    Delivery
+                </span>
+            </a>
+
+
+            <a
+                href="admin-reviews.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-star"></i>
+                </span>
+
+                <span>
+                    Reviews
+                </span>
+            </a>
+
+
+            <p class="bakery-admin-nav-title bakery-admin-nav-title-space">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-coupons.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </span>
+
+                <span>
+                    Coupons
+                </span>
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="bakery-admin-nav-link active"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+
+                <span>
+                    Settings
+                </span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+        <div class="bakery-admin-sidebar-bottom">
+
+             
+
+            <button
+                type="button"
+                class="bakery-admin-logout"
+                id="bakeryAdminLogout"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="bakery-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="bakery-admin-topbar">
+
+
+            <!-- Left Side -->
+            <div class="bakery-admin-topbar-left">
+
+                <!-- Mobile Hamburger -->
+                <button
+                    type="button"
+                    class="bakery-admin-menu-toggle"
+                    id="bakeryAdminMenuToggle"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div class="bakery-admin-page-heading">
+
+                    <span class="bakery-admin-heading-label">
+                        ADMIN PANEL
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Side -->
+            <div class="bakery-admin-topbar-right">
+
+
+                <!-- Notification -->
+                <a
+                    href="404-admin.html"
+                    class="bakery-admin-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-admin-notification-dot">
+                        4
+                    </span>
+
+                </a>
+
+
+                <!-- User -->
+                <div class="bakery-admin-user">
+
+                    <div class="bakery-admin-user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+
+                    <div class="bakery-admin-user-details">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <!-- EMAIL WILL BE DISPLAYED HERE -->
+                        <span id="bakeryAdminEmail">
+                            admin@stackly.com
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+    <!-- =========================================================
+     SETTINGS PAGE CONTENT
+========================================================= -->
+
+<div class="bakery-settings-page-content">
+
+
+    <!-- =====================================================
+         SETTINGS HERO / INTRO
+    ====================================================== -->
+
+    <section class="bakery-settings-intro">
+
+        <div class="bakery-settings-intro-content">
+
+            <span class="bakery-settings-eyebrow">
+                <i class="fa-solid fa-sliders"></i>
+                STORE CONFIGURATION
+            </span>
+
+            <h2>
+                Manage Your
+                <span>Bakery Settings</span>
+            </h2>
+
+            <p>
+                Customize your bakery profile, ordering preferences,
+                delivery options, notifications and account settings
+                from one convenient place.
+            </p>
+
+        </div>
+
+
+        <div class="bakery-settings-save-area">
+
+            <span class="bakery-settings-save-status">
+                <i class="fa-solid fa-circle-check"></i>
+                All changes saved
+            </span>
+
+            <a
+                href="404-admin.html"
+                class="bakery-settings-save-button"
+            >
+                <i class="fa-solid fa-floppy-disk"></i>
+                Save Changes
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+         MAIN SETTINGS AREA
+    ====================================================== -->
+
+    <section class="bakery-settings-main-section">
+
+        <div class="bakery-settings-layout">
+
+
+            <!-- =================================================
+                 SETTINGS NAVIGATION
+            ================================================== -->
+
+            <aside class="bakery-settings-menu">
+
+                <div class="bakery-settings-menu-heading">
+
+                    <span>
+                        SETTINGS
+                    </span>
+
+                    <h3>
+                        Preferences
+                    </h3>
+
+                </div>
+
+
+                <a
+                    href="#bakeryStoreProfile"
+                    class="bakery-settings-menu-link active"
+                >
+
+                    <span class="bakery-settings-menu-icon">
+                        <i class="fa-solid fa-store"></i>
+                    </span>
+
+                    <span>
+                        Store Profile
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </a>
+
+
+                <a
+                    href="#bakeryBusinessSettings"
+                    class="bakery-settings-menu-link"
+                >
+
+                    <span class="bakery-settings-menu-icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </span>
+
+                    <span>
+                        Business Settings
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </a>
+
+
+                <a
+                    href="#bakeryOrderSettings"
+                    class="bakery-settings-menu-link"
+                >
+
+                    <span class="bakery-settings-menu-icon">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                    </span>
+
+                    <span>
+                        Order Settings
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </a>
+
+
+                <a
+                    href="#bakeryDeliverySettings"
+                    class="bakery-settings-menu-link"
+                >
+
+                    <span class="bakery-settings-menu-icon">
+                        <i class="fa-solid fa-truck"></i>
+                    </span>
+
+                    <span>
+                        Delivery Settings
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </a>
+
+
+                <a
+                    href="#bakeryNotificationSettings"
+                    class="bakery-settings-menu-link"
+                >
+
+                    <span class="bakery-settings-menu-icon">
+                        <i class="fa-solid fa-bell"></i>
+                    </span>
+
+                    <span>
+                        Notifications
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </a>
+
+
+                <a
+                    href="#bakerySecuritySettings"
+                    class="bakery-settings-menu-link"
+                >
+
+                    <span class="bakery-settings-menu-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </span>
+
+                    <span>
+                        Security
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </a>
+
+            </aside>
+
+
+
+            <!-- =================================================
+                 SETTINGS CONTENT
+            ================================================== -->
+
+            <div class="bakery-settings-content">
+
+
+                <!-- =============================================
+                     STORE PROFILE
+                ============================================== -->
+
+                <article
+                    class="bakery-settings-panel"
+                    id="bakeryStoreProfile"
+                >
+
+                    <div class="bakery-settings-panel-heading">
+
+                        <div>
+
+                            <span>
+                                BUSINESS INFORMATION
+                            </span>
+
+                            <h3>
+                                Store Profile
+                            </h3>
+
+                            <p>
+                                Update the basic information customers
+                                see across your bakery website.
+                            </p>
+
+                        </div>
+
+                        <div class="bakery-settings-panel-icon">
+                            <i class="fa-solid fa-store"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-settings-profile-box">
+
+                        <div class="bakery-settings-store-avatar">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Stackly Bakery
+                            </strong>
+
+                            <span>
+                                Premium Cakes & Desserts
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="404-admin.html"
+                            class="bakery-settings-change-logo"
+                        >
+                            Change Logo
+                        </a>
+
+                    </div>
+
+
+                    <div class="bakery-settings-form-grid">
+
+                        <div class="bakery-settings-form-group">
+
+                            <label for="bakeryStoreName">
+                                Bakery Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="bakeryStoreName"
+                                value="Stackly Bakery"
+                            >
+
+                        </div>
+
+
+                        <div class="bakery-settings-form-group">
+
+                            <label for="bakeryStoreEmail">
+                                Business Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="bakeryStoreEmail"
+                                value="info@stackly.com"
+                            >
+
+                        </div>
+
+
+                        <div class="bakery-settings-form-group">
+
+                            <label for="bakeryStorePhone">
+                                Contact Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="bakeryStorePhone"
+                                value="+91 98765 43210"
+                            >
+
+                        </div>
+
+
+                        <div class="bakery-settings-form-group">
+
+                            <label for="bakeryStoreWebsite">
+                                Website
+                            </label>
+
+                            <input
+                                type="url"
+                                id="bakeryStoreWebsite"
+                                value="www.stackly.com"
+                            >
+
+                        </div>
+
+
+                        <div class="bakery-settings-form-group full">
+
+                            <label for="bakeryStoreAddress">
+                                Store Address
+                            </label>
+
+                            <textarea
+                                id="bakeryStoreAddress"
+                                rows="3"
+                            >Chennai, Tamil Nadu, India</textarea>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-settings-panel-footer">
+
+                        <span>
+                            <i class="fa-solid fa-circle-info"></i>
+                            Customers can see this information
+                        </span>
+
+                        <a
+                            href="404-admin.html"
+                            class="bakery-settings-panel-button"
+                        >
+                            Update Profile
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =============================================
+                     BUSINESS SETTINGS
+                ============================================== -->
+
+                <article
+                    class="bakery-settings-panel"
+                    id="bakeryBusinessSettings"
+                >
+
+                    <div class="bakery-settings-panel-heading">
+
+                        <div>
+
+                            <span>
+                                BUSINESS OPERATIONS
+                            </span>
+
+                            <h3>
+                                Business Settings
+                            </h3>
+
+                            <p>
+                                Control your bakery's working hours,
+                                currency and ordering availability.
+                            </p>
+
+                        </div>
+
+                        <div class="bakery-settings-panel-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-settings-option-list">
+
+
+                        <div class="bakery-settings-option">
+
+                            <div class="bakery-settings-option-icon">
+                                <i class="fa-regular fa-clock"></i>
+                            </div>
+
+                            <div class="bakery-settings-option-text">
+
+                                <strong>
+                                    Store Availability
+                                </strong>
+
+                                <span>
+                                    Allow customers to place orders
+                                    during business hours.
+                                </span>
+
+                            </div>
+
+                            <label class="bakery-settings-switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <div class="bakery-settings-option">
+
+                            <div class="bakery-settings-option-icon">
+                                <i class="fa-solid fa-indian-rupee-sign"></i>
+                            </div>
+
+                            <div class="bakery-settings-option-text">
+
+                                <strong>
+                                    Currency
+                                </strong>
+
+                                <span>
+                                    Indian Rupee (₹) is used for
+                                    all bakery orders.
+                                </span>
+
+                            </div>
+
+                            <select class="bakery-settings-small-select">
+
+                                <option selected>
+                                    INR (₹)
+                                </option>
+
+                                <option>
+                                    USD ($)
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+
+                        <div class="bakery-settings-option">
+
+                            <div class="bakery-settings-option-icon">
+                                <i class="fa-solid fa-calendar-days"></i>
+                            </div>
+
+                            <div class="bakery-settings-option-text">
+
+                                <strong>
+                                    Advance Orders
+                                </strong>
+
+                                <span>
+                                    Customers can schedule cakes
+                                    for future dates.
+                                </span>
+
+                            </div>
+
+                            <label class="bakery-settings-switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =============================================
+                     ORDER SETTINGS
+                ============================================== -->
+
+                <article
+                    class="bakery-settings-panel"
+                    id="bakeryOrderSettings"
+                >
+
+                    <div class="bakery-settings-panel-heading">
+
+                        <div>
+
+                            <span>
+                                ORDER MANAGEMENT
+                            </span>
+
+                            <h3>
+                                Order Settings
+                            </h3>
+
+                            <p>
+                                Decide how new cake orders are accepted,
+                                prepared and confirmed.
+                            </p>
+
+                        </div>
+
+                        <div class="bakery-settings-panel-icon">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-settings-form-grid">
+
+
+                        <div class="bakery-settings-form-group">
+
+                            <label for="bakeryOrderApproval">
+                                Order Approval
+                            </label>
+
+                            <select id="bakeryOrderApproval">
+
+                                <option selected>
+                                    Automatic Approval
+                                </option>
+
+                                <option>
+                                    Manual Approval
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="bakery-settings-form-group">
+
+                            <label for="bakeryMinOrder">
+                                Minimum Order Value
+                            </label>
+
+                            <input
+                                type="number"
+                                id="bakeryMinOrder"
+                                value="500"
+                            >
+
+                        </div>
+
+
+                        <div class="bakery-settings-form-group">
+
+                            <label for="bakeryPreparationTime">
+                                Standard Preparation
+                            </label>
+
+                            <select id="bakeryPreparationTime">
+
+                                <option>
+                                    2 Hours
+                                </option>
+
+                                <option selected>
+                                    4 Hours
+                                </option>
+
+                                <option>
+                                    6 Hours
+                                </option>
+
+                                <option>
+                                    24 Hours
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="bakery-settings-form-group">
+
+                            <label for="bakeryCustomOrders">
+                                Custom Cake Orders
+                            </label>
+
+                            <select id="bakeryCustomOrders">
+
+                                <option selected>
+                                    Enabled
+                                </option>
+
+                                <option>
+                                    Disabled
+                                </option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =============================================
+                     DELIVERY SETTINGS
+                ============================================== -->
+
+                <article
+                    class="bakery-settings-panel"
+                    id="bakeryDeliverySettings"
+                >
+
+                    <div class="bakery-settings-panel-heading">
+
+                        <div>
+
+                            <span>
+                                DELIVERY & LOGISTICS
+                            </span>
+
+                            <h3>
+                                Delivery Settings
+                            </h3>
+
+                            <p>
+                                Configure delivery availability,
+                                charges and service coverage.
+                            </p>
+
+                        </div>
+
+                        <div class="bakery-settings-panel-icon">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-settings-delivery-grid">
+
+
+                        <div class="bakery-settings-delivery-card">
+
+                            <div class="bakery-settings-delivery-icon">
+                                <i class="fa-solid fa-motorcycle"></i>
+                            </div>
+
+                            <strong>
+                                Same-Day Delivery
+                            </strong>
+
+                            <span>
+                                Available
+                            </span>
+
+                            <b>
+                                ₹99
+                            </b>
+
+                        </div>
+
+
+
+                        <div class="bakery-settings-delivery-card">
+
+                            <div class="bakery-settings-delivery-icon">
+                                <i class="fa-solid fa-truck"></i>
+                            </div>
+
+                            <strong>
+                                Standard Delivery
+                            </strong>
+
+                            <span>
+                                1–2 Business Days
+                            </span>
+
+                            <b>
+                                ₹59
+                            </b>
+
+                        </div>
+
+
+
+                        <div class="bakery-settings-delivery-card">
+
+                            <div class="bakery-settings-delivery-icon">
+                                <i class="fa-solid fa-gift"></i>
+                            </div>
+
+                            <strong>
+                                Free Delivery
+                            </strong>
+
+                            <span>
+                                Orders above ₹2,000
+                            </span>
+
+                            <b>
+                                FREE
+                            </b>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-settings-option bakery-settings-delivery-toggle">
+
+                        <div class="bakery-settings-option-icon">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
+
+                        <div class="bakery-settings-option-text">
+
+                            <strong>
+                                Delivery Area Coverage
+                            </strong>
+
+                            <span>
+                                Delivery is currently available
+                                within Chennai city limits.
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="404-admin.html"
+                            class="bakery-settings-manage-link"
+                        >
+                            Manage Area
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =============================================
+                     NOTIFICATION SETTINGS
+                ============================================== -->
+
+                <article
+                    class="bakery-settings-panel"
+                    id="bakeryNotificationSettings"
+                >
+
+                    <div class="bakery-settings-panel-heading">
+
+                        <div>
+
+                            <span>
+                                ALERT PREFERENCES
+                            </span>
+
+                            <h3>
+                                Notifications
+                            </h3>
+
+                            <p>
+                                Choose which bakery activities
+                                should send you notifications.
+                            </p>
+
+                        </div>
+
+                        <div class="bakery-settings-panel-icon">
+                            <i class="fa-solid fa-bell"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-settings-notification-list">
+
+
+                        <div class="bakery-settings-notification-item">
+
+                            <div class="bakery-settings-notification-icon">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    New Orders
+                                </strong>
+
+                                <span>
+                                    Get notified whenever a new
+                                    cake order is received.
+                                </span>
+
+                            </div>
+
+                            <label class="bakery-settings-switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <div class="bakery-settings-notification-item">
+
+                            <div class="bakery-settings-notification-icon">
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    New Reviews
+                                </strong>
+
+                                <span>
+                                    Receive alerts when customers
+                                    leave a review.
+                                </span>
+
+                            </div>
+
+                            <label class="bakery-settings-switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <div class="bakery-settings-notification-item">
+
+                            <div class="bakery-settings-notification-icon">
+                                <i class="fa-solid fa-ticket"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Coupon Activity
+                                </strong>
+
+                                <span>
+                                    Receive updates about coupon
+                                    usage and expiry.
+                                </span>
+
+                            </div>
+
+                            <label class="bakery-settings-switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <div class="bakery-settings-notification-item">
+
+                            <div class="bakery-settings-notification-icon">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Weekly Reports
+                                </strong>
+
+                                <span>
+                                    Receive a weekly bakery
+                                    performance summary.
+                                </span>
+
+                            </div>
+
+                            <label class="bakery-settings-switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =============================================
+                     SECURITY SETTINGS
+                ============================================== -->
+
+                <article
+                    class="bakery-settings-panel"
+                    id="bakerySecuritySettings"
+                >
+
+                    <div class="bakery-settings-panel-heading">
+
+                        <div>
+
+                            <span>
+                                ACCOUNT PROTECTION
+                            </span>
+
+                            <h3>
+                                Security & Access
+                            </h3>
+
+                            <p>
+                                Keep your administrator account secure
+                                and review recent access activity.
+                            </p>
+
+                        </div>
+
+                        <div class="bakery-settings-panel-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-settings-security-grid">
+
+
+                        <div class="bakery-settings-security-card">
+
+                            <div class="bakery-settings-security-icon">
+                                <i class="fa-solid fa-key"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Password
+                                </strong>
+
+                                <span>
+                                    Last changed 24 days ago
+                                </span>
+
+                            </div>
+
+                            <a href="404-admin.html">
+                                Change
+                            </a>
+
+                        </div>
+
+
+
+                        <div class="bakery-settings-security-card">
+
+                            <div class="bakery-settings-security-icon">
+                                <i class="fa-solid fa-mobile-screen-button"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Two-Factor Authentication
+                                </strong>
+
+                                <span>
+                                    Extra protection is enabled
+                                </span>
+
+                            </div>
+
+                            <span class="bakery-settings-security-enabled">
+                                Enabled
+                            </span>
+
+                        </div>
+
+
+
+                        <div class="bakery-settings-security-card">
+
+                            <div class="bakery-settings-security-icon">
+                                <i class="fa-solid fa-clock-rotate-left"></i>
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Recent Login
+                                </strong>
+
+                                <span>
+                                    Today at 09:42 AM · Chennai
+                                </span>
+
+                            </div>
+
+                            <a href="404-admin.html">
+                                View
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =============================================
+                     DANGER ZONE
+                ============================================== -->
+
+                <article class="bakery-settings-danger-panel">
+
+                    <div class="bakery-settings-danger-icon">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+                    </div>
+
+                    <div class="bakery-settings-danger-content">
+
+                        <span>
+                            ADVANCED ACCOUNT ACTIONS
+                        </span>
+
+                        <h3>
+                            Danger Zone
+                        </h3>
+
+                        <p>
+                            These actions can affect your bakery
+                            account and store data. Please proceed
+                            carefully.
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="404-admin.html"
+                        class="bakery-settings-danger-button"
+                    >
+                        Manage Account
+                    </a>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SETTINGS HELP BANNER
+    ====================================================== -->
+
+    <section class="bakery-settings-help-section">
+
+        <div class="bakery-settings-help-card">
+
+            <div class="bakery-settings-help-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <div class="bakery-settings-help-content">
+
+                <span>
+                    NEED HELP?
+                </span>
+
+                <h3>
+                    Need assistance with your bakery settings?
+                </h3>
+
+                <p>
+                    Our support team can help you configure orders,
+                    delivery, notifications and store preferences.
+                </p>
+
+            </div>
+
+            <a
+                href="404-admin.html"
+                class="bakery-settings-help-button"
+            >
+                Contact Support
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+</div>
+
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="admin.js"></script>
+
+</body>
+</html>

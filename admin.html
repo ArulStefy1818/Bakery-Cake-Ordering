@@ -1,0 +1,1046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Stackly Bakery | Admin Dashboard</title>
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     ADMIN DASHBOARD WRAPPER
+========================================================= -->
+
+<div class="bakery-admin-dashboard">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="bakery-admin-overlay"
+        id="bakeryAdminOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="bakery-admin-sidebar"
+        id="bakeryAdminSidebar"
+    >
+
+        <!-- Sidebar Header -->
+        <div class="bakery-admin-sidebar-header">
+
+            <a
+                href="admin.html"
+                class="bakery-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+            <button
+                type="button"
+                class="bakery-admin-close"
+                id="bakeryAdminClose"
+                aria-label="Close menu"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Sidebar Navigation -->
+        <nav class="bakery-admin-navigation">
+
+            <p class="bakery-admin-nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="bakery-admin-nav-link active"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+            </a>
+
+
+            <a
+                href="admin-orders.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+                <small class="bakery-admin-nav-count">
+                    24
+                </small>
+            </a>
+
+
+            <a
+                href="admin-cakes.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </span>
+
+                <span>
+                    Cakes
+                </span>
+            </a>
+
+
+            <a
+                href="admin-customers.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+
+                <span>
+                    Customers
+                </span>
+            </a>
+
+
+            <a
+                href="admin-delivery.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-truck"></i>
+                </span>
+
+                <span>
+                    Delivery
+                </span>
+            </a>
+
+
+            <a
+                href="admin-reviews.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-star"></i>
+                </span>
+
+                <span>
+                    Reviews
+                </span>
+            </a>
+
+
+            <p class="bakery-admin-nav-title bakery-admin-nav-title-space">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-coupons.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </span>
+
+                <span>
+                    Coupons
+                </span>
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+
+                <span>
+                    Settings
+                </span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+        <div class="bakery-admin-sidebar-bottom">
+
+             
+
+            <button
+                type="button"
+                class="bakery-admin-logout"
+                id="bakeryAdminLogout"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="bakery-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="bakery-admin-topbar">
+
+
+            <!-- Left Side -->
+            <div class="bakery-admin-topbar-left">
+
+                <!-- Mobile Hamburger -->
+                <button
+                    type="button"
+                    class="bakery-admin-menu-toggle"
+                    id="bakeryAdminMenuToggle"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div class="bakery-admin-page-heading">
+
+                    <span class="bakery-admin-heading-label">
+                        ADMIN PANEL
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Side -->
+            <div class="bakery-admin-topbar-right">
+
+
+                <!-- Notification -->
+                <a
+                    href="404-admin.html"
+                    class="bakery-admin-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-admin-notification-dot">
+                        4
+                    </span>
+
+                </a>
+
+
+                <!-- User -->
+                <div class="bakery-admin-user">
+
+                    <div class="bakery-admin-user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+
+                    <div class="bakery-admin-user-details">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <!-- EMAIL WILL BE DISPLAYED HERE -->
+                        <span id="bakeryAdminEmail">
+                            admin@stackly.com
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             DASHBOARD CONTENT
+        ================================================== -->
+
+        <section class="bakery-admin-content">
+
+
+            <!-- =================================================
+                 WELCOME
+            ================================================== -->
+
+            <div class="bakery-admin-welcome">
+
+                <div>
+
+                    <span class="bakery-admin-welcome-label">
+                        GOOD MORNING
+                    </span>
+
+                    <h2>
+                        Welcome back, Admin!
+                    </h2>
+
+                    <p>
+                        Here's what's happening with your cake
+                        and bakery orders today.
+                    </p>
+
+                </div>
+
+
+                <a
+                    href="404-admin.html"
+                    class="bakery-admin-primary-button"
+                >
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Add New Cake
+
+                </a>
+
+            </div>
+
+            <!-- =================================================
+                 CONTENT GRID
+            ================================================== -->
+
+            <div class="bakery-admin-dashboard-grid">
+
+
+                <!-- =================================================
+                     RECENT ORDERS
+                ================================================== -->
+
+                <section class="bakery-admin-panel bakery-admin-orders-panel">
+
+                    <div class="bakery-admin-panel-header">
+
+                        <div>
+
+                            <span class="bakery-admin-panel-label">
+                                ORDER MANAGEMENT
+                            </span>
+
+                            <h3>
+                                Recent Orders
+                            </h3>
+
+                        </div>
+
+
+                        <a
+                            href="404-admin.html"
+                            class="bakery-admin-view-link"
+                        >
+                            View All
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+                    <div class="bakery-admin-table-wrapper">
+
+                        <table class="bakery-admin-orders-table">
+
+                            <thead>
+
+                                <tr>
+
+                                    <th>
+                                        Order ID
+                                    </th>
+
+                                    <th>
+                                        Customer
+                                    </th>
+
+                                    <th>
+                                        Cake
+                                    </th>
+
+                                    <th>
+                                        Amount
+                                    </th>
+
+                                    <th>
+                                        Status
+                                    </th>
+
+                                    <th>
+                                        Date
+                                    </th>
+
+                                </tr>
+
+                            </thead>
+
+
+                            <tbody>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>
+                                            #BK10284
+                                        </strong>
+                                    </td>
+
+                                    <td>
+
+                                        <div class="bakery-admin-customer">
+
+                                            <div class="bakery-admin-small-avatar">
+                                                AS
+                                            </div>
+
+                                            <span>
+                                                Ananya Sharma
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Chocolate Truffle
+                                    </td>
+
+                                    <td>
+                                        ₹1,250
+                                    </td>
+
+                                    <td>
+                                        <span class="bakery-admin-status delivered">
+                                            Delivered
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        10 Sep 2026
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>
+                                            #BK10283
+                                        </strong>
+                                    </td>
+
+                                    <td>
+
+                                        <div class="bakery-admin-customer">
+
+                                            <div class="bakery-admin-small-avatar">
+                                                RK
+                                            </div>
+
+                                            <span>
+                                                Rahul Kumar
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Red Velvet Cake
+                                    </td>
+
+                                    <td>
+                                        ₹1,850
+                                    </td>
+
+                                    <td>
+                                        <span class="bakery-admin-status preparing">
+                                            Preparing
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        10 Sep 2026
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>
+                                            #BK10282
+                                        </strong>
+                                    </td>
+
+                                    <td>
+
+                                        <div class="bakery-admin-customer">
+
+                                            <div class="bakery-admin-small-avatar">
+                                                SP
+                                            </div>
+
+                                            <span>
+                                                Sneha Priya
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Black Forest
+                                    </td>
+
+                                    <td>
+                                        ₹1,100
+                                    </td>
+
+                                    <td>
+                                        <span class="bakery-admin-status pending">
+                                            Pending
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        09 Sep 2026
+                                    </td>
+
+                                </tr>
+
+
+                                <tr>
+
+                                    <td>
+                                        <strong>
+                                            #BK10281
+                                        </strong>
+                                    </td>
+
+                                    <td>
+
+                                        <div class="bakery-admin-customer">
+
+                                            <div class="bakery-admin-small-avatar">
+                                                VK
+                                            </div>
+
+                                            <span>
+                                                Vikram Raj
+                                            </span>
+
+                                        </div>
+
+                                    </td>
+
+                                    <td>
+                                        Strawberry Cake
+                                    </td>
+
+                                    <td>
+                                        ₹1,450
+                                    </td>
+
+                                    <td>
+                                        <span class="bakery-admin-status delivered">
+                                            Delivered
+                                        </span>
+                                    </td>
+
+                                    <td>
+                                        09 Sep 2026
+                                    </td>
+
+                                </tr>
+
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     POPULAR CAKES
+                ================================================== -->
+
+                <section class="bakery-admin-panel bakery-admin-popular-panel">
+
+                    <div class="bakery-admin-panel-header">
+
+                        <div>
+
+                            <span class="bakery-admin-panel-label">
+                                BEST SELLERS
+                            </span>
+
+                            <h3>
+                                Popular Cakes
+                            </h3>
+
+                        </div>
+
+                        <a
+                            href="404-admin.html"
+                            class="bakery-admin-view-link"
+                        >
+                            Manage
+                        </a>
+
+                    </div>
+
+
+                    <div class="bakery-admin-popular-list">
+
+
+                        <div class="bakery-admin-popular-item">
+
+                            <div class="bakery-admin-popular-image">
+
+                                <img
+                                    src="chocolate-truffle-cake.webp"
+                                    alt="Chocolate Truffle Cake"
+                                >
+
+                            </div>
+
+                            <div class="bakery-admin-popular-info">
+
+                                <h4>
+                                    Chocolate Truffle
+                                </h4>
+
+                                <span>
+                                    128 orders
+                                </span>
+
+                            </div>
+
+                            <strong>
+                                ₹1,250
+                            </strong>
+
+                        </div>
+
+
+                        <div class="bakery-admin-popular-item">
+
+                            <div class="bakery-admin-popular-image">
+
+                                <img
+                                    src="red-velvet-cake.webp"
+                                    alt="Red Velvet Cake"
+                                >
+
+                            </div>
+
+                            <div class="bakery-admin-popular-info">
+
+                                <h4>
+                                    Red Velvet Cake
+                                </h4>
+
+                                <span>
+                                    104 orders
+                                </span>
+
+                            </div>
+
+                            <strong>
+                                ₹1,850
+                            </strong>
+
+                        </div>
+
+
+                        <div class="bakery-admin-popular-item">
+
+                            <div class="bakery-admin-popular-image">
+
+                                <img
+                                    src="blackforest-cake.webp"
+                                    alt="Black Forest Cake"
+                                >
+
+                            </div>
+
+                            <div class="bakery-admin-popular-info">
+
+                                <h4>
+                                    Black Forest
+                                </h4>
+
+                                <span>
+                                    96 orders
+                                </span>
+
+                            </div>
+
+                            <strong>
+                                ₹1,100
+                            </strong>
+
+                        </div>
+
+
+                        <div class="bakery-admin-popular-item">
+
+                            <div class="bakery-admin-popular-image">
+
+                                <img
+                                    src="strawberry-cake.webp"
+                                    alt="Strawberry Cake"
+                                >
+
+                            </div>
+
+                            <div class="bakery-admin-popular-info">
+
+                                <h4>
+                                    Strawberry Cake
+                                </h4>
+
+                                <span>
+                                    82 orders
+                                </span>
+
+                            </div>
+
+                            <strong>
+                                ₹1,450
+                            </strong>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- =================================================
+                 BOTTOM GRID
+            ================================================== -->
+
+            <div class="bakery-admin-bottom-grid">
+
+
+                <!-- Quick Actions -->
+                <section class="bakery-admin-panel">
+
+                    <div class="bakery-admin-panel-header">
+
+                        <div>
+
+                            <span class="bakery-admin-panel-label">
+                                QUICK ACCESS
+                            </span>
+
+                            <h3>
+                                Quick Actions
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-admin-quick-actions">
+
+
+                        <a
+                            href="404-admin.html"
+                            class="bakery-admin-action-card"
+                        >
+
+                            <span>
+                                <i class="fa-solid fa-cake-candles"></i>
+                            </span>
+
+                            <strong>
+                                Add New Cake
+                            </strong>
+
+                            <small>
+                                Create a new product
+                            </small>
+
+                        </a>
+
+
+                        <a
+                            href="404-admin.html"
+                            class="bakery-admin-action-card"
+                        >
+
+                            <span>
+                                <i class="fa-solid fa-list-check"></i>
+                            </span>
+
+                            <strong>
+                                Manage Orders
+                            </strong>
+
+                            <small>
+                                Review the orders
+                            </small>
+
+                        </a>
+
+
+                        <a
+                            href="404-admin.html"
+                            class="bakery-admin-action-card"
+                        >
+
+                            <span>
+                                <i class="fa-solid fa-ticket"></i>
+                            </span>
+
+                            <strong>
+                                Create Coupon
+                            </strong>
+
+                            <small>
+                                Offer special discounts
+                            </small>
+
+                        </a>
+
+
+                        <a
+                            href="404-admin.html"
+                            class="bakery-admin-action-card"
+                        >
+
+                            <span>
+                                <i class="fa-solid fa-chart-column"></i>
+                            </span>
+
+                            <strong>
+                                View Reports
+                            </strong>
+
+                            <small>
+                                Check sales performance
+                            </small>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Today's Activity -->
+                <section class="bakery-admin-panel">
+
+                    <div class="bakery-admin-panel-header">
+
+                        <div>
+
+                            <span class="bakery-admin-panel-label">
+                                LIVE ACTIVITY
+                            </span>
+
+                            <h3>
+                                Today's Activity
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-admin-activity-list">
+
+
+                        <div class="bakery-admin-activity-item">
+
+                            <span class="bakery-admin-activity-icon">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    New order received
+                                </strong>
+
+                                <p>
+                                    Order #BK10284 placed by Ananya Sharma
+                                </p>
+
+                                <small>
+                                    12 minutes ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="bakery-admin-activity-item">
+
+                            <span class="bakery-admin-activity-icon">
+                                <i class="fa-solid fa-user-plus"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    New customer registered
+                                </strong>
+
+                                <p>
+                                    Meena Krishnan joined the bakery
+                                </p>
+
+                                <small>
+                                    35 minutes ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="bakery-admin-activity-item">
+
+                            <span class="bakery-admin-activity-icon">
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    New review received
+                                </strong>
+
+                                <p>
+                                    Rahul rated Red Velvet Cake 5 stars
+                                </p>
+
+                                <small>
+                                    1 hour ago
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="admin.js"></script>
+
+</body>
+</html>

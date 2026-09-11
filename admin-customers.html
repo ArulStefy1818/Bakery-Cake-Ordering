@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Stackly Bakery | Admin Dashboard</title>
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     ADMIN DASHBOARD WRAPPER
+========================================================= -->
+
+<div class="bakery-admin-dashboard">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="bakery-admin-overlay"
+        id="bakeryAdminOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="bakery-admin-sidebar"
+        id="bakeryAdminSidebar"
+    >
+
+        <!-- Sidebar Header -->
+        <div class="bakery-admin-sidebar-header">
+
+            <a
+                href="admin.html"
+                class="bakery-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+            <button
+                type="button"
+                class="bakery-admin-close"
+                id="bakeryAdminClose"
+                aria-label="Close menu"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Sidebar Navigation -->
+        <nav class="bakery-admin-navigation">
+
+            <p class="bakery-admin-nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+            </a>
+
+
+            <a
+                href="admin-orders.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+                <small class="bakery-admin-nav-count">
+                    24
+                </small>
+            </a>
+
+
+            <a
+                href="admin-cakes.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </span>
+
+                <span>
+                    Cakes
+                </span>
+            </a>
+
+
+            <a
+                href="admin-customers.html"
+                class="bakery-admin-nav-link active"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+
+                <span>
+                    Customers
+                </span>
+            </a>
+
+
+            <a
+                href="admin-delivery.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-truck"></i>
+                </span>
+
+                <span>
+                    Delivery
+                </span>
+            </a>
+
+
+            <a
+                href="admin-reviews.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-star"></i>
+                </span>
+
+                <span>
+                    Reviews
+                </span>
+            </a>
+
+
+            <p class="bakery-admin-nav-title bakery-admin-nav-title-space">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-coupons.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </span>
+
+                <span>
+                    Coupons
+                </span>
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+
+                <span>
+                    Settings
+                </span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+        <div class="bakery-admin-sidebar-bottom">
+
+             
+
+            <button
+                type="button"
+                class="bakery-admin-logout"
+                id="bakeryAdminLogout"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="bakery-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="bakery-admin-topbar">
+
+
+            <!-- Left Side -->
+            <div class="bakery-admin-topbar-left">
+
+                <!-- Mobile Hamburger -->
+                <button
+                    type="button"
+                    class="bakery-admin-menu-toggle"
+                    id="bakeryAdminMenuToggle"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div class="bakery-admin-page-heading">
+
+                    <span class="bakery-admin-heading-label">
+                        ADMIN PANEL
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Side -->
+            <div class="bakery-admin-topbar-right">
+
+
+                <!-- Notification -->
+                <a
+                    href="404-admin.html"
+                    class="bakery-admin-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-admin-notification-dot">
+                        4
+                    </span>
+
+                </a>
+
+
+                <!-- User -->
+                <div class="bakery-admin-user">
+
+                    <div class="bakery-admin-user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+
+                    <div class="bakery-admin-user-details">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <!-- EMAIL WILL BE DISPLAYED HERE -->
+                        <span id="bakeryAdminEmail">
+                            admin@stackly.com
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+    <!-- =========================================================
+     CUSTOMERS PAGE CONTENT
+========================================================= -->
+
+<section class="bakery-customers-page-content">
+
+
+    <!-- =====================================================
+         PAGE INTRO
+    ====================================================== -->
+
+    <div class="bakery-customers-page-intro">
+
+        <div class="bakery-customers-intro-content">
+
+            <span class="bakery-customers-eyebrow">
+                CUSTOMER MANAGEMENT
+            </span>
+
+            <h2>
+                Know Your Customers
+            </h2>
+
+            <p>
+                Manage customer profiles, understand buying habits,
+                track loyalty, and build stronger relationships
+                with every bakery order.
+            </p>
+
+        </div>
+
+
+        <div class="bakery-customers-intro-actions">
+
+            <a
+                href="404-admin.html"
+                class="bakery-customers-primary-button"
+            >
+                <i class="fa-solid fa-user-plus"></i>
+                Add Customer
+            </a>
+
+            <a
+                href="404-admin.html"
+                class="bakery-customers-secondary-button"
+            >
+                <i class="fa-solid fa-download"></i>
+                Export
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         CUSTOMER DIRECTORY
+    ====================================================== -->
+
+    <section class="bakery-customers-directory-card">
+
+        <div class="bakery-customers-directory-header">
+
+            <div>
+
+                <span>
+                    CUSTOMER LIST
+                </span>
+
+                <h3>
+                    Recent Customers
+                </h3>
+
+            </div>
+
+            <span class="bakery-customers-live-status">
+                <i class="fa-solid fa-circle"></i>
+                Live Database
+            </span>
+
+        </div>
+
+
+        <div class="bakery-customers-table-wrapper">
+
+            <table class="bakery-customers-data-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Customer
+                        </th>
+
+                        <th>
+                            Location
+                        </th>
+
+                        <th>
+                            Orders
+                        </th>
+
+                        <th>
+                            Total Spent
+                        </th>
+
+                        <th>
+                            Last Order
+                        </th>
+
+                        <th>
+                            Customer Type
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <!-- Customer 01 -->
+
+                    <tr>
+
+                        <td>
+
+                            <div class="bakery-customers-profile-cell">
+
+                                <span class="bakery-customers-avatar">
+                                    AS
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Ananya Sharma
+                                    </strong>
+
+                                    <small>
+                                        ananya@example.com
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Chennai
+                        </td>
+
+
+                        <td>
+                            <strong>
+                                18
+                            </strong>
+                        </td>
+
+
+                        <td>
+                            <strong>
+                                ₹24,850
+                            </strong>
+                        </td>
+
+
+                        <td>
+                            11 Sep 2026
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-customers-type-vip">
+                                <i class="fa-solid fa-crown"></i>
+                                VIP
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <button
+                                type="button"
+                                class="bakery-customers-view-button"
+                                aria-label="View Ananya Sharma"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Customer 02 -->
+
+                    <tr>
+
+                        <td>
+
+                            <div class="bakery-customers-profile-cell">
+
+                                <span class="bakery-customers-avatar">
+                                    RK
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Rahul Kumar
+                                    </strong>
+
+                                    <small>
+                                        rahul@example.com
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Coimbatore
+                        </td>
+
+
+                        <td>
+                            <strong>
+                                12
+                            </strong>
+                        </td>
+
+
+                        <td>
+                            <strong>
+                                ₹18,420
+                            </strong>
+                        </td>
+
+
+                        <td>
+                            10 Sep 2026
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-customers-type-returning">
+                                <i class="fa-solid fa-repeat"></i>
+                                Returning
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <button
+                                type="button"
+                                class="bakery-customers-view-button"
+                                aria-label="View Rahul Kumar"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Customer 03 -->
+
+                    <tr>
+
+                        <td>
+
+                            <div class="bakery-customers-profile-cell">
+
+                                <span class="bakery-customers-avatar">
+                                    SP
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Sneha Priya
+                                    </strong>
+
+                                    <small>
+                                        sneha@example.com
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Madurai
+                        </td>
+
+
+                        <td>
+                            <strong>
+                                7
+                            </strong>
+                        </td>
+
+
+                        <td>
+                            <strong>
+                                ₹9,750
+                            </strong>
+                        </td>
+
+
+                        <td>
+                            09 Sep 2026
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-customers-type-regular">
+                                Regular
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <button
+                                type="button"
+                                class="bakery-customers-view-button"
+                                aria-label="View Sneha Priya"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Customer 04 -->
+
+                    <tr>
+
+                        <td>
+
+                            <div class="bakery-customers-profile-cell">
+
+                                <span class="bakery-customers-avatar">
+                                    VR
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Vikram Raj
+                                    </strong>
+
+                                    <small>
+                                        vikram@example.com
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Salem
+                        </td>
+
+
+                        <td>
+                            <strong>
+                                9
+                            </strong>
+                        </td>
+
+
+                        <td>
+                            <strong>
+                                ₹14,300
+                            </strong>
+                        </td>
+
+
+                        <td>
+                            08 Sep 2026
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-customers-type-returning">
+                                <i class="fa-solid fa-repeat"></i>
+                                Returning
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <button
+                                type="button"
+                                class="bakery-customers-view-button"
+                                aria-label="View Vikram Raj"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                    <!-- Customer 05 -->
+
+                    <tr>
+
+                        <td>
+
+                            <div class="bakery-customers-profile-cell">
+
+                                <span class="bakery-customers-avatar">
+                                    MK
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Meena Krishnan
+                                    </strong>
+
+                                    <small>
+                                        meena@example.com
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Trichy
+                        </td>
+
+
+                        <td>
+                            <strong>
+                                15
+                            </strong>
+                        </td>
+
+
+                        <td>
+                            <strong>
+                                ₹21,680
+                            </strong>
+                        </td>
+
+
+                        <td>
+                            07 Sep 2026
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-customers-type-vip">
+                                <i class="fa-solid fa-crown"></i>
+                                VIP
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <button
+                                type="button"
+                                class="bakery-customers-view-button"
+                                aria-label="View Meena Krishnan"
+                            >
+                                <i class="fa-solid fa-eye"></i>
+                            </button>
+
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <!-- Directory Footer -->
+
+        <div class="bakery-customers-directory-footer">
+
+            <span>
+                Showing 1–5 of 1,284 customers
+            </span>
+
+             
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CUSTOMER INSIGHTS
+    ====================================================== -->
+
+    <section class="bakery-customers-insights-section">
+
+        <div class="bakery-customers-section-heading">
+
+            <div>
+
+                <span>
+                    CUSTOMER INSIGHTS
+                </span>
+
+                <h3>
+                    Understand Your Audience
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="bakery-customers-insights-grid">
+
+
+            <!-- Favorite Category -->
+
+            <article class="bakery-customers-insight-card">
+
+                <div class="bakery-customers-insight-icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        MOST ORDERED
+                    </span>
+
+                    <h4>
+                        Chocolate Cakes
+                    </h4>
+
+                    <p>
+                        42% of customer orders are
+                        chocolate-based cakes.
+                    </p>
+
+                </div>
+
+                <strong>
+                    42%
+                </strong>
+
+            </article>
+
+
+            <!-- Average Order -->
+
+            <article class="bakery-customers-insight-card">
+
+                <div class="bakery-customers-insight-icon">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        AVERAGE ORDER
+                    </span>
+
+                    <h4>
+                        ₹1,680
+                    </h4>
+
+                    <p>
+                        Average customer spending
+                        per bakery order.
+                    </p>
+
+                </div>
+
+                <strong>
+                    +8.2%
+                </strong>
+
+            </article>
+
+
+            <!-- Repeat Rate -->
+
+            <article class="bakery-customers-insight-card">
+
+                <div class="bakery-customers-insight-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        CUSTOMER LOYALTY
+                    </span>
+
+                    <h4>
+                        68% Repeat Rate
+                    </h4>
+
+                    <p>
+                        Customers are returning
+                        for another bakery order.
+                    </p>
+
+                </div>
+
+                <strong>
+                    68%
+                </strong>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         TOP CUSTOMERS
+    ====================================================== -->
+
+    <section class="bakery-customers-top-section">
+
+        <div class="bakery-customers-section-heading">
+
+            <div>
+
+                <span>
+                    CUSTOMER LOYALTY
+                </span>
+
+                <h3>
+                    Top Customers
+                </h3>
+
+            </div>
+
+            <a href="404-admin.html">
+                View Loyalty Report
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="bakery-customers-top-grid">
+
+
+            <!-- Top Customer 01 -->
+
+            <article class="bakery-customers-top-card">
+
+                <div class="bakery-customers-rank">
+                    01
+                </div>
+
+                <span class="bakery-customers-top-avatar">
+                    AS
+                </span>
+
+                <h4>
+                    Ananya Sharma
+                </h4>
+
+                <p>
+                    18 orders completed
+                </p>
+
+                <strong>
+                    ₹24,850
+                </strong>
+
+                <small>
+                    Total spending
+                </small>
+
+            </article>
+
+
+            <!-- Top Customer 02 -->
+
+            <article class="bakery-customers-top-card">
+
+                <div class="bakery-customers-rank">
+                    02
+                </div>
+
+                <span class="bakery-customers-top-avatar">
+                    MK
+                </span>
+
+                <h4>
+                    Meena Krishnan
+                </h4>
+
+                <p>
+                    15 orders completed
+                </p>
+
+                <strong>
+                    ₹21,680
+                </strong>
+
+                <small>
+                    Total spending
+                </small>
+
+            </article>
+
+
+            <!-- Top Customer 03 -->
+
+            <article class="bakery-customers-top-card">
+
+                <div class="bakery-customers-rank">
+                    03
+                </div>
+
+                <span class="bakery-customers-top-avatar">
+                    RK
+                </span>
+
+                <h4>
+                    Rahul Kumar
+                </h4>
+
+                <p>
+                    12 orders completed
+                </p>
+
+                <strong>
+                    ₹18,420
+                </strong>
+
+                <small>
+                    Total spending
+                </small>
+
+            </article>
+
+
+            <!-- Top Customer 04 -->
+
+            <article class="bakery-customers-top-card">
+
+                <div class="bakery-customers-rank">
+                    04
+                </div>
+
+                <span class="bakery-customers-top-avatar">
+                    VR
+                </span>
+
+                <h4>
+                    Vikram Raj
+                </h4>
+
+                <p>
+                    9 orders completed
+                </p>
+
+                <strong>
+                    ₹14,300
+                </strong>
+
+                <small>
+                    Total spending
+                </small>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CUSTOMER ACTIVITY
+    ====================================================== -->
+
+    <section class="bakery-customers-activity-section">
+
+        <div class="bakery-customers-section-heading">
+
+            <div>
+
+                <span>
+                    RECENT ACTIVITY
+                </span>
+
+                <h3>
+                    Customer Activity
+                </h3>
+
+            </div>
+
+            <a href="404-admin.html">
+                View All Activity
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="bakery-customers-activity-list">
+
+
+            <!-- Activity 01 -->
+
+            <div class="bakery-customers-activity-item">
+
+                <div class="bakery-customers-activity-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </div>
+
+                <div class="bakery-customers-activity-content">
+
+                    <strong>
+                        Ananya Sharma placed a new order
+                    </strong>
+
+                    <span>
+                        Chocolate Truffle Cake • ₹1,250
+                    </span>
+
+                </div>
+
+                <time>
+                    10 min ago
+                </time>
+
+            </div>
+
+
+            <!-- Activity 02 -->
+
+            <div class="bakery-customers-activity-item">
+
+                <div class="bakery-customers-activity-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <div class="bakery-customers-activity-content">
+
+                    <strong>
+                        New customer registered
+                    </strong>
+
+                    <span>
+                        Kavya Menon joined Stackly Bakery
+                    </span>
+
+                </div>
+
+                <time>
+                    28 min ago
+                </time>
+
+            </div>
+
+
+            <!-- Activity 03 -->
+
+            <div class="bakery-customers-activity-item">
+
+                <div class="bakery-customers-activity-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <div class="bakery-customers-activity-content">
+
+                    <strong>
+                        Rahul Kumar became a returning customer
+                    </strong>
+
+                    <span>
+                        Completed his 12th bakery order
+                    </span>
+
+                </div>
+
+                <time>
+                    1 hr ago
+                </time>
+
+            </div>
+
+
+            <!-- Activity 04 -->
+
+            <div class="bakery-customers-activity-item">
+
+                <div class="bakery-customers-activity-icon">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div class="bakery-customers-activity-content">
+
+                    <strong>
+                        Meena Krishnan left a 5-star review
+                    </strong>
+
+                    <span>
+                        "Beautiful cake and excellent service!"
+                    </span>
+
+                </div>
+
+                <time>
+                    2 hrs ago
+                </time>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CUSTOMER QUICK ACTIONS
+    ====================================================== -->
+
+    <section class="bakery-customers-actions-section">
+
+        <div class="bakery-customers-section-heading">
+
+            <div>
+
+                <span>
+                    CUSTOMER TOOLS
+                </span>
+
+                <h3>
+                    Quick Actions
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="bakery-customers-actions-grid">
+
+
+            <a
+                href="404-admin.html"
+                class="bakery-customers-action-card"
+            >
+
+                <span>
+                    <i class="fa-solid fa-user-plus"></i>
+                </span>
+
+                <div>
+
+                    <strong>
+                        Add Customer
+                    </strong>
+
+                    <small>
+                        Create a new customer profile
+                    </small>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="404-admin.html"
+                class="bakery-customers-action-card"
+            >
+
+                <span>
+                    <i class="fa-solid fa-envelope"></i>
+                </span>
+
+                <div>
+
+                    <strong>
+                        Send Message
+                    </strong>
+
+                    <small>
+                        Contact your customers
+                    </small>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="404-admin.html"
+                class="bakery-customers-action-card"
+            >
+
+                <span>
+                    <i class="fa-solid fa-crown"></i>
+                </span>
+
+                <div>
+
+                    <strong>
+                        Loyalty Program
+                    </strong>
+
+                    <small>
+                        Manage VIP customer rewards
+                    </small>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="404-admin.html"
+                class="bakery-customers-action-card"
+            >
+
+                <span>
+                    <i class="fa-solid fa-chart-pie"></i>
+                </span>
+
+                <div>
+
+                    <strong>
+                        Customer Analytics
+                    </strong>
+
+                    <small>
+                        Explore customer behavior
+                    </small>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+</section>
+
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="admin.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================================================
+         BASIC META
+    ========================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Bakery Customer Dashboard - Manage orders, wishlist, profile and bakery purchases."
+    >
+
+    <title>Stackly | Customer Dashboard</title>
+
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================================
+         FONT AWESOME
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =========================================================
+         CUSTOMER DASHBOARD CSS
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="customer.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =============================================================
+     CUSTOMER DASHBOARD WRAPPER
+============================================================== -->
+
+<div class="bakery-customer-dashboard">
+
+
+    <!-- =========================================================
+         MOBILE OVERLAY
+    ========================================================== -->
+
+    <div
+        class="bakery-customer-overlay"
+        id="bakeryCustomerOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================================
+         CUSTOMER SIDEBAR
+    ========================================================== -->
+
+    <aside
+        class="bakery-customer-sidebar"
+        id="bakeryCustomerSidebar"
+        aria-hidden="true"
+    >
+
+
+        <!-- =====================================================
+             SIDEBAR HEADER
+        ====================================================== -->
+
+        <div class="bakery-customer-sidebar-header">
+
+            <!-- Logo -->
+
+            <a
+                href="customer.html"
+                class="bakery-customer-logo"
+                aria-label="Stackly Bakery Home"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+
+            <button
+                type="button"
+                class="bakery-customer-close"
+                id="bakeryCustomerClose"
+                aria-label="Close customer menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             CUSTOMER NAVIGATION
+        ====================================================== -->
+
+        <nav
+            class="bakery-customer-navigation"
+            aria-label="Customer Dashboard Navigation"
+        >
+
+
+            <!-- Main -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    MAIN
+                </span>
+
+
+                <!-- Dashboard -->
+
+                <a
+                    href="customer.html"
+                    class="bakery-customer-nav-link active"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- Orders -->
+
+                <a
+                    href="customer-orders.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                    </span>
+
+                    <span>
+                        My Orders
+                    </span>
+
+                    <span class="bakery-customer-nav-count">
+                        3
+                    </span>
+
+                </a>
+
+
+                <!-- Wishlist -->
+
+                <a
+                    href="customer-wishlist.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </span>
+
+                    <span>
+                        Wishlist
+                    </span>
+
+                    <span class="bakery-customer-nav-count">
+                        8
+                    </span>
+
+                </a>
+
+
+                <!-- Reviews -->
+
+                <a
+                    href="customer-reviews.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-star"></i>
+
+                    </span>
+
+                    <span>
+                        My Reviews
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Shopping -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    SHOPPING
+                </span>
+
+
+                <!-- Custom Cakes -->
+
+                <a
+                    href="custom-cakes.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    </span>
+
+                    <span>
+                        Custom Cakes
+                    </span>
+
+                </a>
+
+
+                <!-- Offers -->
+
+                <a
+                    href="customer-offers.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-tag"></i>
+
+                    </span>
+
+                    <span>
+                        Offers
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Account -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    ACCOUNT
+                </span>
+
+
+                <!-- Profile -->
+
+                <a
+                    href="customer-profile.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-user"></i>
+
+                    </span>
+
+                    <span>
+                        My Profile
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- =====================================================
+             SIDEBAR BOTTOM
+        ====================================================== -->
+
+        <div class="bakery-customer-sidebar-bottom">
+
+            <!-- Logout -->
+
+            <button
+                type="button"
+                class="bakery-customer-logout"
+                id="bakeryCustomerLogout"
+            >
+
+                <span class="bakery-customer-nav-icon">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================================
+         MAIN CUSTOMER AREA
+    ========================================================== -->
+
+    <main class="bakery-customer-main">
+
+
+        <!-- =====================================================
+             TOP HEADER
+        ====================================================== -->
+
+        <header class="bakery-customer-topbar">
+
+
+            <!-- LEFT -->
+
+            <div class="bakery-customer-topbar-left">
+
+
+                <!-- Mobile Hamburger -->
+
+                <button
+                    type="button"
+                    class="bakery-customer-menu-toggle"
+                    id="bakeryCustomerMenuToggle"
+                    aria-label="Open customer menu"
+                    aria-expanded="false"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <!-- Page Heading -->
+
+                <div class="bakery-customer-page-heading">
+
+                    <span class="bakery-customer-heading-label">
+                        Customer Dashboard
+                    </span>
+
+                    <span class="bakery-customer-heading-subtitle">
+                        Welcome back to Stackly Bakery
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="bakery-customer-topbar-right">
+
+
+                <!-- Notification -->
+
+                <a
+                    href="404-customer.html"
+                    class="bakery-customer-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-customer-notification-dot">
+                    </span>
+
+                </a>
+
+
+                <!-- Customer -->
+
+                <div class="bakery-customer-user">
+
+
+                    <!-- Email -->
+
+                    <div class="bakery-customer-user-details">
+
+                        <span class="bakery-customer-user-label">
+                            Signed in as
+                        </span>
+
+                        <span
+                            class="bakery-customer-email"
+                            id="bakeryCustomerEmail"
+                        >
+                            customer@stackly.com
+                        </span>
+
+                    </div>
+
+
+                    <!-- Avatar -->
+
+                    <div class="bakery-customer-user-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     CUSTOMER OFFERS PAGE
+========================================================== -->
+
+<section class="bakery-offers-content">
+
+    <!-- =====================================================
+         OFFERS INTRO
+    ====================================================== -->
+
+    <div class="bakery-offers-intro">
+
+        <div class="bakery-offers-intro-text">
+
+            <span class="bakery-offers-kicker">
+                <i class="fa-solid fa-tag"></i>
+                SWEET DEALS FOR YOU
+            </span>
+
+            <h1>
+                Fresh Bakes,
+                <span>Better Prices.</span>
+            </h1>
+
+            <p>
+                Discover exclusive bakery offers, special discounts
+                and delicious rewards created especially for our customers.
+            </p>
+
+        </div>
+
+        <div class="bakery-offers-intro-icon">
+
+            <i class="fa-solid fa-gift"></i>
+
+            <span>NEW</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         OFFER SUMMARY
+    ====================================================== -->
+
+    <div class="bakery-offers-summary">
+
+        <div class="bakery-offers-summary-card">
+
+            <div class="bakery-offers-summary-icon">
+                <i class="fa-solid fa-percent"></i>
+            </div>
+
+            <div>
+                <strong>25%</strong>
+                <span>Max Discount</span>
+            </div>
+
+        </div>
+
+
+        <div class="bakery-offers-summary-card">
+
+            <div class="bakery-offers-summary-icon">
+                <i class="fa-solid fa-ticket"></i>
+            </div>
+
+            <div>
+                <strong>06</strong>
+                <span>Active Coupons</span>
+            </div>
+
+        </div>
+
+
+        <div class="bakery-offers-summary-card">
+
+            <div class="bakery-offers-summary-icon">
+                <i class="fa-solid fa-cake-candles"></i>
+            </div>
+
+            <div>
+                <strong>₹199</strong>
+                <span>Minimum Savings</span>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FEATURED OFFER
+    ====================================================== -->
+
+    <div class="bakery-offers-featured">
+
+        <div class="bakery-offers-featured-content">
+
+            <span class="bakery-offers-featured-label">
+                LIMITED TIME OFFER
+            </span>
+
+            <h2>
+                Make Every Celebration
+                <em>Extra Sweet.</em>
+            </h2>
+
+            <p>
+                Get a special discount on selected celebration cakes
+                and make your next sweet moment even more memorable.
+            </p>
+
+            <div class="bakery-offers-featured-details">
+
+                <div>
+                    <strong>20% OFF</strong>
+                    <span>Celebration Cakes</span>
+                </div>
+
+                <div>
+                    <strong>MIN ₹999</strong>
+                    <span>Order Value</span>
+                </div>
+
+            </div>
+
+            <a href="404-customer.html" class="bakery-offers-featured-button">
+                Shop This Offer
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="bakery-offers-featured-art">
+
+            <div class="bakery-offers-discount-circle">
+
+                <span>GET</span>
+
+                <strong>20%</strong>
+
+                <small>OFF</small>
+
+            </div>
+
+            <i class="fa-solid fa-cake-candles"></i>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         COUPON SECTION
+    ====================================================== -->
+
+    <div class="bakery-offers-section-heading">
+
+        <div>
+
+            <span>CHOOSE YOUR SAVINGS</span>
+
+            <h2>Exclusive Offers</h2>
+
+        </div>
+
+        <a href="404-customer.html">
+            View All
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="bakery-offers-grid">
+
+
+        <!-- OFFER 01 -->
+
+        <article class="bakery-offer-card">
+
+            <div class="bakery-offer-card-top">
+
+                <span class="bakery-offer-badge">
+                    BESTSELLER
+                </span>
+
+                <i class="fa-solid fa-heart"></i>
+
+            </div>
+
+            <div class="bakery-offer-icon">
+                <i class="fa-solid fa-cake-candles"></i>
+            </div>
+
+            <h3>
+                Celebration Special
+            </h3>
+
+            <p>
+                Save on birthday and celebration cakes
+                for your next special occasion.
+            </p>
+
+            <div class="bakery-offer-code">
+
+                <span>Code</span>
+
+                <strong>CAKE20</strong>
+
+                <button type="button">
+                    Copy
+                </button>
+
+            </div>
+
+            <div class="bakery-offer-bottom">
+
+                <span>
+                    <i class="fa-regular fa-clock"></i>
+                    Ends in 5 days
+                </span>
+
+                <strong>
+                    20% OFF
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- OFFER 02 -->
+
+        <article class="bakery-offer-card">
+
+            <div class="bakery-offer-card-top">
+
+                <span class="bakery-offer-badge">
+                    POPULAR
+                </span>
+
+                <i class="fa-solid fa-heart"></i>
+
+            </div>
+
+            <div class="bakery-offer-icon">
+                <i class="fa-solid fa-cookie-bite"></i>
+            </div>
+
+            <h3>
+                Sweet Starter
+            </h3>
+
+            <p>
+                Enjoy a special discount when ordering
+                your favorite cakes and pastries.
+            </p>
+
+            <div class="bakery-offer-code">
+
+                <span>Code</span>
+
+                <strong>SWEET15</strong>
+
+                <button type="button">
+                    Copy
+                </button>
+
+            </div>
+
+            <div class="bakery-offer-bottom">
+
+                <span>
+                    <i class="fa-regular fa-clock"></i>
+                    Ends in 8 days
+                </span>
+
+                <strong>
+                    15% OFF
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- OFFER 03 -->
+
+        <article class="bakery-offer-card">
+
+            <div class="bakery-offer-card-top">
+
+                <span class="bakery-offer-badge">
+                    NEW
+                </span>
+
+                <i class="fa-solid fa-heart"></i>
+
+            </div>
+
+            <div class="bakery-offer-icon">
+                <i class="fa-solid fa-bread-slice"></i>
+            </div>
+
+            <h3>
+                Bakery Box Deal
+            </h3>
+
+            <p>
+                Get extra savings when you create
+                your own selection of bakery favorites.
+            </p>
+
+            <div class="bakery-offer-code">
+
+                <span>Code</span>
+
+                <strong>BAKE10</strong>
+
+                <button type="button">
+                    Copy
+                </button>
+
+            </div>
+
+            <div class="bakery-offer-bottom">
+
+                <span>
+                    <i class="fa-regular fa-clock"></i>
+                    Ends in 12 days
+                </span>
+
+                <strong>
+                    10% OFF
+                </strong>
+
+            </div>
+
+        </article>
+
+    </div>
+
+
+    <!-- =====================================================
+         LOYALTY REWARD
+    ====================================================== -->
+
+    <section class="bakery-offers-reward">
+
+        <div class="bakery-offers-reward-icon">
+            <i class="fa-solid fa-crown"></i>
+        </div>
+
+        <div class="bakery-offers-reward-content">
+
+            <span>STACKLY SWEET REWARDS</span>
+
+            <h2>
+                You're Only
+                <em>120 Points</em>
+                Away!
+            </h2>
+
+            <p>
+                Keep ordering your favorite treats and unlock
+                your next exclusive bakery reward.
+            </p>
+
+            <div class="bakery-offers-progress">
+
+                <div class="bakery-offers-progress-top">
+
+                    <span>
+                        Your Progress
+                    </span>
+
+                    <strong>
+                        380 / 500 Points
+                    </strong>
+
+                </div>
+
+                <div class="bakery-offers-progress-track">
+
+                    <span></span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <a href="404-customer.html" class="bakery-offers-reward-button">
+            View Rewards
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+
+    <!-- =====================================================
+         OFFER TERMS
+    ====================================================== -->
+
+    <div class="bakery-offers-note">
+
+        <i class="fa-solid fa-circle-info"></i>
+
+        <div>
+
+            <strong>
+                A little note about our offers
+            </strong>
+
+            <p>
+                Offers cannot be combined with other promotional
+                discounts. Coupon availability and minimum order
+                values may vary.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FINAL CTA
+    ====================================================== -->
+
+    <section class="bakery-offers-final">
+
+        <div class="bakery-offers-final-icon">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+        </div>
+
+        <div class="bakery-offers-final-content">
+
+            <span>READY FOR SOMETHING SWEET?</span>
+
+            <h2>
+                Your next favorite treat is waiting.
+            </h2>
+
+            <p>
+                Use your favorite offer and discover
+                something delicious from Stackly Bakery.
+            </p>
+
+        </div>
+
+        <a href="404-customer.html">
+            Start Shopping
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+</section>
+
+
+    </main>
+
+</div>
+
+
+<!-- =============================================================
+     CUSTOMER DASHBOARD JAVASCRIPT
+============================================================== -->
+
+<script src="customer.js"></script>
+
+</body>
+
+</html>

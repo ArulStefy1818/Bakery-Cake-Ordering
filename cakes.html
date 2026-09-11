@@ -1,0 +1,2359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC META
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Bakery - Premium cakes, pastries, breads and delicious bakery treats."
+    >
+
+    <meta
+        name="keywords"
+        content="Stackly Bakery, cakes, bakery, pastries, fresh breads, online cake ordering"
+    >
+
+    <meta
+        name="author"
+        content="Stackly Bakery"
+    >
+
+    <meta
+        name="theme-color"
+        content="#a96f43"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <title>Stackly | Bakery &amp; Cake Ordering</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         AOS ANIMATION CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    >
+
+
+    <!-- =====================================================
+         MAIN WEBSITE CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="index.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================== -->
+
+<header
+    class="stackly-header"
+    data-aos="fade-down"
+    data-aos-duration="900"
+    data-aos-easing="ease-out-cubic"
+>
+
+    <div class="stackly-header-inner">
+
+
+        <!-- =================================================
+             LOGO
+        ================================================== -->
+
+        <a
+            href="index.html"
+            class="stackly-logo"
+            aria-label="Stackly Bakery Home"
+            data-aos="fade-right"
+            data-aos-duration="800"
+        >
+
+            <img
+                src="Stackly-logo-Blue.webp"
+                alt="Stackly Bakery"
+                width="160"
+                height="auto"
+            >
+
+        </a>
+
+        <!-- MOBILE CART -->
+    <a
+        href="cart.html"
+        class="stackly-mobile-cart"
+        aria-label="Shopping Cart"
+        title="Shopping Cart"
+    >
+        <i
+            class="fa-solid fa-cart-shopping"
+            aria-hidden="true"
+        ></i>
+
+        <span class="stackly-mobile-cart-count">
+            0
+        </span>
+    </a>
+
+
+        <!-- =================================================
+             MOBILE MENU CHECKBOX
+        ================================================== -->
+
+        <input
+            type="checkbox"
+            id="stackly-menu-toggle"
+            class="stackly-menu-toggle"
+            aria-hidden="true"
+            tabindex="-1"
+        >
+
+
+        <!-- =================================================
+             MOBILE HAMBURGER
+        ================================================== -->
+
+        <label
+            for="stackly-menu-toggle"
+            class="stackly-hamburger"
+            aria-label="Open navigation menu"
+            aria-controls="stackly-navigation"
+            data-aos="fade-left"
+            data-aos-duration="800"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </label>
+
+
+        <!-- =================================================
+             MAIN NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="stackly-navigation"
+            id="stackly-navigation"
+            aria-label="Main Navigation"
+        >
+
+
+            <!-- =============================================
+                 MOBILE CLOSE BUTTON
+            ============================================== -->
+
+            <label
+                for="stackly-menu-toggle"
+                class="stackly-menu-close"
+                aria-label="Close navigation menu"
+            >
+
+                <i
+                    class="fa-solid fa-xmark"
+                    aria-hidden="true"
+                ></i>
+
+            </label>
+
+
+            <!-- =============================================
+                 HOME
+            ============================================== -->
+
+            <a
+                href="index.html"
+                class="stackly-nav-link"
+            >
+                Home
+            </a>
+
+
+            <!-- =============================================
+                 ABOUT
+            ============================================== -->
+
+            <a
+                href="about.html"
+                class="stackly-nav-link"
+            >
+                About
+            </a>
+
+
+            <!-- =============================================
+                 CAKES
+            ============================================== -->
+
+            <a
+                href="cakes.html"
+                class="stackly-nav-link"
+            >
+                Cakes
+            </a>
+
+
+            <!-- =============================================
+                 OFFERS
+            ============================================== -->
+
+            <a
+                href="services.html"
+                class="stackly-nav-link"
+            >
+                Services
+            </a>
+
+
+            <!-- =============================================
+                 BLOG
+            ============================================== -->
+
+            <a
+                href="blog.html"
+                class="stackly-nav-link"
+            >
+                Blog
+            </a>
+
+
+            <!-- =============================================
+                 CONTACT
+            ============================================== -->
+
+            <a
+                href="contact.html"
+                class="stackly-nav-link"
+            >
+                Contact
+            </a>
+
+
+<!-- =============================================
+     CART
+============================================= -->
+
+<a
+    href="cart.html"
+    class="stackly-cart-button"
+    aria-label="Shopping Cart"
+>
+
+    <i
+        class="fa-solid fa-cart-shopping"
+        aria-hidden="true"
+    ></i>
+
+    <span>
+        Cart
+    </span>
+
+    <small class="stackly-cart-count">
+        0
+    </small>
+
+</a>
+
+
+<!-- =============================================
+     LOGIN
+============================================= -->
+
+<a
+    href="order.html"
+    class="stackly-order-button"
+>
+
+    <i
+        class="fa-solid fa-user"
+        aria-hidden="true"
+    ></i>
+
+    <span>
+        Login
+    </span>
+
+</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- =========================================================
+     STACKLY BAKERY - CAKES PAGE HEADING
+========================================================= -->
+
+<section
+    class="stackly-cakes-page-heading"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-easing="ease-out-cubic"
+>
+
+    <div
+        class="stackly-cakes-heading-content"
+        data-aos="zoom-in"
+        data-aos-duration="1100"
+        data-aos-delay="150"
+    >
+
+        <span class="stackly-cakes-heading-label">
+            OUR CAKES
+        </span>
+
+        <h1>
+            Delicious Cakes for Every Celebration
+        </h1>
+
+        <p>
+            Discover beautifully crafted cakes, made with fresh ingredients
+            and a touch of sweetness for every special moment.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     STACKLY BAKERY - CAKE CATEGORIES
+========================================================= -->
+
+<section class="stackly-cake-categories">
+
+    <div class="stackly-cake-section-heading"
+         data-aos="fade-up"
+         data-aos-duration="900">
+
+        <span>EXPLORE OUR COLLECTION</span>
+
+        <h2>
+            Cakes Made for Every Sweet Moment
+        </h2>
+
+        <p>
+            From intimate celebrations to grand occasions,
+            discover a cake crafted to make your moment unforgettable.
+        </p>
+
+    </div>
+
+
+    <div class="stackly-cake-category-grid">
+
+
+        <!-- Birthday -->
+
+        <article class="stackly-cake-category-card"
+                 data-aos="fade-up"
+                 data-aos-delay="100">
+
+            <div class="stackly-cake-category-image">
+
+                <img
+                    src="blog-3.webp"
+                    alt="Birthday Cake"
+                >
+
+                <span>
+                    01
+                </span>
+
+            </div>
+
+            <div class="stackly-cake-category-content">
+
+                <h3>
+                    Birthday Cakes
+                </h3>
+
+                <p>
+                    Colorful, joyful and delicious cakes
+                    designed to make birthdays extra special.
+                </p>
+
+                <a href="404.html">
+                    Explore Cakes
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- Wedding -->
+
+        <article class="stackly-cake-category-card"
+                 data-aos="fade-up"
+                 data-aos-delay="200">
+
+            <div class="stackly-cake-category-image">
+
+                <img
+                    src="wedding-cake.webp"
+                    alt="Wedding Cake"
+                >
+
+                <span>
+                    02
+                </span>
+
+            </div>
+
+            <div class="stackly-cake-category-content">
+
+                <h3>
+                    Wedding Cakes
+                </h3>
+
+                <p>
+                    Elegant multi-tier creations crafted
+                    beautifully for your once-in-a-lifetime day.
+                </p>
+
+                <a href="404.html">
+                    Explore Cakes
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- Anniversary -->
+
+        <article class="stackly-cake-category-card"
+                 data-aos="fade-up"
+                 data-aos-delay="300">
+
+            <div class="stackly-cake-category-image">
+
+                <img
+                    src="anniversay-cake.webp"
+                    alt="Anniversary Cake"
+                >
+
+                <span>
+                    03
+                </span>
+
+            </div>
+
+            <div class="stackly-cake-category-content">
+
+                <h3>
+                    Anniversary Cakes
+                </h3>
+
+                <p>
+                    Romantic cake designs made to celebrate
+                    love, memories and beautiful milestones.
+                </p>
+
+                <a href="404.html">
+                    Explore Cakes
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <!-- Kids -->
+
+        <article class="stackly-cake-category-card"
+                 data-aos="fade-up"
+                 data-aos-delay="400">
+
+            <div class="stackly-cake-category-image">
+
+                <img
+                    src="kids-cake.webp"
+                    alt="Kids Cake"
+                >
+
+                <span>
+                    04
+                </span>
+
+            </div>
+
+            <div class="stackly-cake-category-content">
+
+                <h3>
+                    Kids Cakes
+                </h3>
+
+                <p>
+                    Fun characters, playful colors and
+                    delicious flavors children will love.
+                </p>
+
+                <a href="order.html">
+                    Explore Cakes
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     CAKE & BAKERY - FEATURED COLLECTION
+     ADD TO CART READY VERSION
+========================================================= -->
+
+<section class="sweet-collection-section" id="sweetCollection">
+
+    <!-- =====================================================
+         SECTION HEADER
+    ====================================================== -->
+
+    <div
+        class="sweet-collection-header"
+        data-aos="fade-up"
+        data-aos-duration="1000"
+    >
+
+        <span class="sweet-collection-mini-title">
+            FRESH FROM OUR OVEN
+        </span>
+
+        <h2 class="sweet-collection-heading">
+            Baked With Love,
+            <br>
+            Made For You
+        </h2>
+
+        <p class="sweet-collection-intro">
+            Discover our freshly baked collection of cakes,
+            pastries and delightful treats, prepared daily
+            with premium ingredients.
+        </p>
+
+        <a
+            href="404.html"
+            class="sweet-collection-view-button"
+        >
+            VIEW ALL TREATS
+        </a>
+
+    </div>
+
+
+    <!-- =====================================================
+         SLIDER WRAPPER
+    ====================================================== -->
+
+    <div class="sweet-slider-wrapper">
+
+        <!-- PREVIOUS BUTTON -->
+
+        <button
+            class="sweet-slider-arrow sweet-slider-prev"
+            type="button"
+            aria-label="Previous products"
+        >
+            <span>←</span>
+        </button>
+
+
+        <!-- =================================================
+             SLIDER WINDOW
+        ================================================== -->
+
+        <div class="sweet-slider-window">
+
+            <div class="sweet-slider-track">
+
+
+                <!-- =================================================
+                     PRODUCT 1 - CHOCOLATE CELEBRATION CAKE
+                ================================================== -->
+
+                <article
+                    class="sweet-product-card"
+                    data-product-id="chocolate-celebration-cake"
+                    data-product-name="Chocolate Celebration Cake"
+                    data-product-price="850"
+                    data-product-image="chocolate-cake.webp"
+                    data-aos="fade-up"
+                    data-aos-duration="900"
+                    data-aos-delay="100"
+                >
+
+                    <div class="sweet-product-image-box">
+
+                        <img
+                            src="chocolate-cake.webp"
+                            alt="Chocolate Celebration Cake"
+                            loading="lazy"
+                        >
+
+                        <span class="sweet-product-badge">
+                            BEST SELLER
+                        </span>
+
+                         
+                    </div>
+
+
+                    <div class="sweet-product-content">
+
+                        <span class="sweet-product-category">
+                            CELEBRATION CAKE
+                        </span>
+
+                        <h3 class="sweet-product-name">
+                            Chocolate Cake
+                        </h3>
+
+                        <p class="sweet-product-description">
+                            Rich chocolate sponge layered with
+cream and finished with
+handcrafted chocolate decorations.
+                        </p>
+
+                        <div class="sweet-product-bottom">
+
+                            <span class="sweet-product-price">
+                                ₹850
+                            </span>
+
+                            <button
+                                class="sweet-cart-button"
+                                type="button"
+                                data-add-to-cart
+                                aria-label="Add Chocolate Celebration Cake to cart"
+                            >
+                                <span>ADD TO CART</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     PRODUCT 2 - FRESH STRAWBERRY CAKE
+                ================================================== -->
+
+                <article
+                    class="sweet-product-card"
+                    data-product-id="fresh-strawberry-cake"
+                    data-product-name="Fresh Strawberry Cake"
+                    data-product-price="750"
+                    data-product-image="strawberry-cake.webp"
+                    data-aos="fade-up"
+                    data-aos-duration="900"
+                    data-aos-delay="200"
+                >
+
+                    <div class="sweet-product-image-box">
+
+                        <img
+                            src="strawberry-cake.webp"
+                            alt="Fresh Strawberry Cake"
+                            loading="lazy"
+                        >
+
+                        <span class="sweet-product-badge">
+                            CUSTOMER FAVORITE
+                        </span>
+
+                         
+
+                    </div>
+
+
+                    <div class="sweet-product-content">
+
+                        <span class="sweet-product-category">
+                            FRUIT CAKE
+                        </span>
+
+                        <h3 class="sweet-product-name">
+                            Fresh Strawberry Cake
+                        </h3>
+
+                        <p class="sweet-product-description">
+                            Soft vanilla sponge with fresh
+                            strawberries and a light, creamy
+                            frosting.
+                        </p>
+
+                        <div class="sweet-product-bottom">
+
+                            <span class="sweet-product-price">
+                                ₹750
+                            </span>
+
+                            <button
+                                class="sweet-cart-button"
+                                type="button"
+                                data-add-to-cart
+                                aria-label="Add Fresh Strawberry Cake to cart"
+                            >
+                                <span>ADD TO CART</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     PRODUCT 3 - CLASSIC BUTTER CROISSANT
+                ================================================== -->
+
+                <article
+                    class="sweet-product-card"
+                    data-product-id="classic-butter-croissant"
+                    data-product-name="Classic Butter Croissant"
+                    data-product-price="180"
+                    data-product-image="croissant.webp"
+                    data-aos="fade-up"
+                    data-aos-duration="900"
+                    data-aos-delay="300"
+                >
+
+                    <div class="sweet-product-image-box">
+
+                        <img
+                            src="croissant.webp"
+                            alt="Classic Butter Croissant"
+                            loading="lazy"
+                        >
+
+                        <span class="sweet-product-badge">
+                            FRESH TODAY
+                        </span>
+
+                        
+
+                    </div>
+
+
+                    <div class="sweet-product-content">
+
+                        <span class="sweet-product-category">
+                            FRESH PASTRY
+                        </span>
+
+                        <h3 class="sweet-product-name">
+                            Classic Butter Croissant
+                        </h3>
+
+                        <p class="sweet-product-description">
+                            Golden, flaky layers baked fresh
+                            every morning with premium butter
+                            for a delicate finish.
+                        </p>
+
+                        <div class="sweet-product-bottom">
+
+                            <span class="sweet-product-price">
+                                ₹180
+                            </span>
+
+                            <button
+                                class="sweet-cart-button"
+                                type="button"
+                                data-add-to-cart
+                                aria-label="Add Classic Butter Croissant to cart"
+                            >
+                                <span>ADD TO CART</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     PRODUCT 4 - CLASSIC RED VELVET
+                ================================================== -->
+
+                <article
+                    class="sweet-product-card"
+                    data-product-id="classic-red-velvet"
+                    data-product-name="Classic Red Velvet"
+                    data-product-price="950"
+                    data-product-image="red-velvet-cake.webp"
+                    data-aos="fade-up"
+                    data-aos-duration="900"
+                    data-aos-delay="400"
+                >
+
+                    <div class="sweet-product-image-box">
+
+                        <img
+                            src="red-velvet-cake.webp"
+                            alt="Classic Red Velvet Cake"
+                            loading="lazy"
+                        >
+
+                        <span class="sweet-product-badge">
+                            NEW
+                        </span>
+
+                         
+
+                    </div>
+
+
+                    <div class="sweet-product-content">
+
+                        <span class="sweet-product-category">
+                            SIGNATURE CAKE
+                        </span>
+
+                        <h3 class="sweet-product-name">
+                            Classic Red Velvet
+                        </h3>
+
+                        <p class="sweet-product-description">
+                            Velvet-soft cake with silky cream
+                            cheese frosting and a delicate
+                            cocoa finish.
+                        </p>
+
+                        <div class="sweet-product-bottom">
+
+                            <span class="sweet-product-price">
+                                ₹950
+                            </span>
+
+                            <button
+                                class="sweet-cart-button"
+                                type="button"
+                                data-add-to-cart
+                                aria-label="Add Classic Red Velvet to cart"
+                            >
+                                <span>ADD TO CART</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     PRODUCT 5 - VANILLA CREAM CUPCAKES
+                ================================================== -->
+
+                <article
+                    class="sweet-product-card"
+                    data-product-id="vanilla-cream-cupcakes"
+                    data-product-name="Vanilla Cream Cupcakes"
+                    data-product-price="420"
+                    data-product-image="vanilla-cupcakes.webp"
+                    data-aos="fade-up"
+                    data-aos-duration="900"
+                    data-aos-delay="500"
+                >
+
+                    <div class="sweet-product-image-box">
+
+                        <img
+                            src="vanilla-cupcakes.webp"
+                            alt="Vanilla Cream Cupcakes"
+                            loading="lazy"
+                        >
+
+                        <span class="sweet-product-badge">
+                            POPULAR
+                        </span>
+
+                         
+
+                    </div>
+
+
+                    <div class="sweet-product-content">
+
+                        <span class="sweet-product-category">
+                            CUPCAKES
+                        </span>
+
+                        <h3 class="sweet-product-name">
+                            Vanilla Cream Cupcakes
+                        </h3>
+
+                        <p class="sweet-product-description">
+                            Light vanilla cupcakes topped with
+                            smooth whipped cream and delicate
+                            decorative sprinkles.
+                        </p>
+
+                        <div class="sweet-product-bottom">
+
+                            <span class="sweet-product-price">
+                                ₹420
+                            </span>
+
+                            <button
+                                class="sweet-cart-button"
+                                type="button"
+                                data-add-to-cart
+                                aria-label="Add Vanilla Cream Cupcakes to cart"
+                            >
+                                <span>ADD TO CART</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     PRODUCT 6 - FUDGE CHOCOLATE BROWNIES
+                ================================================== -->
+
+                <article
+                    class="sweet-product-card"
+                    data-product-id="fudge-chocolate-brownies"
+                    data-product-name="Fudge Chocolate Brownies"
+                    data-product-price="360"
+                    data-product-image="brownie.webp"
+                    data-aos="fade-up"
+                    data-aos-duration="900"
+                    data-aos-delay="600"
+                >
+
+                    <div class="sweet-product-image-box">
+
+                        <img
+                            src="brownie.webp"
+                            alt="Fudge Chocolate Brownies"
+                            loading="lazy"
+                        >
+
+                        <span class="sweet-product-badge">
+                            FRESH BAKE
+                        </span>
+
+                        
+
+                    </div>
+
+
+                    <div class="sweet-product-content">
+
+                        <span class="sweet-product-category">
+                            BROWNIES
+                        </span>
+
+                        <h3 class="sweet-product-name">
+                            Chocolate Brownies
+                        </h3>
+
+                        <p class="sweet-product-description">
+                            Deeply chocolatey fudgy brownies
+                            with a soft centre and rich
+                            chocolate finish.
+                        </p>
+
+                        <div class="sweet-product-bottom">
+
+                            <span class="sweet-product-price">
+                                ₹360
+                            </span>
+
+                            <button
+                                class="sweet-cart-button"
+                                type="button"
+                                data-add-to-cart
+                                aria-label="Add Fudge Chocolate Brownies to cart"
+                            >
+                                <span>ADD TO CART</span>
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =====================================================
+             NEXT BUTTON
+        ====================================================== -->
+
+        <button
+            class="sweet-slider-arrow sweet-slider-next"
+            type="button"
+            aria-label="Next products"
+        >
+            <span>→</span>
+        </button>
+
+    </div>
+
+
+    <!-- =====================================================
+         SLIDER DOTS
+    ====================================================== -->
+
+    <div class="sweet-slider-dots">
+
+        <button
+            class="sweet-slider-dot active"
+            type="button"
+            aria-label="Slide 1"
+        ></button>
+
+        <button
+            class="sweet-slider-dot"
+            type="button"
+            aria-label="Slide 2"
+        ></button>
+
+        <button
+            class="sweet-slider-dot"
+            type="button"
+            aria-label="Slide 3"
+        ></button>
+
+        <button
+            class="sweet-slider-dot"
+            type="button"
+            aria-label="Slide 4"
+        ></button>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     STACKLY BAKERY - POPULAR CAKES
+     ADD TO CART PRODUCT SECTION
+========================================================= -->
+
+<section class="stackly-popular-cakes">
+
+    <!-- =====================================================
+         SECTION HEADING
+    ====================================================== -->
+
+    <div
+        class="stackly-cake-section-heading"
+        data-aos="fade-up"
+        data-aos-duration="900"
+    >
+
+        <span>BEST SELLERS</span>
+
+        <h2>
+            Pick Your Favorite Cake
+        </h2>
+
+        <p>
+            Our most-loved cakes are ready to make
+            your next celebration extra delicious.
+        </p>
+
+    </div>
+
+
+    <!-- =====================================================
+         CAKE GRID
+    ====================================================== -->
+
+    <div class="stackly-popular-cake-grid">
+
+
+        <!-- =================================================
+             CAKE 01
+        ================================================== -->
+
+        <article
+            class="stackly-popular-cake-card sweet-product-card"
+            data-product-id="chocolate-truffle-cake"
+            data-product-name="Chocolate Truffle Cake"
+            data-product-price="899"
+            data-product-image="chocolate-truffle-cake.webp"
+            data-product-category="BEST SELLER"
+            data-aos="fade-up"
+            data-aos-delay="100"
+        >
+
+            <!-- IMAGE -->
+
+            <div class="stackly-popular-cake-image">
+
+                <img
+                    src="chocolate-truffle-cake.webp"
+                    alt="Chocolate Truffle Cake"
+                    loading="lazy"
+                >
+
+
+                <span class="stackly-cake-tag">
+                    BEST SELLER
+                </span>
+
+
+            </div>
+
+
+            <!-- CONTENT -->
+
+            <div class="stackly-popular-cake-content">
+
+
+                <!-- RATING -->
+
+                <div class="stackly-cake-rating">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>
+                        4.9
+                    </span>
+
+                </div>
+
+
+                <!-- NAME -->
+
+                <h3 class="sweet-product-name">
+                    Chocolate Truffle Cake
+                </h3>
+
+
+                <!-- DESCRIPTION -->
+
+                <p class="sweet-product-description">
+                    Rich chocolate sponge layered with
+                    smooth chocolate truffle cream.
+                </p>
+
+
+                <!-- ORDER -->
+
+                <div class="stackly-cake-order-row">
+
+                    <strong class="sweet-product-price">
+                        ₹899
+                    </strong>
+
+
+                    <button
+                        type="button"
+                        class="sweet-cart-button"
+                        data-add-to-cart
+                    >
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <span>
+                            Add to Cart
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             CAKE 02
+        ================================================== -->
+
+        <article
+            class="stackly-popular-cake-card sweet-product-card"
+            data-product-id="red-velvet-cake"
+            data-product-name="Red Velvet Cake"
+            data-product-price="949"
+            data-product-image="red-velvet-cake.webp"
+            data-product-category="CUSTOMER PICK"
+            data-aos="fade-up"
+            data-aos-delay="200"
+        >
+
+            <div class="stackly-popular-cake-image">
+
+                <img
+                    src="red-velvet-cake.webp"
+                    alt="Red Velvet Cake"
+                    loading="lazy"
+                >
+
+
+                <span class="stackly-cake-tag">
+                    CUSTOMER PICK
+                </span>
+ 
+ 
+            </div>
+
+
+            <div class="stackly-popular-cake-content">
+
+
+                <div class="stackly-cake-rating">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>
+                        4.8
+                    </span>
+
+                </div>
+
+
+                <h3 class="sweet-product-name">
+                    Red Velvet <br>Cake
+                </h3>
+
+
+                <p class="sweet-product-description">
+                    Soft red velvet sponge with creamy
+                    frosting and a delicate finish.
+                </p>
+
+
+                <div class="stackly-cake-order-row">
+
+                    <strong class="sweet-product-price">
+                        ₹949
+                    </strong>
+
+
+                    <button
+                        type="button"
+                        class="sweet-cart-button"
+                        data-add-to-cart
+                    >
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <span>
+                            Add to Cart
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             CAKE 03
+        ================================================== -->
+
+        <article
+            class="stackly-popular-cake-card sweet-product-card"
+            data-product-id="strawberry-cream-cake"
+            data-product-name="Strawberry Cream Cake"
+            data-product-price="799"
+            data-product-image="strawberry-cake.webp"
+            data-product-category="FRESH PICK"
+            data-aos="fade-up"
+            data-aos-delay="300"
+        >
+
+            <div class="stackly-popular-cake-image">
+
+                <img
+                    src="strawberry-cake.webp"
+                    alt="Strawberry Cream Cake"
+                    loading="lazy"
+                >
+
+
+                <span class="stackly-cake-tag">
+                    FRESH PICK
+                </span>
+ 
+
+            </div>
+
+
+            <div class="stackly-popular-cake-content">
+
+
+                <div class="stackly-cake-rating">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>
+                        4.9
+                    </span>
+
+                </div>
+
+
+                <h3 class="sweet-product-name">
+                    Strawberry Cream Cake
+                </h3>
+
+
+                <p class="sweet-product-description">
+                    Light vanilla sponge, fresh strawberry
+                    filling and soft whipped cream.
+                </p>
+
+
+                <div class="stackly-cake-order-row">
+
+                    <strong class="sweet-product-price">
+                        ₹799
+                    </strong>
+
+
+                    <button
+                        type="button"
+                        class="sweet-cart-button"
+                        data-add-to-cart
+                    >
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <span>
+                            Add to Cart
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             CAKE 04
+        ================================================== -->
+
+        <article
+            class="stackly-popular-cake-card sweet-product-card"
+            data-product-id="black-forest-cake"
+            data-product-name="Black Forest Cake"
+            data-product-price="749"
+            data-product-image="blackforest-cake.webp"
+            data-product-category="CLASSIC"
+            data-aos="fade-up"
+            data-aos-delay="400"
+        >
+
+            <div class="stackly-popular-cake-image">
+
+                <img
+                    src="blackforest-cake.webp"
+                    alt="Black Forest Cake"
+                    loading="lazy"
+                >
+
+
+                <span class="stackly-cake-tag">
+                    CLASSIC
+                </span>
+ 
+
+            </div>
+
+
+            <div class="stackly-popular-cake-content">
+
+
+                <div class="stackly-cake-rating">
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                    <span>
+                        4.9
+                    </span>
+
+                </div>
+
+
+                <h3 class="sweet-product-name">
+                    Black Forest <br>Cake
+                </h3>
+
+
+                <p class="sweet-product-description">
+                    Classic chocolate sponge with cherries,
+                    cream and rich chocolate shavings.
+                </p>
+
+
+                <div class="stackly-cake-order-row">
+
+                    <strong class="sweet-product-price">
+                        ₹749
+                    </strong>
+
+
+                    <button
+                        type="button"
+                        class="sweet-cart-button"
+                        data-add-to-cart
+                    >
+
+                        <i class="fa-solid fa-cart-shopping"></i>
+
+                        <span>
+                            Add to Cart
+                        </span>
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+
+    <!-- =====================================================
+         VIEW CART
+    ====================================================== -->
+
+    <div
+        class="stackly-view-all-cakes"
+        data-aos="fade-up"
+    >
+
+        <a href="cart.html">
+
+            View Cart
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+<section class="stackly-popular-cakes stackly-bakery-items">
+
+
+<!-- =====================================================
+     SECTION HEADING
+====================================================== -->
+
+<div
+    class="stackly-cake-section-heading"
+    data-aos="fade-up"
+    data-aos-duration="900"
+>
+
+    <span>FRESH BAKERY FAVORITES</span>
+
+    <h2>
+        Discover Our Bakery Items
+    </h2>
+
+    <p>
+        Freshly baked every day with quality ingredients,
+        delicious flavors and irresistible goodness.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     BAKERY ITEMS GRID
+====================================================== -->
+
+<div class="stackly-popular-cake-grid">
+
+
+    <!-- =================================================
+         BAKERY ITEM 01 - CROISSANT
+    ================================================== -->
+
+    <article
+        class="stackly-popular-cake-card sweet-product-card"
+        data-product-id="butter-croissant"
+        data-product-name="Butter Croissant"
+        data-product-price="99"
+        data-product-image="butter-croissant.webp"
+        data-product-category="BEST SELLER"
+        data-aos="fade-up"
+        data-aos-delay="100"
+    >
+
+        <div class="stackly-popular-cake-image">
+
+            <img
+                src="butter-croissant.webp"
+                alt="Fresh Butter Croissant"
+                loading="lazy"
+            >
+
+            <span class="stackly-cake-tag">
+                BEST SELLER
+            </span>
+
+        </div>
+
+
+        <div class="stackly-popular-cake-content">
+
+            <div class="stackly-cake-rating">
+
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+
+                <span>
+                    4.9
+                </span>
+
+            </div>
+
+
+            <h3 class="sweet-product-name">
+                Fresh Butter Croissant
+            </h3>
+
+
+            <p class="sweet-product-description">
+                Golden, flaky pastry baked with rich butter
+                for a light and deliciously crisp bite.
+            </p>
+
+
+            <div class="stackly-cake-order-row">
+
+                <strong class="sweet-product-price">
+                    ₹99
+                </strong>
+
+
+                <button
+                    type="button"
+                    class="sweet-cart-button"
+                    data-add-to-cart
+                >
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span>
+                        Add to Cart
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =================================================
+         BAKERY ITEM 02 - GARLIC BREAD
+    ================================================== -->
+
+    <article
+        class="stackly-popular-cake-card sweet-product-card"
+        data-product-id="garlic-bread"
+        data-product-name="Classic Garlic Bread"
+        data-product-price="129"
+        data-product-image="garlic-bread.webp"
+        data-product-category="CUSTOMER PICK"
+        data-aos="fade-up"
+        data-aos-delay="200"
+    >
+
+        <div class="stackly-popular-cake-image">
+
+            <img
+                src="garlic-bread.webp"
+                alt="Classic Garlic Bread"
+                loading="lazy"
+            >
+
+            <span class="stackly-cake-tag">
+                CUSTOMER PICK
+            </span>
+
+        </div>
+
+
+        <div class="stackly-popular-cake-content">
+
+            <div class="stackly-cake-rating">
+
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+
+                <span>
+                    4.8
+                </span>
+
+            </div>
+
+
+            <h3 class="sweet-product-name">
+                Classic Garlic Bread
+            </h3>
+
+
+            <p class="sweet-product-description">
+                Soft-baked bread brushed with garlic butter,
+                herbs and a perfectly golden crust.
+            </p>
+
+
+            <div class="stackly-cake-order-row">
+
+                <strong class="sweet-product-price">
+                    ₹129
+                </strong>
+
+
+                <button
+                    type="button"
+                    class="sweet-cart-button"
+                    data-add-to-cart
+                >
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span>
+                        Add to Cart
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =================================================
+         BAKERY ITEM 03 - CHOCOLATE MUFFIN
+    ================================================== -->
+
+    <article
+        class="stackly-popular-cake-card sweet-product-card"
+        data-product-id="chocolate-muffin"
+        data-product-name="Chocolate Muffin"
+        data-product-price="89"
+        data-product-image="chocolate-muffin.webp"
+        data-product-category="FRESH PICK"
+        data-aos="fade-up"
+        data-aos-delay="300"
+    >
+
+        <div class="stackly-popular-cake-image">
+
+            <img
+                src="chocolate-muffin.webp"
+                alt="Chocolate Muffin"
+                loading="lazy"
+            >
+
+            <span class="stackly-cake-tag">
+                FRESH PICK
+            </span>
+
+        </div>
+
+
+        <div class="stackly-popular-cake-content">
+
+            <div class="stackly-cake-rating">
+
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+
+                <span>
+                    4.9
+                </span>
+
+            </div>
+
+
+            <h3 class="sweet-product-name">
+                Chocolate Chip Muffin
+            </h3>
+
+
+            <p class="sweet-product-description">
+                Moist chocolate muffin packed with rich cocoa
+                flavor and delicious chocolate chips.
+            </p>
+
+
+            <div class="stackly-cake-order-row">
+
+                <strong class="sweet-product-price">
+                    ₹89
+                </strong>
+
+
+                <button
+                    type="button"
+                    class="sweet-cart-button"
+                    data-add-to-cart
+                >
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span>
+                        Add to Cart
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- =================================================
+         BAKERY ITEM 04 - CINNAMON ROLL
+    ================================================== -->
+
+    <article
+        class="stackly-popular-cake-card sweet-product-card"
+        data-product-id="cinnamon-roll"
+        data-product-name="Cinnamon Roll"
+        data-product-price="119"
+        data-product-image="cinnamon-roll.webp"
+        data-product-category="CLASSIC"
+        data-aos="fade-up"
+        data-aos-delay="400"
+    >
+
+        <div class="stackly-popular-cake-image">
+
+            <img
+                src="cinnamon-roll.webp"
+                alt="Fresh Cinnamon Roll"
+                loading="lazy"
+            >
+
+            <span class="stackly-cake-tag">
+                CLASSIC
+            </span>
+
+        </div>
+
+
+        <div class="stackly-popular-cake-content">
+
+            <div class="stackly-cake-rating">
+
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+
+                <span>
+                    4.8
+                </span>
+
+            </div>
+
+
+            <h3 class="sweet-product-name">
+                Cinnamon Swirl Roll
+            </h3>
+
+
+            <p class="sweet-product-description">
+                Soft rolled pastry filled with cinnamon sugar
+                and finished with a smooth sweet glaze.
+            </p>
+
+
+            <div class="stackly-cake-order-row">
+
+                <strong class="sweet-product-price">
+                    ₹119
+                </strong>
+
+
+                <button
+                    type="button"
+                    class="sweet-cart-button"
+                    data-add-to-cart
+                >
+
+                    <i class="fa-solid fa-cart-shopping"></i>
+
+                    <span>
+                        Add to Cart
+                    </span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </article>
+
+
+</div>
+
+
+<!-- =====================================================
+     VIEW CART
+====================================================== -->
+
+<div
+    class="stackly-view-all-cakes"
+    data-aos="fade-up"
+>
+
+    <a href="cart.html">
+
+        View Cart
+
+        <i class="fa-solid fa-arrow-right"></i>
+
+    </a>
+
+</div>
+
+
+</section>
+
+
+
+<!-- =========================================================
+     STACKLY BAKERY - PROFESSIONAL FOOTER
+========================================================= -->
+
+<footer class="stackly-footer">
+
+    <!-- =====================================================
+         FOOTER MAIN AREA
+    ====================================================== -->
+
+    <div class="stackly-footer-main">
+
+        <div class="stackly-footer-container">
+
+
+            <!-- =================================================
+                 BRAND COLUMN
+            ================================================== -->
+
+            <div class="stackly-footer-brand">
+
+                <a
+                    href="index.html"
+                    class="stackly-footer-logo"
+                    aria-label="Stackly Bakery Home"
+                >
+
+                    <img
+                        src="Stackly-logo-Blue.webp"
+                        alt="Stackly Bakery Logo"
+                    >
+
+                </a>
+
+
+                <p class="stackly-footer-description">
+
+                    Creating beautiful cakes, freshly baked breads,
+                    delicious pastries and sweet memories for every
+                    special occasion.
+
+                </p>
+
+
+                <!-- SOCIAL MEDIA -->
+
+                <div class="stackly-footer-social">
+
+                    <a
+                        href="404.html"
+                        aria-label="Facebook"
+                        title="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="404.html"
+                        aria-label="Instagram"
+                        title="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="404.html"
+                        aria-label="Twitter"
+                        title="Twitter"
+                    >
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a
+                        href="404.html"
+                        aria-label="YouTube"
+                        title="YouTube"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 QUICK LINKS
+            ================================================== -->
+
+            <div class="stackly-footer-column">
+
+                <h3 class="stackly-footer-title">
+                    Quick Links
+                </h3>
+
+                <ul class="stackly-footer-links">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="cakes.html">
+                            Our Cakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="services.html">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="blog.html">
+                            Bakery Blog
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- =================================================
+                 BAKERY SERVICES
+            ================================================== -->
+
+            <div class="stackly-footer-column">
+
+                <h3 class="stackly-footer-title">
+                    Our Specialties
+                </h3>
+
+                <ul class="stackly-footer-links">
+
+                    <li>
+                        <a href="404.html">
+                            Celebration Cakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Wedding Cakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Birthday Cakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Fresh Pastries
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Cupcakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Custom Cakes
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- =================================================
+                 CONTACT COLUMN
+            ================================================== -->
+
+            <div class="stackly-footer-column stackly-footer-contact">
+
+                <h3 class="stackly-footer-title">
+                    Get In Touch
+                </h3>
+
+
+                <!-- ADDRESS -->
+
+                <div class="stackly-footer-contact-item">
+
+                    <span class="stackly-footer-contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+
+                    <div>
+                        <strong>
+                            Visit Us
+                        </strong>
+
+                        <p>
+                            Fresh Street Bakery,
+                            Chennai, Tamil Nadu
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="stackly-footer-contact-item">
+
+                    <span class="stackly-footer-contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </span>
+
+                    <div>
+                        <strong>
+                            Call Us
+                        </strong>
+
+                        <p>
+                            +91 98765 43210
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="stackly-footer-contact-item">
+
+                    <span class="stackly-footer-contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+
+                    <div>
+                        <strong>
+                            Email Us
+                        </strong>
+
+                        <p>
+                            hello@stacklybakery.com
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NEWSLETTER STRIP
+    ====================================================== -->
+
+    <div class="stackly-footer-newsletter">
+
+        <div class="stackly-footer-newsletter-container">
+
+
+            <div class="stackly-footer-newsletter-content">
+
+                <span>
+                    SWEET NEWS
+                </span>
+
+                <h3>
+                    Get fresh bakery updates
+                    <br>
+                    delivered to your inbox.
+                </h3>
+
+            </div>
+
+
+            <form
+                class="stackly-footer-newsletter-form"
+                action="#"
+                method="post"
+            >
+
+                <label
+                    for="stacklyFooterEmail"
+                    class="stackly-footer-email-label"
+                >
+                    Email Address
+                </label>
+
+                <div class="stackly-footer-input-wrap">
+
+                    <input
+                        type="email"
+                        id="stacklyFooterEmail"
+                        name="email"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        aria-label="Subscribe to bakery newsletter"
+                    >
+                        SUBSCRIBE
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER BOTTOM
+    ====================================================== -->
+
+    <div class="stackly-footer-bottom">
+
+        <div class="stackly-footer-bottom-container">
+
+            <p>
+                © 2026
+                <strong>Stackly Bakery</strong>.
+                All Rights Reserved.
+            </p>
+
+
+            <div class="stackly-footer-bottom-links">
+
+                <a href="404.html">
+                    Privacy Policy
+                </a>
+
+                <a href="404.html">
+                    Terms &amp; Conditions
+                </a>
+
+                <a href="404.html">
+                    Cookie Policy
+                </a>
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="stackly-footer-back-top"
+                aria-label="Back to top"
+            >
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     AOS JAVASCRIPT
+========================================================== -->
+
+<script
+    src="https://unpkg.com/aos@2.3.4/dist/aos.js"
+></script>
+
+
+<!-- =========================================================
+     STACKLY MAIN JAVASCRIPT
+========================================================== -->
+
+<script
+    src="index.js"
+></script>
+
+
+</body>
+
+</html>

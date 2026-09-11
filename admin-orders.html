@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Stackly Bakery | Admin Dashboard</title>
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     ADMIN DASHBOARD WRAPPER
+========================================================= -->
+
+<div class="bakery-admin-dashboard">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="bakery-admin-overlay"
+        id="bakeryAdminOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="bakery-admin-sidebar"
+        id="bakeryAdminSidebar"
+    >
+
+        <!-- Sidebar Header -->
+        <div class="bakery-admin-sidebar-header">
+
+            <a
+                href="admin.html"
+                class="bakery-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+            <button
+                type="button"
+                class="bakery-admin-close"
+                id="bakeryAdminClose"
+                aria-label="Close menu"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Sidebar Navigation -->
+        <nav class="bakery-admin-navigation">
+
+            <p class="bakery-admin-nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+            </a>
+
+
+            <a
+                href="admin-orders.html"
+                class="bakery-admin-nav-link active"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+                <small class="bakery-admin-nav-count">
+                    24
+                </small>
+            </a>
+
+
+            <a
+                href="admin-cakes.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </span>
+
+                <span>
+                    Cakes
+                </span>
+            </a>
+
+
+            <a
+                href="admin-customers.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+
+                <span>
+                    Customers
+                </span>
+            </a>
+
+
+            <a
+                href="admin-delivery.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-truck"></i>
+                </span>
+
+                <span>
+                    Delivery
+                </span>
+            </a>
+
+
+            <a
+                href="admin-reviews.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-star"></i>
+                </span>
+
+                <span>
+                    Reviews
+                </span>
+            </a>
+
+
+            <p class="bakery-admin-nav-title bakery-admin-nav-title-space">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-coupons.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </span>
+
+                <span>
+                    Coupons
+                </span>
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+
+                <span>
+                    Settings
+                </span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+        <div class="bakery-admin-sidebar-bottom">
+
+             
+
+            <button
+                type="button"
+                class="bakery-admin-logout"
+                id="bakeryAdminLogout"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="bakery-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="bakery-admin-topbar">
+
+
+            <!-- Left Side -->
+            <div class="bakery-admin-topbar-left">
+
+                <!-- Mobile Hamburger -->
+                <button
+                    type="button"
+                    class="bakery-admin-menu-toggle"
+                    id="bakeryAdminMenuToggle"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div class="bakery-admin-page-heading">
+
+                    <span class="bakery-admin-heading-label">
+                        ADMIN PANEL
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Side -->
+            <div class="bakery-admin-topbar-right">
+
+
+                <!-- Notification -->
+                <a
+                    href="404-admin.html"
+                    class="bakery-admin-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-admin-notification-dot">
+                        4
+                    </span>
+
+                </a>
+
+
+                <!-- User -->
+                <div class="bakery-admin-user">
+
+                    <div class="bakery-admin-user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+
+                    <div class="bakery-admin-user-details">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <!-- EMAIL WILL BE DISPLAYED HERE -->
+                        <span id="bakeryAdminEmail">
+                            admin@stackly.com
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- =========================================================
+     ORDERS PAGE CONTENT
+========================================================= -->
+
+<section class="bakery-orders-page-content">
+
+
+    <!-- =====================================================
+         PAGE INTRO
+    ====================================================== -->
+
+    <div class="bakery-orders-page-intro">
+
+        <div>
+
+            <span class="bakery-orders-eyebrow">
+                ORDER MANAGEMENT
+            </span>
+
+            <h2>
+                Manage Bakery Orders
+            </h2>
+
+            <p>
+                Track customer purchases, payment status,
+                preparation progress, and deliveries from one place.
+            </p>
+
+        </div>
+
+
+        <a
+            href="404-admin.html"
+            class="bakery-orders-add-button"
+        >
+
+            <i class="fa-solid fa-plus"></i>
+
+            Create Order
+
+        </a>
+
+    </div>
+
+
+    <!-- =====================================================
+         ORDER TABLE
+    ====================================================== -->
+
+    <section class="bakery-orders-management-card">
+
+
+        <div class="bakery-orders-card-heading">
+
+
+            <div>
+
+                <span>
+                    CUSTOMER PURCHASES
+                </span>
+
+                <h3>
+                    Latest Orders
+                </h3>
+
+            </div>
+
+
+            <span class="bakery-orders-live-indicator">
+
+                <i class="fa-solid fa-circle"></i>
+
+                Live Updates
+
+            </span>
+
+
+        </div>
+
+
+
+        <div class="bakery-orders-table-scroll">
+
+            <table class="bakery-orders-data-table">
+
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Order
+                        </th>
+
+                        <th>
+                            Customer
+                        </th>
+
+                        <th>
+                            Items
+                        </th>
+
+                        <th>
+                            Total
+                        </th>
+
+                        <th>
+                            Payment
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                        <th>
+                            Delivery
+                        </th>
+
+                        <th>
+                            Action
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+
+                <tbody>
+
+
+                    <!-- ORDER 01 -->
+
+                    <tr>
+
+                        <td>
+
+                            <strong>
+                                #BK10284
+                            </strong>
+
+                            <small>
+                                10 Sep, 10:42 AM
+                            </small>
+
+                        </td>
+
+
+                        <td>
+
+                            <div class="bakery-orders-customer-cell">
+
+                                <span class="bakery-orders-customer-avatar">
+                                    AS
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Ananya Sharma
+                                    </strong>
+
+                                    <small>
+                                        Chennai
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Chocolate Truffle
+                        </td>
+
+
+                        <td>
+                            <strong>
+                                ₹1,250
+                            </strong>
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-orders-payment-paid">
+                                Paid
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-orders-status orders-delivered">
+                                Delivered
+                            </span>
+
+                        </td>
+
+
+                        <td>
+                            Completed
+                        </td>
+
+
+                        <td>
+
+                            <a
+                                href="404-admin.html"
+                                class="bakery-orders-action-button"
+                                aria-label="View order BK10284"
+                            >
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <!-- ORDER 02 -->
+
+                    <tr>
+
+                        <td>
+
+                            <strong>
+                                #BK10283
+                            </strong>
+
+                            <small>
+                                10 Sep, 09:25 AM
+                            </small>
+
+                        </td>
+
+
+                        <td>
+
+                            <div class="bakery-orders-customer-cell">
+
+                                <span class="bakery-orders-customer-avatar">
+                                    RK
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Rahul Kumar
+                                    </strong>
+
+                                    <small>
+                                        Coimbatore
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Red Velvet Cake
+                        </td>
+
+
+                        <td>
+                            <strong>
+                                ₹1,850
+                            </strong>
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-orders-payment-paid">
+                                Paid
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-orders-status orders-preparing">
+                                Preparing
+                            </span>
+
+                        </td>
+
+
+                        <td>
+                            Tomorrow
+                        </td>
+
+
+                        <td>
+
+                            <a
+                                href="404-admin.html"
+                                class="bakery-orders-action-button"
+                                aria-label="View order BK10283"
+                            >
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <!-- ORDER 03 -->
+
+                    <tr>
+
+                        <td>
+
+                            <strong>
+                                #BK10282
+                            </strong>
+
+                            <small>
+                                09 Sep, 05:18 PM
+                            </small>
+
+                        </td>
+
+
+                        <td>
+
+                            <div class="bakery-orders-customer-cell">
+
+                                <span class="bakery-orders-customer-avatar">
+                                    SP
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Sneha Priya
+                                    </strong>
+
+                                    <small>
+                                        Madurai
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Black Forest
+                        </td>
+
+
+                        <td>
+                            <strong>
+                                ₹1,100
+                            </strong>
+
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-orders-payment-pending">
+                                Pending
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-orders-status orders-pending">
+                                Pending
+                            </span>
+
+                        </td>
+
+
+                        <td>
+                            12 Sep
+                        </td>
+
+
+                        <td>
+
+                            <a
+                                href="404-admin.html"
+                                class="bakery-orders-action-button"
+                                aria-label="View order BK10282"
+                            >
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <!-- ORDER 04 -->
+
+                    <tr>
+
+                        <td>
+
+                            <strong>
+                                #BK10281
+                            </strong>
+
+                            <small>
+                                09 Sep, 02:40 PM
+                            </small>
+
+                        </td>
+
+
+                        <td>
+
+                            <div class="bakery-orders-customer-cell">
+
+                                <span class="bakery-orders-customer-avatar">
+                                    VK
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Vikram Raj
+                                    </strong>
+
+                                    <small>
+                                        Salem
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Strawberry Cake
+                        </td>
+
+
+                        <td>
+
+                            <strong>
+                                ₹1,450
+                            </strong>
+
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-orders-payment-paid">
+                                Paid
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-orders-status orders-delivery">
+                                Out for Delivery
+                            </span>
+
+                        </td>
+
+
+                        <td>
+                            Today
+                        </td>
+
+
+                        <td>
+
+                            <a
+                                href="404-admin.html"
+                                class="bakery-orders-action-button"
+                                aria-label="View order BK10281"
+                            >
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <!-- ORDER 05 -->
+
+                    <tr>
+
+                        <td>
+
+                            <strong>
+                                #BK10280
+                            </strong>
+
+                            <small>
+                                09 Sep, 11:15 AM
+                            </small>
+
+                        </td>
+
+
+                        <td>
+
+                            <div class="bakery-orders-customer-cell">
+
+                                <span class="bakery-orders-customer-avatar">
+                                    MK
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Meena Krishnan
+                                    </strong>
+
+                                    <small>
+                                        Trichy
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Vanilla Celebration Cake
+                        </td>
+
+
+                        <td>
+
+                            <strong>
+                                ₹1,650
+                            </strong>
+
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-orders-payment-paid">
+                                Paid
+                            </span>
+
+                        </td>
+
+
+                        <td>
+
+                            <span class="bakery-orders-status orders-preparing">
+                                Preparing
+                            </span>
+
+                        </td>
+
+
+                        <td>
+                            11 Sep
+                        </td>
+
+
+                        <td>
+
+                            <a
+                                href="404-admin.html"
+                                class="bakery-orders-action-button"
+                                aria-label="View order BK10280"
+                            >
+
+                                <i class="fa-solid fa-eye"></i>
+
+                            </a>
+
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+
+            </table>
+
+        </div>
+
+
+        <!-- TABLE FOOTER -->
+
+        <div class="bakery-orders-table-footer">
+
+            <span>
+                Showing 1–5 of 248 orders
+            </span>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ORDER INSIGHTS
+    ====================================================== -->
+
+    <div class="bakery-orders-insights-grid">
+
+
+        <!-- TODAY'S DELIVERY -->
+
+        <section class="bakery-orders-insight-card">
+
+
+            <div class="bakery-orders-insight-heading">
+
+                <div>
+
+                    <span>
+                        DELIVERY OVERVIEW
+                    </span>
+
+                    <h3>
+                        Today's Delivery
+                    </h3>
+
+                </div>
+
+                <i class="fa-solid fa-truck-fast"></i>
+
+            </div>
+
+
+
+            <div class="bakery-orders-delivery-progress">
+
+
+                <div class="bakery-orders-progress-top">
+
+                    <strong>
+                        76%
+                    </strong>
+
+                    <span>
+                        19 of 25 orders
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-orders-progress-track">
+
+                    <span
+                        style="width: 76%;"
+                    ></span>
+
+                </div>
+
+
+                <p>
+                    Most deliveries are on schedule today.
+                </p>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- SALES INSIGHT -->
+
+        <section class="bakery-orders-insight-card">
+
+
+            <div class="bakery-orders-insight-heading">
+
+                <div>
+
+                    <span>
+                        SALES INSIGHT
+                    </span>
+
+                    <h3>
+                        Today's Revenue
+                    </h3>
+
+                </div>
+
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+
+            </div>
+
+
+
+            <div class="bakery-orders-revenue">
+
+                <strong>
+                    ₹42,850
+                </strong>
+
+                <span>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    14.8%
+                </span>
+
+            </div>
+
+
+            <p>
+                Revenue is higher compared with yesterday.
+            </p>
+
+
+        </section>
+
+
+    </div>
+
+
+</section>
+    
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="admin.js"></script>
+
+</body>
+</html>

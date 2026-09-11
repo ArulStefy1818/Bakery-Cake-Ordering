@@ -1,0 +1,817 @@
+/* =====================================================
+   ROOT VARIABLES
+====================================================== */
+
+:root {
+
+    --stackly-primary: #a96f43;
+    --stackly-primary-dark: #75452c;
+    --stackly-secondary: #d8a56f;
+
+    --stackly-dark: #21140f;
+    --stackly-dark-2: #2d1b14;
+
+    --stackly-cream: #fbf5ee;
+    --stackly-cream-dark: #f1e3d3;
+
+    --stackly-white: #ffffff;
+
+    --stackly-text: #34221a;
+    --stackly-muted: #78665b;
+
+    --stackly-border: rgba(102, 67, 43, 0.12);
+
+    --stackly-heading:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    --stackly-body:
+        "DM Sans",
+        Arial,
+        sans-serif;
+
+    --stackly-transition:
+        all 0.35s ease;
+}
+
+
+/* =====================================================
+   RESET
+====================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    font-family: var(--stackly-body);
+
+    background: var(--stackly-cream);
+    color: var(--stackly-dark);
+
+    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   404 PAGE WRAPPER
+====================================================== */
+
+.stackly-404-page {
+
+    position: relative;
+
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px 20px;
+
+    overflow: hidden;
+}
+
+
+/* =====================================================
+   BACKGROUND DECORATIONS
+====================================================== */
+
+.stackly-404-bg-circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+/* TOP LEFT */
+
+.stackly-404-circle-one {
+
+    width: 420px;
+    height: 420px;
+
+    top: -190px;
+    left: -190px;
+
+    background:
+        rgba(169, 111, 67, 0.08);
+}
+
+
+/* BOTTOM RIGHT */
+
+.stackly-404-circle-two {
+
+    width: 500px;
+    height: 500px;
+
+    right: -250px;
+    bottom: -250px;
+
+    background:
+        rgba(216, 165, 111, 0.10);
+}
+
+
+/* OUTLINE CIRCLE */
+
+.stackly-404-circle-three {
+
+    width: 170px;
+    height: 170px;
+
+    right: 11%;
+    top: 11%;
+
+    border:
+        2px solid
+        rgba(169, 111, 67, 0.13);
+}
+
+
+/* =====================================================
+   FLOATING BAKERY ICONS
+====================================================== */
+
+.stackly-404-icon {
+
+    position: absolute;
+
+    color:
+        rgba(169, 111, 67, 0.13);
+
+    font-size: 40px;
+
+    z-index: 0;
+
+    animation:
+        stacklyFloat 5s ease-in-out infinite;
+}
+
+
+/* ICON ONE */
+
+.stackly-404-icon-one {
+
+    top: 20%;
+    left: 9%;
+}
+
+
+/* ICON TWO */
+
+.stackly-404-icon-two {
+
+    bottom: 20%;
+    left: 15%;
+
+    font-size: 32px;
+
+    animation-delay: 1s;
+}
+
+
+/* ICON THREE */
+
+.stackly-404-icon-three {
+
+    top: 25%;
+    right: 10%;
+
+    font-size: 35px;
+
+    animation-delay: 2s;
+}
+
+
+/* ICON FOUR */
+
+.stackly-404-icon-four {
+
+    bottom: 16%;
+    right: 13%;
+
+    font-size: 45px;
+
+    animation-delay: 1.5s;
+}
+
+
+/* =====================================================
+   FLOAT ANIMATION
+====================================================== */
+
+@keyframes stacklyFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-13px)
+            rotate(5deg);
+    }
+}
+
+
+/* =====================================================
+   MAIN CONTENT
+====================================================== */
+
+.stackly-404-content {
+
+    position: relative;
+
+    z-index: 5;
+
+    width:
+        min(720px, 100%);
+
+    text-align: center;
+}
+
+
+/* =====================================================
+   404 NUMBER
+====================================================== */
+
+.stackly-404-number {
+
+    position: relative;
+
+    display: inline-block;
+
+    font-family:
+        var(--stackly-heading);
+
+    font-size:
+        clamp(110px, 20vw, 230px);
+
+    font-weight: 800;
+
+    line-height: 0.85;
+
+    letter-spacing: -8px;
+
+    color:
+        var(--stackly-primary);
+
+    text-shadow:
+
+        0 10px 0
+        rgba(117, 69, 44, 0.08),
+
+        0 18px 35px
+        rgba(33, 20, 15, 0.08);
+
+    animation:
+        stackly404Pulse 3s ease-in-out infinite;
+}
+
+
+/* =====================================================
+   404 PULSE
+====================================================== */
+
+@keyframes stackly404Pulse {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+    }
+
+    50% {
+
+        transform:
+            translateY(-6px);
+    }
+}
+
+
+/* =====================================================
+   DECORATIVE DOT
+====================================================== */
+
+.stackly-404-dot {
+
+    position: absolute;
+
+    width: 16px;
+    height: 16px;
+
+    border-radius: 50%;
+
+    background:
+        var(--stackly-primary-dark);
+
+    top: 18%;
+    right: 8%;
+
+    box-shadow:
+
+        0 0 0 7px
+        rgba(169, 111, 67, 0.12),
+
+        0 0 0 14px
+        rgba(169, 111, 67, 0.06);
+}
+
+
+/* =====================================================
+   TITLE
+====================================================== */
+
+.stackly-404-title {
+
+    margin-top: 28px;
+
+    font-family:
+        var(--stackly-heading);
+
+    font-size:
+        clamp(27px, 4vw, 44px);
+
+    font-weight: 700;
+
+    line-height: 1.15;
+
+    color:
+        var(--stackly-dark);
+}
+
+
+.stackly-404-title span {
+
+    color:
+        var(--stackly-primary);
+}
+
+
+/* =====================================================
+   DESCRIPTION
+====================================================== */
+
+.stackly-404-description {
+
+    max-width: 560px;
+
+    margin:
+        14px auto 0;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
+    color:
+        var(--stackly-muted);
+}
+
+
+/* =====================================================
+   BUTTON AREA
+====================================================== */
+
+.stackly-404-buttons {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 26px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =====================================================
+   COMMON BUTTON
+====================================================== */
+
+.stackly-404-button {
+
+    min-width: 155px;
+    min-height: 48px;
+
+    padding:
+        12px 20px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    border-radius: 5px;
+
+    text-decoration: none;
+
+    font-family:
+        var(--stackly-body);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    transition:
+        var(--stackly-transition);
+}
+
+
+/* =====================================================
+   GO HOME
+====================================================== */
+
+.stackly-404-home {
+
+    color:
+        var(--stackly-white);
+
+    background:
+        var(--stackly-primary);
+
+    border:
+        1px solid
+        var(--stackly-primary);
+
+    box-shadow:
+        0 8px 20px
+        rgba(169, 111, 67, 0.22);
+}
+
+
+.stackly-404-home:hover {
+
+    color:
+        var(--stackly-white);
+
+    background:
+        var(--stackly-primary-dark);
+
+    border-color:
+        var(--stackly-primary-dark);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 12px 25px
+        rgba(117, 69, 44, 0.25);
+}
+
+
+/* =====================================================
+   GO BACK
+====================================================== */
+
+.stackly-404-back {
+
+    color:
+        var(--stackly-primary-dark);
+
+    background:
+        transparent;
+
+    border:
+        1px solid
+        var(--stackly-border);
+}
+
+
+.stackly-404-back:hover {
+
+    color:
+        var(--stackly-white);
+
+    background:
+        var(--stackly-primary);
+
+    border-color:
+        var(--stackly-primary);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 8px 20px
+        rgba(169, 111, 67, 0.18);
+}
+
+
+/* =====================================================
+   SMALL BAKERY MESSAGE
+====================================================== */
+
+.stackly-404-message {
+
+    margin-top: 28px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding:
+        8px 14px;
+
+    border:
+        1px solid
+        var(--stackly-border);
+
+    border-radius: 50px;
+
+    background:
+        rgba(255, 255, 255, 0.65);
+
+    color:
+        var(--stackly-muted);
+
+    font-size: 12px;
+}
+
+
+.stackly-404-message i {
+
+    color:
+        var(--stackly-primary);
+}
+
+
+/* =====================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 600px) {
+
+    .stackly-404-page {
+
+        padding:
+            25px 18px;
+    }
+
+
+    .stackly-404-number {
+
+        font-size:
+            clamp(95px, 32vw, 165px);
+
+        letter-spacing:
+            -5px;
+    }
+
+
+    .stackly-404-title {
+
+        margin-top: 24px;
+
+        font-size: 29px;
+    }
+
+
+    .stackly-404-description {
+
+        max-width: 450px;
+
+        margin-top: 12px;
+
+        font-size: 14px;
+
+        line-height: 1.65;
+    }
+
+
+    .stackly-404-buttons {
+
+        flex-direction: column;
+
+        width: 100%;
+
+        margin-top: 23px;
+    }
+
+
+    .stackly-404-button {
+
+        width:
+            min(100%, 280px);
+
+        min-height: 46px;
+
+        padding:
+            11px 18px;
+
+        font-size: 13px;
+    }
+
+
+    .stackly-404-message {
+
+        margin-top: 25px;
+
+        font-size: 11px;
+
+        padding:
+            7px 13px;
+    }
+
+
+    .stackly-404-icon {
+
+        font-size: 32px;
+    }
+
+
+    .stackly-404-icon-one {
+
+        left: 4%;
+    }
+
+
+    .stackly-404-icon-two {
+
+        font-size: 27px;
+    }
+
+
+    .stackly-404-icon-three {
+
+        right: 4%;
+
+        font-size: 29px;
+    }
+
+
+    .stackly-404-icon-four {
+
+        font-size: 35px;
+    }
+
+
+    .stackly-404-circle-three {
+
+        display: none;
+    }
+
+
+    .stackly-404-dot {
+
+        width: 12px;
+        height: 12px;
+
+        right: 7%;
+
+        box-shadow:
+
+            0 0 0 5px
+            rgba(169, 111, 67, 0.11),
+
+            0 0 0 10px
+            rgba(169, 111, 67, 0.05);
+    }
+}
+
+
+/* =====================================================
+   SMALL PHONES
+====================================================== */
+
+@media (max-width: 375px) {
+
+    .stackly-404-page {
+
+        padding:
+            22px 15px;
+    }
+
+
+    .stackly-404-number {
+
+        font-size: 95px;
+
+        letter-spacing:
+            -4px;
+    }
+
+
+    .stackly-404-title {
+
+        font-size: 26px;
+
+        margin-top: 22px;
+    }
+
+
+    .stackly-404-description {
+
+        font-size: 13px;
+
+        line-height: 1.6;
+    }
+
+
+    .stackly-404-buttons {
+
+        margin-top: 20px;
+    }
+
+
+    .stackly-404-button {
+
+        min-height: 44px;
+
+        font-size: 12px;
+    }
+
+
+    .stackly-404-message {
+
+        font-size: 10px;
+
+        margin-top: 22px;
+    }
+}
+
+
+/* =====================================================
+   VERY SHORT SCREENS
+====================================================== */
+
+@media (max-height: 650px) and (min-width: 601px) {
+
+    .stackly-404-page {
+
+        padding:
+            20px;
+    }
+
+
+    .stackly-404-number {
+
+        font-size: 150px;
+    }
+
+
+    .stackly-404-title {
+
+        margin-top: 18px;
+
+        font-size: 34px;
+    }
+
+
+    .stackly-404-description {
+
+        margin-top: 10px;
+
+        font-size: 14px;
+    }
+
+
+    .stackly-404-buttons {
+
+        margin-top: 18px;
+    }
+
+
+    .stackly-404-message {
+
+        margin-top: 18px;
+    }
+}

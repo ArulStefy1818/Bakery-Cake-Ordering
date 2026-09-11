@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Stackly Bakery | Admin Dashboard</title>
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     ADMIN DASHBOARD WRAPPER
+========================================================= -->
+
+<div class="bakery-admin-dashboard">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="bakery-admin-overlay"
+        id="bakeryAdminOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="bakery-admin-sidebar"
+        id="bakeryAdminSidebar"
+    >
+
+        <!-- Sidebar Header -->
+        <div class="bakery-admin-sidebar-header">
+
+            <a
+                href="admin.html"
+                class="bakery-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+            <button
+                type="button"
+                class="bakery-admin-close"
+                id="bakeryAdminClose"
+                aria-label="Close menu"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Sidebar Navigation -->
+        <nav class="bakery-admin-navigation">
+
+            <p class="bakery-admin-nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+            </a>
+
+
+            <a
+                href="admin-orders.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+                <small class="bakery-admin-nav-count">
+                    24
+                </small>
+            </a>
+
+
+            <a
+                href="admin-cakes.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </span>
+
+                <span>
+                    Cakes
+                </span>
+            </a>
+
+
+            <a
+                href="admin-customers.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+
+                <span>
+                    Customers
+                </span>
+            </a>
+
+
+            <a
+                href="admin-delivery.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-truck"></i>
+                </span>
+
+                <span>
+                    Delivery
+                </span>
+            </a>
+
+
+            <a
+                href="admin-reviews.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-star"></i>
+                </span>
+
+                <span>
+                    Reviews
+                </span>
+            </a>
+
+
+            <p class="bakery-admin-nav-title bakery-admin-nav-title-space">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-coupons.html"
+                class="bakery-admin-nav-link active"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </span>
+
+                <span>
+                    Coupons
+                </span>
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+
+                <span>
+                    Settings
+                </span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+        <div class="bakery-admin-sidebar-bottom">
+
+             
+
+            <button
+                type="button"
+                class="bakery-admin-logout"
+                id="bakeryAdminLogout"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="bakery-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="bakery-admin-topbar">
+
+
+            <!-- Left Side -->
+            <div class="bakery-admin-topbar-left">
+
+                <!-- Mobile Hamburger -->
+                <button
+                    type="button"
+                    class="bakery-admin-menu-toggle"
+                    id="bakeryAdminMenuToggle"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div class="bakery-admin-page-heading">
+
+                    <span class="bakery-admin-heading-label">
+                        ADMIN PANEL
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Side -->
+            <div class="bakery-admin-topbar-right">
+
+
+                <!-- Notification -->
+                <a
+                    href="404-admin.html"
+                    class="bakery-admin-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-admin-notification-dot">
+                        4
+                    </span>
+
+                </a>
+
+
+                <!-- User -->
+                <div class="bakery-admin-user">
+
+                    <div class="bakery-admin-user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+
+                    <div class="bakery-admin-user-details">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <!-- EMAIL WILL BE DISPLAYED HERE -->
+                        <span id="bakeryAdminEmail">
+                            admin@stackly.com
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- =========================================================
+     COUPONS PAGE CONTENT
+========================================================= -->
+
+<div class="bakery-coupons-page-content">
+
+
+    <!-- =====================================================
+         COUPONS HERO / INTRO
+    ====================================================== -->
+
+    <section class="bakery-coupons-intro">
+
+        <div class="bakery-coupons-intro-content">
+
+            <span class="bakery-coupons-eyebrow">
+                <i class="fa-solid fa-ticket"></i>
+                PROMOTIONS & OFFERS
+            </span>
+
+            <h2>
+                Manage Your
+                <span>Bakery Coupons</span>
+            </h2>
+
+            <p>
+                Create, manage and monitor promotional offers that
+                help increase orders and reward your customers.
+            </p>
+
+        </div>
+
+
+        <div class="bakery-coupons-intro-action">
+
+            <a
+                href="404-admin.html"
+                class="bakery-coupons-create-button"
+            >
+                <i class="fa-solid fa-plus"></i>
+                Create New Coupon
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+         ACTIVE COUPONS
+    ====================================================== -->
+
+    <section class="bakery-coupons-list-section">
+
+
+        <div class="bakery-coupons-section-heading">
+
+            <div>
+
+                <span class="bakery-coupons-section-label">
+                    COUPON MANAGEMENT
+                </span>
+
+                <h3>
+                    Active Coupons
+                </h3>
+
+            </div>
+
+            <a
+                href="404-admin.html"
+                class="bakery-coupons-view-all"
+            >
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+
+        <div class="bakery-coupons-grid">
+
+
+            <!-- =================================================
+                 COUPON CARD 01
+            ================================================== -->
+
+            <article class="bakery-coupon-card">
+
+                <div class="bakery-coupon-card-top">
+
+                    <div class="bakery-coupon-ticket">
+
+                        <span>
+                            CAKE20
+                        </span>
+
+                        <small>
+                            20% OFF
+                        </small>
+
+                    </div>
+
+
+                    <span class="bakery-coupon-status active">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-coupon-card-body">
+
+                    <h4>
+                        Sweet Celebration
+                    </h4>
+
+                    <p>
+                        Get 20% off on celebration cakes
+                        above ₹1,500.
+                    </p>
+
+
+                    <div class="bakery-coupon-details">
+
+                        <div>
+
+                            <span>
+                                Usage
+                            </span>
+
+                            <strong>
+                                284 / 500
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Expires
+                            </span>
+
+                            <strong>
+                                Sep 30, 2026
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-coupon-progress">
+
+                        <div class="bakery-coupon-progress-track">
+
+                            <span style="width: 57%;"></span>
+
+                        </div>
+
+                        <small>
+                            57% used
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bakery-coupon-card-footer">
+
+                    <a
+                        href="404-admin.html"
+                        class="bakery-coupon-edit"
+                    >
+                        <i class="fa-solid fa-pen"></i>
+                        Edit
+                    </a>
+
+                    <a
+                        href="404-admin.html"
+                        class="bakery-coupon-more"
+                    >
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 COUPON CARD 02
+            ================================================== -->
+
+            <article class="bakery-coupon-card">
+
+                <div class="bakery-coupon-card-top">
+
+                    <div class="bakery-coupon-ticket">
+
+                        <span>
+                            WELCOME10
+                        </span>
+
+                        <small>
+                            ₹100 OFF
+                        </small>
+
+                    </div>
+
+
+                    <span class="bakery-coupon-status active">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-coupon-card-body">
+
+                    <h4>
+                        Welcome Sweet Deal
+                    </h4>
+
+                    <p>
+                        Flat ₹100 off for new customers
+                        on their first order.
+                    </p>
+
+
+                    <div class="bakery-coupon-details">
+
+                        <div>
+
+                            <span>
+                                Usage
+                            </span>
+
+                            <strong>
+                                438 / 1,000
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Expires
+                            </span>
+
+                            <strong>
+                                Oct 15, 2026
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-coupon-progress">
+
+                        <div class="bakery-coupon-progress-track">
+
+                            <span style="width: 44%;"></span>
+
+                        </div>
+
+                        <small>
+                            44% used
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bakery-coupon-card-footer">
+
+                    <a
+                        href="404-admin.html"
+                        class="bakery-coupon-edit"
+                    >
+                        <i class="fa-solid fa-pen"></i>
+                        Edit
+                    </a>
+
+                    <a
+                        href="404-admin.html"
+                        class="bakery-coupon-more"
+                    >
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 COUPON CARD 03
+            ================================================== -->
+
+            <article class="bakery-coupon-card">
+
+                <div class="bakery-coupon-card-top">
+
+                    <div class="bakery-coupon-ticket">
+
+                        <span>
+                            FESTIVE25
+                        </span>
+
+                        <small>
+                            25% OFF
+                        </small>
+
+                    </div>
+
+
+                    <span class="bakery-coupon-status active">
+                        Active
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-coupon-card-body">
+
+                    <h4>
+                        Festive Treat
+                    </h4>
+
+                    <p>
+                        Enjoy 25% off selected cakes
+                        during our festive celebration.
+                    </p>
+
+
+                    <div class="bakery-coupon-details">
+
+                        <div>
+
+                            <span>
+                                Usage
+                            </span>
+
+                            <strong>
+                                126 / 300
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Expires
+                            </span>
+
+                            <strong>
+                                Sep 25, 2026
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-coupon-progress">
+
+                        <div class="bakery-coupon-progress-track">
+
+                            <span style="width: 42%;"></span>
+
+                        </div>
+
+                        <small>
+                            42% used
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bakery-coupon-card-footer">
+
+                    <a
+                        href="404-admin.html"
+                        class="bakery-coupon-edit"
+                    >
+                        <i class="fa-solid fa-pen"></i>
+                        Edit
+                    </a>
+
+                    <a
+                        href="404-admin.html"
+                        class="bakery-coupon-more"
+                    >
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         COUPON TABLE
+    ====================================================== -->
+
+    <section class="bakery-coupons-table-section">
+
+
+        <div class="bakery-coupons-section-heading">
+
+            <div>
+
+                <span class="bakery-coupons-section-label">
+                    ALL PROMOTIONS
+                </span>
+
+                <h3>
+                    Coupon History
+                </h3>
+
+            </div>
+
+            <span class="bakery-coupons-total-count">
+                48 Coupons
+            </span>
+
+        </div>
+
+
+
+        <div class="bakery-coupons-table-card">
+
+            <div class="bakery-coupons-table-wrapper">
+
+                <table class="bakery-coupons-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Coupon
+                            </th>
+
+                            <th>
+                                Discount
+                            </th>
+
+                            <th>
+                                Usage
+                            </th>
+
+                            <th>
+                                Valid Until
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <!-- ROW 01 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="bakery-coupon-table-name">
+
+                                    <div class="bakery-coupon-table-icon">
+                                        <i class="fa-solid fa-ticket"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            CAKE20
+                                        </strong>
+
+                                        <span>
+                                            Sweet Celebration
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+
+                                <strong>
+                                    20%
+                                </strong>
+
+                                <span class="bakery-coupon-subtext">
+                                    Percentage
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                284 / 500
+                            </td>
+
+
+                            <td>
+                                Sep 30, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="bakery-coupon-table-status active">
+                                    Active
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="404-admin.html"
+                                    class="bakery-coupon-table-action"
+                                    aria-label="Edit CAKE20"
+                                >
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- ROW 02 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="bakery-coupon-table-name">
+
+                                    <div class="bakery-coupon-table-icon">
+                                        <i class="fa-solid fa-ticket"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            WELCOME10
+                                        </strong>
+
+                                        <span>
+                                            Welcome Sweet Deal
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+
+                                <strong>
+                                    ₹100
+                                </strong>
+
+                                <span class="bakery-coupon-subtext">
+                                    Flat Discount
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                438 / 1,000
+                            </td>
+
+
+                            <td>
+                                Oct 15, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="bakery-coupon-table-status active">
+                                    Active
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="404-admin.html"
+                                    class="bakery-coupon-table-action"
+                                    aria-label="Edit WELCOME10"
+                                >
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- ROW 03 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="bakery-coupon-table-name">
+
+                                    <div class="bakery-coupon-table-icon">
+                                        <i class="fa-solid fa-ticket"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            FESTIVE25
+                                        </strong>
+
+                                        <span>
+                                            Festive Treat
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+
+                                <strong>
+                                    25%
+                                </strong>
+
+                                <span class="bakery-coupon-subtext">
+                                    Percentage
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                126 / 300
+                            </td>
+
+
+                            <td>
+                                Sep 25, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="bakery-coupon-table-status active">
+                                    Active
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="404-admin.html"
+                                    class="bakery-coupon-table-action"
+                                    aria-label="Edit FESTIVE25"
+                                >
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- ROW 04 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="bakery-coupon-table-name">
+
+                                    <div class="bakery-coupon-table-icon">
+                                        <i class="fa-solid fa-ticket"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            BIRTHDAY15
+                                        </strong>
+
+                                        <span>
+                                            Birthday Special
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+
+                                <strong>
+                                    15%
+                                </strong>
+
+                                <span class="bakery-coupon-subtext">
+                                    Percentage
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                92 / 250
+                            </td>
+
+
+                            <td>
+                                Sep 20, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="bakery-coupon-table-status expiring">
+                                    Expiring Soon
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="404-admin.html"
+                                    class="bakery-coupon-table-action"
+                                    aria-label="Edit BIRTHDAY15"
+                                >
+                                    <i class="fa-solid fa-pen"></i>
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- ROW 05 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="bakery-coupon-table-name">
+
+                                    <div class="bakery-coupon-table-icon">
+                                        <i class="fa-solid fa-ticket"></i>
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            SUMMER50
+                                        </strong>
+
+                                        <span>
+                                            Summer Special
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+
+                                <strong>
+                                    ₹500
+                                </strong>
+
+                                <span class="bakery-coupon-subtext">
+                                    Flat Discount
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                500 / 500
+                            </td>
+
+
+                            <td>
+                                Aug 31, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="bakery-coupon-table-status expired">
+                                    Expired
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="404-admin.html"
+                                    class="bakery-coupon-table-action"
+                                    aria-label="View SUMMER50"
+                                >
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EXPIRING SOON + PERFORMANCE
+    ====================================================== -->
+
+    <section class="bakery-coupons-insights-section">
+
+        <div class="bakery-coupons-insights-grid">
+
+
+            <!-- =================================================
+                 EXPIRING SOON
+            ================================================== -->
+
+            <article class="bakery-coupons-expiring-card">
+
+                <div class="bakery-coupons-card-heading">
+
+                    <div>
+
+                        <span>
+                            NEEDS ATTENTION
+                        </span>
+
+                        <h3>
+                            Expiring Soon
+                        </h3>
+
+                    </div>
+
+                    <div class="bakery-coupons-warning-icon">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="bakery-coupons-expiring-list">
+
+
+                    <div class="bakery-coupons-expiring-item">
+
+                        <div class="bakery-coupons-expiring-code">
+                            BIRTHDAY15
+                        </div>
+
+                        <div class="bakery-coupons-expiring-info">
+
+                            <strong>
+                                15% OFF
+                            </strong>
+
+                            <span>
+                                Expires in 9 days
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="404-admin.html"
+                            aria-label="Edit BIRTHDAY15"
+                        >
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="bakery-coupons-expiring-item">
+
+                        <div class="bakery-coupons-expiring-code">
+                            FESTIVE25
+                        </div>
+
+                        <div class="bakery-coupons-expiring-info">
+
+                            <strong>
+                                25% OFF
+                            </strong>
+
+                            <span>
+                                Expires in 14 days
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="404-admin.html"
+                            aria-label="Edit FESTIVE25"
+                        >
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="bakery-coupons-expiring-item">
+
+                        <div class="bakery-coupons-expiring-code">
+                            CAKE20
+                        </div>
+
+                        <div class="bakery-coupons-expiring-info">
+
+                            <strong>
+                                20% OFF
+                            </strong>
+
+                            <span>
+                                Expires in 19 days
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="404-admin.html"
+                            aria-label="Edit CAKE20"
+                        >
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 PERFORMANCE
+            ================================================== -->
+
+            <article class="bakery-coupons-performance-card">
+
+                <div class="bakery-coupons-card-heading">
+
+                    <div>
+
+                        <span>
+                            COUPON ANALYTICS
+                        </span>
+
+                        <h3>
+                            Best Performing
+                        </h3>
+
+                    </div>
+
+                    <i class="fa-solid fa-chart-simple"></i>
+
+                </div>
+
+
+                <div class="bakery-coupons-performance-list">
+
+
+                    <div class="bakery-coupons-performance-item">
+
+                        <div class="bakery-coupons-performance-number">
+                            01
+                        </div>
+
+                        <div class="bakery-coupons-performance-info">
+
+                            <strong>
+                                WELCOME10
+                            </strong>
+
+                            <span>
+                                438 redemptions
+                            </span>
+
+                        </div>
+
+                        <b>
+                            87.6%
+                        </b>
+
+                    </div>
+
+
+
+                    <div class="bakery-coupons-performance-item">
+
+                        <div class="bakery-coupons-performance-number">
+                            02
+                        </div>
+
+                        <div class="bakery-coupons-performance-info">
+
+                            <strong>
+                                CAKE20
+                            </strong>
+
+                            <span>
+                                284 redemptions
+                            </span>
+
+                        </div>
+
+                        <b>
+                            56.8%
+                        </b>
+
+                    </div>
+
+
+
+                    <div class="bakery-coupons-performance-item">
+
+                        <div class="bakery-coupons-performance-number">
+                            03
+                        </div>
+
+                        <div class="bakery-coupons-performance-info">
+
+                            <strong>
+                                FESTIVE25
+                            </strong>
+
+                            <span>
+                                126 redemptions
+                            </span>
+
+                        </div>
+
+                        <b>
+                            42.0%
+                        </b>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUICK ACTIONS
+    ====================================================== -->
+
+    <section class="bakery-coupons-quick-section">
+
+        <div class="bakery-coupons-quick-card">
+
+            <div class="bakery-coupons-quick-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+
+
+            <div class="bakery-coupons-quick-content">
+
+                <span>
+                    CREATE A NEW OFFER
+                </span>
+
+                <h3>
+                    Give Your Customers
+                    Something Sweet
+                </h3>
+
+                <p>
+                    Create a percentage discount, flat-rate offer
+                    or special seasonal promotion in just a few steps.
+                </p>
+
+            </div>
+
+
+            <a
+                href="404-admin.html"
+                class="bakery-coupons-quick-button"
+            >
+                <i class="fa-solid fa-plus"></i>
+                Add Coupon
+            </a>
+
+        </div>
+
+    </section>
+
+
+</div>
+    
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="admin.js"></script>
+
+</body>
+</html>

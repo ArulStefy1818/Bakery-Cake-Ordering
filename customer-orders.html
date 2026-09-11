@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================================================
+         BASIC META
+    ========================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Bakery Customer Dashboard - Manage orders, wishlist, profile and bakery purchases."
+    >
+
+    <title>Stackly | Customer Dashboard</title>
+
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================================
+         FONT AWESOME
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =========================================================
+         CUSTOMER DASHBOARD CSS
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="customer.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =============================================================
+     CUSTOMER DASHBOARD WRAPPER
+============================================================== -->
+
+<div class="bakery-customer-dashboard">
+
+
+    <!-- =========================================================
+         MOBILE OVERLAY
+    ========================================================== -->
+
+    <div
+        class="bakery-customer-overlay"
+        id="bakeryCustomerOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================================
+         CUSTOMER SIDEBAR
+    ========================================================== -->
+
+    <aside
+        class="bakery-customer-sidebar"
+        id="bakeryCustomerSidebar"
+        aria-hidden="true"
+    >
+
+
+        <!-- =====================================================
+             SIDEBAR HEADER
+        ====================================================== -->
+
+        <div class="bakery-customer-sidebar-header">
+
+            <!-- Logo -->
+
+            <a
+                href="customer.html"
+                class="bakery-customer-logo"
+                aria-label="Stackly Bakery Home"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+
+            <button
+                type="button"
+                class="bakery-customer-close"
+                id="bakeryCustomerClose"
+                aria-label="Close customer menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             CUSTOMER NAVIGATION
+        ====================================================== -->
+
+        <nav
+            class="bakery-customer-navigation"
+            aria-label="Customer Dashboard Navigation"
+        >
+
+
+            <!-- Main -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    MAIN
+                </span>
+
+
+                <!-- Dashboard -->
+
+                <a
+                    href="customer.html"
+                    class="bakery-customer-nav-link active"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- Orders -->
+
+                <a
+                    href="customer-orders.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                    </span>
+
+                    <span>
+                        My Orders
+                    </span>
+
+                    <span class="bakery-customer-nav-count">
+                        3
+                    </span>
+
+                </a>
+
+
+                <!-- Wishlist -->
+
+                <a
+                    href="customer-wishlist.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </span>
+
+                    <span>
+                        Wishlist
+                    </span>
+
+                    <span class="bakery-customer-nav-count">
+                        8
+                    </span>
+
+                </a>
+
+
+                <!-- Reviews -->
+
+                <a
+                    href="customer-reviews.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-star"></i>
+
+                    </span>
+
+                    <span>
+                        My Reviews
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Shopping -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    SHOPPING
+                </span>
+
+
+                <!-- Custom Cakes -->
+
+                <a
+                    href="custom-cakes.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    </span>
+
+                    <span>
+                        Custom Cakes
+                    </span>
+
+                </a>
+
+
+                <!-- Offers -->
+
+                <a
+                    href="customer-offers.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-tag"></i>
+
+                    </span>
+
+                    <span>
+                        Offers
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Account -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    ACCOUNT
+                </span>
+
+
+                <!-- Profile -->
+
+                <a
+                    href="customer-profile.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-user"></i>
+
+                    </span>
+
+                    <span>
+                        My Profile
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- =====================================================
+             SIDEBAR BOTTOM
+        ====================================================== -->
+
+        <div class="bakery-customer-sidebar-bottom">
+
+            <!-- Logout -->
+
+            <button
+                type="button"
+                class="bakery-customer-logout"
+                id="bakeryCustomerLogout"
+            >
+
+                <span class="bakery-customer-nav-icon">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================================
+         MAIN CUSTOMER AREA
+    ========================================================== -->
+
+    <main class="bakery-customer-main">
+
+
+        <!-- =====================================================
+             TOP HEADER
+        ====================================================== -->
+
+        <header class="bakery-customer-topbar">
+
+
+            <!-- LEFT -->
+
+            <div class="bakery-customer-topbar-left">
+
+
+                <!-- Mobile Hamburger -->
+
+                <button
+                    type="button"
+                    class="bakery-customer-menu-toggle"
+                    id="bakeryCustomerMenuToggle"
+                    aria-label="Open customer menu"
+                    aria-expanded="false"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <!-- Page Heading -->
+
+                <div class="bakery-customer-page-heading">
+
+                    <span class="bakery-customer-heading-label">
+                        Customer Dashboard
+                    </span>
+
+                    <span class="bakery-customer-heading-subtitle">
+                        Welcome back to Stackly Bakery
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="bakery-customer-topbar-right">
+
+
+                <!-- Notification -->
+
+                <a
+                    href="404-customer.html"
+                    class="bakery-customer-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-customer-notification-dot">
+                    </span>
+
+                </a>
+
+
+                <!-- Customer -->
+
+                <div class="bakery-customer-user">
+
+
+                    <!-- Email -->
+
+                    <div class="bakery-customer-user-details">
+
+                        <span class="bakery-customer-user-label">
+                            Signed in as
+                        </span>
+
+                        <span
+                            class="bakery-customer-email"
+                            id="bakeryCustomerEmail"
+                        >
+                            customer@stackly.com
+                        </span>
+
+                    </div>
+
+
+                    <!-- Avatar -->
+
+                    <div class="bakery-customer-user-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+<!-- =========================================================
+     MY ORDERS PAGE CONTENT
+========================================================= -->
+
+<div class="bakery-myorders-content">
+
+
+    <!-- =====================================================
+         PAGE INTRO
+    ====================================================== -->
+
+    <section class="bakery-myorders-intro">
+
+        <div class="bakery-myorders-intro-text">
+
+            <span class="bakery-myorders-kicker">
+                ORDER MANAGEMENT
+            </span>
+
+            <h1>
+                My <span>Orders</span>
+            </h1>
+
+            <p>
+                View your recent bakery purchases, track active
+                deliveries and quickly reorder your favorites.
+            </p>
+
+        </div>
+
+        <div class="bakery-myorders-intro-icon">
+
+            <i class="fa-solid fa-basket-shopping"></i>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         ORDER OVERVIEW
+    ====================================================== -->
+
+    <section class="bakery-myorders-overview">
+
+
+        <!-- All Orders -->
+
+        <article class="bakery-order-overview-box">
+
+            <div class="bakery-order-overview-icon">
+
+                <i class="fa-solid fa-receipt"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    ALL ORDERS
+                </span>
+
+                <strong>
+                    24
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- Processing -->
+
+        <article class="bakery-order-overview-box">
+
+            <div class="bakery-order-overview-icon">
+
+                <i class="fa-solid fa-kitchen-set"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    PROCESSING
+                </span>
+
+                <strong>
+                    1
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- On Way -->
+
+        <article class="bakery-order-overview-box">
+
+            <div class="bakery-order-overview-icon">
+
+                <i class="fa-solid fa-truck"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    ON THE WAY
+                </span>
+
+                <strong>
+                    1
+                </strong>
+
+            </div>
+
+        </article>
+
+
+        <!-- Delivered -->
+
+        <article class="bakery-order-overview-box">
+
+            <div class="bakery-order-overview-icon">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    DELIVERED
+                </span>
+
+                <strong>
+                    21
+                </strong>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CURRENT ORDER
+    ====================================================== -->
+
+    <section class="bakery-current-order-panel">
+
+
+        <div class="bakery-current-order-heading">
+
+            <div>
+
+                <span>
+                    CURRENT ORDER
+                </span>
+
+                <h2>
+                    Your cake is on the way
+                </h2>
+
+            </div>
+
+            <span class="bakery-current-order-live">
+
+                <i class="fa-solid fa-circle"></i>
+
+                LIVE
+
+            </span>
+
+        </div>
+
+
+
+        <!-- Current Order -->
+
+        <div class="bakery-current-order-body">
+
+
+            <div class="bakery-current-cake">
+
+                <div class="bakery-current-cake-image">
+
+                    <img
+                        src="chocolate-truffle-cake.webp"
+                        alt="Chocolate Truffle Cake"
+                    >
+
+                </div>
+
+
+                <div class="bakery-current-cake-info">
+
+                    <span>
+                        ORDER #STK-2094
+                    </span>
+
+                    <h3>
+                        Chocolate Truffle Cake
+                    </h3>
+
+                    <p>
+                        1 kg · Eggless · Premium Chocolate
+                    </p>
+
+                    <strong>
+                        ₹899
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Delivery Status -->
+
+            <div class="bakery-current-status">
+
+                <div class="bakery-current-status-header">
+
+                    <span>
+                        DELIVERY STATUS
+                    </span>
+
+                    <strong>
+                        Expected today
+                    </strong>
+
+                </div>
+
+
+                <div class="bakery-current-status-line">
+
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span class="active"></span>
+                    <span></span>
+
+                </div>
+
+
+                <div class="bakery-current-status-labels">
+
+                    <span class="active">
+                        Confirmed
+                    </span>
+
+                    <span class="active">
+                        Baking
+                    </span>
+
+                    <span class="active">
+                        On the Way
+                    </span>
+
+                    <span>
+                        Delivered
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Delivery Time -->
+
+            <div class="bakery-current-delivery-time">
+
+                <i class="fa-regular fa-clock"></i>
+
+                <div>
+
+                    <span>
+                        ESTIMATED ARRIVAL
+                    </span>
+
+                    <strong>
+                        Today by 7:00 PM
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RECENT ORDERS
+    ====================================================== -->
+
+    <section class="bakery-recent-orders-area">
+
+
+        <div class="bakery-recent-orders-heading">
+
+            <div>
+
+                <span>
+                    ORDER HISTORY
+                </span>
+
+                <h2>
+                    Recent Purchases
+                </h2>
+
+            </div>
+
+             
+
+        </div>
+
+
+
+        <!-- =================================================
+             ORDER ITEM 01
+        ================================================== -->
+
+        <article class="bakery-recent-order-item">
+
+
+            <div class="bakery-recent-order-photo">
+
+                <img
+                    src="strawberry-cake.webp"
+                    alt="Strawberry Fresh Cream Cake"
+                >
+
+            </div>
+
+
+            <div class="bakery-recent-order-details">
+
+                <span>
+                    #STK-2048
+                </span>
+
+                <h3>
+                    Strawberry Fresh Cream Cake
+                </h3>
+
+                <p>
+                    1 kg · Eggless · Fresh Cream
+                </p>
+
+                <small>
+                    September 08, 2026
+                </small>
+
+            </div>
+
+
+            <div class="bakery-recent-order-status">
+
+                <strong>
+                    ₹899
+                </strong>
+
+                <span class="bakery-order-delivered-tag">
+                    <i class="fa-solid fa-circle"></i>
+                    Delivered
+                </span>
+
+            </div>
+
+
+            <div class="bakery-recent-order-action">
+
+                <a
+                    href="404-customer.html"
+                >
+                    View
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             ORDER ITEM 02
+        ================================================== -->
+
+        <article class="bakery-recent-order-item">
+
+
+            <div class="bakery-recent-order-photo">
+
+                <img
+                    src="red-velvet-cake.webp"
+                    alt="Red Velvet Cake"
+                >
+
+            </div>
+
+
+            <div class="bakery-recent-order-details">
+
+                <span>
+                    #STK-2019
+                </span>
+
+                <h3>
+                    Red Velvet Celebration Cake
+                </h3>
+
+                <p>
+                    1 kg · Eggless · Cream Cheese
+                </p>
+
+                <small>
+                    August 29, 2026
+                </small>
+
+            </div>
+
+
+            <div class="bakery-recent-order-status">
+
+                <strong>
+                    ₹799
+                </strong>
+
+                <span class="bakery-order-delivered-tag">
+                    <i class="fa-solid fa-circle"></i>
+                    Delivered
+                </span>
+
+            </div>
+
+
+            <div class="bakery-recent-order-action">
+
+                <a
+                    href="404-customer.html"
+                >
+                    View
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             ORDER ITEM 03
+        ================================================== -->
+
+        <article class="bakery-recent-order-item">
+
+
+            <div class="bakery-recent-order-photo">
+
+                <img
+                    src="butterscotch-cake.webp"
+                    alt="Butterscotch Cake"
+                >
+
+            </div>
+
+
+            <div class="bakery-recent-order-details">
+
+                <span>
+                    #STK-1987
+                </span>
+
+                <h3>
+                    Butterscotch Crunch Cake
+                </h3>
+
+                <p>
+                    1 kg · Fresh Cream · Crunch Topping
+                </p>
+
+                <small>
+                    August 17, 2026
+                </small>
+
+            </div>
+
+
+            <div class="bakery-recent-order-status">
+
+                <strong>
+                    ₹749
+                </strong>
+
+                <span class="bakery-order-delivered-tag">
+                    <i class="fa-solid fa-circle"></i>
+                    Delivered
+                </span>
+
+            </div>
+
+
+            <div class="bakery-recent-order-action">
+
+                <a
+                    href="404-customer.html"
+                >
+                    View
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FAVORITE ORDER
+    ====================================================== -->
+
+    <section class="bakery-favorite-order-box">
+
+
+        <div class="bakery-favorite-order-icon">
+
+            <i class="fa-solid fa-heart"></i>
+
+        </div>
+
+
+        <div class="bakery-favorite-order-content">
+
+            <span>
+                YOUR FAVORITE
+            </span>
+
+            <h2>
+                Strawberry Fresh Cream Cake
+            </h2>
+
+            <p>
+                You've ordered this cake 4 times.
+                Ready for another sweet moment?
+            </p>
+
+        </div>
+
+
+        <a
+            href="404-customer.html"
+            class="bakery-favorite-order-button"
+        >
+            Reorder
+
+            <i class="fa-solid fa-rotate-right"></i>
+
+        </a>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         NEED HELP
+    ====================================================== -->
+
+    <section class="bakery-order-help-strip">
+
+        <div class="bakery-order-help-icon">
+
+            <i class="fa-regular fa-circle-question"></i>
+
+        </div>
+
+        <div>
+
+            <span>
+                NEED HELP WITH AN ORDER?
+            </span>
+
+            <h3>
+                Our bakery team is happy to help.
+            </h3>
+
+        </div>
+
+        <a
+            href="404-customer.html"
+        >
+            Contact Support
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+
+</div>
+
+
+
+
+    </main>
+
+</div>
+
+
+<!-- =============================================================
+     CUSTOMER DASHBOARD JAVASCRIPT
+============================================================== -->
+
+<script src="customer.js"></script>
+
+</body>
+
+</html>

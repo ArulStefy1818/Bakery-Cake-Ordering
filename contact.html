@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =====================================================
+         BASIC META
+    ====================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Bakery - Premium cakes, pastries, breads and delicious bakery treats."
+    >
+
+    <meta
+        name="keywords"
+        content="Stackly Bakery, cakes, bakery, pastries, fresh breads, online cake ordering"
+    >
+
+    <meta
+        name="author"
+        content="Stackly Bakery"
+    >
+
+    <meta
+        name="theme-color"
+        content="#a96f43"
+    >
+
+    <meta
+        name="robots"
+        content="index, follow"
+    >
+
+    <title>Stackly | Bakery &amp; Cake Ordering</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         AOS ANIMATION CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+    >
+
+
+    <!-- =====================================================
+         MAIN WEBSITE CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="index.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     HEADER
+========================================================== -->
+
+<header
+    class="stackly-header"
+    data-aos="fade-down"
+    data-aos-duration="900"
+    data-aos-easing="ease-out-cubic"
+>
+
+    <div class="stackly-header-inner">
+
+
+        <!-- =================================================
+             LOGO
+        ================================================== -->
+
+        <a
+            href="index.html"
+            class="stackly-logo"
+            aria-label="Stackly Bakery Home"
+            data-aos="fade-right"
+            data-aos-duration="800"
+        >
+
+            <img
+                src="Stackly-logo-Blue.webp"
+                alt="Stackly Bakery"
+                width="160"
+                height="auto"
+            >
+
+        </a>
+
+        <!-- MOBILE CART -->
+    <a
+        href="cart.html"
+        class="stackly-mobile-cart"
+        aria-label="Shopping Cart"
+        title="Shopping Cart"
+    >
+        <i
+            class="fa-solid fa-cart-shopping"
+            aria-hidden="true"
+        ></i>
+
+        <span class="stackly-mobile-cart-count">
+            0
+        </span>
+    </a>
+
+
+        <!-- =================================================
+             MOBILE MENU CHECKBOX
+        ================================================== -->
+
+        <input
+            type="checkbox"
+            id="stackly-menu-toggle"
+            class="stackly-menu-toggle"
+            aria-hidden="true"
+            tabindex="-1"
+        >
+
+
+        <!-- =================================================
+             MOBILE HAMBURGER
+        ================================================== -->
+
+        <label
+            for="stackly-menu-toggle"
+            class="stackly-hamburger"
+            aria-label="Open navigation menu"
+            aria-controls="stackly-navigation"
+            data-aos="fade-left"
+            data-aos-duration="800"
+        >
+
+            <span></span>
+            <span></span>
+            <span></span>
+
+        </label>
+
+
+        <!-- =================================================
+             MAIN NAVIGATION
+        ================================================== -->
+
+        <nav
+            class="stackly-navigation"
+            id="stackly-navigation"
+            aria-label="Main Navigation"
+        >
+
+
+            <!-- =============================================
+                 MOBILE CLOSE BUTTON
+            ============================================== -->
+
+            <label
+                for="stackly-menu-toggle"
+                class="stackly-menu-close"
+                aria-label="Close navigation menu"
+            >
+
+                <i
+                    class="fa-solid fa-xmark"
+                    aria-hidden="true"
+                ></i>
+
+            </label>
+
+
+            <!-- =============================================
+                 HOME
+            ============================================== -->
+
+            <a
+                href="index.html"
+                class="stackly-nav-link"
+            >
+                Home
+            </a>
+
+
+            <!-- =============================================
+                 ABOUT
+            ============================================== -->
+
+            <a
+                href="about.html"
+                class="stackly-nav-link"
+            >
+                About
+            </a>
+
+
+            <!-- =============================================
+                 CAKES
+            ============================================== -->
+
+            <a
+                href="cakes.html"
+                class="stackly-nav-link"
+            >
+                Cakes
+            </a>
+
+
+            <!-- =============================================
+                 OFFERS
+            ============================================== -->
+
+            <a
+                href="services.html"
+                class="stackly-nav-link"
+            >
+                Services
+            </a>
+
+
+            <!-- =============================================
+                 BLOG
+            ============================================== -->
+
+            <a
+                href="blog.html"
+                class="stackly-nav-link"
+            >
+                Blog
+            </a>
+
+
+            <!-- =============================================
+                 CONTACT
+            ============================================== -->
+
+            <a
+                href="contact.html"
+                class="stackly-nav-link"
+            >
+                Contact
+            </a>
+
+
+<!-- =============================================
+     CART
+============================================= -->
+
+<a
+    href="cart.html"
+    class="stackly-cart-button"
+    aria-label="Shopping Cart"
+>
+
+    <i
+        class="fa-solid fa-cart-shopping"
+        aria-hidden="true"
+    ></i>
+
+    <span>
+        Cart
+    </span>
+
+    <small class="stackly-cart-count">
+        0
+    </small>
+
+</a>
+
+
+<!-- =============================================
+     LOGIN
+============================================= -->
+
+<a
+    href="order.html"
+    class="stackly-order-button"
+>
+
+    <i
+        class="fa-solid fa-user"
+        aria-hidden="true"
+    ></i>
+
+    <span>
+        Login
+    </span>
+
+</a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+<!-- =========================================================
+     STACKLY BAKERY - CONTACT PAGE HEADING
+========================================================= -->
+
+<section
+    class="stackly-contact-page-heading"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+    data-aos-easing="ease-out-cubic"
+>
+
+    <div
+        class="stackly-contact-heading-content"
+        data-aos="zoom-in"
+        data-aos-duration="1100"
+        data-aos-delay="150"
+    >
+
+        <span class="stackly-contact-heading-label">
+            CONTACT US
+        </span>
+
+        <h1>
+            Let's Create Something Delicious
+        </h1>
+
+        <p>
+            Have a question, special request or celebration coming up?
+            Get in touch with Stackly Bakery and let us make your
+            sweetest moments even more special.
+        </p>
+
+    </div>
+
+</section>
+
+<!-- =========================================================
+     STACKLY BAKERY - CONTACT FORM
+========================================================= -->
+
+<section
+    class="stackly-contact-main-section"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+>
+
+    <div class="stackly-contact-main-container">
+
+
+        <!-- =================================================
+             LEFT SIDE
+        ================================================== -->
+
+        <div
+            class="stackly-contact-main-content"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+        >
+
+            <span class="stackly-contact-main-label">
+                LET'S CREATE TOGETHER
+            </span>
+
+            <h2>
+                Tell Us About
+                Your Celebration
+            </h2>
+
+            <p>
+                From elegant wedding cakes to fun birthday
+                designs, tell us what you're planning and
+                we'll help turn your idea into something
+                delicious and memorable.
+            </p>
+
+
+            <!-- FEATURE 01 -->
+
+            <div class="stackly-contact-feature">
+
+                <div class="stackly-contact-feature-icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Custom Cake Designs
+                    </h3>
+
+                    <p>
+                        Bring your ideas, themes and colors.
+                        We'll help create a cake that feels
+                        uniquely yours.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FEATURE 02 -->
+
+            <div class="stackly-contact-feature">
+
+                <div class="stackly-contact-feature-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Made With Care
+                    </h3>
+
+                    <p>
+                        Every cake is prepared with attention
+                        to detail and a passion for baking.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- FEATURE 03 -->
+
+            <div class="stackly-contact-feature">
+
+                <div class="stackly-contact-feature-icon">
+                    <i class="fa-solid fa-truck"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Easy Ordering
+                    </h3>
+
+                    <p>
+                        Tell us what you need and our team
+                        will guide you through the next steps.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- SUPPORT -->
+
+            <div class="stackly-contact-support">
+
+                <div class="stackly-contact-support-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        NEED QUICK HELP?
+                    </span>
+
+                    <strong>
+                        +91 98765 43210
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             RIGHT SIDE FORM
+        ================================================== -->
+
+        <div
+            class="stackly-contact-form-wrapper"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+        >
+
+            <form
+                class="stackly-contact-form"
+                id="stacklyContactForm"
+                action="#"
+                method="post"
+            >
+
+                <div class="stackly-contact-form-header">
+
+                    <span>
+                        CONTACT FORM
+                    </span>
+
+                    <h3>
+                        Send Us A Message
+                    </h3>
+
+                    <p>
+                        Fill in the details and our bakery team
+                        will contact you.
+                    </p>
+
+                </div>
+
+
+                <!-- NAME -->
+
+                <div class="stackly-contact-form-group">
+
+                    <label for="contactName">
+                        Full Name
+                    </label>
+
+                    <div class="stackly-contact-input-box">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="contactName"
+                            name="name"
+                            placeholder="Enter your full name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="stackly-contact-form-group">
+
+                    <label for="contactPhone">
+                        Phone Number
+                    </label>
+
+                    <div class="stackly-contact-input-box">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <input
+                            type="tel"
+                            id="contactPhone"
+                            name="phone"
+                            placeholder="Enter your phone number"
+                            autocomplete="tel"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="stackly-contact-form-group">
+
+                    <label for="contactEmail">
+                        Email Address
+                    </label>
+
+                    <div class="stackly-contact-input-box">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="contactEmail"
+                            name="email"
+                            placeholder="Enter your email address"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- SERVICE -->
+
+                <!-- =========================================================
+     STACKLY BAKERY - SERVICE DROPDOWN
+========================================================= -->
+
+<div class="stackly-contact-form-group">
+
+    <label for="contactServiceButton">
+        What Can We Help With?
+    </label>
+
+    <div class="stackly-contact-input-box">
+
+        <!-- Cake Icon -->
+        <i class="fa-solid fa-cake-candles stackly-contact-input-icon"></i>
+
+
+        <!-- =================================================
+             CUSTOM SERVICE DROPDOWN
+        ================================================== -->
+
+        <div
+            class="stackly-custom-dropdown"
+            id="contactServiceDropdown"
+        >
+
+            <!-- Selected Value Button -->
+            <button
+                type="button"
+                class="stackly-dropdown-button"
+                id="contactServiceButton"
+                aria-haspopup="listbox"
+                aria-expanded="false"
+            >
+
+                <span id="contactServiceValue">
+                    Select a service
+                </span>
+
+                <i class="fas fa-chevron-down"></i>
+
+            </button>
+
+
+            <!-- =================================================
+                 DROPDOWN OPTIONS
+            ================================================== -->
+
+            <div
+                class="stackly-dropdown-menu"
+                id="contactServiceMenu"
+                role="listbox"
+                aria-label="Select a service"
+            >
+
+                <div
+                    class="stackly-dropdown-option"
+                    data-value="birthday-cake"
+                    role="option"
+                    tabindex="0"
+                >
+                    Birthday Cake
+                </div>
+
+
+                <div
+                    class="stackly-dropdown-option"
+                    data-value="wedding-cake"
+                    role="option"
+                    tabindex="0"
+                >
+                    Wedding Cake
+                </div>
+
+
+                <div
+                    class="stackly-dropdown-option"
+                    data-value="anniversary-cake"
+                    role="option"
+                    tabindex="0"
+                >
+                    Anniversary Cake
+                </div>
+
+
+                <div
+                    class="stackly-dropdown-option"
+                    data-value="custom-cake"
+                    role="option"
+                    tabindex="0"
+                >
+                    Custom Cake
+                </div>
+
+
+                <div
+                    class="stackly-dropdown-option"
+                    data-value="cupcakes"
+                    role="option"
+                    tabindex="0"
+                >
+                    Cupcakes
+                </div>
+
+
+                <div
+                    class="stackly-dropdown-option"
+                    data-value="pastries"
+                    role="option"
+                    tabindex="0"
+                >
+                    Pastries
+                </div>
+
+
+                <div
+                    class="stackly-dropdown-option"
+                    data-value="bulk-order"
+                    role="option"
+                    tabindex="0"
+                >
+                    Bulk Order
+                </div>
+
+
+                <div
+                    class="stackly-dropdown-option"
+                    data-value="other"
+                    role="option"
+                    tabindex="0"
+                >
+                    Other
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 HIDDEN FORM VALUE
+            ================================================== -->
+
+            <input
+                type="hidden"
+                id="contactService"
+                name="service"
+                required
+            >
+
+        </div>
+
+    </div>
+
+</div>
+
+
+                <!-- DATE -->
+
+                <div class="stackly-contact-form-group">
+
+                    <label for="contactDate">
+                        Preferred Date
+                    </label>
+
+                    <div class="stackly-contact-input-box">
+
+                        <i class="fa-regular fa-calendar"></i>
+
+                        <input
+                            type="date"
+                            id="contactDate"
+                            name="date"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- MESSAGE -->
+
+                <div class="stackly-contact-form-group">
+
+                    <label for="contactMessage">
+                        Your Message
+                    </label>
+
+                    <div class="stackly-contact-textarea-box">
+
+                        <i class="fa-regular fa-message"></i>
+
+                        <textarea
+                            id="contactMessage"
+                            name="message"
+                            rows="5"
+                            placeholder="Tell us about your cake or special request..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+                </div>
+
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="stackly-contact-submit-button"
+                >
+
+                    <span>
+                        Send Message
+                    </span>
+
+                    <i class="fa-solid fa-paper-plane"></i>
+
+                </button>
+
+
+                <p class="stackly-contact-form-security">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    Your information is kept private and secure.
+
+                </p>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STACKLY BAKERY - OPENING HOURS
+========================================================= -->
+
+<section
+    class="stackly-opening-hours-section"
+    id="stackly-opening-hours"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+>
+
+    <div class="stackly-opening-hours-container">
+
+
+        <div
+            class="stackly-opening-hours-content"
+            data-aos="fade-right"
+        >
+
+            <span>
+                WHEN TO VISIT
+            </span>
+
+            <h2>
+                We're Baking
+                All Week Long
+            </h2>
+
+            <p>
+                Stop by our bakery for fresh cakes, pastries,
+                breads and sweet treats prepared throughout
+                the day.
+            </p>
+
+            <div class="stackly-opening-hours-list">
+
+                <div class="stackly-opening-hours-row">
+
+                    <strong>
+                        Monday
+                    </strong>
+
+                    <span>
+                        8:00 AM – 9:00 PM
+                    </span>
+
+                </div>
+
+                <div class="stackly-opening-hours-row">
+
+                    <strong>
+                        Tuesday
+                    </strong>
+
+                    <span>
+                        8:00 AM – 9:00 PM
+                    </span>
+
+                </div>
+
+                <div class="stackly-opening-hours-row">
+
+                    <strong>
+                        Wednesday
+                    </strong>
+
+                    <span>
+                        8:00 AM – 9:00 PM
+                    </span>
+
+                </div>
+
+                <div class="stackly-opening-hours-row">
+
+                    <strong>
+                        Thursday
+                    </strong>
+
+                    <span>
+                        8:00 AM – 9:00 PM
+                    </span>
+
+                </div>
+
+                <div class="stackly-opening-hours-row">
+
+                    <strong>
+                        Friday
+                    </strong>
+
+                    <span>
+                        8:00 AM – 9:00 PM
+                    </span>
+
+                </div>
+
+                <div class="stackly-opening-hours-row">
+
+                    <strong>
+                        Saturday
+                    </strong>
+
+                    <span>
+                        8:00 AM – 10:00 PM
+                    </span>
+
+                </div>
+
+                <div class="stackly-opening-hours-row">
+
+                    <strong>
+                        Sunday
+                    </strong>
+
+                    <span>
+                        9:00 AM – 9:00 PM
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="stackly-opening-hours-card"
+            data-aos="fade-left"
+        >
+
+            <div class="stackly-opening-hours-icon">
+
+                <i class="fa-regular fa-clock"></i>
+
+            </div>
+
+            <span>
+                TODAY'S BAKING
+            </span>
+
+            <h3>
+                Freshly Baked
+                With Love
+            </h3>
+
+            <p>
+                Our ovens are working throughout the day
+                to keep your favorite treats fresh.
+            </p>
+
+
+            <div class="stackly-hours-highlight">
+
+                <i class="fa-solid fa-bread-slice"></i>
+
+                <div>
+
+                    <strong>
+                        Fresh From The Oven
+                    </strong>
+
+                    <span>
+                        Cakes • Breads • Pastries
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     STACKLY BAKERY - FAQ
+========================================================= -->
+
+<section
+    class="stackly-contact-faq-section"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+>
+
+    <div class="stackly-contact-faq-container">
+
+
+        <div class="stackly-contact-faq-heading">
+
+            <span>
+                HAVE QUESTIONS?
+            </span>
+
+            <h2>
+                Frequently Asked Questions
+            </h2>
+
+            <p>
+                Find quick answers to some of the questions
+                our customers ask most often.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-contact-faq-list">
+
+
+            <!-- FAQ 01 -->
+
+            <details
+                class="stackly-contact-faq-item"
+                open
+            >
+
+                <summary>
+
+                    <span>
+                        How far in advance should I order a custom cake?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </summary>
+
+                <div class="stackly-contact-faq-answer">
+
+                    <p>
+                        For custom celebration cakes, we recommend
+                        placing your order several days in advance.
+                        Larger or highly detailed designs may require
+                        additional preparation time.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <!-- FAQ 02 -->
+
+            <details class="stackly-contact-faq-item">
+
+                <summary>
+
+                    <span>
+                        Can I request a specific cake flavor?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </summary>
+
+                <div class="stackly-contact-faq-answer">
+
+                    <p>
+                        Yes. You can contact our bakery team to
+                        discuss your preferred flavors, fillings,
+                        frosting and other cake requirements.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <!-- FAQ 03 -->
+
+            <details class="stackly-contact-faq-item">
+
+                <summary>
+
+                    <span>
+                        Do you make cakes for weddings and large events?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </summary>
+
+                <div class="stackly-contact-faq-answer">
+
+                    <p>
+                        Yes. We create celebration cakes for
+                        birthdays, weddings, anniversaries,
+                        corporate events and other special occasions.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <!-- FAQ 04 -->
+
+            <details class="stackly-contact-faq-item">
+
+                <summary>
+
+                    <span>
+                        Can I place a bulk bakery order?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </summary>
+
+                <div class="stackly-contact-faq-answer">
+
+                    <p>
+                        Yes. For larger orders of cakes, pastries,
+                        cupcakes or bakery items, contact our team
+                        with your quantity and preferred date.
+                    </p>
+
+                </div>
+
+            </details>
+
+
+            <!-- FAQ 05 -->
+
+            <details class="stackly-contact-faq-item">
+
+                <summary>
+
+                    <span>
+                        Do you offer delivery?
+                    </span>
+
+                    <i class="fa-solid fa-plus"></i>
+
+                </summary>
+
+                <div class="stackly-contact-faq-answer">
+
+                    <p>
+                        Delivery availability depends on the order,
+                        location and selected delivery date. Contact
+                        our team for current delivery options.
+                    </p>
+
+                </div>
+
+            </details>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     STACKLY BAKERY - LOCATION WITH GOOGLE MAP
+========================================================= -->
+
+<section
+    class="stackly-contact-location-section"
+    id="stackly-contact-location"
+    data-aos="fade-up"
+    data-aos-duration="1000"
+>
+
+    <div class="stackly-contact-location-container">
+
+
+        <!-- =================================================
+             LOCATION DETAILS
+        ================================================== -->
+
+        <div
+            class="stackly-contact-location-content"
+            data-aos="fade-right"
+            data-aos-duration="1000"
+        >
+
+            <span>
+                FIND OUR BAKERY
+            </span>
+
+            <h2>
+                Come Say Hello
+            </h2>
+
+            <p>
+                We'd love to welcome you into our bakery.
+                Stop by, explore our freshly baked treats and
+                find your next favorite dessert.
+            </p>
+
+
+            <!-- =================================================
+                 ADDRESS
+            ================================================== -->
+
+            <div class="stackly-location-detail">
+
+                <div class="stackly-location-detail-icon">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Bakery Address
+                    </strong>
+
+                    <p>
+                        Fresh Street Bakery,<br>
+                        Chennai, Tamil Nadu, India
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 PHONE
+            ================================================== -->
+
+            <div class="stackly-location-detail">
+
+                <div class="stackly-location-detail-icon">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Phone
+                    </strong>
+
+                    <p>
+                        <a
+                            href="tel:+919876543210"
+                            class="stackly-location-contact-link"
+                        >
+                            +91 98765 43210
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 EMAIL
+            ================================================== -->
+
+            <div class="stackly-location-detail">
+
+                <div class="stackly-location-detail-icon">
+
+                    <i class="fa-solid fa-envelope"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Email
+                    </strong>
+
+                    <p>
+                        <a
+                            href="mailto:hello@stacklybakery.com"
+                            class="stackly-location-contact-link"
+                        >
+                            hello@stacklybakery.com
+                        </a>
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 OPENING HOURS
+            ================================================== -->
+
+            <div class="stackly-location-detail">
+
+                <div class="stackly-location-detail-icon">
+
+                    <i class="fa-regular fa-clock"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Opening Hours
+                    </strong>
+
+                    <p>
+                        Monday – Friday: 8:00 AM – 9:00 PM<br>
+                        Saturday – Sunday: 9:00 AM – 10:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 DIRECTIONS BUTTON
+            ================================================== -->
+
+            <a
+                href="https://www.google.com/maps/search/?api=1&query=Chennai%2C%20Tamil%20Nadu%2C%20India"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="stackly-location-button"
+            >
+
+                <span>
+                    Get Directions
+                </span>
+
+                <i class="fa-solid fa-location-arrow"></i>
+
+            </a>
+
+        </div>
+
+
+
+        <!-- =================================================
+             GOOGLE MAP
+        ================================================== -->
+
+        <div
+            class="stackly-contact-map"
+            data-aos="fade-left"
+            data-aos-duration="1000"
+        >
+
+            <!-- MAP HEADER -->
+
+            <div class="stackly-contact-map-header">
+
+                <div class="stackly-contact-map-header-icon">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>
+                        Stackly Bakery
+                    </strong>
+
+                    <span>
+                        Chennai, Tamil Nadu
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 GOOGLE MAP IFRAME
+            ================================================== -->
+
+            <div class="stackly-google-map">
+
+                <iframe
+                    src="https://www.google.com/maps?q=Chennai%2C%20Tamil%20Nadu%2C%20India&output=embed"
+                    width="100%"
+                    height="100%"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Stackly Bakery Location - Chennai, Tamil Nadu"
+                >
+                </iframe>
+
+            </div>
+
+
+            <!-- =================================================
+                 MAP FOOTER
+            ================================================== -->
+
+            <div class="stackly-contact-map-footer">
+
+                <div class="stackly-map-footer-info">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    <div>
+
+                        <strong>
+                            Visit Our Bakery
+                        </strong>
+
+                        <span>
+                            Chennai, Tamil Nadu, India
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a
+                    href="https://www.google.com/maps/search/?api=1&query=Chennai%2C%20Tamil%20Nadu%2C%20India"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="stackly-map-view-button"
+                >
+
+                    View Map
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     STACKLY BAKERY - LOCATION MAP CSS
+========================================================= -->
+
+
+<!-- =========================================================
+     STACKLY BAKERY - FINAL CTA
+========================================================= -->
+
+<section
+    class="stackly-contact-final-cta"
+    data-aos="zoom-in"
+    data-aos-duration="1000"
+>
+
+    <div class="stackly-contact-final-content">
+
+        <span>
+            READY TO MAKE IT SPECIAL?
+        </span>
+
+        <h2>
+            Your Celebration
+            Deserves Something Delicious
+        </h2>
+
+        <p>
+            Whether you're ordering a simple treat or planning
+            a big celebration, we're ready to bake something
+            you'll remember.
+        </p>
+
+
+        <div class="stackly-contact-final-buttons">
+
+            <a
+                href="404.html"
+                class="stackly-contact-final-primary"
+            >
+
+                Explore Our Cakes
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+            <a
+                href="404.html"
+                class="stackly-contact-final-secondary"
+            >
+
+                Contact Our Team
+
+                <i class="fa-solid fa-paper-plane"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     STACKLY BAKERY - PROFESSIONAL FOOTER
+========================================================= -->
+
+<footer class="stackly-footer">
+
+    <!-- =====================================================
+         FOOTER MAIN AREA
+    ====================================================== -->
+
+    <div class="stackly-footer-main">
+
+        <div class="stackly-footer-container">
+
+
+            <!-- =================================================
+                 BRAND COLUMN
+            ================================================== -->
+
+            <div class="stackly-footer-brand">
+
+                <a
+                    href="index.html"
+                    class="stackly-footer-logo"
+                    aria-label="Stackly Bakery Home"
+                >
+
+                    <img
+                        src="Stackly-logo-Blue.webp"
+                        alt="Stackly Bakery Logo"
+                    >
+
+                </a>
+
+
+                <p class="stackly-footer-description">
+
+                    Creating beautiful cakes, freshly baked breads,
+                    delicious pastries and sweet memories for every
+                    special occasion.
+
+                </p>
+
+
+                <!-- SOCIAL MEDIA -->
+
+                <div class="stackly-footer-social">
+
+                    <a
+                        href="404.html"
+                        aria-label="Facebook"
+                        title="Facebook"
+                    >
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a
+                        href="404.html"
+                        aria-label="Instagram"
+                        title="Instagram"
+                    >
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a
+                        href="404.html"
+                        aria-label="Twitter"
+                        title="Twitter"
+                    >
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a
+                        href="404.html"
+                        aria-label="YouTube"
+                        title="YouTube"
+                    >
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 QUICK LINKS
+            ================================================== -->
+
+            <div class="stackly-footer-column">
+
+                <h3 class="stackly-footer-title">
+                    Quick Links
+                </h3>
+
+                <ul class="stackly-footer-links">
+
+                    <li>
+                        <a href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="cakes.html">
+                            Our Cakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="services.html">
+                            Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="blog.html">
+                            Bakery Blog
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- =================================================
+                 BAKERY SERVICES
+            ================================================== -->
+
+            <div class="stackly-footer-column">
+
+                <h3 class="stackly-footer-title">
+                    Our Specialties
+                </h3>
+
+                <ul class="stackly-footer-links">
+
+                    <li>
+                        <a href="404.html">
+                            Celebration Cakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Wedding Cakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Birthday Cakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Fresh Pastries
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Cupcakes
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            Custom Cakes
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- =================================================
+                 CONTACT COLUMN
+            ================================================== -->
+
+            <div class="stackly-footer-column stackly-footer-contact">
+
+                <h3 class="stackly-footer-title">
+                    Get In Touch
+                </h3>
+
+
+                <!-- ADDRESS -->
+
+                <div class="stackly-footer-contact-item">
+
+                    <span class="stackly-footer-contact-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </span>
+
+                    <div>
+                        <strong>
+                            Visit Us
+                        </strong>
+
+                        <p>
+                            Fresh Street Bakery,
+                            Chennai, Tamil Nadu
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="stackly-footer-contact-item">
+
+                    <span class="stackly-footer-contact-icon">
+                        <i class="fa-solid fa-phone"></i>
+                    </span>
+
+                    <div>
+                        <strong>
+                            Call Us
+                        </strong>
+
+                        <p>
+                            +91 98765 43210
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="stackly-footer-contact-item">
+
+                    <span class="stackly-footer-contact-icon">
+                        <i class="fa-solid fa-envelope"></i>
+                    </span>
+
+                    <div>
+                        <strong>
+                            Email Us
+                        </strong>
+
+                        <p>
+                            hello@stacklybakery.com
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         NEWSLETTER STRIP
+    ====================================================== -->
+
+    <div class="stackly-footer-newsletter">
+
+        <div class="stackly-footer-newsletter-container">
+
+
+            <div class="stackly-footer-newsletter-content">
+
+                <span>
+                    SWEET NEWS
+                </span>
+
+                <h3>
+                    Get fresh bakery updates
+                    <br>
+                    delivered to your inbox.
+                </h3>
+
+            </div>
+
+
+            <form
+                class="stackly-footer-newsletter-form"
+                action="#"
+                method="post"
+            >
+
+                <label
+                    for="stacklyFooterEmail"
+                    class="stackly-footer-email-label"
+                >
+                    Email Address
+                </label>
+
+                <div class="stackly-footer-input-wrap">
+
+                    <input
+                        type="email"
+                        id="stacklyFooterEmail"
+                        name="email"
+                        placeholder="Enter your email address"
+                        autocomplete="email"
+                        required
+                    >
+
+                    <button
+                        type="submit"
+                        aria-label="Subscribe to bakery newsletter"
+                    >
+                        SUBSCRIBE
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         FOOTER BOTTOM
+    ====================================================== -->
+
+    <div class="stackly-footer-bottom">
+
+        <div class="stackly-footer-bottom-container">
+
+            <p>
+                © 2026
+                <strong>Stackly Bakery</strong>.
+                All Rights Reserved.
+            </p>
+
+
+            <div class="stackly-footer-bottom-links">
+
+                <a href="404.html">
+                    Privacy Policy
+                </a>
+
+                <a href="404.html">
+                    Terms &amp; Conditions
+                </a>
+
+                <a href="404.html">
+                    Cookie Policy
+                </a>
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="stackly-footer-back-top"
+                aria-label="Back to top"
+            >
+                <i class="fa-solid fa-arrow-up"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================================================
+     AOS JAVASCRIPT
+========================================================== -->
+
+<script
+    src="https://unpkg.com/aos@2.3.4/dist/aos.js"
+></script>
+
+
+<!-- =========================================================
+     STACKLY MAIN JAVASCRIPT
+========================================================== -->
+
+<script
+    src="index.js"
+></script>
+
+
+</body>
+
+</html>

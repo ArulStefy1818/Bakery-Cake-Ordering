@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================================================
+         BASIC META
+    ========================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Bakery Customer Dashboard - Manage orders, wishlist, profile and bakery purchases."
+    >
+
+    <title>Stackly | Customer Dashboard</title>
+
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================================
+         FONT AWESOME
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =========================================================
+         CUSTOMER DASHBOARD CSS
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="customer.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =============================================================
+     CUSTOMER DASHBOARD WRAPPER
+============================================================== -->
+
+<div class="bakery-customer-dashboard">
+
+
+    <!-- =========================================================
+         MOBILE OVERLAY
+    ========================================================== -->
+
+    <div
+        class="bakery-customer-overlay"
+        id="bakeryCustomerOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================================
+         CUSTOMER SIDEBAR
+    ========================================================== -->
+
+    <aside
+        class="bakery-customer-sidebar"
+        id="bakeryCustomerSidebar"
+        aria-hidden="true"
+    >
+
+
+        <!-- =====================================================
+             SIDEBAR HEADER
+        ====================================================== -->
+
+        <div class="bakery-customer-sidebar-header">
+
+            <!-- Logo -->
+
+            <a
+                href="customer.html"
+                class="bakery-customer-logo"
+                aria-label="Stackly Bakery Home"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+
+            <button
+                type="button"
+                class="bakery-customer-close"
+                id="bakeryCustomerClose"
+                aria-label="Close customer menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             CUSTOMER NAVIGATION
+        ====================================================== -->
+
+        <nav
+            class="bakery-customer-navigation"
+            aria-label="Customer Dashboard Navigation"
+        >
+
+
+            <!-- Main -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    MAIN
+                </span>
+
+
+                <!-- Dashboard -->
+
+                <a
+                    href="customer.html"
+                    class="bakery-customer-nav-link active"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- Orders -->
+
+                <a
+                    href="customer-orders.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                    </span>
+
+                    <span>
+                        My Orders
+                    </span>
+
+                    <span class="bakery-customer-nav-count">
+                        3
+                    </span>
+
+                </a>
+
+
+                <!-- Wishlist -->
+
+                <a
+                    href="customer-wishlist.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </span>
+
+                    <span>
+                        Wishlist
+                    </span>
+
+                    <span class="bakery-customer-nav-count">
+                        8
+                    </span>
+
+                </a>
+
+
+                <!-- Reviews -->
+
+                <a
+                    href="customer-reviews.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-star"></i>
+
+                    </span>
+
+                    <span>
+                        My Reviews
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Shopping -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    SHOPPING
+                </span>
+
+
+                <!-- Custom Cakes -->
+
+                <a
+                    href="custom-cakes.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    </span>
+
+                    <span>
+                        Custom Cakes
+                    </span>
+
+                </a>
+
+
+                <!-- Offers -->
+
+                <a
+                    href="customer-offers.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-tag"></i>
+
+                    </span>
+
+                    <span>
+                        Offers
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Account -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    ACCOUNT
+                </span>
+
+
+                <!-- Profile -->
+
+                <a
+                    href="customer-profile.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-user"></i>
+
+                    </span>
+
+                    <span>
+                        My Profile
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- =====================================================
+             SIDEBAR BOTTOM
+        ====================================================== -->
+
+        <div class="bakery-customer-sidebar-bottom">
+
+            <!-- Logout -->
+
+            <button
+                type="button"
+                class="bakery-customer-logout"
+                id="bakeryCustomerLogout"
+            >
+
+                <span class="bakery-customer-nav-icon">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================================
+         MAIN CUSTOMER AREA
+    ========================================================== -->
+
+    <main class="bakery-customer-main">
+
+
+        <!-- =====================================================
+             TOP HEADER
+        ====================================================== -->
+
+        <header class="bakery-customer-topbar">
+
+
+            <!-- LEFT -->
+
+            <div class="bakery-customer-topbar-left">
+
+
+                <!-- Mobile Hamburger -->
+
+                <button
+                    type="button"
+                    class="bakery-customer-menu-toggle"
+                    id="bakeryCustomerMenuToggle"
+                    aria-label="Open customer menu"
+                    aria-expanded="false"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <!-- Page Heading -->
+
+                <div class="bakery-customer-page-heading">
+
+                    <span class="bakery-customer-heading-label">
+                        Customer Dashboard
+                    </span>
+
+                    <span class="bakery-customer-heading-subtitle">
+                        Welcome back to Stackly Bakery
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="bakery-customer-topbar-right">
+
+
+                <!-- Notification -->
+
+                <a
+                    href="404-customer.html"
+                    class="bakery-customer-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-customer-notification-dot">
+                    </span>
+
+                </a>
+
+
+                <!-- Customer -->
+
+                <div class="bakery-customer-user">
+
+
+                    <!-- Email -->
+
+                    <div class="bakery-customer-user-details">
+
+                        <span class="bakery-customer-user-label">
+                            Signed in as
+                        </span>
+
+                        <span
+                            class="bakery-customer-email"
+                            id="bakeryCustomerEmail"
+                        >
+                            customer@stackly.com
+                        </span>
+
+                    </div>
+
+
+                    <!-- Avatar -->
+
+                    <div class="bakery-customer-user-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     CUSTOM CAKES PAGE CONTENT
+========================================================= -->
+
+<div class="bakery-customcakes-content">
+
+
+<!-- =====================================================
+     CUSTOM CAKE HERO / TITLE SECTION
+====================================================== -->
+
+<section class="bakery-customcakes-hero">
+
+    <div class="bakery-customcakes-hero-content">
+
+        <span class="bakery-customcakes-kicker">
+            <i class="fa-solid fa-wand-magic-sparkles"></i>
+            MADE JUST FOR YOU
+        </span>
+
+        <h1>
+            Create Your
+            <span>Dream Cake</span>
+        </h1>
+
+        <p>
+            Turn your sweetest ideas into a beautiful celebration cake.
+            Choose your flavor, size, design and finishing touches to
+            create something truly personal.
+        </p>
+
+        <div class="bakery-customcakes-hero-actions">
+
+            <a href="404-customer.html" class="bakery-customcakes-primary-btn">
+                Start Designing
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="404-customer.html" class="bakery-customcakes-secondary-btn">
+                Explore Designs
+                <i class="fa-solid fa-cake-candles"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- Decorative Cake Icon -->
+
+    <div class="bakery-customcakes-hero-art">
+
+        <div class="bakery-customcakes-art-circle"></div>
+
+        <div class="bakery-customcakes-cake-icon">
+            <i class="fa-solid fa-cake-candles"></i>
+        </div>
+
+        <span class="bakery-customcakes-sparkle sparkle-one">
+            <i class="fa-solid fa-star"></i>
+        </span>
+
+        <span class="bakery-customcakes-sparkle sparkle-two">
+            <i class="fa-solid fa-star"></i>
+        </span>
+
+        <span class="bakery-customcakes-sparkle sparkle-three">
+            <i class="fa-solid fa-heart"></i>
+        </span>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SECTION TITLE
+====================================================== -->
+
+<section class="bakery-customcakes-title-section">
+
+    <div class="bakery-customcakes-title-text">
+
+        <span>YOUR CAKE, YOUR WAY</span>
+
+        <h2>
+            Build Every Detail
+            <em>Yourself</em>
+        </h2>
+
+        <p>
+            From the first layer to the final decoration,
+            personalize your cake exactly the way you imagine it.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CUSTOMIZATION OPTIONS
+====================================================== -->
+
+<section class="bakery-customcakes-options">
+
+    <!-- Flavor -->
+
+    <article class="bakery-customcakes-option-card">
+
+        <div class="bakery-customcakes-option-icon">
+            <i class="fa-solid fa-cookie-bite"></i>
+        </div>
+
+        <div class="bakery-customcakes-option-number">
+            01
+        </div>
+
+        <span>STEP ONE</span>
+
+        <h3>Choose Your Flavor</h3>
+
+        <p>
+            Pick from chocolate truffle, vanilla, red velvet,
+            butterscotch and our seasonal bakery flavors.
+        </p>
+
+        <a href="404-customer.html">
+            Choose Flavor
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </article>
+
+
+    <!-- Size -->
+
+    <article class="bakery-customcakes-option-card">
+
+        <div class="bakery-customcakes-option-icon">
+            <i class="fa-solid fa-layer-group"></i>
+        </div>
+
+        <div class="bakery-customcakes-option-number">
+            02
+        </div>
+
+        <span>STEP TWO</span>
+
+        <h3>Select The Perfect Size</h3>
+
+        <p>
+            Choose the perfect cake size for an intimate
+            gathering, birthday party or grand celebration.
+        </p>
+
+        <a href="404-customer.html">
+            Select Size
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </article>
+
+
+    <!-- Design -->
+
+    <article class="bakery-customcakes-option-card">
+
+        <div class="bakery-customcakes-option-icon">
+            <i class="fa-solid fa-palette"></i>
+        </div>
+
+        <div class="bakery-customcakes-option-number">
+            03
+        </div>
+
+        <span>STEP THREE</span>
+
+        <h3>Pick Your Perfect Design</h3>
+
+        <p>
+            Add colors, textures, flowers, toppers and
+            creative decorations that match your celebration.
+        </p>
+
+        <a href="404-customer.html">
+            Pick Design
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </article>
+
+
+    <!-- Message -->
+
+    <article class="bakery-customcakes-option-card">
+
+        <div class="bakery-customcakes-option-icon">
+            <i class="fa-solid fa-pen"></i>
+        </div>
+
+        <div class="bakery-customcakes-option-number">
+            04
+        </div>
+
+        <span>STEP FOUR</span>
+
+        <h3>Add Your Message</h3>
+
+        <p>
+            Make the cake meaningful with a personalized message, name or celebration.
+
+        </p>
+
+        <a href="404-customer.html">
+            Add Message
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </article>
+
+</section>
+
+
+
+<!-- =====================================================
+     CAKE EXPERIENCE SECTION
+====================================================== -->
+
+<section class="bakery-customcakes-experience">
+
+    <div class="bakery-customcakes-experience-badge">
+
+        <i class="fa-solid fa-heart"></i>
+
+    </div>
+
+    <div class="bakery-customcakes-experience-content">
+
+        <span>
+            A CAKE WITH YOUR STORY
+        </span>
+
+        <h2>
+            More Than A Cake,
+            <em>It's Your Moment.</em>
+        </h2>
+
+        <p>
+            Whether you're celebrating a birthday, anniversary,
+            graduation or simply making someone's day sweeter,
+            our custom cake service helps you create a dessert
+            that feels completely yours.
+        </p>
+
+        <div class="bakery-customcakes-highlights">
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                <span>Freshly Baked</span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                <span>Personalized Designs</span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                <span>Premium Ingredients</span>
+            </div>
+
+            <div>
+                <i class="fa-solid fa-check"></i>
+                <span>Made To Order</span>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="bakery-customcakes-price-card">
+
+        <span>STARTING FROM</span>
+
+        <strong>₹699</strong>
+
+        <small>
+            Customization available
+        </small>
+
+        <a href="404-customer.html">
+            Create My Cake
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     POPULAR CUSTOM CAKE STYLES
+====================================================== -->
+
+<section class="bakery-customcakes-styles">
+
+    <div class="bakery-customcakes-section-heading">
+
+        <div>
+
+            <span>GET INSPIRED</span>
+
+            <h2>
+                Popular Cake Styles
+            </h2>
+
+        </div>
+
+        <a href="404-customer.html">
+            View All Designs
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="bakery-customcakes-style-grid">
+
+
+        <article class="bakery-customcakes-style-card">
+
+            <div class="bakery-customcakes-style-icon">
+                <i class="fa-solid fa-cake-candles"></i>
+            </div>
+
+            <h3>Birthday <br>Cakes</h3>
+
+            <p>
+                Fun colors, names, numbers and playful decorations
+                for unforgettable birthdays.
+            </p>
+
+            <span>From ₹699</span>
+
+        </article>
+
+
+        <article class="bakery-customcakes-style-card">
+
+            <div class="bakery-customcakes-style-icon">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <h3>Anniversary Cakes</h3>
+
+            <p>
+                Elegant designs created for romantic celebrations
+                and beautiful memories together.
+            </p>
+
+            <span>From ₹899</span>
+
+        </article>
+
+
+        <article class="bakery-customcakes-style-card">
+
+            <div class="bakery-customcakes-style-icon">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+
+            <h3>Celebration Cakes</h3>
+
+            <p>
+                Personalized cakes for graduations, achievements,
+                parties and special milestones.
+            </p>
+
+            <span>From ₹799</span>
+
+        </article>
+
+
+        <article class="bakery-customcakes-style-card">
+
+            <div class="bakery-customcakes-style-icon">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+
+            <h3>Theme <br>Cakes</h3>
+
+            <p>
+                Creative themed designs inspired by hobbies,
+                characters, colors and unique ideas.
+            </p>
+
+            <span>From ₹999</span>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FINAL CTA
+====================================================== -->
+
+<section class="bakery-customcakes-final-cta">
+
+    <div class="bakery-customcakes-final-icon">
+        <i class="fa-solid fa-wand-magic-sparkles"></i>
+    </div>
+
+    <div class="bakery-customcakes-final-content">
+
+        <span>
+            READY TO CREATE?
+        </span>
+
+        <h2>
+            Your perfect cake starts with an idea.
+        </h2>
+
+        <p>
+            Tell us what you're imagining and we'll help
+            turn it into a delicious centerpiece.
+        </p>
+
+    </div>
+
+    <a href="404-customer.html">
+        Start Customizing
+        <i class="fa-solid fa-arrow-right"></i>
+    </a>
+
+</section>
+
+
+</div>
+
+
+
+    </main>
+
+</div>
+
+
+<!-- =============================================================
+     CUSTOMER DASHBOARD JAVASCRIPT
+============================================================== -->
+
+<script src="customer.js"></script>
+
+</body>
+
+</html>

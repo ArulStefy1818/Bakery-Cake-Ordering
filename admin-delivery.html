@@ -1,0 +1,1775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Stackly Bakery | Admin Dashboard</title>
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     ADMIN DASHBOARD WRAPPER
+========================================================= -->
+
+<div class="bakery-admin-dashboard">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="bakery-admin-overlay"
+        id="bakeryAdminOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="bakery-admin-sidebar"
+        id="bakeryAdminSidebar"
+    >
+
+        <!-- Sidebar Header -->
+        <div class="bakery-admin-sidebar-header">
+
+            <a
+                href="admin.html"
+                class="bakery-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+            <button
+                type="button"
+                class="bakery-admin-close"
+                id="bakeryAdminClose"
+                aria-label="Close menu"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Sidebar Navigation -->
+        <nav class="bakery-admin-navigation">
+
+            <p class="bakery-admin-nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+            </a>
+
+
+            <a
+                href="admin-orders.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+                <small class="bakery-admin-nav-count">
+                    24
+                </small>
+            </a>
+
+
+            <a
+                href="admin-cakes.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </span>
+
+                <span>
+                    Cakes
+                </span>
+            </a>
+
+
+            <a
+                href="admin-customers.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+
+                <span>
+                    Customers
+                </span>
+            </a>
+
+
+            <a
+                href="admin-delivery.html"
+                class="bakery-admin-nav-link active"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-truck"></i>
+                </span>
+
+                <span>
+                    Delivery
+                </span>
+            </a>
+
+
+            <a
+                href="admin-reviews.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-star"></i>
+                </span>
+
+                <span>
+                    Reviews
+                </span>
+            </a>
+
+
+            <p class="bakery-admin-nav-title bakery-admin-nav-title-space">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-coupons.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </span>
+
+                <span>
+                    Coupons
+                </span>
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+
+                <span>
+                    Settings
+                </span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+        <div class="bakery-admin-sidebar-bottom">
+
+             
+
+            <button
+                type="button"
+                class="bakery-admin-logout"
+                id="bakeryAdminLogout"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="bakery-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="bakery-admin-topbar">
+
+
+            <!-- Left Side -->
+            <div class="bakery-admin-topbar-left">
+
+                <!-- Mobile Hamburger -->
+                <button
+                    type="button"
+                    class="bakery-admin-menu-toggle"
+                    id="bakeryAdminMenuToggle"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div class="bakery-admin-page-heading">
+
+                    <span class="bakery-admin-heading-label">
+                        ADMIN PANEL
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Side -->
+            <div class="bakery-admin-topbar-right">
+
+
+                <!-- Notification -->
+                <a
+                    href="404-admin.html"
+                    class="bakery-admin-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-admin-notification-dot">
+                        4
+                    </span>
+
+                </a>
+
+
+                <!-- User -->
+                <div class="bakery-admin-user">
+
+                    <div class="bakery-admin-user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+
+                    <div class="bakery-admin-user-details">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <!-- EMAIL WILL BE DISPLAYED HERE -->
+                        <span id="bakeryAdminEmail">
+                            admin@stackly.com
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- =========================================================
+     DELIVERY PAGE CONTENT
+========================================================= -->
+
+<div class="bakery-delivery-page-content">
+
+
+    <!-- =====================================================
+         DELIVERY PAGE INTRO
+    ====================================================== -->
+
+    <section class="bakery-delivery-intro">
+
+        <div class="bakery-delivery-intro-content">
+
+            <span class="bakery-delivery-eyebrow">
+                <i class="fa-solid fa-route"></i>
+                DELIVERY OPERATIONS
+            </span>
+
+            <h2>
+                Deliver Every Cake
+                <span>Fresh & On Time</span>
+            </h2>
+
+            <p>
+                Monitor today's deliveries, manage delivery partners,
+                track routes, and keep every bakery order moving
+                smoothly from kitchen to customer's doorstep.
+            </p>
+
+        </div>
+
+
+        <div class="bakery-delivery-intro-actions">
+
+            <a
+                href="404-admin.html"
+                class="bakery-delivery-primary-button"
+            >
+                <i class="fa-solid fa-plus"></i>
+                Add Delivery
+            </a>
+
+            <a
+                href="404-admin.html"
+                class="bakery-delivery-secondary-button"
+            >
+                <i class="fa-solid fa-map-location-dot"></i>
+                View Routes
+            </a>
+
+        </div>
+
+    </section>
+
+ 
+    <!-- =====================================================
+         LIVE DELIVERY STATUS
+    ====================================================== -->
+
+    <section class="bakery-delivery-live-section">
+
+        <div class="bakery-delivery-section-heading">
+
+            <div>
+
+                <span class="bakery-delivery-section-label">
+                    LIVE MONITORING
+                </span>
+
+                <h3>
+                    Delivery Control Center
+                </h3>
+
+            </div>
+
+            <div class="bakery-delivery-live-badge">
+
+                <span></span>
+
+                Live Tracking
+
+            </div>
+
+        </div>
+
+
+        <div class="bakery-delivery-control-grid">
+
+
+            <!-- =================================================
+                 DELIVERY MAP / ROUTE VISUAL
+            ================================================== -->
+
+            <article class="bakery-delivery-route-card">
+
+                <div class="bakery-delivery-card-header">
+
+                    <div>
+
+                        <span>
+                            TODAY'S DELIVERY NETWORK
+                        </span>
+
+                        <h4>
+                            Chennai Delivery Routes
+                        </h4>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="bakery-delivery-expand-button"
+                        aria-label="Expand delivery map"
+                    >
+                        <i class="fa-solid fa-expand"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="bakery-delivery-map">
+
+                    <div class="bakery-delivery-map-grid"></div>
+
+
+                    <!-- Route Lines -->
+
+                    <span class="bakery-delivery-route-line route-one"></span>
+                    <span class="bakery-delivery-route-line route-two"></span>
+                    <span class="bakery-delivery-route-line route-three"></span>
+
+
+                    <!-- Location Points -->
+
+                    <span class="bakery-delivery-map-point point-one">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+
+                    <span class="bakery-delivery-map-point point-two">
+                        <i class="fa-solid fa-truck"></i>
+                    </span>
+
+                    <span class="bakery-delivery-map-point point-three">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </span>
+
+                    <span class="bakery-delivery-map-point point-four">
+                        <i class="fa-solid fa-house"></i>
+                    </span>
+
+                    <div class="bakery-delivery-map-label label-one">
+                        Anna Nagar
+                    </div>
+
+                    <div class="bakery-delivery-map-label label-two">
+                        T. Nagar
+                    </div>
+
+                    <div class="bakery-delivery-map-label label-three">
+                        Adyar
+                    </div>
+
+                </div>
+
+
+                <div class="bakery-delivery-map-footer">
+
+                    <div>
+                        <span class="bakery-delivery-map-dot active"></span>
+                        Active Driver
+                    </div>
+
+                    <div>
+                        <span class="bakery-delivery-map-dot bakery"></span>
+                        Bakery Hub
+                    </div>
+
+                    <div>
+                        <span class="bakery-delivery-map-dot customer"></span>
+                        Customer
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 DRIVER STATUS
+            ================================================== -->
+
+            <article class="bakery-delivery-driver-card">
+
+                <div class="bakery-delivery-card-header">
+
+                    <div>
+
+                        <span>
+                            DELIVERY PARTNERS
+                        </span>
+
+                        <h4>
+                            Driver Availability
+                        </h4>
+
+                    </div>
+
+                    <a
+                        href="404-admin.html"
+                        class="bakery-delivery-card-link"
+                    >
+                        Manage
+                    </a>
+
+                </div>
+
+
+                <div class="bakery-delivery-driver-list">
+
+
+                    <!-- DRIVER 01 -->
+
+                    <div class="bakery-delivery-driver-item">
+
+                        <div class="bakery-delivery-driver-avatar">
+                            AK
+                        </div>
+
+                        <div class="bakery-delivery-driver-info">
+
+                            <strong>
+                                Arun Kumar
+                            </strong>
+
+                            <span>
+                                Bike • DL-08-AX-2145
+                            </span>
+
+                        </div>
+
+                        <span class="bakery-delivery-driver-status online">
+                            Online
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- DRIVER 02 -->
+
+                    <div class="bakery-delivery-driver-item">
+
+                        <div class="bakery-delivery-driver-avatar">
+                            RS
+                        </div>
+
+                        <div class="bakery-delivery-driver-info">
+
+                            <strong>
+                                Ravi Shankar
+                            </strong>
+
+                            <span>
+                                Bike • TN-09-BM-4812
+                            </span>
+
+                        </div>
+
+                        <span class="bakery-delivery-driver-status online">
+                            Online
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- DRIVER 03 -->
+
+                    <div class="bakery-delivery-driver-item">
+
+                        <div class="bakery-delivery-driver-avatar">
+                            VK
+                        </div>
+
+                        <div class="bakery-delivery-driver-info">
+
+                            <strong>
+                                Vikram Kumar
+                            </strong>
+
+                            <span>
+                                Scooter • TN-10-CD-7621
+                            </span>
+
+                        </div>
+
+                        <span class="bakery-delivery-driver-status busy">
+                            On Route
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- DRIVER 04 -->
+
+                    <div class="bakery-delivery-driver-item">
+
+                        <div class="bakery-delivery-driver-avatar">
+                            SM
+                        </div>
+
+                        <div class="bakery-delivery-driver-info">
+
+                            <strong>
+                                Suresh Mani
+                            </strong>
+
+                            <span>
+                                Bike • TN-07-ER-3356
+                            </span>
+
+                        </div>
+
+                        <span class="bakery-delivery-driver-status offline">
+                            Offline
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bakery-delivery-driver-footer">
+
+                    <div>
+
+                        <strong>
+                            8
+                        </strong>
+
+                        <span>
+                            Drivers Active
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            2
+                        </strong>
+
+                        <span>
+                            Available
+                        </span>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            1
+                        </strong>
+
+                        <span>
+                            Offline
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         TODAY'S DELIVERY SCHEDULE
+    ====================================================== -->
+
+    <section class="bakery-delivery-schedule-section">
+
+        <div class="bakery-delivery-section-heading">
+
+            <div>
+
+                <span class="bakery-delivery-section-label">
+                    DELIVERY SCHEDULE
+                </span>
+
+                <h3>
+                    Today's Dispatch Queue
+                </h3>
+
+            </div>
+
+            <a
+                href="404-admin.html"
+                class="bakery-delivery-view-all"
+            >
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="bakery-delivery-schedule-card">
+
+            <div class="bakery-delivery-schedule-list">
+
+
+                <!-- ORDER 01 -->
+
+                <article class="bakery-delivery-schedule-item">
+
+                    <div class="bakery-delivery-time">
+
+                        <strong>
+                            01:30 PM
+                        </strong>
+
+                        <span>
+                            Today
+                        </span>
+
+                    </div>
+
+
+                    <div class="bakery-delivery-order-icon">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+
+
+                    <div class="bakery-delivery-order-details">
+
+                        <strong>
+                            #ORD-10842
+                        </strong>
+
+                        <span>
+                            Chocolate Truffle Cake
+                        </span>
+
+                        <small>
+                            Ananya Sharma • Anna Nagar
+                        </small>
+
+                    </div>
+
+
+                    <div class="bakery-delivery-order-driver">
+
+                        <span>
+                            Driver
+                        </span>
+
+                        <strong>
+                            Arun Kumar
+                        </strong>
+
+                    </div>
+
+
+                    <span class="bakery-delivery-order-status preparing">
+                        Preparing
+                    </span>
+
+
+                    <a
+                        href="404-admin.html"
+                        class="bakery-delivery-order-action"
+                        aria-label="View order ORD-10842"
+                    >
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+
+                </article>
+
+
+
+                <!-- ORDER 02 -->
+
+                <article class="bakery-delivery-schedule-item">
+
+                    <div class="bakery-delivery-time">
+
+                        <strong>
+                            02:15 PM
+                        </strong>
+
+                        <span>
+                            Today
+                        </span>
+
+                    </div>
+
+
+                    <div class="bakery-delivery-order-icon">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+
+
+                    <div class="bakery-delivery-order-details">
+
+                        <strong>
+                            #ORD-10839
+                        </strong>
+
+                        <span>
+                            Red Velvet Celebration Cake
+                        </span>
+
+                        <small>
+                            Rahul Kumar • T. Nagar
+                        </small>
+
+                    </div>
+
+
+                    <div class="bakery-delivery-order-driver">
+
+                        <span>
+                            Driver
+                        </span>
+
+                        <strong>
+                            Ravi Shankar
+                        </strong>
+
+                    </div>
+
+
+                    <span class="bakery-delivery-order-status onroute">
+                        On Route
+                    </span>
+
+
+                    <a
+                        href="404-admin.html"
+                        class="bakery-delivery-order-action"
+                        aria-label="View order ORD-10839"
+                    >
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+
+                </article>
+
+
+
+                <!-- ORDER 03 -->
+
+                <article class="bakery-delivery-schedule-item">
+
+                    <div class="bakery-delivery-time">
+
+                        <strong>
+                            03:00 PM
+                        </strong>
+
+                        <span>
+                            Today
+                        </span>
+
+                    </div>
+
+
+                    <div class="bakery-delivery-order-icon">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+
+
+                    <div class="bakery-delivery-order-details">
+
+                        <strong>
+                            #ORD-10837
+                        </strong>
+
+                        <span>
+                            Strawberry Fresh Cream Cake
+                        </span>
+
+                        <small>
+                            Sneha Priya • Adyar
+                        </small>
+
+                    </div>
+
+
+                    <div class="bakery-delivery-order-driver">
+
+                        <span>
+                            Driver
+                        </span>
+
+                        <strong>
+                            Vikram Kumar
+                        </strong>
+
+                    </div>
+
+
+                    <span class="bakery-delivery-order-status delivered">
+                        Delivered
+                    </span>
+
+
+                    <a
+                        href="404-admin.html"
+                        class="bakery-delivery-order-action"
+                        aria-label="View order ORD-10837"
+                    >
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+
+                </article>
+
+
+
+                <!-- ORDER 04 -->
+
+                <article class="bakery-delivery-schedule-item">
+
+                    <div class="bakery-delivery-time">
+
+                        <strong>
+                            04:20 PM
+                        </strong>
+
+                        <span>
+                            Today
+                        </span>
+
+                    </div>
+
+
+                    <div class="bakery-delivery-order-icon">
+                        <i class="fa-solid fa-gift"></i>
+                    </div>
+
+
+                    <div class="bakery-delivery-order-details">
+
+                        <strong>
+                            #ORD-10831
+                        </strong>
+
+                        <span>
+                            Premium Wedding Cake
+                        </span>
+
+                        <small>
+                            Meena Krishnan • Besant Nagar
+                        </small>
+
+                    </div>
+
+
+                    <div class="bakery-delivery-order-driver">
+
+                        <span>
+                            Driver
+                        </span>
+
+                        <strong>
+                            Suresh Mani
+                        </strong>
+
+                    </div>
+
+
+                    <span class="bakery-delivery-order-status delayed">
+                        Delayed
+                    </span>
+
+
+                    <a
+                        href="404-admin.html"
+                        class="bakery-delivery-order-action"
+                        aria-label="View order ORD-10831"
+                    >
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+
+                </article>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DELIVERY PERFORMANCE + DELAYS
+    ====================================================== -->
+
+    <section class="bakery-delivery-analysis-section">
+
+        <div class="bakery-delivery-analysis-grid">
+
+
+            <!-- =================================================
+                 DELIVERY PERFORMANCE
+            ================================================== -->
+
+            <article class="bakery-delivery-performance-card">
+
+                <div class="bakery-delivery-card-header">
+
+                    <div>
+
+                        <span>
+                            PERFORMANCE
+                        </span>
+
+                        <h4>
+                            Delivery Success Rate
+                        </h4>
+
+                    </div>
+
+                    <span class="bakery-delivery-performance-period">
+                        This Week
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-delivery-performance-main">
+
+                    <div class="bakery-delivery-performance-circle">
+
+                        <div>
+
+                            <strong>
+                                94%
+                            </strong>
+
+                            <span>
+                                On Time
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-delivery-performance-details">
+
+                        <div>
+
+                            <span>
+                                Successful Deliveries
+                            </span>
+
+                            <strong>
+                                612
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Late Deliveries
+                            </span>
+
+                            <strong>
+                                38
+                            </strong>
+
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Cancelled
+                            </span>
+
+                            <strong>
+                                7
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bakery-delivery-performance-bars">
+
+                    <div class="bakery-delivery-bar-row">
+
+                        <div>
+                            <span>Mon</span>
+                            <strong>92%</strong>
+                        </div>
+
+                        <div class="bakery-delivery-bar">
+                            <span style="width:92%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-delivery-bar-row">
+
+                        <div>
+                            <span>Tue</span>
+                            <strong>95%</strong>
+                        </div>
+
+                        <div class="bakery-delivery-bar">
+                            <span style="width:95%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-delivery-bar-row">
+
+                        <div>
+                            <span>Wed</span>
+                            <strong>94%</strong>
+                        </div>
+
+                        <div class="bakery-delivery-bar">
+                            <span style="width:94%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-delivery-bar-row">
+
+                        <div>
+                            <span>Thu</span>
+                            <strong>97%</strong>
+                        </div>
+
+                        <div class="bakery-delivery-bar">
+                            <span style="width:97%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-delivery-bar-row">
+
+                        <div>
+                            <span>Fri</span>
+                            <strong>93%</strong>
+                        </div>
+
+                        <div class="bakery-delivery-bar">
+                            <span style="width:93%;"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 DELIVERY ALERTS
+            ================================================== -->
+
+            <article class="bakery-delivery-alert-card">
+
+                <div class="bakery-delivery-card-header">
+
+                    <div>
+
+                        <span>
+                            ATTENTION REQUIRED
+                        </span>
+
+                        <h4>
+                            Delivery Alerts
+                        </h4>
+
+                    </div>
+
+                    <span class="bakery-delivery-alert-count">
+                        4
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-delivery-alert-list">
+
+
+                    <div class="bakery-delivery-alert-item urgent">
+
+                        <div class="bakery-delivery-alert-icon">
+                            <i class="fa-solid fa-triangle-exclamation"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Order #ORD-10831 delayed
+                            </strong>
+
+                            <span>
+                                Driver has been inactive for 14 minutes.
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="404-admin.html"
+                            aria-label="View delivery alert"
+                        >
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="bakery-delivery-alert-item warning">
+
+                        <div class="bakery-delivery-alert-icon">
+                            <i class="fa-solid fa-clock"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Anna Nagar route busy
+                            </strong>
+
+                            <span>
+                                9 deliveries are waiting for dispatch.
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="404-admin.html"
+                            aria-label="View route alert"
+                        >
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="bakery-delivery-alert-item info">
+
+                        <div class="bakery-delivery-alert-icon">
+                            <i class="fa-solid fa-battery-quarter"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Driver battery low
+                            </strong>
+
+                            <span>
+                                Ravi Shankar's device is at 18%.
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="404-admin.html"
+                            aria-label="View driver alert"
+                        >
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+
+
+                    <div class="bakery-delivery-alert-item success">
+
+                        <div class="bakery-delivery-alert-icon">
+                            <i class="fa-solid fa-circle-check"></i>
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Route completed
+                            </strong>
+
+                            <span>
+                                Adyar morning delivery route completed.
+                            </span>
+
+                        </div>
+
+                        <a
+                            href="404-admin.html"
+                            aria-label="View route details"
+                        >
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         DELIVERY ZONES
+    ====================================================== -->
+
+    <section class="bakery-delivery-zones-section">
+
+        <div class="bakery-delivery-section-heading">
+
+            <div>
+
+                <span class="bakery-delivery-section-label">
+                    DELIVERY COVERAGE
+                </span>
+
+                <h3>
+                    Popular Delivery Zones
+                </h3>
+
+            </div>
+
+            <a
+                href="404-admin.html"
+                class="bakery-delivery-view-all"
+            >
+                Manage Zones
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="bakery-delivery-zone-grid">
+
+
+            <!-- ZONE 01 -->
+
+            <article class="bakery-delivery-zone-card">
+
+                <div class="bakery-delivery-zone-top">
+
+                    <div class="bakery-delivery-zone-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <span class="bakery-delivery-zone-status normal">
+                        Normal
+                    </span>
+
+                </div>
+
+                <h4>
+                    Anna Nagar
+                </h4>
+
+                <p>
+                    24 active deliveries
+                </p>
+
+                <div class="bakery-delivery-zone-progress">
+
+                    <div>
+                        <span>
+                            Route Capacity
+                        </span>
+
+                        <strong>
+                            62%
+                        </strong>
+                    </div>
+
+                    <div class="bakery-delivery-zone-track">
+                        <span style="width:62%;"></span>
+                    </div>
+
+                </div>
+
+                <a
+                    href="404-admin.html"
+                    class="bakery-delivery-zone-link"
+                >
+                    View Zone
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+
+            <!-- ZONE 02 -->
+
+            <article class="bakery-delivery-zone-card">
+
+                <div class="bakery-delivery-zone-top">
+
+                    <div class="bakery-delivery-zone-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <span class="bakery-delivery-zone-status busy">
+                        Busy
+                    </span>
+
+                </div>
+
+                <h4>
+                    T. Nagar
+                </h4>
+
+                <p>
+                    31 active deliveries
+                </p>
+
+                <div class="bakery-delivery-zone-progress">
+
+                    <div>
+                        <span>
+                            Route Capacity
+                        </span>
+
+                        <strong>
+                            84%
+                        </strong>
+                    </div>
+
+                    <div class="bakery-delivery-zone-track">
+                        <span style="width:84%;"></span>
+                    </div>
+
+                </div>
+
+                <a
+                    href="404-admin.html"
+                    class="bakery-delivery-zone-link"
+                >
+                    View Zone
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+
+            <!-- ZONE 03 -->
+
+            <article class="bakery-delivery-zone-card">
+
+                <div class="bakery-delivery-zone-top">
+
+                    <div class="bakery-delivery-zone-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <span class="bakery-delivery-zone-status normal">
+                        Normal
+                    </span>
+
+                </div>
+
+                <h4>
+                    Adyar
+                </h4>
+
+                <p>
+                    18 active deliveries
+                </p>
+
+                <div class="bakery-delivery-zone-progress">
+
+                    <div>
+                        <span>
+                            Route Capacity
+                        </span>
+
+                        <strong>
+                            48%
+                        </strong>
+                    </div>
+
+                    <div class="bakery-delivery-zone-track">
+                        <span style="width:48%;"></span>
+                    </div>
+
+                </div>
+
+                <a
+                    href="404-admin.html"
+                    class="bakery-delivery-zone-link"
+                >
+                    View Zone
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+
+            <!-- ZONE 04 -->
+
+            <article class="bakery-delivery-zone-card">
+
+                <div class="bakery-delivery-zone-top">
+
+                    <div class="bakery-delivery-zone-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <span class="bakery-delivery-zone-status low">
+                        Low
+                    </span>
+
+                </div>
+
+                <h4>
+                    Besant Nagar
+                </h4>
+
+                <p>
+                    9 active deliveries
+                </p>
+
+                <div class="bakery-delivery-zone-progress">
+
+                    <div>
+                        <span>
+                            Route Capacity
+                        </span>
+
+                        <strong>
+                            31%
+                        </strong>
+                    </div>
+
+                    <div class="bakery-delivery-zone-track">
+                        <span style="width:31%;"></span>
+                    </div>
+
+                </div>
+
+                <a
+                    href="404-admin.html"
+                    class="bakery-delivery-zone-link"
+                >
+                    View Zone
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUICK DELIVERY ACTIONS
+    ====================================================== -->
+
+    <section class="bakery-delivery-actions-section">
+
+        <div class="bakery-delivery-section-heading">
+
+            <div>
+
+                <span class="bakery-delivery-section-label">
+                    MANAGEMENT TOOLS
+                </span>
+
+                <h3>
+                    Quick Delivery Actions
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="bakery-delivery-actions-grid">
+
+
+            <a
+                href="404-admin.html"
+                class="bakery-delivery-action-card"
+            >
+
+                <div class="bakery-delivery-action-icon">
+                    <i class="fa-solid fa-user-plus"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Add Driver
+                    </strong>
+
+                    <span>
+                        Register a new delivery partner
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+
+            <a
+                href="404-admin.html"
+                class="bakery-delivery-action-card"
+            >
+
+                <div class="bakery-delivery-action-icon">
+                    <i class="fa-solid fa-route"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Create Route
+                    </strong>
+
+                    <span>
+                        Build an optimized delivery route
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+
+            <a
+                href="404-admin.html"
+                class="bakery-delivery-action-card"
+            >
+
+                <div class="bakery-delivery-action-icon">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Delivery History
+                    </strong>
+
+                    <span>
+                        Review completed deliveries
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+
+            <a
+                href="404-admin.html"
+                class="bakery-delivery-action-card"
+            >
+
+                <div class="bakery-delivery-action-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Delivery Reports
+                    </strong>
+
+                    <span>
+                        Analyze delivery performance
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+</div>
+    
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="admin.js"></script>
+
+</body>
+</html>

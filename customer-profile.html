@@ -1,0 +1,947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================================================
+         BASIC META
+    ========================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Bakery Customer Dashboard - Manage orders, wishlist, profile and bakery purchases."
+    >
+
+    <title>Stackly | Customer Dashboard</title>
+
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================================
+         FONT AWESOME
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =========================================================
+         CUSTOMER DASHBOARD CSS
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="customer.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =============================================================
+     CUSTOMER DASHBOARD WRAPPER
+============================================================== -->
+
+<div class="bakery-customer-dashboard">
+
+
+    <!-- =========================================================
+         MOBILE OVERLAY
+    ========================================================== -->
+
+    <div
+        class="bakery-customer-overlay"
+        id="bakeryCustomerOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================================
+         CUSTOMER SIDEBAR
+    ========================================================== -->
+
+    <aside
+        class="bakery-customer-sidebar"
+        id="bakeryCustomerSidebar"
+        aria-hidden="true"
+    >
+
+
+        <!-- =====================================================
+             SIDEBAR HEADER
+        ====================================================== -->
+
+        <div class="bakery-customer-sidebar-header">
+
+            <!-- Logo -->
+
+            <a
+                href="customer.html"
+                class="bakery-customer-logo"
+                aria-label="Stackly Bakery Home"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+
+            <button
+                type="button"
+                class="bakery-customer-close"
+                id="bakeryCustomerClose"
+                aria-label="Close customer menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             CUSTOMER NAVIGATION
+        ====================================================== -->
+
+        <nav
+            class="bakery-customer-navigation"
+            aria-label="Customer Dashboard Navigation"
+        >
+
+
+            <!-- Main -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    MAIN
+                </span>
+
+
+                <!-- Dashboard -->
+
+                <a
+                    href="customer.html"
+                    class="bakery-customer-nav-link active"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- Orders -->
+
+                <a
+                    href="customer-orders.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                    </span>
+
+                    <span>
+                        My Orders
+                    </span>
+
+                    <span class="bakery-customer-nav-count">
+                        3
+                    </span>
+
+                </a>
+
+
+                <!-- Wishlist -->
+
+                <a
+                    href="customer-wishlist.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </span>
+
+                    <span>
+                        Wishlist
+                    </span>
+
+                    <span class="bakery-customer-nav-count">
+                        8
+                    </span>
+
+                </a>
+
+
+                <!-- Reviews -->
+
+                <a
+                    href="customer-reviews.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-star"></i>
+
+                    </span>
+
+                    <span>
+                        My Reviews
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Shopping -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    SHOPPING
+                </span>
+
+
+                <!-- Custom Cakes -->
+
+                <a
+                    href="custom-cakes.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    </span>
+
+                    <span>
+                        Custom Cakes
+                    </span>
+
+                </a>
+
+
+                <!-- Offers -->
+
+                <a
+                    href="customer-offers.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-tag"></i>
+
+                    </span>
+
+                    <span>
+                        Offers
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Account -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    ACCOUNT
+                </span>
+
+
+                <!-- Profile -->
+
+                <a
+                    href="customer-profile.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-user"></i>
+
+                    </span>
+
+                    <span>
+                        My Profile
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- =====================================================
+             SIDEBAR BOTTOM
+        ====================================================== -->
+
+        <div class="bakery-customer-sidebar-bottom">
+
+            <!-- Logout -->
+
+            <button
+                type="button"
+                class="bakery-customer-logout"
+                id="bakeryCustomerLogout"
+            >
+
+                <span class="bakery-customer-nav-icon">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================================
+         MAIN CUSTOMER AREA
+    ========================================================== -->
+
+    <main class="bakery-customer-main">
+
+
+        <!-- =====================================================
+             TOP HEADER
+        ====================================================== -->
+
+        <header class="bakery-customer-topbar">
+
+
+            <!-- LEFT -->
+
+            <div class="bakery-customer-topbar-left">
+
+
+                <!-- Mobile Hamburger -->
+
+                <button
+                    type="button"
+                    class="bakery-customer-menu-toggle"
+                    id="bakeryCustomerMenuToggle"
+                    aria-label="Open customer menu"
+                    aria-expanded="false"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <!-- Page Heading -->
+
+                <div class="bakery-customer-page-heading">
+
+                    <span class="bakery-customer-heading-label">
+                        Customer Dashboard
+                    </span>
+
+                    <span class="bakery-customer-heading-subtitle">
+                        Welcome back to Stackly Bakery
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="bakery-customer-topbar-right">
+
+
+                <!-- Notification -->
+
+                <a
+                    href="404-customer.html"
+                    class="bakery-customer-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-customer-notification-dot">
+                    </span>
+
+                </a>
+
+
+                <!-- Customer -->
+
+                <div class="bakery-customer-user">
+
+
+                    <!-- Email -->
+
+                    <div class="bakery-customer-user-details">
+
+                        <span class="bakery-customer-user-label">
+                            Signed in as
+                        </span>
+
+                        <span
+                            class="bakery-customer-email"
+                            id="bakeryCustomerEmail"
+                        >
+                            customer@stackly.com
+                        </span>
+
+                    </div>
+
+
+                    <!-- Avatar -->
+
+                    <div class="bakery-customer-user-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+<!-- =============================================================
+     CUSTOMER SETTINGS PAGE
+============================================================== -->
+
+<section class="bakery-settings-content">
+
+
+    <!-- =========================================================
+         SETTINGS INTRO
+    ========================================================== -->
+
+    <div class="bakery-settings-intro">
+
+        <div class="bakery-settings-intro-text">
+
+            <span class="bakery-settings-kicker">
+                <i class="fa-solid fa-sliders"></i>
+                ACCOUNT SETTINGS
+            </span>
+
+            <h1>
+                Make Your Bakery
+                <span>Experience Yours.</span>
+            </h1>
+
+            <p>
+                Personalize your preferences, notifications and
+                account experience at Stackly Bakery.
+            </p>
+
+        </div>
+
+
+        <div class="bakery-settings-intro-icon">
+            <i class="fa-solid fa-gear"></i>
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         SETTINGS GRID
+    ========================================================== -->
+
+    <div class="bakery-settings-layout">
+
+
+        <!-- =====================================================
+             LEFT SETTINGS COLUMN
+        ====================================================== -->
+
+        <div class="bakery-settings-main-column">
+
+
+            <!-- =================================================
+                 PROFILE PREFERENCES
+            ================================================== -->
+
+            <section class="bakery-settings-card">
+
+                <div class="bakery-settings-card-heading">
+
+                    <div class="bakery-settings-card-icon">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+
+                    <div>
+                        <span>PERSONALIZATION</span>
+                        <h2>Profile Preferences</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="bakery-settings-preference-list">
+
+
+                    <div class="bakery-settings-preference">
+
+                        <div class="bakery-settings-preference-info">
+
+                            <strong>Birthday Specials</strong>
+
+                            <span>
+                                Receive special cake offers around
+                                your birthday.
+                            </span>
+
+                        </div>
+
+                        <label class="bakery-settings-switch">
+
+                            <input
+                                type="checkbox"
+                                checked
+                            >
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="bakery-settings-preference">
+
+                        <div class="bakery-settings-preference-info">
+
+                            <strong>Personalized Recommendations</strong>
+
+                            <span>
+                                Get cake and bakery suggestions based
+                                on your favorites.
+                            </span>
+
+                        </div>
+
+                        <label class="bakery-settings-switch">
+
+                            <input
+                                type="checkbox"
+                                checked
+                            >
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+
+                    <div class="bakery-settings-preference">
+
+                        <div class="bakery-settings-preference-info">
+
+                            <strong>Sweet Rewards Updates</strong>
+
+                            <span>
+                                Stay updated about points, rewards
+                                and special benefits.
+                            </span>
+
+                        </div>
+
+                        <label class="bakery-settings-switch">
+
+                            <input
+                                type="checkbox"
+                                checked
+                            >
+
+                            <span></span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 NOTIFICATION SETTINGS
+            ================================================== -->
+
+            <section class="bakery-settings-card">
+
+                <div class="bakery-settings-card-heading">
+
+                    <div class="bakery-settings-card-icon">
+                        <i class="fa-regular fa-bell"></i>
+                    </div>
+
+                    <div>
+                        <span>COMMUNICATION</span>
+                        <h2>Notification Settings</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="bakery-settings-notification-grid">
+
+
+                    <div class="bakery-settings-notification-box">
+
+                        <div class="bakery-settings-notification-top">
+
+                            <div class="bakery-settings-mini-icon">
+                                <i class="fa-solid fa-bag-shopping"></i>
+                            </div>
+
+                            <label class="bakery-settings-switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+                        <strong>Order Updates</strong>
+
+                        <p>
+                            Delivery and order status notifications.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bakery-settings-notification-box">
+
+                        <div class="bakery-settings-notification-top">
+
+                            <div class="bakery-settings-mini-icon">
+                                <i class="fa-solid fa-tag"></i>
+                            </div>
+
+                            <label class="bakery-settings-switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+                        <strong>Offers & Deals</strong>
+
+                        <p>
+                            Be the first to know about bakery offers.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bakery-settings-notification-box">
+
+                        <div class="bakery-settings-notification-top">
+
+                            <div class="bakery-settings-mini-icon">
+                                <i class="fa-solid fa-cake-candles"></i>
+                            </div>
+
+                            <label class="bakery-settings-switch">
+
+                                <input
+                                    type="checkbox"
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+                        <strong>New Arrivals</strong>
+
+                        <p>
+                            Discover newly added cakes and treats.
+                        </p>
+
+                    </div>
+
+
+                    <div class="bakery-settings-notification-box">
+
+                        <div class="bakery-settings-notification-top">
+
+                            <div class="bakery-settings-mini-icon">
+                                <i class="fa-regular fa-envelope"></i>
+                            </div>
+
+                            <label class="bakery-settings-switch">
+
+                                <input
+                                    type="checkbox"
+                                    checked
+                                >
+
+                                <span></span>
+
+                            </label>
+
+                        </div>
+
+                        <strong>Email Updates</strong>
+
+                        <p>
+                            Receive occasional bakery news and tips.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+
+
+        <!-- =====================================================
+             RIGHT SIDEBAR
+        ====================================================== -->
+
+        <aside class="bakery-settings-side-column">
+
+
+            <!-- =================================================
+                 SETTINGS PROFILE CARD
+            ================================================== -->
+
+            <div class="bakery-settings-profile-card">
+
+                <div class="bakery-settings-profile-art">
+
+                    <span class="bakery-settings-profile-circle">
+                        <i class="fa-solid fa-user"></i>
+                    </span>
+
+                </div>
+
+                <div class="bakery-settings-profile-body">
+
+                    <span class="bakery-settings-profile-label">
+                        YOUR ACCOUNT
+                    </span>
+
+                    <h3 id="bakerySettingsUserName">Bakery Lover</h3>
+
+                    
+<p id="bakerySettingsUserEmail">
+    customer@stackly.com
+</p>
+
+
+
+                    <a
+                        href="404-customer.html"
+                        class="bakery-settings-profile-button"
+                    >
+                        Edit Profile
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 QUICK SETTINGS
+            ================================================== -->
+
+            <div class="bakery-settings-quick-card">
+
+                <div class="bakery-settings-quick-heading">
+
+                    <span>QUICK SETTINGS</span>
+
+                    <i class="fa-solid fa-sliders"></i>
+
+                </div>
+
+
+                <a
+                    href="customer-wishlist.html"
+                    class="bakery-settings-quick-item"
+                >
+
+                    <span>
+                        <i class="fa-regular fa-heart"></i>
+                        Wishlist
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </a>
+
+
+                <a
+                    href="customer-orders.html"
+                    class="bakery-settings-quick-item"
+                >
+
+                    <span>
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        My Orders
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </a>
+
+
+                <a
+                    href="customer-reviews.html"
+                    class="bakery-settings-quick-item"
+                >
+
+                    <span>
+                        <i class="fa-regular fa-star"></i>
+                        My Reviews
+                    </span>
+
+                    <i class="fa-solid fa-chevron-right"></i>
+
+                </a>
+
+            </div>
+
+
+
+            
+        </aside>
+
+    </div>
+
+
+
+    <!-- =========================================================
+         SAVE BAR
+    ========================================================== -->
+
+    <div class="bakery-settings-savebar">
+
+        <div class="bakery-settings-save-info">
+
+            <span class="bakery-settings-save-icon">
+                <i class="fa-solid fa-check"></i>
+            </span>
+
+            <div>
+                <strong>Your preferences are up to date</strong>
+                <span>Changes are saved automatically.</span>
+            </div>
+
+        </div>
+
+        <a
+            href="customer.html"
+            class="bakery-settings-back"
+        >
+            Back to Dashboard
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+    </main>
+
+</div>
+
+
+<!-- =============================================================
+     CUSTOMER DASHBOARD JAVASCRIPT
+============================================================== -->
+
+<script src="customer.js"></script>
+
+</body>
+
+</html>

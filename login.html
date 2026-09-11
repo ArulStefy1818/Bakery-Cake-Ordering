@@ -1,0 +1,1061 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================================================
+         BASIC META
+    ========================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Login or create your Stackly Bakery account."
+    >
+
+    <title>Stackly Bakery | Login & Signup</title>
+
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================================
+         FONT AWESOME
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =========================================================
+         AOS ANIMATION
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+    >
+
+
+    <!-- =========================================================
+         LOGIN CSS
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="login.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================================
+         AUTH PAGE
+    ========================================================== -->
+
+    <main class="bakery-auth-page">
+
+
+        <!-- =====================================================
+             BACKGROUND DECORATIONS
+        ====================================================== -->
+
+        <span
+            class="bakery-auth-decoration bakery-auth-decoration-one"
+            aria-hidden="true"
+        ></span>
+
+        <span
+            class="bakery-auth-decoration bakery-auth-decoration-two"
+            aria-hidden="true"
+        ></span>
+
+        <span
+            class="bakery-auth-decoration bakery-auth-decoration-three"
+            aria-hidden="true"
+        ></span>
+
+
+
+        <!-- =====================================================
+             MAIN AUTH CONTAINER
+        ====================================================== -->
+
+        <div
+            class="bakery-auth-container"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+        >
+
+
+            <!-- =================================================
+                 LEFT BRANDING SIDE
+            ================================================== -->
+
+            <aside class="bakery-auth-brand-panel">
+
+
+                <!-- =============================================
+                     LOGO
+                ============================================== -->
+
+                <a
+                    href="index.html"
+                    class="bakery-auth-logo"
+                    aria-label="Go to Stackly Bakery Home"
+                >
+
+                    <img
+                        src="Stackly-logo-Blue.webp"
+                        alt="Stackly Bakery Logo"
+                    >
+
+                </a>
+
+
+
+                <!-- =============================================
+                     BRAND CONTENT
+                ============================================== -->
+
+                <div class="bakery-auth-brand-content">
+
+                    <span class="bakery-auth-small-label">
+                        WELCOME TO STACKLY BAKERY
+                    </span>
+
+                    <h1>
+                        Fresh Moments
+                        <span>Begin Here.</span>
+                    </h1>
+
+                     
+
+                </div>
+
+
+
+                <!-- =============================================
+                     BRAND FEATURES
+                ============================================== -->
+
+                <div class="bakery-auth-features">
+
+
+                    <div class="bakery-auth-feature-item">
+
+                        <div class="bakery-auth-feature-icon">
+                            <i class="fa-solid fa-cake-candles"></i>
+                        </div>
+
+                        <div class="bakery-auth-feature-content">
+
+                            <h4>
+                                Freshly Baked
+                            </h4>
+
+                            <p>
+                                Quality ingredients and fresh flavours.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="bakery-auth-feature-item">
+
+                        <div class="bakery-auth-feature-icon">
+                            <i class="fa-solid fa-bag-shopping"></i>
+                        </div>
+
+                        <div class="bakery-auth-feature-content">
+
+                            <h4>
+                                Easy Ordering
+                            </h4>
+
+                            <p>
+                                Order your favourite treats effortlessly.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="bakery-auth-feature-item">
+
+                        <div class="bakery-auth-feature-icon">
+                            <i class="fa-solid fa-heart"></i>
+                        </div>
+
+                        <div class="bakery-auth-feature-content">
+
+                            <h4>
+                                Made With Love
+                            </h4>
+
+                            <p>
+                                Sweet moments made memorable.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+
+                <!-- =============================================
+                     QUOTE
+                ============================================== -->
+
+                <div class="bakery-auth-quote">
+
+                    <i
+                        class="fa-solid fa-quote-left"
+                        aria-hidden="true"
+                    ></i>
+
+                    <p>
+                        Baked with love, shared with happiness.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =============================================
+                     GO BACK HOME
+                ============================================== -->
+
+                <a
+                    href="index.html"
+                    class="bakery-auth-home-button"
+                >
+
+                    <i
+                        class="fa-solid fa-arrow-left"
+                        aria-hidden="true"
+                    ></i>
+
+                    <span>
+                        Go Back Home
+                    </span>
+
+                </a>
+
+            </aside>
+
+
+
+            <!-- =================================================
+                 RIGHT FORM SIDE
+            ================================================== -->
+
+            <section class="bakery-auth-form-panel">
+
+
+                <!-- =================================================
+                     LOGIN SECTION
+                ================================================== -->
+
+                <div
+                    class="bakery-auth-wrapper bakery-login-wrapper active"
+                    id="bakeryLoginWrapper"
+                >
+
+
+                    <!-- =============================================
+                         LOGIN HEADING
+                    ============================================== -->
+
+                    <div class="bakery-auth-heading">
+
+                        <span class="bakery-auth-heading-label">
+                            WELCOME BACK
+                        </span>
+
+                        <h2>
+                            Sign In
+                        </h2>
+
+                        <p>
+                            Login to continue your sweet experience.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- =============================================
+                         LOGIN FORM
+                    ============================================== -->
+
+                    <form
+                        id="bakeryLoginForm"
+                        class="bakery-auth-form"
+                        novalidate
+                    >
+
+
+                        <!-- =========================================
+                             LOGIN ROLE
+                        ========================================== -->
+
+                        <div class="bakery-auth-field">
+
+                            <label for="bakeryLoginRoleButton">
+                                Login As
+                            </label>
+
+
+                            <div
+                                class="bakery-role-dropdown"
+                                id="bakeryLoginRoleDropdown"
+                            >
+
+                                <button
+                                    type="button"
+                                    class="bakery-role-button"
+                                    id="bakeryLoginRoleButton"
+                                    aria-haspopup="listbox"
+                                    aria-expanded="false"
+                                >
+
+                                    <span
+                                        id="bakeryLoginRoleValue"
+                                        class="bakery-role-value"
+                                    >
+                                        Select Role
+                                    </span>
+
+                                    <i
+                                        class="fa-solid fa-chevron-down"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                </button>
+
+
+                                <div
+                                    class="bakery-role-menu"
+                                    id="bakeryLoginRoleMenu"
+                                    role="listbox"
+                                >
+
+                                    <button
+                                        type="button"
+                                        class="bakery-role-option"
+                                        data-value="admin"
+                                        role="option"
+                                    >
+
+                                        <i class="fa-solid fa-user-shield"></i>
+
+                                        <span>
+                                            Admin
+                                        </span>
+
+                                    </button>
+
+
+                                    <button
+                                        type="button"
+                                        class="bakery-role-option"
+                                        data-value="customer"
+                                        role="option"
+                                    >
+
+                                        <i class="fa-solid fa-user"></i>
+
+                                        <span>
+                                            Customer
+                                        </span>
+
+                                    </button>
+
+                                </div>
+
+
+                                <input
+                                    type="hidden"
+                                    id="bakeryLoginRole"
+                                    name="role"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =========================================
+                             LOGIN EMAIL
+                        ========================================== -->
+
+                        <div class="bakery-auth-field">
+
+                            <label for="bakeryLoginEmail">
+                                Email Address
+                            </label>
+
+                            <div class="bakery-input-wrapper">
+
+                                <i
+                                    class="fa-regular fa-envelope bakery-input-icon"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <input
+                                    type="email"
+                                    id="bakeryLoginEmail"
+                                    name="email"
+                                    placeholder="Enter your email address"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =========================================
+                             LOGIN PASSWORD
+                        ========================================== -->
+
+                        <div class="bakery-auth-field">
+
+                            <label for="bakeryLoginPassword">
+                                Password
+                            </label>
+
+                            <div class="bakery-input-wrapper">
+
+                                <i
+                                    class="fa-solid fa-lock bakery-input-icon"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <input
+                                    type="password"
+                                    id="bakeryLoginPassword"
+                                    name="password"
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="bakery-password-eye"
+                                    data-target="bakeryLoginPassword"
+                                    aria-label="Show password"
+                                >
+
+                                    <i
+                                        class="fa-regular fa-eye"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =========================================
+                             REMEMBER ME / FORGOT PASSWORD
+                        ========================================== -->
+
+                        <div class="bakery-auth-options">
+
+
+                            <label class="bakery-remember-option">
+
+                                <input
+                                    type="checkbox"
+                                    id="bakeryRememberMe"
+                                    name="remember"
+                                >
+
+                                <span class="bakery-checkmark">
+
+                                    <i class="fa-solid fa-check"></i>
+
+                                </span>
+
+                                <span>
+                                    Remember me
+                                </span>
+
+                            </label>
+
+
+                            <a
+                                href="#"
+                                id="bakeryForgotPassword"
+                                class="bakery-forgot-link"
+                            >
+                                Forgot Password?
+                            </a>
+
+
+                        </div>
+
+
+
+                        <!-- =========================================
+                             LOGIN BUTTON
+                        ========================================== -->
+
+                        <button
+                            type="submit"
+                            class="bakery-auth-submit"
+                        >
+
+                            <span>
+                                Sign In
+                            </span>
+
+                            <i
+                                class="fa-solid fa-arrow-right"
+                                aria-hidden="true"
+                            ></i>
+
+                        </button>
+
+
+
+                        <!-- =========================================
+                             LOGIN MESSAGE
+                        ========================================== -->
+
+                        <div
+                            id="bakeryLoginMessage"
+                            class="bakery-auth-message"
+                            aria-live="polite"
+                        ></div>
+
+
+                    </form>
+
+
+
+                    <!-- =============================================
+                         CREATE ACCOUNT SWITCH
+                    ============================================== -->
+
+                    <div class="bakery-auth-switch">
+
+                        <span>
+                            Don't have an account?
+                        </span>
+
+                        <button
+                            type="button"
+                            id="bakeryShowSignup"
+                        >
+                            Create Account
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================================
+                     SIGNUP SECTION
+                ================================================== -->
+
+                <div
+                    class="bakery-auth-wrapper bakery-signup-wrapper"
+                    id="bakerySignupWrapper"
+                >
+
+
+                    <!-- =============================================
+                         SIGNUP HEADING
+                    ============================================== -->
+
+                    <div class="bakery-auth-heading">
+
+                        <span class="bakery-auth-heading-label">
+                            JOIN OUR BAKERY
+                        </span>
+
+                        <h2>
+                            Create Account
+                        </h2>
+
+                        <p>
+                            Create your account and discover
+                            freshly baked happiness.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- =============================================
+                         SIGNUP FORM
+                    ============================================== -->
+
+                    <form
+                        id="bakerySignupForm"
+                        class="bakery-auth-form"
+                        novalidate
+                    >
+
+
+                        <!-- =========================================
+                             FULL NAME
+                        ========================================== -->
+
+                        <div class="bakery-auth-field">
+
+                            <label for="bakerySignupName">
+                                Full Name
+                            </label>
+
+                            <div class="bakery-input-wrapper">
+
+                                <i
+                                    class="fa-regular fa-user bakery-input-icon"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <input
+                                    type="text"
+                                    id="bakerySignupName"
+                                    name="name"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                    maxlength="60"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =========================================
+                             SIGNUP EMAIL
+                        ========================================== -->
+
+                        <div class="bakery-auth-field">
+
+                            <label for="bakerySignupEmail">
+                                Email Address
+                            </label>
+
+                            <div class="bakery-input-wrapper">
+
+                                <i
+                                    class="fa-regular fa-envelope bakery-input-icon"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <input
+                                    type="email"
+                                    id="bakerySignupEmail"
+                                    name="email"
+                                    placeholder="Enter your email address"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =========================================
+                             PHONE
+                        ========================================== -->
+
+                        <div class="bakery-auth-field">
+
+                            <label for="bakerySignupPhone">
+                                Phone Number
+                            </label>
+
+                            <div class="bakery-input-wrapper">
+
+                                <i
+                                    class="fa-solid fa-phone bakery-input-icon"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <input
+                                    type="tel"
+                                    id="bakerySignupPhone"
+                                    name="phone"
+                                    placeholder="Enter 10 digit phone number"
+                                    maxlength="10"
+                                    autocomplete="tel"
+                                    inputmode="numeric"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =========================================
+                             ACCOUNT ROLE
+                        ========================================== -->
+
+                        <div class="bakery-auth-field">
+
+                            <label for="bakerySignupRoleButton">
+                                Account Type
+                            </label>
+
+
+                            <div
+                                class="bakery-role-dropdown"
+                                id="bakerySignupRoleDropdown"
+                            >
+
+                                <button
+                                    type="button"
+                                    class="bakery-role-button"
+                                    id="bakerySignupRoleButton"
+                                    aria-haspopup="listbox"
+                                    aria-expanded="false"
+                                >
+
+                                    <span
+                                        id="bakerySignupRoleValue"
+                                        class="bakery-role-value"
+                                    >
+                                        Select Account Type
+                                    </span>
+
+                                    <i
+                                        class="fa-solid fa-chevron-down"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                </button>
+
+
+                                <div
+                                    class="bakery-role-menu"
+                                    id="bakerySignupRoleMenu"
+                                    role="listbox"
+                                >
+
+                                    <button
+                                        type="button"
+                                        class="bakery-role-option"
+                                        data-value="admin"
+                                        role="option"
+                                    >
+
+                                        <i class="fa-solid fa-user-shield"></i>
+
+                                        <span>
+                                            Admin
+                                        </span>
+
+                                    </button>
+
+
+                                    <button
+                                        type="button"
+                                        class="bakery-role-option"
+                                        data-value="customer"
+                                        role="option"
+                                    >
+
+                                        <i class="fa-solid fa-user"></i>
+
+                                        <span>
+                                            Customer
+                                        </span>
+
+                                    </button>
+
+                                </div>
+
+
+                                <input
+                                    type="hidden"
+                                    id="bakerySignupRole"
+                                    name="role"
+                                >
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =========================================
+                             PASSWORD
+                        ========================================== -->
+
+                        <div class="bakery-auth-field">
+
+                            <label for="bakerySignupPassword">
+                                Password
+                            </label>
+
+                            <div class="bakery-input-wrapper">
+
+                                <i
+                                    class="fa-solid fa-lock bakery-input-icon"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <input
+                                    type="password"
+                                    id="bakerySignupPassword"
+                                    name="password"
+                                    placeholder="Create a password"
+                                    autocomplete="new-password"
+                                    minlength="6"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="bakery-password-eye"
+                                    data-target="bakerySignupPassword"
+                                    aria-label="Show password"
+                                >
+
+                                    <i
+                                        class="fa-regular fa-eye"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =========================================
+                             CONFIRM PASSWORD
+                        ========================================== -->
+
+                        <div class="bakery-auth-field">
+
+                            <label for="bakerySignupConfirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <div class="bakery-input-wrapper">
+
+                                <i
+                                    class="fa-solid fa-lock bakery-input-icon"
+                                    aria-hidden="true"
+                                ></i>
+
+                                <input
+                                    type="password"
+                                    id="bakerySignupConfirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="Confirm your password"
+                                    autocomplete="new-password"
+                                    minlength="6"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="bakery-password-eye"
+                                    data-target="bakerySignupConfirmPassword"
+                                    aria-label="Show password"
+                                >
+
+                                    <i
+                                        class="fa-regular fa-eye"
+                                        aria-hidden="true"
+                                    ></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =========================================
+                             TERMS & CONDITIONS
+                        ========================================== -->
+
+                        <div class="bakery-terms-option">
+
+                            <label>
+
+                                <input
+                                    type="checkbox"
+                                    id="bakeryAcceptTerms"
+                                    name="terms"
+                                    required
+                                >
+
+                                <span class="bakery-checkmark">
+
+                                    <i class="fa-solid fa-check"></i>
+
+                                </span>
+
+
+                                <span class="bakery-terms-content">
+
+                                    I agree to the
+
+                                    <a href="terms.html">
+                                        Terms & Conditions
+                                    </a>
+
+                                    and
+
+                                    <a href="privacy.html">
+                                        Privacy Policy
+                                    </a>
+
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <!-- =========================================
+                             CREATE ACCOUNT BUTTON
+                        ========================================== -->
+
+                        <button
+                            type="submit"
+                            class="bakery-auth-submit"
+                        >
+
+                            <span>
+                                Create Account
+                            </span>
+
+                            <i
+                                class="fa-solid fa-arrow-right"
+                                aria-hidden="true"
+                            ></i>
+
+                        </button>
+
+
+
+                        <!-- =========================================
+                             SIGNUP MESSAGE
+                        ========================================== -->
+
+                        <div
+                            id="bakerySignupMessage"
+                            class="bakery-auth-message"
+                            aria-live="polite"
+                        ></div>
+
+
+                    </form>
+
+
+
+                    <!-- =============================================
+                         LOGIN SWITCH
+                    ============================================== -->
+
+                    <div class="bakery-auth-switch">
+
+                        <span>
+                            Already have an account?
+                        </span>
+
+                        <button
+                            type="button"
+                            id="bakeryShowLogin"
+                        >
+                            Sign In
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- =========================================================
+         AOS JS
+    ========================================================== -->
+
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"
+    ></script>
+
+
+    <!-- =========================================================
+         LOGIN / SIGNUP JS
+    ========================================================== -->
+
+    <script src="login.js"></script>
+
+
+</body>
+
+</html>
+

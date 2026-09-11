@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Stackly Bakery | Admin Dashboard</title>
+
+    <!-- =====================================================
+         GOOGLE FONTS
+    ====================================================== -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+<!-- =========================================================
+     ADMIN DASHBOARD WRAPPER
+========================================================= -->
+
+<div class="bakery-admin-dashboard">
+
+
+    <!-- =====================================================
+         MOBILE OVERLAY
+    ====================================================== -->
+
+    <div
+        class="bakery-admin-overlay"
+        id="bakeryAdminOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="bakery-admin-sidebar"
+        id="bakeryAdminSidebar"
+    >
+
+        <!-- Sidebar Header -->
+        <div class="bakery-admin-sidebar-header">
+
+            <a
+                href="admin.html"
+                class="bakery-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+            <button
+                type="button"
+                class="bakery-admin-close"
+                id="bakeryAdminClose"
+                aria-label="Close menu"
+            >
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+        </div>
+
+
+        <!-- Sidebar Navigation -->
+        <nav class="bakery-admin-navigation">
+
+            <p class="bakery-admin-nav-title">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-chart-pie"></i>
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+            </a>
+
+
+            <a
+                href="admin-orders.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-bag-shopping"></i>
+                </span>
+
+                <span>
+                    Orders
+                </span>
+
+                <small class="bakery-admin-nav-count">
+                    24
+                </small>
+            </a>
+
+
+            <a
+                href="admin-cakes.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </span>
+
+                <span>
+                    Cakes
+                </span>
+            </a>
+
+
+            <a
+                href="admin-customers.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-users"></i>
+                </span>
+
+                <span>
+                    Customers
+                </span>
+            </a>
+
+
+            <a
+                href="admin-delivery.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-truck"></i>
+                </span>
+
+                <span>
+                    Delivery
+                </span>
+            </a>
+
+
+            <a
+                href="admin-reviews.html"
+                class="bakery-admin-nav-link active"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-star"></i>
+                </span>
+
+                <span>
+                    Reviews
+                </span>
+            </a>
+
+
+            <p class="bakery-admin-nav-title bakery-admin-nav-title-space">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-coupons.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-ticket"></i>
+                </span>
+
+                <span>
+                    Coupons
+                </span>
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="bakery-admin-nav-link"
+            >
+                <span class="bakery-admin-nav-icon">
+                    <i class="fa-solid fa-gear"></i>
+                </span>
+
+                <span>
+                    Settings
+                </span>
+            </a>
+
+        </nav>
+
+
+        <!-- Sidebar Bottom -->
+        <div class="bakery-admin-sidebar-bottom">
+
+             
+
+            <button
+                type="button"
+                class="bakery-admin-logout"
+                id="bakeryAdminLogout"
+            >
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>
+                    Logout
+                </span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="bakery-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="bakery-admin-topbar">
+
+
+            <!-- Left Side -->
+            <div class="bakery-admin-topbar-left">
+
+                <!-- Mobile Hamburger -->
+                <button
+                    type="button"
+                    class="bakery-admin-menu-toggle"
+                    id="bakeryAdminMenuToggle"
+                    aria-label="Open menu"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+
+
+                <div class="bakery-admin-page-heading">
+
+                    <span class="bakery-admin-heading-label">
+                        ADMIN PANEL
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- Right Side -->
+            <div class="bakery-admin-topbar-right">
+
+
+                <!-- Notification -->
+                <a
+                    href="404-admin.html"
+                    class="bakery-admin-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-admin-notification-dot">
+                        4
+                    </span>
+
+                </a>
+
+
+                <!-- User -->
+                <div class="bakery-admin-user">
+
+                    <div class="bakery-admin-user-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+
+                    <div class="bakery-admin-user-details">
+
+                        <strong>
+                            Admin
+                        </strong>
+
+                        <!-- EMAIL WILL BE DISPLAYED HERE -->
+                        <span id="bakeryAdminEmail">
+                            admin@stackly.com
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- =====================================================
+     REVIEWS PAGE CONTENT
+====================================================== -->
+
+<div class="bakery-reviews-page-content">
+
+
+    <!-- =================================================
+         REVIEWS HERO / INTRO
+    ================================================== -->
+
+    <section class="bakery-reviews-intro">
+
+        <div class="bakery-reviews-intro-content">
+
+            <span class="bakery-reviews-eyebrow">
+                <i class="fa-solid fa-heart"></i>
+                CUSTOMER FEEDBACK
+            </span>
+
+            <h2>
+                Every Review
+                <span>Tells Our Story</span>
+            </h2>
+
+            <p>
+                Understand what customers love, discover areas for
+                improvement, and keep building memorable bakery
+                experiences through meaningful feedback.
+            </p>
+
+        </div>
+
+
+        <div class="bakery-reviews-intro-actions">
+
+            <a
+                href="404-admin.html"
+                class="bakery-reviews-primary-button"
+            >
+                <i class="fa-solid fa-reply"></i>
+                Reply to Reviews
+            </a>
+
+            <a
+                href="404-admin.html"
+                class="bakery-reviews-secondary-button"
+            >
+                <i class="fa-solid fa-chart-simple"></i>
+                Review Analytics
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         REVIEW SUMMARY
+    ================================================== -->
+
+    <section class="bakery-reviews-summary-section">
+
+        <div class="bakery-reviews-summary-grid">
+
+
+            <!-- Overall Rating -->
+
+            <article class="bakery-reviews-summary-card bakery-reviews-rating-card">
+
+                <div class="bakery-reviews-summary-icon">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+
+                <div class="bakery-reviews-summary-content">
+
+                    <span>
+                        Overall Rating
+                    </span>
+
+                    <strong>
+                        4.8
+                    </strong>
+
+                    <div class="bakery-reviews-stars">
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+
+                    <small>
+                        Based on 1,284 reviews
+                    </small>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Total Reviews -->
+
+            <article class="bakery-reviews-summary-card">
+
+                <div class="bakery-reviews-summary-icon">
+                    <i class="fa-solid fa-comments"></i>
+                </div>
+
+                <div class="bakery-reviews-summary-content">
+
+                    <span>
+                        Total Reviews
+                    </span>
+
+                    <strong>
+                        1,284
+                    </strong>
+
+                    <small class="bakery-reviews-positive">
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        12.6% this month
+                    </small>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Pending Reviews -->
+
+            <article class="bakery-reviews-summary-card">
+
+                <div class="bakery-reviews-summary-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div class="bakery-reviews-summary-content">
+
+                    <span>
+                        Awaiting Reply
+                    </span>
+
+                    <strong>
+                        18
+                    </strong>
+
+                    <small class="bakery-reviews-warning">
+                        Needs attention today
+                    </small>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Positive Reviews -->
+
+            <article class="bakery-reviews-summary-card">
+
+                <div class="bakery-reviews-summary-icon">
+                    <i class="fa-solid fa-face-smile"></i>
+                </div>
+
+                <div class="bakery-reviews-summary-content">
+
+                    <span>
+                        Positive Reviews
+                    </span>
+
+                    <strong>
+                        94%
+                    </strong>
+
+                    <small class="bakery-reviews-positive">
+                        Excellent customer sentiment
+                    </small>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RATING DISTRIBUTION + SENTIMENT
+    ================================================== -->
+
+    <section class="bakery-reviews-insights-section">
+
+
+        <!-- Rating Distribution -->
+
+        <div class="bakery-reviews-distribution-card">
+
+            <div class="bakery-reviews-card-header">
+
+                <div>
+
+                    <span class="bakery-reviews-section-label">
+                        RATING OVERVIEW
+                    </span>
+
+                    <h3>
+                        Customer Ratings
+                    </h3>
+
+                </div>
+
+                <a
+                    href="404-admin.html"
+                    class="bakery-reviews-card-link"
+                >
+                    View Details
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="bakery-reviews-distribution-list">
+
+
+                <div class="bakery-reviews-rating-row">
+
+                    <span class="bakery-reviews-rating-number">
+                        5
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+
+                    <div class="bakery-reviews-rating-track">
+                        <span style="width:82%;"></span>
+                    </div>
+
+                    <strong>
+                        82%
+                    </strong>
+
+                </div>
+
+
+                <div class="bakery-reviews-rating-row">
+
+                    <span class="bakery-reviews-rating-number">
+                        4
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+
+                    <div class="bakery-reviews-rating-track">
+                        <span style="width:12%;"></span>
+                    </div>
+
+                    <strong>
+                        12%
+                    </strong>
+
+                </div>
+
+
+                <div class="bakery-reviews-rating-row">
+
+                    <span class="bakery-reviews-rating-number">
+                        3
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+
+                    <div class="bakery-reviews-rating-track">
+                        <span style="width:4%;"></span>
+                    </div>
+
+                    <strong>
+                        4%
+                    </strong>
+
+                </div>
+
+
+                <div class="bakery-reviews-rating-row">
+
+                    <span class="bakery-reviews-rating-number">
+                        2
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+
+                    <div class="bakery-reviews-rating-track">
+                        <span style="width:1.5%;"></span>
+                    </div>
+
+                    <strong>
+                        1.5%
+                    </strong>
+
+                </div>
+
+
+                <div class="bakery-reviews-rating-row">
+
+                    <span class="bakery-reviews-rating-number">
+                        1
+                        <i class="fa-solid fa-star"></i>
+                    </span>
+
+                    <div class="bakery-reviews-rating-track">
+                        <span style="width:0.5%;"></span>
+                    </div>
+
+                    <strong>
+                        0.5%
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Sentiment -->
+
+        <div class="bakery-reviews-sentiment-card">
+
+            <div class="bakery-reviews-card-header">
+
+                <div>
+
+                    <span class="bakery-reviews-section-label">
+                        CUSTOMER SENTIMENT
+                    </span>
+
+                    <h3>
+                        What Customers Feel
+                    </h3>
+
+                </div>
+
+                <span class="bakery-reviews-sentiment-period">
+                    This Month
+                </span>
+
+            </div>
+
+
+            <div class="bakery-reviews-sentiment-content">
+
+
+                <div class="bakery-reviews-sentiment-circle">
+
+                    <div>
+
+                        <strong>
+                            94%
+                        </strong>
+
+                        <span>
+                            Positive
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bakery-reviews-sentiment-details">
+
+                    <div class="bakery-reviews-sentiment-item">
+
+                        <span>
+                            <i class="fa-solid fa-face-smile"></i>
+                            Positive
+                        </span>
+
+                        <strong>
+                            94%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bakery-reviews-sentiment-item">
+
+                        <span>
+                            <i class="fa-solid fa-face-meh"></i>
+                            Neutral
+                        </span>
+
+                        <strong>
+                            4%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="bakery-reviews-sentiment-item">
+
+                        <span>
+                            <i class="fa-solid fa-face-frown"></i>
+                            Negative
+                        </span>
+
+                        <strong>
+                            2%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         FEATURED CUSTOMER REVIEWS
+    ================================================== -->
+
+    <section class="bakery-reviews-featured-section">
+
+        <div class="bakery-reviews-section-heading">
+
+            <div>
+
+                <span class="bakery-reviews-section-label">
+                    CUSTOMER STORIES
+                </span>
+
+                <h3>
+                    Featured Reviews
+                </h3>
+
+                <p>
+                    A few words from customers who loved their
+                    Stackly Bakery experience.
+                </p>
+
+            </div>
+
+            <a
+                href="404-admin.html"
+                class="bakery-reviews-view-all"
+            >
+                View All Reviews
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+
+        <div class="bakery-reviews-featured-grid">
+
+
+            <!-- Review 01 -->
+
+            <article class="bakery-review-card">
+
+                <div class="bakery-review-card-top">
+
+                    <div class="bakery-review-customer">
+
+                        <div class="bakery-review-avatar">
+                            AS
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Ananya Sharma
+                            </strong>
+
+                            <span>
+                                Verified Customer
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bakery-review-rating">
+
+                    <span>
+                        5.0
+                    </span>
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+
+                <h4>
+                    Beautiful cake and perfect delivery!
+                </h4>
+
+                <p>
+                    The chocolate truffle cake was absolutely delicious.
+                    It looked exactly like the picture and arrived fresh
+                    and beautifully packed.
+                </p>
+
+
+                <div class="bakery-review-product">
+
+                    <i class="fa-solid fa-cake-candles"></i>
+
+                    <span>
+                        Chocolate Truffle Cake
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-review-card-footer">
+
+                    <span>
+                        2 days ago
+                    </span>
+
+                    <a href="404-admin.html">
+                        Reply
+                        <i class="fa-solid fa-reply"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Review 02 -->
+
+            <article class="bakery-review-card">
+
+                <div class="bakery-review-card-top">
+
+                    <div class="bakery-review-customer">
+
+                        <div class="bakery-review-avatar bakery-review-avatar-two">
+                            RK
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Rahul Kumar
+                            </strong>
+
+                            <span>
+                                Verified Customer
+                            </span>
+
+                        </div>
+
+                    </div>
+ 
+
+                </div>
+
+
+                <div class="bakery-review-rating">
+
+                    <span>
+                        5.0
+                    </span>
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+
+                <h4>
+                    Everyone loved the red velvet!
+                </h4>
+
+                <p>
+                    Ordered this for my daughter's birthday. The cake
+                    was soft, fresh and not overly sweet. The presentation
+                    was also excellent.
+                </p>
+
+
+                <div class="bakery-review-product">
+
+                    <i class="fa-solid fa-cake-candles"></i>
+
+                    <span>
+                        Red Velvet Celebration Cake
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-review-card-footer">
+
+                    <span>
+                        4 days ago
+                    </span>
+
+                    <a href="404-admin.html">
+                        Reply
+                        <i class="fa-solid fa-reply"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- Review 03 -->
+
+            <article class="bakery-review-card">
+
+                <div class="bakery-review-card-top">
+
+                    <div class="bakery-review-customer">
+
+                        <div class="bakery-review-avatar bakery-review-avatar-three">
+                            SP
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Sneha Priya
+                            </strong>
+
+                            <span>
+                                Verified Customer
+                            </span>
+
+                        </div>
+
+                    </div>
+ 
+
+                </div>
+
+
+                <div class="bakery-review-rating">
+
+                    <span>
+                        4.8
+                    </span>
+
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+
+                </div>
+
+
+                <h4>
+                    Fresh, elegant and delicious.
+                </h4>
+
+                <p>
+                    I ordered a strawberry fresh cream 
+                    cake for a family celebration. The cream was 
+                    light and the strawberries tasted fresh.
+                </p>
+
+
+                <div class="bakery-review-product">
+
+                    <i class="fa-solid fa-cake-candles"></i>
+
+                    <span>
+                        Strawberry Fresh Cream Cake
+                    </span>
+
+                </div>
+
+
+                <div class="bakery-review-card-footer">
+
+                    <span>
+                        6 days ago
+                    </span>
+
+                    <a href="404-admin.html">
+                        Reply
+                        <i class="fa-solid fa-reply"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         RECENT REVIEWS TABLE
+    ================================================== -->
+
+    <section class="bakery-reviews-recent-section">
+
+        <div class="bakery-reviews-section-heading">
+
+            <div>
+
+                <span class="bakery-reviews-section-label">
+                    REVIEW MANAGEMENT
+                </span>
+
+                <h3>
+                    Recent Customer Reviews
+                </h3>
+
+            </div>
+
+            <a
+                href="404-admin.html"
+                class="bakery-reviews-view-all"
+            >
+                Manage Reviews
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="bakery-reviews-table-card">
+
+            <div class="bakery-reviews-table-wrapper">
+
+                <table class="bakery-reviews-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Customer
+                            </th>
+
+                            <th>
+                                Cake
+                            </th>
+
+                            <th>
+                                Rating
+                            </th>
+
+                            <th>
+                                Review
+                            </th>
+
+                            <th>
+                                Date
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="bakery-review-table-customer">
+
+                                    <span>
+                                        AS
+                                    </span>
+
+                                    <strong>
+                                        Ananya Sharma
+                                    </strong>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Chocolate Truffle
+                            </td>
+
+
+                            <td>
+
+                                <span class="bakery-review-table-rating">
+                                    5.0
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                Beautiful and delicious cake.
+                            </td>
+
+
+                            <td>
+                                Sep 10, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="bakery-review-status replied">
+                                    Replied
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="404-admin.html"
+                                    class="bakery-review-table-action"
+                                    aria-label="View review"
+                                >
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="bakery-review-table-customer">
+
+                                    <span>
+                                        MK
+                                    </span>
+
+                                    <strong>
+                                        Meena Krishnan
+                                    </strong>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Wedding Cake
+                            </td>
+
+
+                            <td>
+
+                                <span class="bakery-review-table-rating">
+                                    4.9
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                Elegant design and great taste.
+                            </td>
+
+
+                            <td>
+                                Sep 09, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="bakery-review-status pending">
+                                    Pending Reply
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="404-admin.html"
+                                    class="bakery-review-table-action"
+                                    aria-label="View review"
+                                >
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="bakery-review-table-customer">
+
+                                    <span>
+                                        VK
+                                    </span>
+
+                                    <strong>
+                                        Vikram Kumar
+                                    </strong>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Black Forest Cake
+                            </td>
+
+
+                            <td>
+
+                                <span class="bakery-review-table-rating">
+                                    4.7
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                Fresh cake and quick delivery.
+                            </td>
+
+
+                            <td>
+                                Sep 08, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="bakery-review-status replied">
+                                    Replied
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="404-admin.html"
+                                    class="bakery-review-table-action"
+                                    aria-label="View review"
+                                >
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+
+                                <div class="bakery-review-table-customer">
+
+                                    <span>
+                                        NP
+                                    </span>
+
+                                    <strong>
+                                        Nithya Priya
+                                    </strong>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Strawberry Cake
+                            </td>
+
+
+                            <td>
+
+                                <span class="bakery-review-table-rating">
+                                    3.8
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                Good taste, delivery was slightly late.
+                            </td>
+
+
+                            <td>
+                                Sep 07, 2026
+                            </td>
+
+
+                            <td>
+
+                                <span class="bakery-review-status pending">
+                                    Pending Reply
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="404-admin.html"
+                                    class="bakery-review-table-action"
+                                    aria-label="View review"
+                                >
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         REVIEW RESPONSE CENTER
+    ================================================== -->
+
+    <section class="bakery-reviews-response-section">
+
+        <div class="bakery-reviews-response-content">
+
+            <span class="bakery-reviews-section-label">
+                RESPONSE CENTER
+            </span>
+
+            <h3>
+                Turn Feedback Into Loyalty
+            </h3>
+
+            <p>
+                Respond quickly to customer feedback, thank loyal
+                customers, and resolve concerns before they become
+                missed opportunities.
+            </p>
+
+            <a
+                href="404-admin.html"
+                class="bakery-reviews-response-button"
+            >
+                <i class="fa-solid fa-message"></i>
+                Open Response Center
+            </a>
+
+        </div>
+
+
+        <div class="bakery-reviews-response-stats">
+
+            <div>
+
+                <strong>
+                    18
+                </strong>
+
+                <span>
+                    Replies Needed
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    96%
+                </strong>
+
+                <span>
+                    Response Rate
+                </span>
+
+            </div>
+
+
+            <div>
+
+                <strong>
+                    2h 14m
+                </strong>
+
+                <span>
+                    Avg. Response Time
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =================================================
+         REVIEW HIGHLIGHTS
+    ================================================== -->
+
+    <section class="bakery-reviews-highlights-section">
+
+        <div class="bakery-reviews-section-heading">
+
+            <div>
+
+                <span class="bakery-reviews-section-label">
+                    INSIDE THE FEEDBACK
+                </span>
+
+                <h3>
+                    What Customers Mention Most
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="bakery-reviews-highlights-grid">
+
+
+            <article class="bakery-reviews-highlight-card">
+
+                <div class="bakery-reviews-highlight-icon">
+                    <i class="fa-solid fa-cake-candles"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Taste & Freshness
+                    </strong>
+
+                    <span>
+                        Mentioned in 78% of positive reviews
+                    </span>
+
+                </div>
+
+                <b>
+                    78%
+                </b>
+
+            </article>
+
+
+
+            <article class="bakery-reviews-highlight-card">
+
+                <div class="bakery-reviews-highlight-icon">
+                    <i class="fa-solid fa-box"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Presentation
+                    </strong>
+
+                    <span>
+                        Mentioned in 64% of positive reviews
+                    </span>
+
+                </div>
+
+                <b>
+                    64%
+                </b>
+
+            </article>
+
+
+
+            <article class="bakery-reviews-highlight-card">
+
+                <div class="bakery-reviews-highlight-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Fast Delivery
+                    </strong>
+
+                    <span>
+                        Mentioned in 59% of positive reviews
+                    </span>
+
+                </div>
+
+                <b>
+                    59%
+                </b>
+
+            </article>
+
+
+
+            <article class="bakery-reviews-highlight-card">
+
+                <div class="bakery-reviews-highlight-icon">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Friendly Service
+                    </strong>
+
+                    <span>
+                        Mentioned in 51% of positive reviews
+                    </span>
+
+                </div>
+
+                <b>
+                    51%
+                </b>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+</div>
+    
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="admin.js"></script>
+
+</body>
+</html>

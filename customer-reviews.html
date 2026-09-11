@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================================================
+         BASIC META
+    ========================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Bakery Customer Dashboard - Manage orders, wishlist, profile and bakery purchases."
+    >
+
+    <title>Stackly | Customer Dashboard</title>
+
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================================
+         FONT AWESOME
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =========================================================
+         CUSTOMER DASHBOARD CSS
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="customer.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =============================================================
+     CUSTOMER DASHBOARD WRAPPER
+============================================================== -->
+
+<div class="bakery-customer-dashboard">
+
+
+    <!-- =========================================================
+         MOBILE OVERLAY
+    ========================================================== -->
+
+    <div
+        class="bakery-customer-overlay"
+        id="bakeryCustomerOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================================
+         CUSTOMER SIDEBAR
+    ========================================================== -->
+
+    <aside
+        class="bakery-customer-sidebar"
+        id="bakeryCustomerSidebar"
+        aria-hidden="true"
+    >
+
+
+        <!-- =====================================================
+             SIDEBAR HEADER
+        ====================================================== -->
+
+        <div class="bakery-customer-sidebar-header">
+
+            <!-- Logo -->
+
+            <a
+                href="customer.html"
+                class="bakery-customer-logo"
+                aria-label="Stackly Bakery Home"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+
+            <button
+                type="button"
+                class="bakery-customer-close"
+                id="bakeryCustomerClose"
+                aria-label="Close customer menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             CUSTOMER NAVIGATION
+        ====================================================== -->
+
+        <nav
+            class="bakery-customer-navigation"
+            aria-label="Customer Dashboard Navigation"
+        >
+
+
+            <!-- Main -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    MAIN
+                </span>
+
+
+                <!-- Dashboard -->
+
+                <a
+                    href="customer.html"
+                    class="bakery-customer-nav-link active"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- Orders -->
+
+                <a
+                    href="customer-orders.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                    </span>
+
+                    <span>
+                        My Orders
+                    </span>
+
+                    <span class="bakery-customer-nav-count">
+                        3
+                    </span>
+
+                </a>
+
+
+                <!-- Wishlist -->
+
+                <a
+                    href="customer-wishlist.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </span>
+
+                    <span>
+                        Wishlist
+                    </span>
+
+                    <span class="bakery-customer-nav-count">
+                        8
+                    </span>
+
+                </a>
+
+
+                <!-- Reviews -->
+
+                <a
+                    href="customer-reviews.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-star"></i>
+
+                    </span>
+
+                    <span>
+                        My Reviews
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Shopping -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    SHOPPING
+                </span>
+
+
+                <!-- Custom Cakes -->
+
+                <a
+                    href="custom-cakes.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    </span>
+
+                    <span>
+                        Custom Cakes
+                    </span>
+
+                </a>
+
+
+                <!-- Offers -->
+
+                <a
+                    href="customer-offers.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-tag"></i>
+
+                    </span>
+
+                    <span>
+                        Offers
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Account -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    ACCOUNT
+                </span>
+
+
+                <!-- Profile -->
+
+                <a
+                    href="customer-profile.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-user"></i>
+
+                    </span>
+
+                    <span>
+                        My Profile
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- =====================================================
+             SIDEBAR BOTTOM
+        ====================================================== -->
+
+        <div class="bakery-customer-sidebar-bottom">
+
+            <!-- Logout -->
+
+            <button
+                type="button"
+                class="bakery-customer-logout"
+                id="bakeryCustomerLogout"
+            >
+
+                <span class="bakery-customer-nav-icon">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================================
+         MAIN CUSTOMER AREA
+    ========================================================== -->
+
+    <main class="bakery-customer-main">
+
+
+        <!-- =====================================================
+             TOP HEADER
+        ====================================================== -->
+
+        <header class="bakery-customer-topbar">
+
+
+            <!-- LEFT -->
+
+            <div class="bakery-customer-topbar-left">
+
+
+                <!-- Mobile Hamburger -->
+
+                <button
+                    type="button"
+                    class="bakery-customer-menu-toggle"
+                    id="bakeryCustomerMenuToggle"
+                    aria-label="Open customer menu"
+                    aria-expanded="false"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <!-- Page Heading -->
+
+                <div class="bakery-customer-page-heading">
+
+                    <span class="bakery-customer-heading-label">
+                        Customer Dashboard
+                    </span>
+
+                    <span class="bakery-customer-heading-subtitle">
+                        Welcome back to Stackly Bakery
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="bakery-customer-topbar-right">
+
+
+                <!-- Notification -->
+
+                <a
+                    href="404-customer.html"
+                    class="bakery-customer-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-customer-notification-dot">
+                    </span>
+
+                </a>
+
+
+                <!-- Customer -->
+
+                <div class="bakery-customer-user">
+
+
+                    <!-- Email -->
+
+                    <div class="bakery-customer-user-details">
+
+                        <span class="bakery-customer-user-label">
+                            Signed in as
+                        </span>
+
+                        <span
+                            class="bakery-customer-email"
+                            id="bakeryCustomerEmail"
+                        >
+                            customer@stackly.com
+                        </span>
+
+                    </div>
+
+
+                    <!-- Avatar -->
+
+                    <div class="bakery-customer-user-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     MY REVIEWS PAGE CONTENT
+========================================================== -->
+
+<div class="bakery-reviews-content">
+
+
+    <!-- =====================================================
+         REVIEWS INTRO
+    ====================================================== -->
+
+    <section class="bakery-reviews-intro">
+
+        <div class="bakery-reviews-intro-text">
+
+            <span class="bakery-reviews-kicker">
+                YOUR BAKERY EXPERIENCE
+            </span>
+
+            <h1>
+                My <span>Reviews</span>
+            </h1>
+
+            <p>
+                Share your thoughts about every sweet moment.
+                Your feedback helps us create better cakes,
+                better service and happier celebrations.
+            </p>
+
+        </div>
+
+        <div class="bakery-reviews-intro-icon">
+
+            <i class="fa-solid fa-star"></i>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         REVIEW SUMMARY
+    ====================================================== -->
+
+    <section class="bakery-reviews-summary">
+
+
+        <!-- Average Rating -->
+
+        <article class="bakery-reviews-summary-card">
+
+            <div class="bakery-reviews-summary-icon">
+
+                <i class="fa-solid fa-star"></i>
+
+            </div>
+
+            <div>
+
+                <span>AVERAGE RATING</span>
+
+                <strong>4.8</strong>
+
+                <small>
+                    From your reviews
+                </small>
+
+            </div>
+
+        </article>
+
+
+        <!-- Reviews Written -->
+
+        <article class="bakery-reviews-summary-card">
+
+            <div class="bakery-reviews-summary-icon">
+
+                <i class="fa-regular fa-comment-dots"></i>
+
+            </div>
+
+            <div>
+
+                <span>REVIEWS WRITTEN</span>
+
+                <strong>12</strong>
+
+                <small>
+                    Cakes reviewed
+                </small>
+
+            </div>
+
+        </article>
+
+
+        <!-- Helpful Votes -->
+
+        <article class="bakery-reviews-summary-card">
+
+            <div class="bakery-reviews-summary-icon">
+
+                <i class="fa-solid fa-thumbs-up"></i>
+
+            </div>
+
+            <div>
+
+                <span>HELPFUL VOTES</span>
+
+                <strong>38</strong>
+
+                <small>
+                    From other customers
+                </small>
+
+            </div>
+
+        </article>
+
+
+        <!-- Pending Reviews -->
+
+        <article class="bakery-reviews-summary-card">
+
+            <div class="bakery-reviews-summary-icon">
+
+                <i class="fa-solid fa-pen"></i>
+
+            </div>
+
+            <div>
+
+                <span>TO REVIEW</span>
+
+                <strong>2</strong>
+
+                <small>
+                    Recent purchases
+                </small>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         RATING EXPERIENCE
+    ====================================================== -->
+
+    <section class="bakery-rating-overview">
+
+        <div class="bakery-rating-overview-left">
+
+            <span>
+                YOUR RATING PROFILE
+            </span>
+
+            <h2>
+                You love the sweet stuff!
+            </h2>
+
+            <p>
+                Your reviews show that you especially enjoy
+                fresh cream cakes and chocolate desserts.
+            </p>
+
+            <div class="bakery-rating-score">
+
+                <strong>
+                    4.8
+                </strong>
+
+                <div>
+
+                    <div class="bakery-rating-stars">
+
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+                        <i class="fa-solid fa-star"></i>
+
+                    </div>
+
+                    <small>
+                        Excellent customer rating
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="bakery-rating-breakdown">
+
+
+            <!-- 5 Star -->
+
+            <div class="bakery-rating-row">
+
+                <span>5</span>
+
+                <i class="fa-solid fa-star"></i>
+
+                <div class="bakery-rating-progress">
+
+                    <span style="width: 86%;"></span>
+
+                </div>
+
+                <strong>
+                    86%
+                </strong>
+
+            </div>
+
+
+            <!-- 4 Star -->
+
+            <div class="bakery-rating-row">
+
+                <span>4</span>
+
+                <i class="fa-solid fa-star"></i>
+
+                <div class="bakery-rating-progress">
+
+                    <span style="width: 10%;"></span>
+
+                </div>
+
+                <strong>
+                    10%
+                </strong>
+
+            </div>
+
+
+            <!-- 3 Star -->
+
+            <div class="bakery-rating-row">
+
+                <span>3</span>
+
+                <i class="fa-solid fa-star"></i>
+
+                <div class="bakery-rating-progress">
+
+                    <span style="width: 4%;"></span>
+
+                </div>
+
+                <strong>
+                    4%
+                </strong>
+
+            </div>
+
+
+            <!-- 2 Star -->
+
+            <div class="bakery-rating-row">
+
+                <span>2</span>
+
+                <i class="fa-solid fa-star"></i>
+
+                <div class="bakery-rating-progress">
+
+                    <span style="width: 0%;"></span>
+
+                </div>
+
+                <strong>
+                    0%
+                </strong>
+
+            </div>
+
+
+            <!-- 1 Star -->
+
+            <div class="bakery-rating-row">
+
+                <span>1</span>
+
+                <i class="fa-solid fa-star"></i>
+
+                <div class="bakery-rating-progress">
+
+                    <span style="width: 0%;"></span>
+
+                </div>
+
+                <strong>
+                    0%
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PENDING REVIEWS
+    ====================================================== -->
+
+    <section class="bakery-pending-reviews">
+
+        <div class="bakery-reviews-section-heading">
+
+            <div>
+
+                <span>
+                    YOUR FEEDBACK MATTERS
+                </span>
+
+                <h2>
+                    Items Waiting for Your Review
+                </h2>
+
+            </div>
+
+            <span class="bakery-review-count">
+                2 Pending
+            </span>
+
+        </div>
+
+
+        <!-- Pending Review 01 -->
+
+        <article class="bakery-pending-review-card">
+
+            <div class="bakery-pending-review-image">
+
+                <img
+                    src="chocolate-truffle-cake.webp"
+                    alt="Chocolate Truffle Cake"
+                >
+
+            </div>
+
+            <div class="bakery-pending-review-details">
+
+                <span>
+                    ORDER #STK-2094
+                </span>
+
+                <h3>
+                    Chocolate Truffle Cake
+                </h3>
+
+                <p>
+                    Delivered September 10, 2026
+                </p>
+
+            </div>
+
+            <a
+                href="404-customer.html"
+                class="bakery-write-review-button"
+            >
+                <i class="fa-regular fa-pen-to-square"></i>
+
+                Write Review
+
+            </a>
+
+        </article>
+
+
+        <!-- Pending Review 02 -->
+
+        <article class="bakery-pending-review-card">
+
+            <div class="bakery-pending-review-image">
+
+                <img
+                    src="butterscotch-cake.webp"
+                    alt="Butterscotch Crunch Cake"
+                >
+
+            </div>
+
+            <div class="bakery-pending-review-details">
+
+                <span>
+                    ORDER #STK-1987
+                </span>
+
+                <h3>
+                    Butterscotch Crunch Cake
+                </h3>
+
+                <p>
+                    Delivered August 17, 2026
+                </p>
+
+            </div>
+
+            <a
+                href="404-customer.html"
+                class="bakery-write-review-button"
+            >
+                <i class="fa-regular fa-pen-to-square"></i>
+
+                Write Review
+
+            </a>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         RECENT REVIEWS
+    ====================================================== -->
+
+    <section class="bakery-published-reviews">
+
+        <div class="bakery-reviews-section-heading">
+
+            <div>
+
+                <span>
+                    YOUR VOICE
+                </span>
+
+                <h2>
+                    Recent Reviews
+                </h2>
+
+            </div>
+
+            <a href="404-customer.html">
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- REVIEW 01 -->
+
+        <article class="bakery-published-review-card">
+
+            <div class="bakery-review-product-image">
+
+                <img
+                    src="strawberry-cake.webp"
+                    alt="Strawberry Fresh Cream Cake"
+                >
+
+            </div>
+
+            <div class="bakery-published-review-content">
+
+                <div class="bakery-published-review-top">
+
+                    <div>
+
+                        <h3>
+                            Strawberry Fresh Cream Cake
+                        </h3>
+
+                        <div class="bakery-published-stars">
+
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+
+                        </div>
+
+                    </div>
+
+                    <span>
+                        Sep 08, 2026
+                    </span>
+
+                </div>
+
+                <p>
+                    Absolutely delicious! The cream was fresh,
+                    the sponge was soft and the strawberry
+                    flavor was perfect.
+                </p>
+
+                <div class="bakery-review-helpful">
+
+                    <span>
+                        Was this helpful?
+                    </span>
+
+                    <button type="button">
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        Yes
+                    </button>
+
+                    <strong>
+                        8
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- REVIEW 02 -->
+
+        <article class="bakery-published-review-card">
+
+            <div class="bakery-review-product-image">
+
+                <img
+                    src="red-velvet-cake.webp"
+                    alt="Red Velvet Celebration Cake"
+                >
+
+            </div>
+
+            <div class="bakery-published-review-content">
+
+                <div class="bakery-published-review-top">
+
+                    <div>
+
+                        <h3>
+                            Red Velvet Celebration Cake
+                        </h3>
+
+                        <div class="bakery-published-stars">
+
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-regular fa-star"></i>
+
+                        </div>
+
+                    </div>
+
+                    <span>
+                        Aug 29, 2026
+                    </span>
+
+                </div>
+
+                <p>
+                    Beautiful cake and very smooth cream cheese
+                    frosting. It made our family celebration
+                    extra special.
+                </p>
+
+                <div class="bakery-review-helpful">
+
+                    <span>
+                        Was this helpful?
+                    </span>
+
+                    <button type="button">
+                        <i class="fa-regular fa-thumbs-up"></i>
+                        Yes
+                    </button>
+
+                    <strong>
+                        5
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         REVIEW CTA
+    ====================================================== -->
+
+    <section class="bakery-reviews-cta">
+
+        <div class="bakery-reviews-cta-icon">
+
+            <i class="fa-solid fa-heart"></i>
+
+        </div>
+
+        <div class="bakery-reviews-cta-content">
+
+            <span>
+                THANK YOU FOR SHARING
+            </span>
+
+            <h2>
+                Every review makes our bakery better.
+            </h2>
+
+            <p>
+                Tell us what made your order special and
+                help other customers discover their next
+                favorite dessert.
+            </p>
+
+        </div>
+
+        <a href="404-customer.html">
+
+            Review an Order
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </section>
+
+
+</div>
+
+
+    </main>
+
+</div>
+
+
+<!-- =============================================================
+     CUSTOMER DASHBOARD JAVASCRIPT
+============================================================== -->
+
+<script src="customer.js"></script>
+
+</body>
+
+</html>

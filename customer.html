@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================================================
+         BASIC META
+    ========================================================== -->
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Bakery Customer Dashboard - Manage orders, wishlist, profile and bakery purchases."
+    >
+
+    <title>Stackly | Customer Dashboard</title>
+
+
+    <!-- =========================================================
+         GOOGLE FONTS
+    ========================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================================
+         FONT AWESOME
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    >
+
+
+    <!-- =========================================================
+         CUSTOMER DASHBOARD CSS
+    ========================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="customer.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =============================================================
+     CUSTOMER DASHBOARD WRAPPER
+============================================================== -->
+
+<div class="bakery-customer-dashboard">
+
+
+    <!-- =========================================================
+         MOBILE OVERLAY
+    ========================================================== -->
+
+    <div
+        class="bakery-customer-overlay"
+        id="bakeryCustomerOverlay"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- =========================================================
+         CUSTOMER SIDEBAR
+    ========================================================== -->
+
+    <aside
+        class="bakery-customer-sidebar"
+        id="bakeryCustomerSidebar"
+        aria-hidden="true"
+    >
+
+
+        <!-- =====================================================
+             SIDEBAR HEADER
+        ====================================================== -->
+
+        <div class="bakery-customer-sidebar-header">
+
+            <!-- Logo -->
+
+            <a
+                href="customer.html"
+                class="bakery-customer-logo"
+                aria-label="Stackly Bakery Home"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Bakery Logo"
+                >
+
+            </a>
+
+
+            <!-- Mobile Close -->
+
+            <button
+                type="button"
+                class="bakery-customer-close"
+                id="bakeryCustomerClose"
+                aria-label="Close customer menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =====================================================
+             CUSTOMER NAVIGATION
+        ====================================================== -->
+
+        <nav
+            class="bakery-customer-navigation"
+            aria-label="Customer Dashboard Navigation"
+        >
+
+
+            <!-- Main -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    MAIN
+                </span>
+
+
+                <!-- Dashboard -->
+
+                <a
+                    href="customer.html"
+                    class="bakery-customer-nav-link active"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-chart-pie"></i>
+
+                    </span>
+
+                    <span>
+                        Dashboard
+                    </span>
+
+                </a>
+
+
+                <!-- Orders -->
+
+                <a
+                    href="customer-orders.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-bag-shopping"></i>
+
+                    </span>
+
+                    <span>
+                        My Orders
+                    </span>
+
+                    <span class="bakery-customer-nav-count">
+                        3
+                    </span>
+
+                </a>
+
+
+                <!-- Wishlist -->
+
+                <a
+                    href="customer-wishlist.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-heart"></i>
+
+                    </span>
+
+                    <span>
+                        Wishlist
+                    </span>
+
+                    <span class="bakery-customer-nav-count">
+                        8
+                    </span>
+
+                </a>
+
+
+                <!-- Reviews -->
+
+                <a
+                    href="customer-reviews.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-star"></i>
+
+                    </span>
+
+                    <span>
+                        My Reviews
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Shopping -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    SHOPPING
+                </span>
+
+
+                <!-- Custom Cakes -->
+
+                <a
+                    href="custom-cakes.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                    </span>
+
+                    <span>
+                        Custom Cakes
+                    </span>
+
+                </a>
+
+
+                <!-- Offers -->
+
+                <a
+                    href="customer-offers.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-solid fa-tag"></i>
+
+                    </span>
+
+                    <span>
+                        Offers
+                    </span>
+
+                </a>
+
+            </div>
+
+
+            <!-- Account -->
+
+            <div class="bakery-customer-nav-group">
+
+                <span class="bakery-customer-nav-title">
+                    ACCOUNT
+                </span>
+
+
+                <!-- Profile -->
+
+                <a
+                    href="customer-profile.html"
+                    class="bakery-customer-nav-link"
+                >
+
+                    <span class="bakery-customer-nav-icon">
+
+                        <i class="fa-regular fa-user"></i>
+
+                    </span>
+
+                    <span>
+                        My Profile
+                    </span>
+
+                </a>
+
+            </div>
+
+        </nav>
+
+
+        <!-- =====================================================
+             SIDEBAR BOTTOM
+        ====================================================== -->
+
+        <div class="bakery-customer-sidebar-bottom">
+
+            <!-- Logout -->
+
+            <button
+                type="button"
+                class="bakery-customer-logout"
+                id="bakeryCustomerLogout"
+            >
+
+                <span class="bakery-customer-nav-icon">
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                <span>
+                    Logout
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================================
+         MAIN CUSTOMER AREA
+    ========================================================== -->
+
+    <main class="bakery-customer-main">
+
+
+        <!-- =====================================================
+             TOP HEADER
+        ====================================================== -->
+
+        <header class="bakery-customer-topbar">
+
+
+            <!-- LEFT -->
+
+            <div class="bakery-customer-topbar-left">
+
+
+                <!-- Mobile Hamburger -->
+
+                <button
+                    type="button"
+                    class="bakery-customer-menu-toggle"
+                    id="bakeryCustomerMenuToggle"
+                    aria-label="Open customer menu"
+                    aria-expanded="false"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <!-- Page Heading -->
+
+                <div class="bakery-customer-page-heading">
+
+                    <span class="bakery-customer-heading-label">
+                        Customer Dashboard
+                    </span>
+
+                    <span class="bakery-customer-heading-subtitle">
+                        Welcome back to Stackly Bakery
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="bakery-customer-topbar-right">
+
+
+                <!-- Notification -->
+
+                <a
+                    href="404-customer.html"
+                    class="bakery-customer-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="bakery-customer-notification-dot">
+                    </span>
+
+                </a>
+
+
+                <!-- Customer -->
+
+                <div class="bakery-customer-user">
+
+
+                    <!-- Email -->
+
+                    <div class="bakery-customer-user-details">
+
+                        <span class="bakery-customer-user-label">
+                            Signed in as
+                        </span>
+
+                        <span
+                            class="bakery-customer-email"
+                            id="bakeryCustomerEmail"
+                        >
+                            customer@stackly.com
+                        </span>
+
+                    </div>
+
+
+                    <!-- Avatar -->
+
+                    <div class="bakery-customer-user-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =====================================================
+             CUSTOMER PAGE CONTENT
+        ====================================================== -->
+
+        <div class="bakery-customer-page-content">
+
+
+            <!-- =================================================
+                 WELCOME SECTION
+            ================================================== -->
+
+            <section class="bakery-customer-welcome-section">
+
+
+                <div class="bakery-customer-welcome-content">
+
+
+                    <span class="bakery-customer-eyebrow">
+                        YOUR BAKERY ACCOUNT
+                    </span>
+
+
+                    <h1>
+                        Sweet moments start
+                        <span>with you.</span>
+                    </h1>
+
+
+                    <p>
+                        Manage your orders, discover delicious cakes,
+                        save your favorites and enjoy a smoother
+                        bakery ordering experience.
+                    </p>
+
+
+                    <div class="bakery-customer-welcome-actions">
+
+
+                         
+
+
+                        <a
+                            href="404-customer.html"
+                            class="bakery-customer-secondary-button"
+                        >
+
+                            View My Orders
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Welcome Decoration -->
+
+                <div class="bakery-customer-welcome-decoration">
+
+                    <span class="bakery-customer-decoration-circle"></span>
+
+                    <i class="fa-solid fa-cake-candles"></i>
+
+                </div>
+
+            </section>
+
+
+ 
+            <!-- =================================================
+                 CONTENT GRID
+            ================================================== -->
+
+            <section class="bakery-customer-dashboard-grid">
+
+
+                <!-- =============================================
+                     RECENT ORDER
+                ============================================== -->
+
+                <article class="bakery-customer-card bakery-customer-orders-card">
+
+
+                    <div class="bakery-customer-card-header">
+
+                        <div>
+
+                            <span class="bakery-customer-card-label">
+                                RECENT ORDER
+                            </span>
+
+                            <h2>
+                                Your Latest Order
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="404-customer.html"
+                            class="bakery-customer-card-link"
+                        >
+                            View All
+                        </a>
+
+                    </div>
+
+
+                    <div class="bakery-customer-order-item">
+
+
+                        <div class="bakery-customer-order-image">
+
+                            <img
+                                src="strawberry-cake.webp"
+                                alt="Strawberry Fresh Cream Cake"
+                            >
+
+                        </div>
+
+
+                        <div class="bakery-customer-order-info">
+
+                            <span class="bakery-customer-order-number">
+                                ORDER #STK-2048
+                            </span>
+
+                            <h3>
+                                Strawberry Fresh Cream Cake
+                            </h3>
+
+                            <p>
+                                1 kg · Eggless · Fresh Cream
+                            </p>
+
+                            <strong>
+                                ₹899
+                            </strong>
+
+                        </div>
+
+
+                        <span class="bakery-customer-order-status">
+                            <i class="fa-solid fa-circle"></i>
+                            Delivered
+                        </span>
+
+                    </div>
+
+
+                    <div class="bakery-customer-order-footer">
+
+                        <span>
+                            Delivered on September 08, 2026
+                        </span>
+
+                        <a
+                            href="404-customer.html"
+                            class="bakery-customer-small-button"
+                        >
+                            Reorder
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- =============================================
+                     ORDER TRACKING
+                ============================================== -->
+
+                <article class="bakery-customer-card bakery-customer-tracking-card">
+
+
+                    <div class="bakery-customer-card-header">
+
+                        <div>
+
+                            <span class="bakery-customer-card-label">
+                                ORDER TRACKING
+                            </span>
+
+                            <h2>
+                                On the Way
+                            </h2>
+
+                        </div>
+
+                        <span class="bakery-customer-live-badge">
+                            LIVE
+                        </span>
+
+                    </div>
+
+
+                    <div class="bakery-customer-tracking-product">
+
+
+                        <div class="bakery-customer-mini-image">
+
+                            <img
+                                src="chocolate-truffle-cake.webp"
+                                alt="Chocolate Truffle Cake"
+                            >
+
+                        </div>
+
+
+                        <div>
+
+                            <span>
+                                ORDER #STK-2094
+                            </span>
+
+                            <h3>
+                                Chocolate Truffle Cake
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-customer-progress">
+
+
+                        <div class="bakery-customer-progress-line">
+
+                            <span class="active"></span>
+
+                            <span class="active"></span>
+
+                            <span class="active"></span>
+
+                            <span></span>
+
+                        </div>
+
+
+                        <div class="bakery-customer-progress-steps">
+
+
+                            <div class="active">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                <span>
+                                    Confirmed
+                                </span>
+
+                            </div>
+
+
+                            <div class="active">
+
+                                <i class="fa-solid fa-check"></i>
+
+                                <span>
+                                    Baking
+                                </span>
+
+                            </div>
+
+
+                            <div class="active">
+
+                                <i class="fa-solid fa-truck"></i>
+
+                                <span>
+                                    On the Way
+                                </span>
+
+                            </div>
+
+
+                            <div>
+
+                                <i class="fa-solid fa-house"></i>
+
+                                <span>
+                                    Delivered
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="bakery-customer-delivery-note">
+
+                        <i class="fa-solid fa-clock"></i>
+
+                        <span>
+                            Expected delivery today by 7:00 PM
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 RECOMMENDED CAKES
+            ================================================== -->
+
+            <section class="bakery-customer-recommendations-section">
+
+
+                <div class="bakery-customer-section-heading">
+
+                    <div>
+
+                        <span class="bakery-customer-card-label">
+                            SWEET PICKS FOR YOU
+                        </span>
+
+                        <h2>
+                            Recommended Cakes
+                        </h2>
+
+                    </div>
+
+
+                    <a
+                        href="404-customer.html"
+                        class="bakery-customer-card-link"
+                    >
+                        Explore All
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="bakery-customer-product-grid">
+
+
+                    <!-- Cake 01 -->
+
+                    <article class="bakery-customer-product-card">
+
+
+                        <div class="bakery-customer-product-image">
+
+                            <img
+                                src="red-velvet-cake.webp"
+                                alt="Red Velvet Cake"
+                            >
+
+
+                            <button
+                                type="button"
+                                class="bakery-customer-wishlist-button"
+                                aria-label="Add Red Velvet Cake to wishlist"
+                            >
+
+                                <i class="fa-regular fa-heart"></i>
+
+                            </button>
+
+
+                            <span class="bakery-customer-product-badge">
+                                BESTSELLER
+                            </span>
+
+                        </div>
+
+
+                        <div class="bakery-customer-product-content">
+
+                            <span>
+                                Celebration Cakes
+                            </span>
+
+                            <h3>
+                                Red Velvet Cake
+                            </h3>
+
+                            <div class="bakery-customer-product-bottom">
+
+                                <strong>
+                                    ₹799
+                                </strong>
+
+                                <a
+                                    href="404-customer.html"
+                                    class="bakery-customer-add-button"
+                                >
+                                    <i class="fa-solid fa-plus"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Cake 02 -->
+
+                    <article class="bakery-customer-product-card">
+
+
+                        <div class="bakery-customer-product-image">
+
+                            <img
+                                src="chocolate-truffle-cake.webp"
+                                alt="Chocolate Truffle Cake"
+                            >
+
+
+                            <button
+                                type="button"
+                                class="bakery-customer-wishlist-button"
+                                aria-label="Add Chocolate Truffle Cake to wishlist"
+                            >
+
+                                <i class="fa-regular fa-heart"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="bakery-customer-product-content">
+
+                            <span>
+                                Chocolate Collection
+                            </span>
+
+                            <h3>
+                                Chocolate Truffle
+                            </h3>
+
+                            <div class="bakery-customer-product-bottom">
+
+                                <strong>
+                                    ₹899
+                                </strong>
+
+                                <a
+                                    href="404-customer.html"
+                                    class="bakery-customer-add-button"
+                                >
+                                    <i class="fa-solid fa-plus"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Cake 03 -->
+
+                    <article class="bakery-customer-product-card">
+
+
+                        <div class="bakery-customer-product-image">
+
+                            <img
+                                src="butterscotch-cake.webp"
+                                alt="Butterscotch Cake"
+                            >
+
+
+                            <button
+                                type="button"
+                                class="bakery-customer-wishlist-button"
+                                aria-label="Add Butterscotch Cake to wishlist"
+                            >
+
+                                <i class="fa-regular fa-heart"></i>
+
+                            </button>
+
+
+                            <span class="bakery-customer-product-badge">
+                                NEW
+                            </span>
+
+                        </div>
+
+
+                        <div class="bakery-customer-product-content">
+
+                            <span>
+                                Fresh Cream Cakes
+                            </span>
+
+                            <h3>
+                                Butterscotch Cake
+                            </h3>
+
+                            <div class="bakery-customer-product-bottom">
+
+                                <strong>
+                                    ₹749
+                                </strong>
+
+                                <a
+                                    href="404-customer.html"
+                                    class="bakery-customer-add-button"
+                                >
+                                    <i class="fa-solid fa-plus"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+
+                    <!-- Cake 04 -->
+
+                    <article class="bakery-customer-product-card">
+
+
+                        <div class="bakery-customer-product-image">
+
+                            <img
+                                src="strawberry-cake.webp"
+                                alt="Strawberry Cake"
+                            >
+
+
+                            <button
+                                type="button"
+                                class="bakery-customer-wishlist-button"
+                                aria-label="Add Strawberry Cake to wishlist"
+                            >
+
+                                <i class="fa-regular fa-heart"></i>
+
+                            </button>
+
+                        </div>
+
+
+                        <div class="bakery-customer-product-content">
+
+                            <span>
+                                Fruit Cakes
+                            </span>
+
+                            <h3>
+                                Strawberry Fresh Cream
+                            </h3>
+
+                            <div class="bakery-customer-product-bottom">
+
+                                <strong>
+                                    ₹899
+                                </strong>
+
+                                <a
+                                    href="404-customer.html"
+                                    class="bakery-customer-add-button"
+                                >
+                                    <i class="fa-solid fa-plus"></i>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =================================================
+                 QUICK ACCOUNT SECTION
+            ================================================== -->
+
+            <section class="bakery-customer-quick-section">
+
+
+                <div class="bakery-customer-quick-card">
+
+                    <div class="bakery-customer-quick-icon">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            DELIVERY ADDRESS
+                        </span>
+
+                        <h3>
+                            Your saved delivery address
+                        </h3>
+
+                        <p>
+                            Chennai, Tamil Nadu
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="404-customer.html"
+                        class="bakery-customer-quick-link"
+                    >
+                        Manage
+                    </a>
+
+                </div>
+
+
+
+                <div class="bakery-customer-quick-card">
+
+                    <div class="bakery-customer-quick-icon">
+
+                        <i class="fa-solid fa-tag"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            SPECIAL OFFER
+                        </span>
+
+                        <h3>
+                            Get 20% off your next cake
+                        </h3>
+
+                        <p>
+                            Use coupon code CAKE20
+                        </p>
+
+                    </div>
+
+                    <a
+                        href="404-customer.html"
+                        class="bakery-customer-quick-link"
+                    >
+                        View Offer
+                    </a>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- =============================================================
+     CUSTOMER DASHBOARD JAVASCRIPT
+============================================================== -->
+
+<script src="customer.js"></script>
+
+</body>
+
+</html>
