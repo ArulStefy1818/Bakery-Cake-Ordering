@@ -6513,44 +6513,141 @@ body {
    SERVICE ITEM
 ========================================= */
 
+/* =========================================================
+   SMART SERVICE
+   HOVER EFFECT
+========================================================= */
+
 .smart-service {
-  position: relative;
+    position: relative;
+    height: 100%;
+    min-height: 135px;
+    padding-top: 38px;
 
-  height: 100%;
-  min-height: 135px;
+    overflow: hidden;
 
-  padding-top: 38px;
+    transition:
+        transform 0.35s ease,
+        background-color 0.35s ease;
 }
 
 
-/* Service title */
+/* ---------------------------------------------------------
+   SERVICE TITLE
+--------------------------------------------------------- */
 
 .smart-service h4 {
-  position: relative;
-  z-index: 2;
+    position: relative;
+    z-index: 2;
 
-  margin: 0;
+    margin: 0;
 
-  color: #173b42;
+    color: #173b42;
 
-  font-size: 15px;
-  line-height: 1.3;
+    font-size: 15px;
+    line-height: 1.3;
+    font-weight: 400;
 
-  font-weight: 400;
+    transition:
+        color 0.35s ease,
+        transform 0.35s ease;
 }
 
 
-/* Large background number */
+/* ---------------------------------------------------------
+   LARGE BACKGROUND NUMBER
+--------------------------------------------------------- */
 
 .smart-service span {
     display: block;
+
     margin-top: -8px;
+
     color: #a96f43;
+
     font-size: 82px;
     line-height: 0.95;
     font-weight: 400;
+
+    transition:
+        color 0.35s ease,
+        transform 0.4s ease,
+        opacity 0.35s ease;
 }
 
+
+/* =========================================================
+   HOVER EFFECT
+========================================================= */
+
+.smart-service:hover {
+    transform: translateY(-5px);
+}
+
+
+/* Title hover */
+
+.smart-service:hover h4 {
+    color: #a96f43;
+
+    transform: translateX(5px);
+}
+
+
+/* Number hover */
+
+.smart-service:hover span {
+    color: #c96f3b;
+
+    transform: translateY(-8px) scale(1.04);
+
+    opacity: 0.9;
+}
+
+
+/* =========================================================
+   OPTIONAL UNDERLINE EFFECT
+========================================================= */
+
+.smart-service h4::after {
+    content: "";
+
+    display: block;
+
+    width: 0;
+    height: 1px;
+
+    margin-top: 7px;
+
+    background: #a96f43;
+
+    transition: width 0.35s ease;
+}
+
+.smart-service:hover h4::after {
+    width: 45px;
+}
+
+
+/* =========================================================
+   SMOOTH MOBILE BEHAVIOR
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .smart-service:hover {
+        transform: none;
+    }
+
+    .smart-service:hover h4 {
+        transform: none;
+    }
+
+    .smart-service:hover span {
+        transform: translateY(-4px) scale(1.02);
+    }
+
+}
 /* =========================================
    TABLET
 ========================================= */
