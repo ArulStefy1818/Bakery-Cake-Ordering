@@ -3825,8 +3825,34 @@
 
     z-index: 2;
 }
+/* =========================================================
+   CENTER CONTENT — BOTTOM ALIGNED
+========================================================= */
 
+.stackly-bakery-feature-center-content {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
+    width: 100%;
+    min-height: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    text-align: center;
+
+    padding:
+        55px
+        45px
+        40px; /* moved content lower */
+
+    color: #ffffff;
+    z-index: 2;
+}
 /* =========================================================
    CENTER LABEL
 ========================================================= */
@@ -4449,7 +4475,6 @@
 
         filter: none;
     }
-
 
     .stackly-bakery-feature-center:hover
     .stackly-bakery-feature-center-label {
@@ -14838,4 +14863,146 @@ summary > i {
 .stackly-custom-dropdown.stackly-input-error {
     border-color: #d93025 !important;
     box-shadow: none !important;
+}
+
+/* =========================================================
+   CUSTOM DROPDOWN
+========================================================= */
+
+.stackly-custom-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+.stackly-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
+
+    display: block;
+
+    max-height: 0;
+    overflow: hidden;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transform: translateY(-8px);
+
+    background: #ffffff;
+    border: 1px solid #ead8cc;
+    border-radius: 12px;
+
+    box-shadow:
+        0 15px 35px rgba(43, 27, 21, 0.14);
+
+    z-index: 9999;
+
+    transition:
+        max-height 0.3s ease,
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================================
+   OPEN STATE
+========================================================= */
+
+.stackly-custom-dropdown.active
+.stackly-dropdown-menu {
+
+    max-height: 400px;
+
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+
+    transform: translateY(0);
+
+    overflow-y: auto;
+}
+
+
+/* =========================================================
+   DROPDOWN OPTION
+========================================================= */
+
+.stackly-dropdown-option {
+    padding: 13px 18px;
+
+    color: #60483d;
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        padding-left 0.25s ease;
+}
+
+
+/* =========================================================
+   OPTION HOVER
+========================================================= */
+
+.stackly-dropdown-option:hover {
+    background: #fff3eb;
+    color: #a96f43;
+    padding-left: 23px;
+}
+
+
+/* =========================================================
+   SELECTED OPTION
+========================================================= */
+
+.stackly-dropdown-option.selected {
+    background: #a96f43;
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DROPDOWN BUTTON
+========================================================= */
+
+.stackly-dropdown-button {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    cursor: pointer;
+}
+
+
+/* =========================================================
+   CHEVRON ROTATION
+========================================================= */
+
+.stackly-dropdown-button i {
+    transition:
+        transform 0.3s ease;
+}
+
+.stackly-custom-dropdown.active
+.stackly-dropdown-button i {
+    transform: rotate(180deg);
 }

@@ -2824,6 +2824,705 @@ body.bakery-admin-menu-open {
 }
 
 /* =========================================================
+   STACKLY BAKERY ADMIN
+   FINAL MOBILE TOPBAR + CONTENT FIX
+   ========================================================= */
+
+
+/* =========================================================
+   MOBILE ADMIN LAYOUT
+========================================================= */
+
+@media (max-width: 991px) {
+
+    /* -----------------------------------------------------
+       DASHBOARD
+    ----------------------------------------------------- */
+
+    .bakery-admin-dashboard {
+        width: 100%;
+        min-width: 0;
+        min-height: 100vh;
+        overflow-x: hidden !important;
+    }
+
+    .bakery-admin-main {
+        width: 100% !important;
+        max-width: 100% !important;
+        margin-left: 0 !important;
+        min-width: 0 !important;
+        overflow-x: hidden !important;
+    }
+
+
+    /* -----------------------------------------------------
+       TOPBAR
+    ----------------------------------------------------- */
+
+    .bakery-admin-topbar {
+        width: 100% !important;
+        min-width: 0 !important;
+
+        min-height: 76px;
+
+        padding: 12px 16px !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+
+        gap: 12px;
+
+        overflow: visible !important;
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------------------------------
+       TOPBAR LEFT
+    ----------------------------------------------------- */
+
+    .bakery-admin-topbar-left {
+        display: flex !important;
+        align-items: center !important;
+
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+
+        gap: 10px;
+    }
+
+
+    /* -----------------------------------------------------
+       HAMBURGER
+    ----------------------------------------------------- */
+
+    .bakery-admin-menu-toggle {
+        display: inline-flex !important;
+
+        width: 42px !important;
+        height: 42px !important;
+
+        min-width: 42px !important;
+        flex: 0 0 42px !important;
+
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       PAGE HEADING
+    ----------------------------------------------------- */
+
+    .bakery-admin-page-heading {
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+    }
+
+    .bakery-admin-heading-label {
+        font-size: 7px;
+        letter-spacing: 1.3px;
+    }
+
+    .bakery-admin-page-heading h1 {
+        margin: 0;
+
+        font-size: 21px;
+        line-height: 1.2;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    /* -----------------------------------------------------
+       TOPBAR RIGHT
+    ----------------------------------------------------- */
+
+    .bakery-admin-topbar-right {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+
+        min-width: 0 !important;
+
+        flex: 0 1 auto !important;
+
+        gap: 0 !important;
+
+        margin-left: auto;
+    }
+
+
+    /* -----------------------------------------------------
+       REMOVE NOTIFICATION BELL ON MOBILE
+    ----------------------------------------------------- */
+
+    .bakery-admin-notification {
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       USER AREA
+    ----------------------------------------------------- */
+
+    .bakery-admin-user {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+
+        min-width: 0 !important;
+
+        gap: 8px;
+
+        margin: 0 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       KEEP USER AVATAR
+    ----------------------------------------------------- */
+
+    .bakery-admin-user-avatar {
+        display: inline-flex !important;
+
+        width: 40px;
+        height: 40px;
+
+        min-width: 40px;
+
+        align-items: center;
+        justify-content: center;
+
+        flex: 0 0 40px;
+    }
+
+
+    /* -----------------------------------------------------
+       USER DETAILS
+    ----------------------------------------------------- */
+
+    .bakery-admin-user-details {
+        display: flex !important;
+        flex-direction: column !important;
+
+        min-width: 0 !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        flex: 0 1 auto !important;
+    }
+
+
+    /* Hide "Administrator" / role text */
+    .bakery-admin-user-details strong {
+        display: none !important;
+    }
+
+
+    /* -----------------------------------------------------
+       FULL EMAIL
+    ----------------------------------------------------- */
+
+    .bakery-admin-user-details span {
+        display: block !important;
+
+        width: auto !important;
+        max-width: none !important;
+
+        min-width: 0 !important;
+
+        color: var(--stackly-primary-dark);
+
+        font-size: 11px;
+        font-weight: 700;
+
+        line-height: 1.3;
+
+        white-space: nowrap !important;
+
+        overflow: visible !important;
+
+        text-overflow: clip !important;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTENT
+    ----------------------------------------------------- */
+
+    .bakery-admin-content {
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        min-width: 0 !important;
+
+        box-sizing: border-box;
+
+        padding: 22px 16px 40px !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* Prevent dashboard cards from causing horizontal overflow */
+
+    .bakery-admin-welcome,
+    .bakery-admin-stat-grid,
+    .bakery-admin-dashboard-grid,
+    .bakery-admin-bottom-grid,
+    .bakery-admin-panel,
+    .bakery-admin-quick-actions {
+        max-width: 100% !important;
+        min-width: 0 !important;
+        box-sizing: border-box;
+    }
+
+
+    /* -----------------------------------------------------
+       STAT GRID
+    ----------------------------------------------------- */
+
+    .bakery-admin-stat-grid {
+        width: 100% !important;
+
+        grid-template-columns: 1fr !important;
+
+        min-width: 0 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       DASHBOARD GRID
+    ----------------------------------------------------- */
+
+    .bakery-admin-dashboard-grid,
+    .bakery-admin-bottom-grid {
+        width: 100% !important;
+
+        grid-template-columns: 1fr !important;
+
+        min-width: 0 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       QUICK ACTIONS
+    ----------------------------------------------------- */
+
+    .bakery-admin-quick-actions {
+        width: 100% !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        min-width: 0 !important;
+    }
+
+
+    /* -----------------------------------------------------
+       TABLE / LONG CONTENT
+    ----------------------------------------------------- */
+
+    .bakery-admin-panel {
+        width: 100% !important;
+        max-width: 100% !important;
+
+        overflow-x: auto;
+    }
+
+
+    /* -----------------------------------------------------
+       SIDEBAR
+    ----------------------------------------------------- */
+
+    .bakery-admin-sidebar {
+        position: fixed !important;
+
+        top: 0 !important;
+        left: 0 !important;
+
+        width: 280px !important;
+        max-width: 88vw !important;
+
+        height: 100vh !important;
+        height: 100dvh !important;
+
+        z-index: 10001 !important;
+
+        transform: translate3d(-110%, 0, 0) !important;
+
+        visibility: hidden !important;
+
+        pointer-events: none !important;
+
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+    }
+
+    .bakery-admin-sidebar.active {
+        transform: translate3d(0, 0, 0) !important;
+
+        visibility: visible !important;
+
+        pointer-events: auto !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 767px) {
+
+    .bakery-admin-topbar {
+        min-height: 72px;
+
+        padding: 11px 14px !important;
+
+        gap: 8px;
+    }
+
+
+    /* LEFT SIDE */
+
+    .bakery-admin-topbar-left {
+        gap: 8px;
+    }
+
+
+    /* HAMBURGER */
+
+    .bakery-admin-menu-toggle {
+        width: 40px !important;
+        height: 40px !important;
+
+        min-width: 40px !important;
+        flex-basis: 40px !important;
+    }
+
+
+    /* PAGE TITLE */
+
+    .bakery-admin-page-heading h1 {
+        font-size: 16px;
+    }
+
+
+    /* RIGHT SIDE */
+
+    .bakery-admin-topbar-right {
+        flex: 0 1 auto !important;
+    }
+
+
+    /* AVATAR */
+
+    .bakery-admin-user-avatar {
+        width: 38px;
+        height: 38px;
+
+        min-width: 38px;
+
+        flex-basis: 38px;
+    }
+
+
+    /* EMAIL */
+
+    .bakery-admin-user-details span {
+        font-size: 10px;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* CONTENT */
+
+    .bakery-admin-content {
+        padding:
+            20px 14px
+            35px !important;
+    }
+
+
+    /* WELCOME */
+
+    .bakery-admin-welcome {
+        width: 100%;
+
+        padding: 22px 18px;
+
+        box-sizing: border-box;
+    }
+
+
+    .bakery-admin-welcome h2 {
+        font-size: 23px;
+    }
+
+
+    /* STATS */
+
+    .bakery-admin-stat-card {
+        width: 100%;
+
+        min-width: 0;
+
+        box-sizing: border-box;
+    }
+
+
+    /* QUICK ACTIONS */
+
+    .bakery-admin-quick-actions {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 12px;
+    }
+
+
+    .bakery-admin-action-card {
+        min-width: 0;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .bakery-admin-topbar {
+        min-height: 68px;
+
+        padding: 10px 11px !important;
+
+        gap: 6px;
+    }
+
+
+    /* -----------------------------------------------------
+       LEFT
+    ----------------------------------------------------- */
+
+    .bakery-admin-topbar-left {
+        gap: 6px;
+
+        flex: 1 1 auto !important;
+    }
+
+
+    /* -----------------------------------------------------
+       HAMBURGER
+    ----------------------------------------------------- */
+
+    .bakery-admin-menu-toggle {
+        width: 38px !important;
+        height: 38px !important;
+
+        min-width: 38px !important;
+        flex-basis: 38px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       TITLE
+    ----------------------------------------------------- */
+
+    .bakery-admin-page-heading h1 {
+        font-size: 12px;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+
+    /* -----------------------------------------------------
+       USER
+    ----------------------------------------------------- */
+
+    .bakery-admin-user {
+        gap: 6px;
+    }
+
+
+    /* Keep avatar visible */
+
+    .bakery-admin-user-avatar {
+        display: inline-flex !important;
+
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+
+        flex-basis: 34px;
+
+        font-size: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       EMAIL
+    ----------------------------------------------------- */
+
+    .bakery-admin-user-details {
+        max-width: none !important;
+
+        width: auto !important;
+
+        flex: 0 1 auto !important;
+    }
+
+    .bakery-admin-user-details span {
+        max-width: none !important;
+
+        font-size: 9px;
+
+        white-space: nowrap !important;
+
+        overflow: visible !important;
+
+        text-overflow: clip !important;
+    }
+
+
+    /* -----------------------------------------------------
+       CONTENT
+    ----------------------------------------------------- */
+
+    .bakery-admin-content {
+        padding:
+            18px 11px
+            30px !important;
+    }
+
+
+    /* -----------------------------------------------------
+       WELCOME
+    ----------------------------------------------------- */
+
+    .bakery-admin-welcome {
+        padding: 20px 16px;
+
+        border-radius: 14px;
+    }
+
+    .bakery-admin-welcome h2 {
+        font-size: 21px;
+    }
+
+    .bakery-admin-welcome p {
+        font-size: 13px;
+        line-height: 1.55;
+    }
+
+
+    /* -----------------------------------------------------
+       STATS
+    ----------------------------------------------------- */
+
+    .bakery-admin-stat-grid {
+        gap: 12px;
+    }
+
+    .bakery-admin-stat-card {
+        min-height: 110px;
+
+        padding: 16px;
+    }
+
+
+    /* -----------------------------------------------------
+       PANELS
+    ----------------------------------------------------- */
+
+    .bakery-admin-panel {
+        padding: 15px;
+
+        border-radius: 13px;
+    }
+
+
+    /* -----------------------------------------------------
+       QUICK ACTIONS
+    ----------------------------------------------------- */
+
+    .bakery-admin-quick-actions {
+        grid-template-columns: 1fr !important;
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL DEVICES
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .bakery-admin-topbar {
+        padding: 9px 9px !important;
+    }
+
+
+    .bakery-admin-menu-toggle {
+        width: 36px !important;
+        height: 36px !important;
+
+        min-width: 36px !important;
+        flex-basis: 36px !important;
+    }
+
+
+    .bakery-admin-page-heading h1 {
+        font-size: 12px;
+    }
+
+
+    .bakery-admin-user-avatar {
+        width: 32px;
+        height: 32px;
+
+        min-width: 32px;
+        flex-basis: 32px;
+    }
+
+
+    .bakery-admin-user-details span {
+        font-size: 8px;
+    }
+
+
+    .bakery-admin-content {
+        padding:
+            16px 9px
+            28px !important;
+    }
+
+
+    .bakery-admin-welcome h2 {
+        font-size: 19px;
+    }
+
+}
+
+/* =========================================================
    STACKLY BAKERY - ORDERS PAGE
    ORDER MANAGEMENT STYLES
 ========================================================= */

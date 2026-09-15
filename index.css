@@ -1169,6 +1169,8 @@ select {
 
     animation:
         stacklyFadeUp 1s 0.58s ease both;
+
+    cursor: pointer;
 }
 
 
@@ -1203,6 +1205,33 @@ select {
         14px;
 }
 
+.stackly-hero-feature {
+    transition: transform 0.35s ease;
+}
+
+.stackly-hero-feature span {
+    display: inline-block;
+    color: #ffffff;
+    transition: 
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.stackly-hero-feature i {
+    transition: 
+        color 0.3s ease,
+        transform 0.35s ease;
+}
+
+.stackly-hero-feature:hover span {
+    color: #ffd2b5;
+    transform: translateX(6px);
+}
+
+.stackly-hero-feature:hover i {
+    color: #c96f3b;
+    transform: scale(1.15) rotate(-8deg);
+}
 
 /* =========================================================
    PRICE BADGE
@@ -6514,18 +6543,13 @@ body {
 /* Large background number */
 
 .smart-service span {
-  display: block;
-
-  margin-top: -8px;
-
-  color: rgba(80, 80, 80, 0.12);
-
-  font-size: 82px;
-  line-height: 0.95;
-
-  font-weight: 400;
+    display: block;
+    margin-top: -8px;
+    color: #a96f43;
+    font-size: 82px;
+    line-height: 0.95;
+    font-weight: 400;
 }
-
 
 /* =========================================
    TABLET
@@ -14056,9 +14080,21 @@ a {
     transform: scale(1.08) rotate(-2deg);
 
     filter:
+        brightness(0)
+        saturate(100%)
+        invert(49%)
+        sepia(30%)
+        saturate(900%)
+        hue-rotate(348deg)
+        brightness(100%)
+        contrast(95%)
         drop-shadow(
-            0 8px 15px
-            rgba(169, 111, 67, 0.25)
+            0 5px 8px
+            rgba(169, 111, 67, 0.22)
+        )
+        drop-shadow(
+            0 10px 18px
+            rgba(194, 138, 90, 0.16)
         );
 }
 
@@ -14731,4 +14767,61 @@ a {
         animation: none !important;
         transition: none !important;
     }
+}
+
+/* =========================================================
+   NEWSLETTER MESSAGE
+========================================================= */
+
+.stackly-newsletter-message {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+
+    text-align: left;
+}
+
+
+/* =========================================================
+   ERROR MESSAGE
+========================================================= */
+
+.stackly-newsletter-error {
+    color: #d93025 !important;
+}
+
+
+/* =========================================================
+   SUCCESS MESSAGE
+========================================================= */
+
+.stackly-newsletter-success {
+    color: #2e8b57 !important;
+}
+
+
+/* =========================================================
+   INPUT ERROR
+========================================================= */
+
+.stackly-newsletter-input-error {
+    border-color: #d93025 !important;
+
+    box-shadow:
+        0 0 0 2px rgba(217, 48, 37, 0.12) !important;
+}
+
+
+/* =========================================================
+   INPUT ERROR FOCUS
+========================================================= */
+
+.stackly-newsletter-input-error:focus {
+    border-color: #d93025 !important;
+    outline: none !important;
 }

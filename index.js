@@ -2424,43 +2424,38 @@ document.addEventListener(
 );
 
 
-/* =========================================================
-   =========================================================
-   CONTACT SERVICE DROPDOWN
-   =========================================================
-========================================================= */
+ /* =========================================================
+    =========================================================
+    CONTACT SERVICE DROPDOWN — FIXED
+    =========================================================
+ ========================================================= */
 
 function initContactServiceDropdown() {
 
-    const dropdown =
-        document.getElementById(
-            "contactServiceDropdown"
-        );
+    const dropdown = document.getElementById(
+        "contactServiceDropdown"
+    );
+
+    const button = document.getElementById(
+        "contactServiceButton"
+    );
+
+    const menu = document.getElementById(
+        "contactServiceMenu"
+    );
+
+    const value = document.getElementById(
+        "contactServiceValue"
+    );
+
+    const hiddenInput = document.getElementById(
+        "contactService"
+    );
 
 
-    const button =
-        document.getElementById(
-            "contactServiceButton"
-        );
-
-
-    const menu =
-        document.getElementById(
-            "contactServiceMenu"
-        );
-
-
-    const value =
-        document.getElementById(
-            "contactServiceValue"
-        );
-
-
-    const hiddenInput =
-        document.getElementById(
-            "contactService"
-        );
-
+    /* =====================================================
+       CHECK REQUIRED ELEMENTS
+    ====================================================== */
 
     if (
         !dropdown ||
@@ -2469,16 +2464,13 @@ function initContactServiceDropdown() {
         !value ||
         !hiddenInput
     ) {
-
         return;
-
     }
 
 
-    const options =
-        menu.querySelectorAll(
-            ".stackly-dropdown-option"
-        );
+    const options = menu.querySelectorAll(
+        ".stackly-dropdown-option"
+    );
 
 
     /* =====================================================
@@ -2487,10 +2479,7 @@ function initContactServiceDropdown() {
 
     function openDropdown() {
 
-        dropdown.classList.add(
-            "active"
-        );
-
+        dropdown.classList.add("active");
 
         button.setAttribute(
             "aria-expanded",
@@ -2506,10 +2495,7 @@ function initContactServiceDropdown() {
 
     function closeDropdown() {
 
-        dropdown.classList.remove(
-            "active"
-        );
-
+        dropdown.classList.remove("active");
 
         button.setAttribute(
             "aria-expanded",
@@ -2520,16 +2506,13 @@ function initContactServiceDropdown() {
 
 
     /* =====================================================
-       TOGGLE
+       TOGGLE DROPDOWN
     ====================================================== */
 
     function toggleDropdown() {
 
         const isOpen =
-            dropdown.classList.contains(
-                "active"
-            );
-
+            dropdown.classList.contains("active");
 
         if (isOpen) {
 
@@ -2553,7 +2536,6 @@ function initContactServiceDropdown() {
         function (event) {
 
             event.preventDefault();
-
             event.stopPropagation();
 
             toggleDropdown();
@@ -2563,7 +2545,7 @@ function initContactServiceDropdown() {
 
 
     /* =====================================================
-       OPTIONS
+       OPTION CLICK
     ====================================================== */
 
     options.forEach(
@@ -2574,19 +2556,22 @@ function initContactServiceDropdown() {
                 "0"
             );
 
+            option.setAttribute(
+                "aria-selected",
+                "false"
+            );
+
 
             option.addEventListener(
                 "click",
                 function (event) {
 
                     event.preventDefault();
-
                     event.stopPropagation();
 
 
                     const selectedText =
                         option.textContent.trim();
-
 
                     const selectedValue =
                         option.getAttribute(
@@ -2594,24 +2579,34 @@ function initContactServiceDropdown() {
                         );
 
 
+                    /* -------------------------------------
+                       CHECK VALUE
+                    ------------------------------------- */
+
                     if (!selectedValue) {
                         return;
                     }
 
 
-                    /* UPDATE VISIBLE TEXT */
+                    /* -------------------------------------
+                       UPDATE VISIBLE VALUE
+                    ------------------------------------- */
 
                     value.textContent =
                         selectedText;
 
 
-                    /* UPDATE HIDDEN INPUT */
+                    /* -------------------------------------
+                       UPDATE HIDDEN INPUT
+                    ------------------------------------- */
 
                     hiddenInput.value =
                         selectedValue;
 
 
-                    /* UPDATE SELECTED STATE */
+                    /* -------------------------------------
+                       REMOVE OLD SELECTED STATE
+                    ------------------------------------- */
 
                     options.forEach(
                         function (item) {
@@ -2620,23 +2615,46 @@ function initContactServiceDropdown() {
                                 "selected"
                             );
 
+                            item.setAttribute(
+                                "aria-selected",
+                                "false"
+                            );
+
                         }
                     );
 
+
+                    /* -------------------------------------
+                       ADD SELECTED STATE
+                    ------------------------------------- */
 
                     option.classList.add(
                         "selected"
                     );
 
-
-                    /* CLEAR ERROR */
-
-                    clearContactFieldError(
-                        dropdown
+                    option.setAttribute(
+                        "aria-selected",
+                        "true"
                     );
 
 
-                    /* CLOSE */
+                    /* -------------------------------------
+                       CLEAR VALIDATION ERROR
+                    ------------------------------------- */
+
+                    if (
+                        typeof clearContactFieldError ===
+                        "function"
+                    ) {
+                        clearContactFieldError(
+                            dropdown
+                        );
+                    }
+
+
+                    /* -------------------------------------
+                       CLOSE DROPDOWN IMMEDIATELY
+                    ------------------------------------- */
 
                     closeDropdown();
 
@@ -2645,7 +2663,7 @@ function initContactServiceDropdown() {
 
 
             /* =================================================
-               KEYBOARD SUPPORT
+               KEYBOARD SELECTION
             ================================================== */
 
             option.addEventListener(
@@ -2668,6 +2686,8 @@ function initContactServiceDropdown() {
                         event.key === "Escape"
                     ) {
 
+                        event.preventDefault();
+
                         closeDropdown();
 
                         button.focus();
@@ -2682,7 +2702,7 @@ function initContactServiceDropdown() {
 
 
     /* =====================================================
-       CLICK OUTSIDE
+       CLICK OUTSIDE DROPDOWN
     ====================================================== */
 
     document.addEventListener(
@@ -2696,6 +2716,36 @@ function initContactServiceDropdown() {
             ) {
 
                 closeDropdown();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       ESC KEY
+    ====================================================== */
+
+    document.addEventListener(
+        "keydown",
+        function (event) {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                if (
+                    dropdown.classList.contains(
+                        "active"
+                    )
+                ) {
+
+                    closeDropdown();
+
+                    button.focus();
+
+                }
 
             }
 
@@ -2727,6 +2777,8 @@ function initContactServiceDropdown() {
                 event.key === "Escape"
             ) {
 
+                event.preventDefault();
+
                 closeDropdown();
 
             }
@@ -2734,8 +2786,14 @@ function initContactServiceDropdown() {
         }
     );
 
-}
 
+    /* =====================================================
+       INITIAL STATE
+    ====================================================== */
+
+    closeDropdown();
+
+}
 
 /* =========================================================
    =========================================================
@@ -3751,3 +3809,316 @@ window.addEventListener(
     }
 );
 
+/* =========================================================
+   STACKLY BAKERY
+   NEWSLETTER / SUBSCRIBE VALIDATION
+========================================================= */
+
+function initNewsletter() {
+
+    const form = document.querySelector(
+        ".stackly-footer-newsletter-form"
+    );
+
+    const emailInput = document.getElementById(
+        "stacklyFooterEmail"
+    );
+
+    if (!form || !emailInput) {
+        return;
+    }
+
+
+    /* =====================================================
+       DISABLE BROWSER DEFAULT VALIDATION
+       This allows our custom messages to appear.
+    ====================================================== */
+
+    form.setAttribute(
+        "novalidate",
+        "novalidate"
+    );
+
+
+    /* =====================================================
+       FIND OR CREATE MESSAGE ELEMENT
+    ====================================================== */
+
+    let message = form.querySelector(
+        ".stackly-newsletter-message"
+    );
+
+    if (!message) {
+
+        message = document.createElement(
+            "div"
+        );
+
+        message.className =
+            "stackly-newsletter-message";
+
+        const inputWrapper = form.querySelector(
+            ".stackly-footer-input-wrap"
+        );
+
+        if (inputWrapper) {
+
+            inputWrapper.insertAdjacentElement(
+                "afterend",
+                message
+            );
+
+        } else {
+
+            emailInput.insertAdjacentElement(
+                "afterend",
+                message
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       EMAIL VALIDATION
+    ====================================================== */
+
+    function isValidEmail(email) {
+
+        const emailPattern =
+            /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/;
+
+        return emailPattern.test(email);
+
+    }
+
+
+    /* =====================================================
+       SHOW MESSAGE
+    ====================================================== */
+
+    function showMessage(text, type) {
+
+        message.textContent = text;
+
+        message.className =
+            "stackly-newsletter-message";
+
+        if (type === "error") {
+
+            message.classList.add(
+                "stackly-newsletter-error"
+            );
+
+        }
+
+        if (type === "success") {
+
+            message.classList.add(
+                "stackly-newsletter-success"
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       CLEAR MESSAGE
+    ====================================================== */
+
+    function clearMessage() {
+
+        message.textContent = "";
+
+        message.className =
+            "stackly-newsletter-message";
+
+    }
+
+
+    /* =====================================================
+       INPUT ERROR
+    ====================================================== */
+
+    function showInputError() {
+
+        emailInput.classList.add(
+            "stackly-newsletter-input-error"
+        );
+
+    }
+
+
+    /* =====================================================
+       REMOVE INPUT ERROR
+    ====================================================== */
+
+    function removeInputError() {
+
+        emailInput.classList.remove(
+            "stackly-newsletter-input-error"
+        );
+
+    }
+
+
+    /* =====================================================
+       FORM SUBMIT
+    ====================================================== */
+
+    form.addEventListener(
+        "submit",
+        function (event) {
+
+            event.preventDefault();
+            event.stopPropagation();
+
+
+            /* =============================================
+               GET EMAIL
+            ============================================== */
+
+            const email =
+                emailInput.value.trim();
+
+
+            /* =============================================
+               CLEAR OLD STATE
+            ============================================== */
+
+            clearMessage();
+            removeInputError();
+
+
+            /* =============================================
+               EMPTY EMAIL
+            ============================================== */
+
+            if (email === "") {
+
+                showMessage(
+                    "Please enter your email address.",
+                    "error"
+                );
+
+                showInputError();
+
+                emailInput.focus();
+
+                return;
+
+            }
+
+
+            /* =============================================
+               INVALID EMAIL
+            ============================================== */
+
+            if (!isValidEmail(email)) {
+
+                showMessage(
+                    "Please enter a valid email address.",
+                    "error"
+                );
+
+                showInputError();
+
+                emailInput.focus();
+
+                return;
+
+            }
+
+
+            /* =============================================
+               SUCCESS
+            ============================================== */
+
+            showMessage(
+                "Thank you for subscribing! Sweet news is on its way.",
+                "success"
+            );
+
+
+            /* =============================================
+               CLEAR FORM
+            ============================================== */
+
+            emailInput.value = "";
+
+            removeInputError();
+
+
+            /* =============================================
+               HIDE SUCCESS MESSAGE AFTER 5 SECONDS
+            ============================================== */
+
+            setTimeout(
+                function () {
+
+                    clearMessage();
+
+                },
+                5000
+            );
+
+        },
+        false
+    );
+
+
+    /* =====================================================
+       CLEAR ERROR WHILE TYPING
+    ====================================================== */
+
+    emailInput.addEventListener(
+        "input",
+        function () {
+
+            removeInputError();
+            clearMessage();
+
+        }
+    );
+
+
+    /* =====================================================
+       EMAIL BLUR VALIDATION
+    ====================================================== */
+
+    emailInput.addEventListener(
+        "blur",
+        function () {
+
+            const email =
+                emailInput.value.trim();
+
+            if (email === "") {
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+
+                showMessage(
+                    "Please enter a valid email address.",
+                    "error"
+                );
+
+                showInputError();
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       INITIAL STATE
+    ====================================================== */
+
+    clearMessage();
+    removeInputError();
+
+}

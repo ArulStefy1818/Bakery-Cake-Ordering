@@ -2,6 +2,26 @@
    STACKLY BAKERY
    PROFESSIONAL LOGIN + SIGNUP JAVASCRIPT
    DIRECT ROLE-BASED LOGIN
+
+   FLOW:
+
+   SIGNUP
+      ↓
+   VALIDATE
+      ↓
+   SAVE ACCOUNT
+      ↓
+   SHOW SUCCESS MESSAGE
+      ↓
+   MOVE TO LOGIN
+      ↓
+   PREFILL EMAIL
+      ↓
+   USER LOGS IN MANUALLY
+
+   LOGIN PASSWORD:
+   - Required
+   - Minimum 6 characters
 ================================================================= */
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -266,6 +286,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* ============================================================
        PASSWORD VALIDATION
+
+       IMPORTANT:
+       LOGIN AND SIGNUP REQUIRE MINIMUM 6 CHARACTERS
     ============================================================ */
 
     function isValidPassword(password) {
@@ -512,6 +535,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         form
             .querySelectorAll(
                 ".bakery-input-error"
@@ -548,6 +572,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         try {
 
             element.focus();
@@ -562,8 +587,10 @@ document.addEventListener("DOMContentLoaded", function () {
         try {
 
             element.scrollIntoView({
+
                 behavior: "smooth",
                 block: "center"
+
             });
 
         } catch (error) {
@@ -644,10 +671,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 normalizedEmail
             );
 
+
             localStorage.setItem(
                 AUTH_CONFIG.storage.loginRole,
                 normalizedRole
             );
+
 
             localStorage.setItem(
                 AUTH_CONFIG.storage.loginStatus,
@@ -783,6 +812,7 @@ document.addEventListener("DOMContentLoaded", function () {
             "false"
         );
 
+
         menu.setAttribute(
             "role",
             "listbox"
@@ -810,7 +840,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* ========================================================
-           OPEN
+           OPEN DROPDOWN
         ======================================================== */
 
         function openDropdown() {
@@ -832,7 +862,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
         /* ========================================================
-           CLOSE
+           CLOSE DROPDOWN
         ======================================================== */
 
         function closeDropdown() {
@@ -1003,8 +1033,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     openDropdown();
 
+
                     if (options[0]) {
+
                         options[0].focus();
+
                     }
 
                 }
@@ -1085,12 +1118,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             event.preventDefault();
 
+
                             const next =
                                 options[index + 1] ||
                                 options[0];
 
+
                             if (next) {
+
                                 next.focus();
+
                             }
 
                         }
@@ -1102,14 +1139,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             event.preventDefault();
 
+
                             const previous =
                                 options[index - 1] ||
                                 options[
                                     options.length - 1
                                 ];
 
+
                             if (previous) {
+
                                 previous.focus();
+
                             }
 
                         }
@@ -1121,8 +1162,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
                             event.preventDefault();
 
+
                             if (options[0]) {
+
                                 options[0].focus();
+
                             }
 
                         }
@@ -1133,6 +1177,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         ) {
 
                             event.preventDefault();
+
 
                             if (options.length) {
 
@@ -1150,6 +1195,10 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         );
 
+
+        /* ========================================================
+           PUBLIC DROPDOWN API
+        ======================================================== */
 
         return {
 
@@ -1484,7 +1533,7 @@ document.addEventListener("DOMContentLoaded", function () {
        SHOW LOGIN
     ============================================================ */
 
-    function showLogin() {
+    function showLogin(prefillEmail) {
 
         if (
             !loginWrapper ||
@@ -1514,6 +1563,19 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
+        if (
+            prefillEmail &&
+            loginEmail
+        ) {
+
+            loginEmail.value =
+                normalizeEmail(
+                    prefillEmail
+                );
+
+        }
+
+
         const formPanel =
             document.querySelector(
                 ".bakery-auth-form-panel"
@@ -1523,11 +1585,24 @@ document.addEventListener("DOMContentLoaded", function () {
         if (formPanel) {
 
             formPanel.scrollTo({
+
                 top: 0,
                 behavior: "smooth"
+
             });
 
         }
+
+
+        setTimeout(function () {
+
+            if (loginEmail) {
+
+                loginEmail.focus();
+
+            }
+
+        }, 250);
 
     }
 
@@ -1575,8 +1650,10 @@ document.addEventListener("DOMContentLoaded", function () {
         if (formPanel) {
 
             formPanel.scrollTo({
+
                 top: 0,
                 behavior: "smooth"
+
             });
 
         }
@@ -1636,6 +1713,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         ""
                     );
 
+
                 clearFieldError(
                     signupName
                 );
@@ -1662,11 +1740,13 @@ document.addEventListener("DOMContentLoaded", function () {
                         ""
                     );
 
+
                 signupPhone.value =
                     signupPhone.value.slice(
                         0,
                         10
                     );
+
 
                 clearFieldError(
                     signupPhone
@@ -1737,11 +1817,13 @@ document.addEventListener("DOMContentLoaded", function () {
     ============================================================ */
 
     [
+
         loginEmail,
         loginPassword,
         signupEmail,
         signupPassword,
         signupConfirmPassword
+
     ]
         .filter(Boolean)
         .forEach(function (input) {
@@ -1753,6 +1835,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     clearFieldError(
                         input
                     );
+
 
                     if (
                         input === loginEmail ||
@@ -1792,18 +1875,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* ============================================================
-       DIRECT LOGIN
+       LOGIN FORM
        
-       IMPORTANT:
-       NO USER DATABASE CHECK
-       NO PASSWORD MATCH CHECK
-       NO EXISTING ACCOUNT CHECK
-
-       ROLE = ADMIN
-       → admin.html
-
-       ROLE = CUSTOMER
-       → customer.html
+       LOGIN REQUIREMENTS:
+       1. Role required
+       2. Valid role
+       3. Email required
+       4. Valid email
+       5. Password required
+       6. Password minimum 6 characters
+       7. Create session
+       8. Redirect by role
     ============================================================ */
 
     if (loginForm) {
@@ -1863,7 +1945,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 /* =================================================
-                   ROLE
+                   ROLE VALIDATION
                 ================================================= */
 
                 if (!role) {
@@ -1883,8 +1965,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
+                if (!isValidRole(role)) {
+
+                    showFieldError(
+                        $("bakeryLoginRoleDropdown"),
+                        "Please select a valid account type."
+                    );
+
+
+                    focusInvalidField(
+                        $("bakeryLoginRoleButton")
+                    );
+
+                    return;
+
+                }
+
+
                 /* =================================================
-                   EMAIL
+                   EMAIL VALIDATION
                 ================================================= */
 
                 if (!email) {
@@ -1904,8 +2003,25 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
+                if (!isValidEmail(email)) {
+
+                    showFieldError(
+                        loginEmail,
+                        "Please enter a valid email address."
+                    );
+
+
+                    focusInvalidField(
+                        loginEmail
+                    );
+
+                    return;
+
+                }
+
+
                 /* =================================================
-                   PASSWORD
+                   PASSWORD REQUIRED
                 ================================================= */
 
                 if (!password) {
@@ -1926,11 +2042,34 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 /* =================================================
+                   PASSWORD MINIMUM 6 CHARACTERS
+
+                   THIS IS THE IMPORTANT CHANGE
+                ================================================= */
+
+                if (!isValidPassword(password)) {
+
+                    showFieldError(
+                        loginPassword,
+                        "Password must contain at least 6 characters."
+                    );
+
+
+                    focusInvalidField(
+                        loginPassword
+                    );
+
+                    return;
+
+                }
+
+
+                /* =================================================
                    DIRECT LOGIN SESSION
-                   
-                   NO DATABASE CHECK
-                   NO PASSWORD CHECK
-                   NO SIGNUP REQUIRED
+
+                   No database check.
+                   No password matching check.
+                   Role controls dashboard.
                 ================================================= */
 
                 const sessionCreated =
@@ -1947,7 +2086,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     showMessage(
                         loginMessage,
-                        "Please select a valid account type.",
+                        "Unable to create login session.",
                         "error"
                     );
 
@@ -1972,14 +2111,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /* ============================================================
        SIGNUP FORM
-       
+
        SIGNUP
-       ↓
+          ↓
+       VALIDATE
+          ↓
        SAVE USER
-       ↓
-       CREATE SESSION
-       ↓
-       REDIRECT
+          ↓
+       SHOW SUCCESS
+          ↓
+       LOGIN
+          ↓
+       PREFILL EMAIL
+          ↓
+       USER LOGS IN
     ============================================================ */
 
     if (signupForm) {
@@ -2183,6 +2328,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
+                if (!isValidRole(role)) {
+
+                    showFieldError(
+                        $("bakerySignupRoleDropdown"),
+                        "Please select a valid account type."
+                    );
+
+
+                    focusInvalidField(
+                        $("bakerySignupRoleButton")
+                    );
+
+                    return;
+
+                }
+
+
                 /* =================================================
                    PASSWORD
                 ================================================= */
@@ -2224,6 +2386,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 /* =================================================
                    CONFIRM PASSWORD
                 ================================================= */
+
+                if (
+                    signupConfirmPassword &&
+                    !confirmPassword
+                ) {
+
+                    showFieldError(
+                        signupConfirmPassword,
+                        "Please confirm your password."
+                    );
+
+
+                    focusInvalidField(
+                        signupConfirmPassword
+                    );
+
+                    return;
+
+                }
+
 
                 if (
                     signupConfirmPassword &&
@@ -2275,6 +2457,39 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 const users =
                     getUsers();
+
+
+                /* =================================================
+                   CHECK DUPLICATE EMAIL
+                ================================================= */
+
+                const existingUser =
+                    users.find(function (user) {
+
+                        return (
+                            normalizeEmail(
+                                user.email
+                            ) === email
+                        );
+
+                    });
+
+
+                if (existingUser) {
+
+                    showFieldError(
+                        signupEmail,
+                        "An account with this email already exists."
+                    );
+
+
+                    focusInvalidField(
+                        signupEmail
+                    );
+
+                    return;
+
+                }
 
 
                 /* =================================================
@@ -2344,37 +2559,114 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                 /* =================================================
-                   CREATE SESSION
+                   DO NOT CREATE LOGIN SESSION
+
+                   USER MUST LOGIN MANUALLY
                 ================================================= */
 
-                const sessionCreated =
-                    createLoginSession(
-                        email,
-                        role,
-                        true
-                    );
+                localStorage.removeItem(
+                    AUTH_CONFIG.storage.loginStatus
+                );
 
-
-                if (!sessionCreated) {
-
-                    showMessage(
-                        signupMessage,
-                        "Account created. Please login.",
-                        "error"
-                    );
-
-                    return;
-
-                }
+                localStorage.removeItem(
+                    AUTH_CONFIG.storage.loginRole
+                );
 
 
                 /* =================================================
-                   DIRECT DASHBOARD
+                   SHOW SUCCESS MESSAGE
                 ================================================= */
 
-                redirectByRole(
-                    role
+                showMessage(
+                    signupMessage,
+                    "Account created successfully! Redirecting to login...",
+                    "success"
                 );
+
+
+                /* =================================================
+                   MOVE TO LOGIN
+                ================================================= */
+
+                setTimeout(function () {
+
+
+                    /* =============================================
+                       PREFILL EMAIL
+                    ============================================= */
+
+                    if (loginEmail) {
+
+                        loginEmail.value =
+                            email;
+
+                    }
+
+
+                    /* =============================================
+                       CLEAR LOGIN PASSWORD
+                    ============================================= */
+
+                    if (loginPassword) {
+
+                        loginPassword.value =
+                            "";
+
+                    }
+
+
+                    /* =============================================
+                       CLEAR LOGIN ERRORS
+                    ============================================= */
+
+                    clearFormErrors(
+                        loginForm
+                    );
+
+
+                    /* =============================================
+                       CLEAR SIGNUP FORM
+                    ============================================= */
+
+                    if (signupForm) {
+
+                        signupForm.reset();
+
+                    }
+
+
+                    /* =============================================
+                       RESET SIGNUP ROLE DROPDOWN
+                    ============================================= */
+
+                    if (signupRoleDropdown) {
+
+                        signupRoleDropdown.clear();
+
+                    }
+
+
+                    /* =============================================
+                       SHOW LOGIN PANEL
+                    ============================================= */
+
+                    showLogin(
+                        email
+                    );
+
+
+                    /* =============================================
+                       LOGIN SUCCESS MESSAGE
+                    ============================================= */
+
+                    showMessage(
+                        loginMessage,
+                        "Account created successfully. Please login with your new account.",
+                        "success"
+                    );
+
+
+                }, 1200);
 
             }
         );
@@ -2418,7 +2710,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                     if (loginEmail) {
+
                         loginEmail.focus();
+
                     }
 
                     return;
@@ -2436,7 +2730,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
                     if (loginEmail) {
+
                         loginEmail.focus();
+
                     }
 
                     return;
@@ -2530,6 +2826,7 @@ document.addEventListener("DOMContentLoaded", function () {
     ============================================================ */
 
     window.StacklyBakeryAuth = {
+
 
         /* ========================================================
            GET USERS
